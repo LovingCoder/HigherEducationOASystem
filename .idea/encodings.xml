@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/res/database_config.txt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/log4j.properties" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/tang/bean/PageInfo.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/tang/bean/RequestBean.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/tang/controller/IndexController.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/tang/controller/TaskBookController.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/tang/controller/UserController.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/tang/entity/TaskBookExcel.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/tang/model/User.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/tang/model/_JFinalDemoGenerator.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/tang/model/_MappingKit.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/tang/model/base" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/web/WEB-INF/lib/c3p0-0.9.1.2.jar" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/web/WEB-INF/lib/commons-io-2.4.jar" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/web/WEB-INF/lib/commons-lang3-3.1.jar" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/web/WEB-INF/lib/easypoi-annotation-2.0.9.jar" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/web/WEB-INF/lib/easypoi-base-2.0.9.jar" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/web/WEB-INF/lib/easypoi-web-2.0.9.jar" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/web/WEB-INF/lib/fastjson-1.2.7.jar" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/web/WEB-INF/lib/freemarker-2.3.20.jar" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/web/WEB-INF/lib/guava-19.0.jar" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/web/WEB-INF/lib/hamcrest-core-1.3.rc2.jar" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/web/WEB-INF/lib/hamcrest-library-1.3.rc2.jar" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/web/WEB-INF/lib/jetty-server-8.1.8.jar" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/web/WEB-INF/lib/jfinal-2.2-bin-with-src.jar" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/web/WEB-INF/lib/junit-4.12.jar" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/web/WEB-INF/lib/log4j-1.2.17.jar" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/web/WEB-INF/lib/mysql-connector-java-5.1.20-bin.jar" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/web/WEB-INF/lib/poi-3.13-20150929.jar" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/web/WEB-INF/lib/poi-ooxml-3.13-20150929.jar" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/web/WEB-INF/lib/poi-ooxml-schemas-3.13-20150929.jar" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/web/WEB-INF/lib/slf4j-api-1.7.13.jar" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/web/WEB-INF/lib/slf4j-log4j12-1.7.13.jar" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/web/WEB-INF/lib/xmlbeans-2.6.0.jar" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/web/bootstrap" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/web/jquery/jquery.min.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/web/res/background.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/web/responsive/responsive-nav.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/web/responsive/responsive-nav.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/web/responsive/responsive-nav.min.js" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>

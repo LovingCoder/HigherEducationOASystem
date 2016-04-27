@@ -26,9 +26,12 @@ public class UserController extends Controller {
         RequestBean requestBean = RequestBeanKit.getRequestBean(getRequest());
         Record record = User.me.userRegister(requestBean);
         if (null != record){
-            redirect("/index");
+            setSessionAttr("user", record);
+            record.remove("password");
+            setAttr("data",JsonKit.toJson(record.getColumns()));
+            renderJson();
         }else {
-            renderText("注册失败");
+            redirect("/index");
         }
     }
 
@@ -43,7 +46,7 @@ public class UserController extends Controller {
         if (null != record){
             setSessionAttr("user", record);
             record.remove("password");
-            setAttr("data",JsonKit.toJson(record.getColumns()));
+            setAttr("data", JsonKit.toJson(record.getColumns()));
             renderJson();
         }else {
             redirect("/index");

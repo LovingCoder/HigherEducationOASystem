@@ -31,6 +31,7 @@ public class User extends BaseUser<User> {
 		String userName = ParamKit.checkObjectNotNull(requestBean,"username");
 		String userPwd = ParamKit.checkObjectNotNull(requestBean,"password");
 		String userRole = ParamKit.checkObjectNotNull(requestBean,"userRole");
+		String email = ParamKit.checkObjectNotNull(requestBean,"email");
 		Record record = new Record();
 		record.set("id", IDKit.uuid())
 				.set("userName",userName)

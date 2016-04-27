@@ -42,21 +42,7 @@
             return temp;
         }
 
-        function validateLogin(){
-            var username = document.getElementById("username").value;
-            var password = document.getElementById("password").value;
-            if("" == valueOf("username")){
-                alert("用户名不能为空");
-                return false;
-            }
-            if("" == password){
-                alert("密码不能为空");
-                return false;
-            }
-            document.loginForm.submit;
-        }
         function doLoginByAjax(){
-            alert($("#username").val());
             var para = {
                 "requestTime":"2016-03-15 15:38:09.009",
                 "requestMethod":"",
@@ -84,6 +70,44 @@
                 success: function(data) {
 //                    $("#ajaxDiv").html(data);	//将返回的结果显示到ajaxDiv中
                     alert("请求成功"+data["data"]);
+                    window.location.href = "/higherEducation/main";
+                }
+            });
+        }
+
+        function doRegisterByAjax(){
+            var password = $("#registerPassword").val();
+            var confirmPassword = $("#registerConPassword").val();
+            if(confirmPassword != password){
+                alert("确认密码错误！")
+                return false;
+            }
+            var para = {
+                "sessionId":"2c88449748214631ac43e6b370bd1034",
+                "requestContent":{
+                    "username":$("#registerUsername").val(),
+                    "email":$("#registerEmail").val(),
+                    "password":confirmPassword,
+                },
+                "pageInfo":{
+                    "pageSize":20,
+                    "currentPage":1
+                }
+            };
+            $.ajax({
+                cache: false,
+                type: "POST",
+                dataType: "json",		  //json格式，重要
+                url:"/user/register",	//把表单数据发送到/user/login
+                data:para,	//要发送的是para中的数据
+                async: false,
+                error: function(data) {
+                    alert("发送请求失败！");
+                },
+                success: function(data) {
+//                    $("#ajaxDiv").html(data);	//将返回的结果显示到ajaxDiv中
+                    alert("请求成功"+data["data"]);
+                    window.location.href = "/higherEducation/main";
                 }
             });
         }
@@ -94,7 +118,6 @@
 
 <div class="lc-block" id="l-login" data-ng-class="{'toggled':lctrl.login === 1}">
     <h1 class="lean">HAUT OA</h1>
-    <form name="loginForm" id="loginForm" action="/user/login" method="post">
     <div class="input-group m-b-20">
     		<span class="input-group-addon">
     			<i class="zmdi zmdi-account"></i>
@@ -123,13 +146,9 @@
             </i>
         </label>
     </div>
-    </form>
     <a href="javascript:doLoginByAjax()" class="btn btn-login btn-danger btn-float">
         <i class="zmdi zmdi-arrow-forward"></i>
     </a>
-    <%--<a href="javascript:document.loginForm.submit();" class="btn btn-login btn-danger btn-float">
-        <i class="zmdi zmdi-arrow-forward"></i>
-    </a>--%>
     <ul class="login-navigation">
         <li class="bgm-red" data-ng-click="lctrl.login = 0; lctrl.register = 1">注册</li>
         <li data-block="#l-forget-password" class="bgm-orange" data-ng-click="lctrl.login = 0; lctrl.forgot = 1">忘记密码?</li>
@@ -144,7 +163,7 @@
     			<i class="zmdi zmdi-account"></i>
     		</span>
         <div class="fg-line">
-            <input type="text" class="form-control" placeholder="Username" regex="^\w{3,16}$"/>
+            <input type="text" class="form-control" placeholder="Username" regex="^\w{3,16}$" id="registerUsername"/>
         </div>
     </div>
 
@@ -153,7 +172,7 @@
     			<i class="zmdi zmdi-email"></i>
     		</span>
         <div class="fg-line">
-            <input type="text" class="form-control" placeholder="Email Address" regex="^\w+@\w+\.[a-zA-Z]+(\.[a-zA-Z]+)?$"/>
+            <input type="text" class="form-control" placeholder="Email Address" regex="^\w+@\w+\.[a-zA-Z]+(\.[a-zA-Z]+)?$" id="registerEmail"/>
         </div>
     </div>
 
@@ -162,7 +181,16 @@
     			<i class="zmdi zmdi-male"></i>
     		</span>
         <div class="fg-line">
-            <input type="password" class="form-control" placeholder="Password" regex="^\w+"/>
+            <input type="password" class="form-control" placeholder="Password" regex="^\w+" id="registerPassword"/>
+        </div>
+    </div>
+
+    <div class="input-group m-b-20">
+    		<span class="input-group-addon">
+    			<i class="zmdi zmdi-male"></i>
+    		</span>
+        <div class="fg-line">
+            <input type="password" class="form-control" placeholder="Confirm Password" regex="^\w+" id="registerConPassword"/>
         </div>
     </div>
 
@@ -176,7 +204,7 @@
         </label>
     </div>
 
-    <a href="" class="btn btn-login btn-danger btn-float"><i class="zmdi zmdi-arrow-forward"></i></a>
+    <a href="javascript:doRegisterByAjax()" class="btn btn-login btn-danger btn-float"><i class="zmdi zmdi-arrow-forward"></i></a>
 
     <ul class="login-navigation">
         <li data-block="#l-login" class="bgm-green" data-ng-click="lctrl.register = 0; lctrl.login = 1">登录</li>

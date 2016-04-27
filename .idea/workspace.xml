@@ -1,11 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ddea8668-a321-4e1f-b576-45e9202343f9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+    <list default="true" id="ddea8668-a321-4e1f-b576-45e9202343f9" name="Default" comment="测试上传">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/page/common/common.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/HigherEducationOASystem_war_exploded/WEB-INF/classes/com/tang/bean/PageInfo.class" afterPath="$PROJECT_DIR$/out/artifacts/HigherEducationOASystem_war_exploded/WEB-INF/classes/com/tang/bean/PageInfo.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/HigherEducationOASystem_war_exploded/WEB-INF/classes/com/tang/bean/RequestBean.class" afterPath="$PROJECT_DIR$/out/artifacts/HigherEducationOASystem_war_exploded/WEB-INF/classes/com/tang/bean/RequestBean.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/HigherEducationOASystem_war_exploded/WEB-INF/classes/com/tang/config/OAConfig.class" afterPath="$PROJECT_DIR$/out/artifacts/HigherEducationOASystem_war_exploded/WEB-INF/classes/com/tang/config/OAConfig.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/HigherEducationOASystem_war_exploded/WEB-INF/classes/com/tang/controller/CollegeController.class" afterPath="$PROJECT_DIR$/out/artifacts/HigherEducationOASystem_war_exploded/WEB-INF/classes/com/tang/controller/CollegeController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/HigherEducationOASystem_war_exploded/WEB-INF/classes/com/tang/controller/HigherEducationController.class" afterPath="$PROJECT_DIR$/out/artifacts/HigherEducationOASystem_war_exploded/WEB-INF/classes/com/tang/controller/HigherEducationController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/HigherEducationOASystem_war_exploded/WEB-INF/classes/com/tang/controller/IndexController.class" afterPath="$PROJECT_DIR$/out/artifacts/HigherEducationOASystem_war_exploded/WEB-INF/classes/com/tang/controller/IndexController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/HigherEducationOASystem_war_exploded/WEB-INF/classes/com/tang/controller/SchoolController.class" afterPath="$PROJECT_DIR$/out/artifacts/HigherEducationOASystem_war_exploded/WEB-INF/classes/com/tang/controller/SchoolController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/HigherEducationOASystem_war_exploded/WEB-INF/classes/com/tang/controller/TaskBookController.class" afterPath="$PROJECT_DIR$/out/artifacts/HigherEducationOASystem_war_exploded/WEB-INF/classes/com/tang/controller/TaskBookController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/HigherEducationOASystem_war_exploded/WEB-INF/classes/com/tang/controller/TeacherController.class" afterPath="$PROJECT_DIR$/out/artifacts/HigherEducationOASystem_war_exploded/WEB-INF/classes/com/tang/controller/TeacherController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/HigherEducationOASystem_war_exploded/WEB-INF/classes/com/tang/controller/UserController.class" afterPath="$PROJECT_DIR$/out/artifacts/HigherEducationOASystem_war_exploded/WEB-INF/classes/com/tang/controller/UserController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/HigherEducationOASystem_war_exploded/WEB-INF/classes/com/tang/entity/TaskBookExcel.class" afterPath="$PROJECT_DIR$/out/artifacts/HigherEducationOASystem_war_exploded/WEB-INF/classes/com/tang/entity/TaskBookExcel.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/HigherEducationOASystem_war_exploded/WEB-INF/classes/com/tang/handler/LoginHandler.class" afterPath="$PROJECT_DIR$/out/artifacts/HigherEducationOASystem_war_exploded/WEB-INF/classes/com/tang/handler/LoginHandler.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/HigherEducationOASystem_war_exploded/WEB-INF/classes/com/tang/interceptor/LoginInterceptor.class" afterPath="$PROJECT_DIR$/out/artifacts/HigherEducationOASystem_war_exploded/WEB-INF/classes/com/tang/interceptor/LoginInterceptor.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/HigherEducationOASystem_war_exploded/WEB-INF/classes/com/tang/model/Class.class" afterPath="$PROJECT_DIR$/out/artifacts/HigherEducationOASystem_war_exploded/WEB-INF/classes/com/tang/model/Class.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/HigherEducationOASystem_war_exploded/WEB-INF/classes/com/tang/model/College.class" afterPath="$PROJECT_DIR$/out/artifacts/HigherEducationOASystem_war_exploded/WEB-INF/classes/com/tang/model/College.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/HigherEducationOASystem_war_exploded/WEB-INF/classes/com/tang/model/School.class" afterPath="$PROJECT_DIR$/out/artifacts/HigherEducationOASystem_war_exploded/WEB-INF/classes/com/tang/model/School.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/HigherEducationOASystem_war_exploded/WEB-INF/classes/com/tang/model/Taskbook.class" afterPath="$PROJECT_DIR$/out/artifacts/HigherEducationOASystem_war_exploded/WEB-INF/classes/com/tang/model/Taskbook.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/HigherEducationOASystem_war_exploded/WEB-INF/classes/com/tang/model/Teacher.class" afterPath="$PROJECT_DIR$/out/artifacts/HigherEducationOASystem_war_exploded/WEB-INF/classes/com/tang/model/Teacher.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/HigherEducationOASystem_war_exploded/WEB-INF/classes/com/tang/model/TeacherTaskbook.class" afterPath="$PROJECT_DIR$/out/artifacts/HigherEducationOASystem_war_exploded/WEB-INF/classes/com/tang/model/TeacherTaskbook.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/HigherEducationOASystem_war_exploded/WEB-INF/classes/com/tang/model/User.class" afterPath="$PROJECT_DIR$/out/artifacts/HigherEducationOASystem_war_exploded/WEB-INF/classes/com/tang/model/User.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/HigherEducationOASystem_war_exploded/WEB-INF/classes/com/tang/model/_JFinalDemoGenerator.class" afterPath="$PROJECT_DIR$/out/artifacts/HigherEducationOASystem_war_exploded/WEB-INF/classes/com/tang/model/_JFinalDemoGenerator.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/HigherEducationOASystem_war_exploded/WEB-INF/classes/com/tang/model/_MappingKit.class" afterPath="$PROJECT_DIR$/out/artifacts/HigherEducationOASystem_war_exploded/WEB-INF/classes/com/tang/model/_MappingKit.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/HigherEducationOASystem_war_exploded/WEB-INF/classes/com/tang/model/base/BaseClass.class" afterPath="$PROJECT_DIR$/out/artifacts/HigherEducationOASystem_war_exploded/WEB-INF/classes/com/tang/model/base/BaseClass.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/HigherEducationOASystem_war_exploded/WEB-INF/classes/com/tang/model/base/BaseCollege.class" afterPath="$PROJECT_DIR$/out/artifacts/HigherEducationOASystem_war_exploded/WEB-INF/classes/com/tang/model/base/BaseCollege.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/HigherEducationOASystem_war_exploded/WEB-INF/classes/com/tang/model/base/BaseSchool.class" afterPath="$PROJECT_DIR$/out/artifacts/HigherEducationOASystem_war_exploded/WEB-INF/classes/com/tang/model/base/BaseSchool.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/HigherEducationOASystem_war_exploded/WEB-INF/classes/com/tang/model/base/BaseTaskbook.class" afterPath="$PROJECT_DIR$/out/artifacts/HigherEducationOASystem_war_exploded/WEB-INF/classes/com/tang/model/base/BaseTaskbook.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/HigherEducationOASystem_war_exploded/WEB-INF/classes/com/tang/model/base/BaseTeacher.class" afterPath="$PROJECT_DIR$/out/artifacts/HigherEducationOASystem_war_exploded/WEB-INF/classes/com/tang/model/base/BaseTeacher.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/HigherEducationOASystem_war_exploded/WEB-INF/classes/com/tang/model/base/BaseTeacherTaskbook.class" afterPath="$PROJECT_DIR$/out/artifacts/HigherEducationOASystem_war_exploded/WEB-INF/classes/com/tang/model/base/BaseTeacherTaskbook.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/HigherEducationOASystem_war_exploded/WEB-INF/classes/com/tang/model/base/BaseUser.class" afterPath="$PROJECT_DIR$/out/artifacts/HigherEducationOASystem_war_exploded/WEB-INF/classes/com/tang/model/base/BaseUser.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/HigherEducationOASystem_war_exploded/WEB-INF/classes/com/tang/route/OARoute.class" afterPath="$PROJECT_DIR$/out/artifacts/HigherEducationOASystem_war_exploded/WEB-INF/classes/com/tang/route/OARoute.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/HigherEducationOASystem_war_exploded/WEB-INF/classes/com/tang/testcase/Test.class" afterPath="$PROJECT_DIR$/out/artifacts/HigherEducationOASystem_war_exploded/WEB-INF/classes/com/tang/testcase/Test.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/HigherEducationOASystem_war_exploded/WEB-INF/classes/com/tang/util/DateUtils.class" afterPath="$PROJECT_DIR$/out/artifacts/HigherEducationOASystem_war_exploded/WEB-INF/classes/com/tang/util/DateUtils.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/HigherEducationOASystem_war_exploded/WEB-INF/classes/com/tang/util/IDKit.class" afterPath="$PROJECT_DIR$/out/artifacts/HigherEducationOASystem_war_exploded/WEB-INF/classes/com/tang/util/IDKit.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/HigherEducationOASystem_war_exploded/WEB-INF/classes/com/tang/util/RecordKit.class" afterPath="$PROJECT_DIR$/out/artifacts/HigherEducationOASystem_war_exploded/WEB-INF/classes/com/tang/util/RecordKit.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/HigherEducationOASystem_war_exploded/WEB-INF/classes/com/tang/util/RequestBeanKit.class" afterPath="$PROJECT_DIR$/out/artifacts/HigherEducationOASystem_war_exploded/WEB-INF/classes/com/tang/util/RequestBeanKit.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/HigherEducationOASystem_war_exploded/WEB-INF/classes/com/tang/util/SysConstant$ISDELETE.class" afterPath="$PROJECT_DIR$/out/artifacts/HigherEducationOASystem_war_exploded/WEB-INF/classes/com/tang/util/SysConstant$ISDELETE.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/HigherEducationOASystem_war_exploded/WEB-INF/classes/com/tang/util/SysConstant.class" afterPath="$PROJECT_DIR$/out/artifacts/HigherEducationOASystem_war_exploded/WEB-INF/classes/com/tang/util/SysConstant.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/HigherEducationOASystem_war_exploded/WEB-INF/classes/com/tang/util/TaskExcelKit.class" afterPath="$PROJECT_DIR$/out/artifacts/HigherEducationOASystem_war_exploded/WEB-INF/classes/com/tang/util/TaskExcelKit.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/HigherEducationOASystem_war_exploded/WEB-INF/classes/com/tang/util/_MappingKit.class" afterPath="$PROJECT_DIR$/out/artifacts/HigherEducationOASystem_war_exploded/WEB-INF/classes/com/tang/util/_MappingKit.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/HigherEducationOASystem_war_exploded/WEB-INF/classes/com/tang/validator/LoginValidator.class" afterPath="$PROJECT_DIR$/out/artifacts/HigherEducationOASystem_war_exploded/WEB-INF/classes/com/tang/validator/LoginValidator.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/bean/PageInfo.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/bean/PageInfo.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/bean/RequestBean.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/bean/RequestBean.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/config/OAConfig.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/config/OAConfig.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/controller/CollegeController.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/controller/CollegeController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/controller/HigherEducationController.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/controller/HigherEducationController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/controller/IndexController.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/controller/IndexController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/controller/SchoolController.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/controller/SchoolController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/controller/TaskBookController.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/controller/TaskBookController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/controller/TeacherController.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/controller/TeacherController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/controller/UserController.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/controller/UserController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/entity/TaskBookExcel.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/entity/TaskBookExcel.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/handler/LoginHandler.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/handler/LoginHandler.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/interceptor/LoginInterceptor.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/interceptor/LoginInterceptor.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/model/Class.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/model/Class.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/model/College.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/model/College.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/model/School.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/model/School.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/model/Taskbook.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/model/Taskbook.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/model/Teacher.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/model/Teacher.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/model/TeacherTaskbook.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/model/TeacherTaskbook.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/model/User.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/model/User.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/model/_JFinalDemoGenerator.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/model/_JFinalDemoGenerator.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/model/_MappingKit.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/model/_MappingKit.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/model/base/BaseClass.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/model/base/BaseClass.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/model/base/BaseCollege.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/model/base/BaseCollege.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/model/base/BaseSchool.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/model/base/BaseSchool.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/model/base/BaseTaskbook.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/model/base/BaseTaskbook.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/model/base/BaseTeacher.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/model/base/BaseTeacher.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/model/base/BaseTeacherTaskbook.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/model/base/BaseTeacherTaskbook.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/model/base/BaseUser.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/model/base/BaseUser.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/route/OARoute.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/route/OARoute.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/testcase/Test.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/testcase/Test.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/util/DateUtils.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/util/DateUtils.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/util/IDKit.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/util/IDKit.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/util/RecordKit.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/util/RecordKit.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/util/RequestBeanKit.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/util/RequestBeanKit.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/util/SysConstant$ISDELETE.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/util/SysConstant$ISDELETE.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/util/SysConstant.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/util/SysConstant.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/util/TaskExcelKit.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/util/TaskExcelKit.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/util/_MappingKit.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/util/_MappingKit.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/validator/LoginValidator.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/validator/LoginValidator.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HigherEducationOASystem.iml" afterPath="$PROJECT_DIR$/HigherEducationOASystem.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/tang/config/OAConfig.java" afterPath="$PROJECT_DIR$/src/com/tang/config/OAConfig.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jfinal_demo.log" afterPath="$PROJECT_DIR$/jfinal_demo.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/HigherEducationOASystem_war_exploded/WEB-INF/classes/database_config.txt" afterPath="$PROJECT_DIR$/out/artifacts/HigherEducationOASystem_war_exploded/WEB-INF/classes/database_config.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/HigherEducationOASystem_war_exploded/page/main/main.jsp" afterPath="$PROJECT_DIR$/out/artifacts/HigherEducationOASystem_war_exploded/page/main/main.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/database_config.txt" afterPath="$PROJECT_DIR$/res/database_config.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/database_config.txt" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/database_config.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/page/main/main.jsp" afterPath="$PROJECT_DIR$/web/page/main/main.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/page/taskbook/list.jsp" afterPath="$PROJECT_DIR$/web/page/taskbook/list.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/page/taskbook/uploadTaskBook.jsp" afterPath="$PROJECT_DIR$/web/page/taskbook/uploadTaskBook.jsp" />
     </list>
     <ignored path="HigherEducationOASystem.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,33 +122,86 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="log4j.properties" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/log4j.properties">
+      <file leaf-file-name="main.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/page/main/main.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="-20.147541">
+              <caret line="168" column="7" selection-start-line="168" selection-start-column="7" selection-end-line="168" selection-end-column="7" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OAConfig.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/tang/config/OAConfig.java">
+      <file leaf-file-name="list.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/page/taskbook/list.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="73" column="32" selection-start-line="73" selection-start-column="32" selection-end-line="73" selection-end-column="32" />
+            <state vertical-scroll-proportion="-8.935484">
+              <caret line="100" column="32" selection-start-line="100" selection-start-column="32" selection-end-line="100" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.5667614">
+              <caret line="21" column="10" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="uploadTaskBook.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/page/taskbook/uploadTaskBook.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="4.129032">
+              <caret line="52" column="14" selection-start-line="52" selection-start-column="14" selection-end-line="52" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bootstrap.min.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/bootstrap/css/bootstrap.min.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="4.819672">
+              <caret line="4" column="3187" selection-start-line="4" selection-start-column="3183" selection-end-line="4" selection-end-column="3187" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="common.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/page/common/common.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-7.7868853">
+              <caret line="497" column="24" selection-start-line="497" selection-start-column="0" selection-end-line="498" selection-end-column="0" />
               <folding>
-                <element signature="imports" expanded="false" />
+                <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#4;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#5;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#6;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HigherEducationOASystem.iml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/HigherEducationOASystem.iml">
+      <file leaf-file-name="TaskBookController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/tang/controller/TaskBookController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.78267044">
-              <caret line="29" column="9" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="49" column="24" selection-start-line="49" selection-start-column="24" selection-end-line="49" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="loading.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/page/main/loading.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-13.4838705">
+              <caret line="35" column="30" selection-start-line="35" selection-start-column="30" selection-end-line="35" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -75,6 +216,8 @@
         <option value="Class" />
         <option value="Jsp File" />
         <option value="Html5" />
+        <option value="Jspx File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -89,8 +232,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/com/tang/bean/RequestBean.java" />
-        <option value="$PROJECT_DIR$/web/index.jsp" />
         <option value="$PROJECT_DIR$/src/com/tang/util/SysConst.java" />
         <option value="$PROJECT_DIR$/web/page/user/register.jsp" />
         <option value="$PROJECT_DIR$/src/com/tang/route/AORoute.java" />
@@ -110,7 +251,6 @@
         <option value="$PROJECT_DIR$/src/com/tang/util/TaskExcelKit.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/com/tang/model/Taskbook.java" />
-        <option value="$PROJECT_DIR$/res/database_config.txt" />
         <option value="$PROJECT_DIR$/src/com/tang/model/User.java" />
         <option value="$PROJECT_DIR$/src/com/tang/interceptor/loginInterceptor.java" />
         <option value="$PROJECT_DIR$/src/com/tang/controller/TeacherController.java" />
@@ -135,11 +275,14 @@
         <option value="$PROJECT_DIR$/src/com/tang/controller/HigherEducationController.java" />
         <option value="$PROJECT_DIR$/src/com/tang/controller/TaskBookController.java" />
         <option value="$PROJECT_DIR$/web/page/index.jsp" />
-        <option value="$PROJECT_DIR$/web/page/taskbook/list.jsp" />
-        <option value="$PROJECT_DIR$/web/page/taskbook/uploadTaskBook.jsp" />
-        <option value="$PROJECT_DIR$/web/page/main/main.jsp" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/com/tang/config/OAConfig.java" />
+        <option value="$PROJECT_DIR$/res/database_config.txt" />
+        <option value="$PROJECT_DIR$/web/page/common/common.jspx" />
+        <option value="$PROJECT_DIR$/web/page/taskbook/uploadTaskBook.jsp" />
+        <option value="$PROJECT_DIR$/web/page/taskbook/list.jsp" />
+        <option value="$PROJECT_DIR$/web/page/main/main.jsp" />
+        <option value="$PROJECT_DIR$/web/page/common/common.html" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -163,8 +306,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-4" />
-    <option name="y" value="-4" />
+    <option name="x" value="-18" />
+    <option name="y" value="34" />
     <option name="width" value="1928" />
     <option name="height" value="1060" />
   </component>
@@ -223,11 +366,91 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HigherEducationOASystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HigherEducationOASystem" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="tang" />
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="page" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HigherEducationOASystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HigherEducationOASystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="page" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="taskbook" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HigherEducationOASystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HigherEducationOASystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="page" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HigherEducationOASystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HigherEducationOASystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="page" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="common" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -246,10 +469,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="tang" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -273,7 +492,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../yuanzhuangzhushou_houtai" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -286,7 +505,7 @@
     <property name="recentsLimit" value="5" />
     <property name="dynamic.classpath" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
-    <property name="DefaultHtmlFileTemplate" value="Html5" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -309,7 +528,7 @@
       <recent name="D:\IDEAWorkSpaces\HigherEducationOASystem\web\page\main" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.AppStart">
+  <component name="RunManager" selected="Application.OAConfig">
     <configuration default="false" name="AppStart" type="Application" factoryName="Application" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -414,6 +633,26 @@
           <artifact name="HigherEducationOASystem:war exploded" />
         </option>
       </method>
+    </configuration>
+    <configuration default="false" name="OAConfig" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.tang.config.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="com.tang.config.OAConfig" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="HigherEducationOASystem" />
+      <envs />
+      <method />
     </configuration>
     <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
       <deployment />
@@ -849,18 +1088,20 @@
     <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
       <method />
     </configuration>
-    <list size="4">
+    <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Application.AppStart" />
       <item index="1" class="java.lang.String" itemvalue="Application._JFinalDemoGenerator" />
       <item index="2" class="java.lang.String" itemvalue="JUnit.Test.testImportExcel" />
       <item index="3" class="java.lang.String" itemvalue="Tomcat Server.lockscreen.jsp" />
+      <item index="4" class="java.lang.String" itemvalue="Application.OAConfig" />
     </list>
     <recent_temporary>
-      <list size="4">
-        <item index="0" class="java.lang.String" itemvalue="Application.AppStart" />
-        <item index="1" class="java.lang.String" itemvalue="Application._JFinalDemoGenerator" />
-        <item index="2" class="java.lang.String" itemvalue="Tomcat Server.lockscreen.jsp" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.Test.testImportExcel" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Application.OAConfig" />
+        <item index="1" class="java.lang.String" itemvalue="Application.AppStart" />
+        <item index="2" class="java.lang.String" itemvalue="Application._JFinalDemoGenerator" />
+        <item index="3" class="java.lang.String" itemvalue="Tomcat Server.lockscreen.jsp" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.Test.testImportExcel" />
       </list>
     </recent_temporary>
   </component>
@@ -900,7 +1141,7 @@
       <workItem from="1461630835530" duration="31246000" />
       <workItem from="1461723142817" duration="743000" />
       <workItem from="1461723956956" duration="828000" />
-      <workItem from="1461725016241" duration="224000" />
+      <workItem from="1461725016241" duration="11537000" />
     </task>
     <task id="LOCAL-00001" summary="测试上传">
       <created>1461724100064</created>
@@ -914,41 +1155,53 @@
       <option name="project" value="LOCAL" />
       <updated>1461725088853</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="测试上传">
+      <created>1461725292047</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1461725292047</updated>
+    </task>
+    <task id="LOCAL-00004" summary="测试上传">
+      <created>1461725344283</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1461725344283</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="230151000" />
+    <option name="totallyTimeSpent" value="241464000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-4" y="-4" width="1928" height="1060" extended-state="6" />
+    <frame x="-18" y="34" width="1928" height="1060" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33223322" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3312034" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37945947" sideWeight="0.5021322" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972974" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21938232" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26702702" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1684435" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1684435" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2630458" sideWeight="0.4978678" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3740374" sideWeight="0.4978678" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26702702" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32864866" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -980,6 +1233,9 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
     </layout-to-restore>
   </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.gitignore" />
+  </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
       <collection />
@@ -1006,20 +1262,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/tang/model/base/BaseTaskbook.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.4606204">
-          <caret line="106" column="0" selection-start-line="106" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/tang/model/_MappingKit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.77156174">
-          <caret line="19" column="43" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/tang/util/TaskExcelKit.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1045,13 +1287,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7669725">
           <caret line="45" column="27" selection-start-line="45" selection-start-column="27" selection-end-line="45" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/database_config.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.07366072">
-          <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -1261,38 +1496,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/page/taskbook/list.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="20.426666">
-          <caret line="1058" column="61" selection-start-line="1058" selection-start-column="61" selection-end-line="1058" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/page/main/loading.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5044444">
-          <caret line="13" column="3" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/page/main/lockscreen.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.08222222">
-          <caret line="35" column="57" selection-start-line="35" selection-start-column="57" selection-end-line="35" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/page/user/register.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.22396857">
           <caret line="28" column="24" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/page/taskbook/uploadTaskBook.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38222224">
-          <caret line="668" column="36" selection-start-line="668" selection-start-column="36" selection-end-line="668" selection-end-column="36" />
         </state>
       </provider>
     </entry>
@@ -1303,13 +1510,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/tang/controller/TaskBookController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334">
-          <caret line="41" column="118" selection-start-line="41" selection-start-column="118" selection-end-line="41" selection-end-column="118" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/idea.jar!/resources/html5-schema/html5/common.rnc">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33295456">
@@ -1317,26 +1517,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/page/main/main.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.6774194">
-          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4658494">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.06654991">
           <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HigherEducationOASystem.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="25" column="38" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/database_config.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/tang/config/OAConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.0834553">
+          <caret line="62" column="7" selection-start-line="62" selection-start-column="7" selection-end-line="62" selection-end-column="7" />
           <folding />
         </state>
       </provider>
@@ -1349,20 +1557,79 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/tang/config/OAConfig.java">
+    <entry file="file://$PROJECT_DIR$/web/page/main/lockscreen.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="73" column="32" selection-start-line="73" selection-start-column="32" selection-end-line="73" selection-end-column="32" />
+        <state vertical-scroll-proportion="2.4358974">
+          <caret line="75" column="23" selection-start-line="75" selection-start-column="23" selection-end-line="75" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/page/main/loading.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.4838705">
+          <caret line="35" column="30" selection-start-line="35" selection-start-column="30" selection-end-line="35" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/bootstrap/css/bootstrap.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="4.819672">
+          <caret line="4" column="3187" selection-start-line="4" selection-start-column="3183" selection-end-line="4" selection-end-column="3187" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/page/taskbook/uploadTaskBook.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="4.129032">
+          <caret line="52" column="14" selection-start-line="52" selection-start-column="14" selection-end-line="52" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/page/main/main.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-20.147541">
+          <caret line="168" column="7" selection-start-line="168" selection-start-column="7" selection-end-line="168" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/page/common/common.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.7868853">
+          <caret line="497" column="24" selection-start-line="497" selection-start-column="0" selection-end-line="498" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="false" />
+            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#4;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#5;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#6;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HigherEducationOASystem.iml">
+    <entry file="file://$PROJECT_DIR$/src/com/tang/controller/TaskBookController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.78267044">
-          <caret line="29" column="9" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="49" column="24" selection-start-line="49" selection-start-column="24" selection-end-line="49" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/page/taskbook/list.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.935484">
+          <caret line="100" column="32" selection-start-line="100" selection-start-column="32" selection-end-line="100" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5667614">
+          <caret line="21" column="10" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
           <folding />
         </state>
       </provider>

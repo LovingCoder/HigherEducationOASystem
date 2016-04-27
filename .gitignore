@@ -14,8 +14,11 @@ hs_err_pid*
 
 
 #数据库配置文件不上传
-database_config.txt
+/res/database_config.txt
 
 #out文件夹不上传
-out/
+/out/*
+
+#编译生成文件不上传
+/web/WEB-INF/classes/*
 

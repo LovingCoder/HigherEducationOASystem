@@ -13,7 +13,6 @@ public class HigherEducationController extends Controller {
 
     @ActionKey("/higherEducation/main")
     public void mainPage(){
-
         renderJsp("/page/main/main.jsp");
     }
 }

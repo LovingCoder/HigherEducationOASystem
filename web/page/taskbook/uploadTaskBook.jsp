@@ -666,7 +666,7 @@
         <i class="fa fa-warning"></i><span class="m-left-xs">请选择要上传的任务书.</span>
       </div>
 
-      <form action="http://localhost/taskbook/uploadTaskbook" class="form-inline" enctype="multipart/form-data" method="post">
+      <form action="/taskbook/uploadTaskbook" class="form-inline" enctype="multipart/form-data" method="post">
         <div class="form-group">
           <label for="termName">请填写学期名称（如：2015-2016学年第一学期）</label>
           <input name="term" type="text" class="form-control" id="termName" placeholder="学期名称"/>

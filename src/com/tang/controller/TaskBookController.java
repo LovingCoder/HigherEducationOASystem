@@ -14,6 +14,7 @@ import com.tang.model.Taskbook;
 import com.tang.util.RecordKit;
 import com.tang.util.TaskExcelKit;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
@@ -21,6 +22,11 @@ import java.util.List;
  */
 @Before(LoginInterceptor.class)
 public class TaskBookController extends Controller {
+
+    @ActionKey("/taskbook/index")
+    public void index(){
+        render("/page/taskbook/list.jsp");
+    }
 
     /**
      * 任务书列表
@@ -36,7 +42,7 @@ public class TaskBookController extends Controller {
         Page<Record> recordPage = Taskbook.dao.taskbookList(pageNumber,pageSize,courseName,courseProperty,term,major);
         System.out.println("总条数："+recordPage.getTotalRow()+"\t总页数："+recordPage.getTotalPage());
         setAttr("recordPage", recordPage);
-        render("/page/taskbook/list.jsp");
+        renderJsp("/page/taskbook/list.jsp");
     }
 
     /**

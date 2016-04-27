@@ -23,6 +23,10 @@
     <script type="application/javascript">
 
         function login(URL,PARAMS){
+//            if(null == PARAMS.get){
+//                alert("用户名或密码不能为空！");
+//                return false;
+//            }
             var temp = document.createElement("form");
             temp.action = URL;
             temp.method = "post";
@@ -38,18 +42,33 @@
             return temp;
         }
 
+        function validateLogin(){
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            if("" == valueOf("username")){
+                alert("用户名不能为空");
+                return false;
+            }
+            if("" == password){
+                alert("密码不能为空");
+                return false;
+            }
+            document.loginForm.submit;
+        }
+
     </script>
 </head>
 <body class="login-content" data-ng-controller="loginCtrl as lctrl">
 
 <div class="lc-block" id="l-login" data-ng-class="{'toggled':lctrl.login === 1}">
     <h1 class="lean">HAUT OA</h1>
+    <form name="loginForm" id="loginForm" action="/user/login" method="post">
     <div class="input-group m-b-20">
     		<span class="input-group-addon">
     			<i class="zmdi zmdi-account"></i>
     		</span>
         <div class="fg-line">
-            <input type="text" class="form-control" placeholder="Username" regex="^\w{3,16}$" id="username"/>
+            <input type="text" class="form-control" placeholder="Username" regex="^\w{3,16}$" id="username" name="username" value="123"/>
         </div>
     </div>
 
@@ -58,7 +77,7 @@
     			<i class="zmdi zmdi-male"></i>
     		</span>
         <div class="fg-line">
-            <input type="password" class="form-control" placeholder="Password" regex="^\w+" id="password"/>
+            <input type="password" class="form-control" placeholder="Password" regex="^\w+" id="password" name="password" value="123456"/>
         </div>
     </div>
 
@@ -72,18 +91,21 @@
             </i>
         </label>
     </div>
-    <a href="javascript:login('http://localhost/user/login',{'username':document.getElementById('username').value,'password':document.getElementById('password').value})" class="btn btn-login btn-danger btn-float">
+    </form>
+    <%--<a href="javascript:login('/user/login',{'username':document.getElementById('username').value,'password':document.getElementById('password').value})" class="btn btn-login btn-danger btn-float">--%>
+        <%--<i class="zmdi zmdi-arrow-forward"></i>--%>
+    <%--</a>--%>
+    <a href="javascript:document.loginForm.submit();" class="btn btn-login btn-danger btn-float">
         <i class="zmdi zmdi-arrow-forward"></i>
     </a>
-
     <ul class="login-navigation">
-        <li class="bgm-red" data-ng-click="lctrl.login = 0; lctrl.register = 1">Register</li>
-        <li data-block="#l-forget-password" class="bgm-orange" data-ng-click="lctrl.login = 0; lctrl.forgot = 1">Forgot Password?</li>
+        <li class="bgm-red" data-ng-click="lctrl.login = 0; lctrl.register = 1">注册</li>
+        <li data-block="#l-forget-password" class="bgm-orange" data-ng-click="lctrl.login = 0; lctrl.forgot = 1">忘记密码?</li>
     </ul>
 </div>
 
 <div class="lc-block" id="l-register" data-ng-class="{ 'toggled': lctrl.register === 1 }" data-ng-if="lctrl.register === 1">
-    <h1 class="lean">Azrael</h1>
+    <h1 class="lean">HAUT OA</h1>
 
     <div class="input-group m-b-20">
     		<span class="input-group-addon">
@@ -125,13 +147,13 @@
     <a href="" class="btn btn-login btn-danger btn-float"><i class="zmdi zmdi-arrow-forward"></i></a>
 
     <ul class="login-navigation">
-        <li data-block="#l-login" class="bgm-green" data-ng-click="lctrl.register = 0; lctrl.login = 1">Login</li>
-        <li data-block="#l-forget-password" class="bgm-orange" data-ng-click="lctrl.register = 0; lctrl.forgot = 1">Forgot Password?</li>
+        <li data-block="#l-login" class="bgm-green" data-ng-click="lctrl.register = 0; lctrl.login = 1">登录</li>
+        <li data-block="#l-forget-password" class="bgm-orange" data-ng-click="lctrl.register = 0; lctrl.forgot = 1">忘记密码?</li>
     </ul>
 </div>
 
 <div class="lc-block" id="l-forget-password" data-ng-class="{ 'toggled': lctrl.forgot === 1 }" data-ng-if="lctrl.forgot === 1">
-    <h1 class="lean">Azrael</h1>
+    <h1 class="lean">HAUT OA</h1>
     <p class="text-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eu risus. Curabitur commodo lorem fringilla enim feugiat commodo sed ac lacus.</p>
     <div class="input-group m-b-20">
         <span class="input-group-addon"><i class="zmdi zmdi-email"></i></span>
@@ -143,8 +165,8 @@
     <a href="" class="btn btn-login btn-danger btn-float"><i class="zmdi zmdi-arrow-forward"></i></a>
 
     <ul class="login-navigation">
-        <li data-block="#l-login" class="bgm-green" data-ng-click="lctrl.forgot = 0; lctrl.login = 1">Login</li>
-        <li data-block="#l-register" class="bgm-red" data-ng-click="lctrl.forgot = 0; lctrl.register = 1">Register</li>
+        <li data-block="#l-login" class="bgm-green" data-ng-click="lctrl.forgot = 0; lctrl.login = 1">登录</li>
+        <li data-block="#l-register" class="bgm-red" data-ng-click="lctrl.forgot = 0; lctrl.register = 1">注册</li>
     </ul>
 </div>
 </body>

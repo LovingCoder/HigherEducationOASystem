@@ -2,10 +2,12 @@ package com.tang.model;
 
 import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.Record;
+import com.sun.xml.internal.ws.addressing.W3CAddressingConstants;
 import com.tang.model.base.BaseCollege;
 import com.tang.util.DateUtils;
 import com.tang.util.IDKit;
 import com.tang.util.SysConstant;
+
 import java.util.List;
 
 /**
@@ -13,58 +15,64 @@ import java.util.List;
  */
 @SuppressWarnings("serial")
 public class College extends BaseCollege<College> {
-	public static final College dao = new College();
+    public static final College dao = new College();
 
-	/**
-	 * 新增学院信息
-	 * @param collegeName
-	 * @param collegeDes
-	 * @param schoolId
-	 * @return
-	 */
-	public Boolean saveCollegeInfo(String collegeName,String collegeDes,String schoolId){
-		Record college = new Record();
-		college.set("id", IDKit.uuid())
-				.set("isDelete", SysConstant.ISDELETE.NO)
-				.set("createTime", DateUtils.getCurrentDate())
-				.set("updateTime", DateUtils.getCurrentDate())
-				.set("collegeName",collegeName)
-				.set("collegeDes",collegeDes)
-				.set("schoolId",schoolId);
-		Boolean result = Db.save("college",college);
-		return result;
-	}
-
-
-	/**
-	 * 获取学校当前的所有学院
-	 * @param schoolId
-	 * @return
-	 */
-	public List<Record> queryCollege(String schoolId){
-		return Db.find("SELECT * FROM college WHERE schoolId = ? AND isDelete = ?",schoolId, SysConstant.ISDELETE.NO);
-	}
+    /**
+     * 新增学院信息
+     *
+     * @param collegeName
+     * @param collegeDes
+     * @param schoolId
+     * @return
+     */
+    public Boolean saveCollegeInfo(String collegeName, String collegeDes, String schoolId) {
+        Record college = new Record();
+        college.set("id", IDKit.uuid())
+                .set("isDelete", SysConstant.ISDELETE.NO)
+                .set("createTime", DateUtils.getCurrentDate())
+                .set("updateTime", DateUtils.getCurrentDate())
+                .set("collegeName", collegeName)
+                .set("collegeDes", collegeDes)
+                .set("schoolId", schoolId);
+        Boolean result = Db.save("college", college);
+        return result;
+    }
 
 
-	/**
-	 * 根据id修改学院信息
-	 * @param id
-	 * @param collegeName
-	 * @param collegeDes
-	 * @return
-	 */
-	public Boolean updateCollegeInfo(String id,String collegeName,String collegeDes){
-		int i = Db.update("UPDATE college SET collegeName = ?,collegeDes = ?,updateTime = ? WHERE id = ? AND isDelete = ?",collegeName,collegeDes,DateUtils.getCurrentDate(),id,SysConstant.ISDELETE.NO);
-		return (i == 1) ? true : false;
-	}
+    /**
+     * 获取学校当前的所有学院
+     *
+     * @param schoolId
+     * @return
+     */
+    public List<Record> queryCollege(String schoolId) {
+        return Db.find("SELECT * FROM college WHERE schoolId = ? AND isDelete = ?", schoolId, SysConstant.ISDELETE.NO);
+    }
 
-	/**
-	 * 获取学院信息详情
-	 * @param id
-	 * @return
-	 */
-	public Record detailCollegeInfo(String id){
 
-		return null;
-	}
+    /**
+     * 根据id修改学院信息
+     *
+     * @param id
+     * @param collegeName
+     * @param collegeDes
+     * @return
+     */
+    public Boolean updateCollegeInfo(String id, String collegeName, String collegeDes) {
+        int i = Db.update("UPDATE college SET collegeName = ?,collegeDes = ?,updateTime = ? WHERE id = ? AND isDelete = ?", collegeName, collegeDes, DateUtils.getCurrentDate(), id, SysConstant.ISDELETE.NO);
+        return (i == 1) ? true : false;
+    }
+
+    /**
+     * 获取学院信息详情
+     *
+     * @param id
+     * @return
+     */
+    public Record detailCollegeInfo(String id) {
+        String sql = "SELECT college.*,school.schoolName,school.schoolDes FROM college,school " +
+                "WHERE college.id = ? AND college.isDelete = ? " +
+                "AND college.schoolId = school.id AND school.isDelete = ?";
+        return Db.findFirst(sql, id, SysConstant.ISDELETE.NO, SysConstant.ISDELETE.NO);
+    }
 }

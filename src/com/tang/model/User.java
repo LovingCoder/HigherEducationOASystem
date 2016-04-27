@@ -2,9 +2,12 @@ package com.tang.model;
 import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.Page;
 import com.jfinal.plugin.activerecord.Record;
+import com.tang.bean.RequestBean;
 import com.tang.model.base.BaseUser;
 import com.tang.util.IDKit;
+import com.tang.util.ParamKit;
 import com.tang.util.SysConstant;
+import org.apache.xmlbeans.impl.tool.Extension;
 
 import java.util.Date;
 
@@ -24,11 +27,15 @@ public class User extends BaseUser<User> {
 		return paginate(pageNumber, pageSize, "select *", "from user order by id asc");
 	}
 
-	public Record userRegister(String userName,String userPwd){
+	public Record userRegister(RequestBean requestBean){
+		String userName = ParamKit.checkObjectNotNull(requestBean,"username");
+		String userPwd = ParamKit.checkObjectNotNull(requestBean,"password");
+		String userRole = ParamKit.checkObjectNotNull(requestBean,"userRole");
 		Record record = new Record();
 		record.set("id", IDKit.uuid())
 				.set("userName",userName)
 				.set("password",userPwd)
+				.set("userRole",userRole)
 				.set("isDelete", SysConstant.ISDELETE.NO)
 				.set("createTime",new Date())
 				.set("updateTime", new Date());
@@ -36,7 +43,9 @@ public class User extends BaseUser<User> {
 		return record;
 	}
 
-	public Record userLogin(String username,String password){
+	public Record userLogin(RequestBean requestBean){
+		String username = ParamKit.checkObjectNotNull(requestBean,"username");
+		String password = ParamKit.checkObjectNotNull(requestBean,"password");
         String sql = "SELECT * FROM user WHERE userName = ? AND password = ? AND isDelete = ?";
 		Record record = Db.findFirst(sql, username, password, SysConstant.ISDELETE.NO);
 		return  record;

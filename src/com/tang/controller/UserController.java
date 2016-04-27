@@ -1,9 +1,14 @@
 package com.tang.controller;
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.jfinal.core.ActionKey;
 import com.jfinal.core.Controller;
 import com.jfinal.kit.HttpKit;
+import com.jfinal.kit.JsonKit;
 import com.jfinal.plugin.activerecord.Record;
+import com.tang.bean.RequestBean;
 import com.tang.model.User;
+import com.tang.util.RequestBeanKit;
 
 
 /**
@@ -17,9 +22,9 @@ public class UserController extends Controller {
      */
     @ActionKey("/user/register")
     public void userRegister(){
-        String username = getPara("username");
-        String password = getPara("password");
-        Record record = User.me.userRegister(username,password);
+        HttpKit.setCharSet("utf-8");
+        RequestBean requestBean = RequestBeanKit.getRequestBean(getRequest());
+        Record record = User.me.userRegister(requestBean);
         if (null != record){
             redirect("/index");
         }else {
@@ -33,15 +38,13 @@ public class UserController extends Controller {
     @ActionKey("/user/login")
     public void userLogin(){
         HttpKit.setCharSet("utf-8");
-//        RequestBean requestBean = RequestBeanKit.getRequestBean(getRequest());
-//        String username = requestBean.getRequestContent().get("username").toString();
-//        String password = requestBean.getRequestContent().get("password").toString();
-        String username = getPara("username");
-        String password = getPara("password");
-        Record record = User.me.userLogin(username,password);
+        RequestBean requestBean = RequestBeanKit.getRequestBean(getRequest());
+        Record record = User.me.userLogin(requestBean);
         if (null != record){
-            setSessionAttr("user",record);
-            redirect("/higherEducation/main");
+            setSessionAttr("user", record);
+            record.remove("password");
+            setAttr("data",JsonKit.toJson(record.getColumns()));
+            renderJson();
         }else {
             redirect("/index");
         }

@@ -55,6 +55,38 @@
             }
             document.loginForm.submit;
         }
+        function doLoginByAjax(){
+            alert($("#username").val());
+            var para = {
+                "requestTime":"2016-03-15 15:38:09.009",
+                "requestMethod":"",
+                "sessionId":"2c88449748214631ac43e6b370bd1034",
+                "requestId":"1a30fa8c-362d-4634-86f6-6f1e600e40db",
+                "requestContent":{
+                    "username":$("#username").val(),
+                    "password":$("#password").val()
+                },
+                "pageInfo":{
+                    "pageSize":20,
+                    "currentPage":1
+                }
+            };
+            $.ajax({
+                cache: false,
+                type: "POST",
+                dataType: "json",		  //json格式，重要
+                url:"/user/login",	//把表单数据发送到/user/login
+                data:para,	//要发送的是para中的数据
+                async: false,
+                error: function(data) {
+                    alert("发送请求失败！");
+                },
+                success: function(data) {
+//                    $("#ajaxDiv").html(data);	//将返回的结果显示到ajaxDiv中
+                    alert("请求成功"+data["data"]);
+                }
+            });
+        }
 
     </script>
 </head>
@@ -92,12 +124,12 @@
         </label>
     </div>
     </form>
-    <%--<a href="javascript:login('/user/login',{'username':document.getElementById('username').value,'password':document.getElementById('password').value})" class="btn btn-login btn-danger btn-float">--%>
-        <%--<i class="zmdi zmdi-arrow-forward"></i>--%>
-    <%--</a>--%>
-    <a href="javascript:document.loginForm.submit();" class="btn btn-login btn-danger btn-float">
+    <a href="javascript:doLoginByAjax()" class="btn btn-login btn-danger btn-float">
         <i class="zmdi zmdi-arrow-forward"></i>
     </a>
+    <%--<a href="javascript:document.loginForm.submit();" class="btn btn-login btn-danger btn-float">
+        <i class="zmdi zmdi-arrow-forward"></i>
+    </a>--%>
     <ul class="login-navigation">
         <li class="bgm-red" data-ng-click="lctrl.login = 0; lctrl.register = 1">注册</li>
         <li data-block="#l-forget-password" class="bgm-orange" data-ng-click="lctrl.login = 0; lctrl.forgot = 1">忘记密码?</li>

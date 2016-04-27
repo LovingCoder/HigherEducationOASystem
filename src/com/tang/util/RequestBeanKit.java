@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2011-2013, kidzhou ÖÜÀÚ (zhouleib1412@gmail.com)
+ * Copyright (c) 2011-2013, kidzhou ï¿½ï¿½ï¿½ï¿½ (zhouleib1412@gmail.com)
  * <p/>
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ import com.tang.bean.RequestBean;
 import org.apache.commons.io.IOUtils;
 import javax.servlet.ServletInputStream;
 import javax.servlet.http.HttpServletRequest;
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.Map;
 
@@ -51,15 +52,15 @@ public class RequestBeanKit<T> {
 
 
     /****
-     * ¿Í»§¶ËÍ¨¹ı application/x-www-form-urlencoded
-     * ½«´«µİ¹ıÀ´µÄ²ÎÊı×ª»»³Éjson¶ÔÏó
+     * contentType ä¸º application/x-www-form-urlencoded
+     * è¯»å–è¯·æ±‚ä¸­çš„å‚æ•°
      *
      * @param request
      * @return
      */
     public static JSONObject buildJSONFromParm(HttpServletRequest request) {
-        Map<String, String[]> parmMap = request.getParameterMap(); // ËùÓĞÇëÇó²ÎÊı
-        //»¹Ô­³Éjson
+        Map<String, String[]> parmMap = request.getParameterMap();
+        //ï¿½ï¿½Ô­ï¿½ï¿½json
         JSONObject parmObject = new JSONObject();
         String objectKey = "";
         for (Map.Entry<String, String[]> entry : parmMap.entrySet()) {
@@ -67,12 +68,11 @@ public class RequestBeanKit<T> {
             String value = entry.getValue()[0];
             if (key.contains("[")) {
                 objectKey = key.substring(0, key.indexOf("["));
-                //ÅĞ¶¨ÊÇ·ñ´æÔÚ¸Ã¶ÔÏó
                 JSONObject targetObject = new JSONObject();
                 if (parmObject.containsKey(objectKey)) {
                     targetObject = parmObject.getJSONObject(objectKey);
                 }
-                String targetObjectKey = key.substring(key.indexOf("[") + 1, key.indexOf("]"));//ÀïÃæµÄÊôĞÔÖµ
+                String targetObjectKey = key.substring(key.indexOf("[") + 1, key.indexOf("]"));
                 targetObject.put(targetObjectKey, value);
                 parmObject.put(objectKey, targetObject);
             } else {
@@ -83,7 +83,7 @@ public class RequestBeanKit<T> {
     }
 
     /**
-     * ½«ÇëÇóÊı¾İ×ª»»ÎªrequestBean¶ÔÏó
+     * å°†è¯·æ±‚ä¸­çš„å‚æ•°å°è£…æˆbean
      * @param request
      * @return
      */
@@ -96,5 +96,28 @@ public class RequestBeanKit<T> {
             return null;
         }
         return requestBean;
+    }
+
+    /**
+     * è·å–ajaxä¼ è¿‡æ¥çš„æ•°æ®ï¼Œè½¬æ¢æˆå¯¹åº”çš„bean
+     * @param request
+     * @param valueType
+     * @param <T>
+     * @return
+     */
+    public static  <T> T getRequestObject(HttpServletRequest request,Class<T> valueType)  {
+        StringBuilder json = new StringBuilder();
+        try{
+            BufferedReader reader = request.getReader();
+            String line = null;
+            while((line = reader.readLine()) != null){
+                json.append(line);
+            }
+            reader.close();
+        }catch (Exception e){
+
+        }
+        System.out.println(json.toString());
+        return JSONObject.parseObject(json.toString(), valueType);
     }
 }

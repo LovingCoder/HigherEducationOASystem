@@ -22,3 +22,6 @@ hs_err_pid*
 #编译生成文件不上传
 /web/WEB-INF/classes/*
 
+#idea目录不上传
+/.idea
+

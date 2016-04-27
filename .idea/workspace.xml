@@ -1,7 +1,269 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ddea8668-a321-4e1f-b576-45e9202343f9" name="Default" comment="" />
+    <list default="true" id="ddea8668-a321-4e1f-b576-45e9202343f9" name="Default" comment="">
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\classes\com\tang\bean\PageInfo.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\classes\com\tang\bean\RequestBean.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\classes\com\tang\config\OAConfig.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\classes\com\tang\controller\CollegeController.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\classes\com\tang\controller\HigherEducationController.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\classes\com\tang\controller\IndexController.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\classes\com\tang\controller\SchoolController.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\classes\com\tang\controller\TaskBookController.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\classes\com\tang\controller\TeacherController.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\classes\com\tang\controller\UserController.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\classes\com\tang\entity\TaskBookExcel.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\classes\com\tang\handler\LoginHandler.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\classes\com\tang\interceptor\LoginInterceptor.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\classes\com\tang\model\Class.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\classes\com\tang\model\College.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\classes\com\tang\model\School.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\classes\com\tang\model\Taskbook.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\classes\com\tang\model\Teacher.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\classes\com\tang\model\TeacherTaskbook.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\classes\com\tang\model\User.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\classes\com\tang\model\_JFinalDemoGenerator.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\classes\com\tang\model\_MappingKit.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\classes\com\tang\model\base\BaseClass.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\classes\com\tang\model\base\BaseCollege.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\classes\com\tang\model\base\BaseSchool.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\classes\com\tang\model\base\BaseTaskbook.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\classes\com\tang\model\base\BaseTeacher.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\classes\com\tang\model\base\BaseTeacherTaskbook.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\classes\com\tang\model\base\BaseUser.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\classes\com\tang\route\OARoute.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\classes\com\tang\testcase\Test.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\classes\com\tang\util\DateUtils.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\classes\com\tang\util\IDKit.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\classes\com\tang\util\RecordKit.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\classes\com\tang\util\RequestBeanKit.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\classes\com\tang\util\SysConstant$ISDELETE.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\classes\com\tang\util\SysConstant.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\classes\com\tang\util\TaskExcelKit.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\classes\com\tang\util\_MappingKit.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\classes\com\tang\validator\LoginValidator.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\classes\database_config.txt" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\classes\log4j.properties" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\lib\c3p0-0.9.1.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\lib\commons-io-2.4.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\lib\commons-lang3-3.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\lib\cos-26Dec2008.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\lib\easypoi-annotation-2.0.9.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\lib\easypoi-base-2.0.9.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\lib\easypoi-web-2.0.9.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\lib\fastjson-1.2.7.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\lib\freemarker-2.3.20.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\lib\guava-19.0.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\lib\hamcrest-core-1.3.rc2.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\lib\hamcrest-library-1.3.rc2.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\lib\javax.servlet.jsp.jstl-1.2.0.v201105211821.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\lib\jetty-server-8.1.8.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\lib\jfinal-2.2-bin-with-src.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\lib\junit-4.12.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\lib\log4j-1.2.17.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\lib\mysql-connector-java-5.1.20-bin.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\lib\org.apache.taglibs.standard.glassfish-1.2.0.v201112081803.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\lib\poi-3.13-20150929.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\lib\poi-ooxml-3.13-20150929.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\lib\poi-ooxml-schemas-3.13-20150929.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\lib\slf4j-api-1.7.13.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\lib\slf4j-log4j12-1.7.13.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\lib\xmlbeans-2.6.0.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\web.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\bootstrap\css\bootstrap-theme.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\bootstrap\css\bootstrap-theme.css.map" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\bootstrap\css\bootstrap-theme.min.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\bootstrap\css\bootstrap.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\bootstrap\css\bootstrap.css.map" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\bootstrap\css\bootstrap.min.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\bootstrap\fonts\glyphicons-halflings-regular.eot" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\bootstrap\fonts\glyphicons-halflings-regular.svg" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\bootstrap\fonts\glyphicons-halflings-regular.ttf" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\bootstrap\fonts\glyphicons-halflings-regular.woff" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\bootstrap\fonts\glyphicons-halflings-regular.woff2" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\bootstrap\js\bootstrap.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\bootstrap\js\bootstrap.min.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\bootstrap\js\npm.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\css\Pager.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\css\animate.min.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\css\app.min.1.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\css\app.min.2.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\css\bootstrap-slider.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\css\datepicker.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\css\extralayers.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\css\font-awesome.min.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\css\ionicons.min.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\css\jBootsrapPage.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\css\jquery.tagsinput.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\css\material-design-iconic-font\animate.css\animate.min.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\css\material-design-iconic-font\css\material-design-iconic-font.min.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\css\material-design-iconic-font\fonts\Material-Design-Iconic-Fontf066.ttf" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\css\material-design-iconic-font\fonts\Material-Design-Iconic-Fontf066.woff" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\css\morris.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\css\owl.carousel.min.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\css\owl.theme.default.min.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\css\pagination.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\css\reset.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\css\settings.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\css\simplify.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\css\simplify.min.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\css\style.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\FontAwesome.otf" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\Material-Design-Iconic-Fontf066.ttf" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\Material-Design-Iconic-Fontf066.woff" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\fontawesome-webfont.eot" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\fontawesome-webfont.svg" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\fontawesome-webfont.ttf" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\fontawesome-webfont.woff" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\fontawesome-webfont.woff2" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\glyphicons-halflings-regular.eot" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\glyphicons-halflings-regular.svg" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\glyphicons-halflings-regular.ttf" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\glyphicons-halflings-regular.woff" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\glyphicons-halflings-regular.woff2" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\glyphicons-halflings-regulard41d.eot" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\ionicons.eot" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\ionicons.svg" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\ionicons.ttf" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\ionicons.woff" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\roboto\Roboto-Bold-webfont.eot" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\roboto\Roboto-Bold-webfont.svg" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\roboto\Roboto-Bold-webfont.ttf" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\roboto\Roboto-Bold-webfont.woff" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\roboto\Roboto-Bold-webfontd41d.eot" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\roboto\Roboto-Light-webfont.eot" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\roboto\Roboto-Light-webfont.svg" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\roboto\Roboto-Light-webfont.ttf" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\roboto\Roboto-Light-webfont.woff" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\roboto\Roboto-Light-webfontd41d.eot" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\roboto\Roboto-Medium-webfont.eot" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\roboto\Roboto-Medium-webfont.svg" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\roboto\Roboto-Medium-webfont.ttf" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\roboto\Roboto-Medium-webfont.woff" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\roboto\Roboto-Medium-webfontd41d.eot" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\roboto\Roboto-Regular-webfont.eot" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\roboto\Roboto-Regular-webfont.svg" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\roboto\Roboto-Regular-webfont.ttf" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\roboto\Roboto-Regular-webfont.woff" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\roboto\Roboto-Regular-webfontd41d.eot" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\shadowsintolight\shadowsintolight-webfont-2.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\shadowsintolight\shadowsintolight-webfont-3.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\shadowsintolight\shadowsintolight-webfont-4.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\shadowsintolight\shadowsintolight-webfont.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\shadowsintolight\shadowsintolight-webfontd41d.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\images\blog\blog1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\images\blog\blog2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\images\blog\blog3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\images\dummy.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\images\frontend\mockup1.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\images\gallery\gallery1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\images\gallery\gallery2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\images\gallery\gallery3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\images\gallery\gallery4.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\images\gallery\gallery5.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\images\gallery\gallery6.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\images\gallery\gallery7.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\images\gallery\gallery8.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\images\img11.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\images\profile\profile1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\images\profile\profile2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\images\profile\profile3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\images\profile\profile4.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\images\profile\profile5.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\images\profile\profile6.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\images\profile\profile7.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\images\profile\profile8.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\images\profile\profile9.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\jquery\index.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\jquery\jquery.min.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\app.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\angular-animate\angular-animate.min.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\angular-bootstrap\ui-bootstrap-tpls.min.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\angular-chosen-localytics\chosen.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\angular-loading-bar\src\loading-bar.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\angular-loading-bar\src\loading-bar.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\angular-nouislider\src\nouislider.min.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\angular-resource\angular-resource.min.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\angular-ui-router\release\angular-ui-router.min.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\angular\angular.min.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\animate.css\animate.min.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\autosize\dist\autosize.min.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\bootstrap-sweetalert\lib\sweet-alert.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\bootstrap-sweetalert\lib\sweet-alert.min.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\chosen\chosen.jquery.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\chosen\chosen.min.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\eonasdan-bootstrap-datetimepicker\build\css\bootstrap-datetimepicker.min.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\eonasdan-bootstrap-datetimepicker\build\js\bootstrap-datetimepicker.min.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\flot-orderBars\js\jquery.flot.orderBars.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\flot.curvedlines\curvedLines.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\flot.tooltip\js\jquery.flot.tooltip.min.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\flot\jquery.flot.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\flot\jquery.flot.pie.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\flot\jquery.flot.resize.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\fullcalendar\dist\fullcalendar.min.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\fullcalendar\dist\fullcalendar.min.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\jquery.easy-pie-chart\dist\jquery.easypiechart.min.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\jquery\dist\jquery.min.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\lightgallery\light-gallery\css\lightGallery.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\lightgallery\light-gallery\fronts\Slide-icons.eot" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\lightgallery\light-gallery\js\lightGallery.min.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\material-design-iconic-font\dist\css\material-design-iconic-font.min.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\material-design-iconic-font\dist\fonts\Material-Design-Iconic-Fontf066.ttf" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\material-design-iconic-font\dist\fonts\Material-Design-Iconic-Fontf066.woff" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\mediaelement\build\mediaelement-and-player.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\mediaelement\build\mediaelementplayer.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\moment\min\moment.min.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\ng-table\dist\ng-table.min.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\nouislider\jquery.nouislider.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\nouislider\jquery.nouislider.min.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\oclazyload\dist\ocLazyLoad.min.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\simpleWeather\jquery.simpleWeather.min.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\summernote\dist\summernote.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\summernote\dist\summernote.min.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\controllers\main.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\controllers\ui-bootstrap.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\jquery-1.11.1.min.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\jquery.easypiechart.min.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\jquery.flot.min.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\jquery.localScroll.min.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\jquery.popupoverlay.min.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\jquery.scrollTo.min.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\jquery.slimscroll.min.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\jquery.themepunch.revolution.min.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\jquery.themepunch.tools.min.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\log.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\modernizr.min.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\modules\calendar.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\modules\charts\flot.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\modules\charts\other-charts.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\modules\components.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\modules\demo.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\modules\form.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\modules\media.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\morris.min.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\owl.carousel.min.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\rapheal.min.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\simplify\simplify.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\simplify\simplify_dashboard.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\sparkline.min.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\uncompressed\datepicker.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\uncompressed\jquery.sortable.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\uncompressed\skycons.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\waypoints.min.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\page\index.jsp" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\page\main\loading.jsp" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\page\main\lockscreen.jsp" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\page\main\main.jsp" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\page\taskbook\list.jsp" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\page\taskbook\uploadTaskBook.jsp" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\page\user\register.jsp" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\res\background.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\responsive\responsive-nav.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\responsive\responsive-nav.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\responsive\responsive-nav.min.js" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="HigherEducationOASystem.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -32,8 +294,8 @@
       <file leaf-file-name="main.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/page/main/main.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.28290766">
-              <caret line="115" column="20" selection-start-line="115" selection-start-column="20" selection-end-line="115" selection-end-column="20" />
+            <state vertical-scroll-proportion="0.16">
+              <caret line="119" column="14" selection-start-line="119" selection-start-column="14" selection-end-line="119" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -50,6 +312,9 @@
         <option value="Html5" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
@@ -138,7 +403,7 @@
     <option name="width" value="1920" />
     <option name="height" value="1040" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
@@ -162,6 +427,8 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -278,32 +545,12 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HigherEducationOASystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HigherEducationOASystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tang" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="File.Encoding" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../yuanzhuangzhushou_houtai" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -318,6 +565,22 @@
     <property name="restartRequiresConfirmation" value="true" />
     <property name="FullScreen" value="false" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="63" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="146" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="67" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="619" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="63" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="68" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="67" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="697" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -756,11 +1019,12 @@
       <workItem from="1461374985857" duration="633000" />
       <workItem from="1461489282149" duration="19231000" />
       <workItem from="1461630835530" duration="31246000" />
+      <workItem from="1461721757823" duration="552000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="228356000" />
+    <option name="totallyTimeSpent" value="228908000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1040" extended-state="0" />
@@ -768,17 +1032,16 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33223322" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37945947" sideWeight="0.5021322" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32893288" sideWeight="0.50215054" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972974" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32893288" sideWeight="0.49784946" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26702702" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1688172" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1688172" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32995737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -790,6 +1053,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33223322" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32864866" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -848,7 +1112,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="712" column="61" selection-start-line="712" selection-start-column="61" selection-end-line="712" selection-end-column="61" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -994,7 +1257,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="8" column="37" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1009,7 +1271,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="262" column="43" selection-start-line="262" selection-start-column="43" selection-end-line="262" selection-end-column="43" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1064,7 +1325,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-10.910277">
           <caret line="314" column="31" selection-start-line="314" selection-start-column="31" selection-end-line="314" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1079,9 +1339,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="27" column="35" selection-start-line="27" selection-start-column="35" selection-end-line="27" selection-end-column="89" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1089,7 +1346,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="42" column="40" selection-start-line="42" selection-start-column="34" selection-end-line="42" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1097,7 +1353,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6925926">
           <caret line="32" column="25" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1105,7 +1360,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="13" column="16" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="37" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1113,9 +1367,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="23" column="23" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1123,7 +1374,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33295456">
           <caret line="1563" column="0" selection-start-line="1563" selection-start-column="0" selection-end-line="1563" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1131,7 +1381,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33203125">
           <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1139,7 +1388,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3074074">
           <caret line="74" column="52" selection-start-line="74" selection-start-column="52" selection-end-line="74" selection-end-column="52" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1147,7 +1395,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.93777776">
           <caret line="94" column="51" selection-start-line="94" selection-start-column="51" selection-end-line="94" selection-end-column="51" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1155,7 +1402,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="20.426666">
           <caret line="1058" column="61" selection-start-line="1058" selection-start-column="61" selection-end-line="1058" selection-end-column="61" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1163,7 +1409,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5044444">
           <caret line="13" column="3" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1171,7 +1416,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.08222222">
           <caret line="35" column="57" selection-start-line="35" selection-start-column="57" selection-end-line="35" selection-end-column="57" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1179,7 +1423,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.22396857">
           <caret line="28" column="24" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1187,7 +1430,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.38222224">
           <caret line="668" column="36" selection-start-line="668" selection-start-column="36" selection-end-line="668" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1195,7 +1437,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.52962965">
           <caret line="15" column="16" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1203,7 +1444,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33333334">
           <caret line="41" column="118" selection-start-line="41" selection-start-column="118" selection-end-line="41" selection-end-column="118" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1211,14 +1451,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33295456">
           <caret line="126" column="18" selection-start-line="126" selection-start-column="18" selection-end-line="126" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/page/main/main.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.28290766">
-          <caret line="115" column="20" selection-start-line="115" selection-start-column="20" selection-end-line="115" selection-end-column="20" />
+        <state vertical-scroll-proportion="0.16">
+          <caret line="119" column="14" selection-start-line="119" selection-start-column="14" selection-end-line="119" selection-end-column="14" />
           <folding />
         </state>
       </provider>

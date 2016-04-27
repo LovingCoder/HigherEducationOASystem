@@ -41,7 +41,7 @@ public class UserController extends Controller {
         Record record = User.me.userLogin(username,password);
         if (null != record){
             setSessionAttr("user",record);
-            redirect("/page/main/main.jsp");
+            redirect("/higherEducation/main");
         }else {
             redirect("/index");
         }

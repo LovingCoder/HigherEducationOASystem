@@ -16,21 +16,21 @@
     <meta name="author" content="">
 
     <!-- Bootstrap core CSS -->
-    <%--<link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">--%>
+    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-    <%--<!-- Font Awesome -->--%>
-    <%--<link href="/css/font-awesome.min.css" rel="stylesheet">--%>
+    <!-- Font Awesome -->
+    <link href="/css/font-awesome.min.css" rel="stylesheet">
 
-    <%--<!-- ionicons -->--%>
-    <%--<link href="/css/ionicons.min.css" rel="stylesheet">--%>
+    <!-- ionicons -->
+    <link href="/css/ionicons.min.css" rel="stylesheet">
 
-    <%--<!-- datatable -->--%>
-    <%--<link href="/css/dataTables.bootstrap.css" rel="stylesheet">--%>
+    <!-- datatable -->
+    <link href="/css/dataTables.bootstrap.css" rel="stylesheet">
 
-    <%--<!-- Simplify -->--%>
-    <%--<link href="/css/simplify.min.css" rel="stylesheet">--%>
+    <!-- Simplify -->
+    <link href="/css/simplify.min.css" rel="stylesheet">
 
-    <%--<script src="/jquery/jquery.min.js"></script>--%>
+    <script src="/jquery/jquery.min.js"></script>
 
     <script type="text/javascript">
         function go() {
@@ -69,26 +69,6 @@
                 }
             })
         });
-
-        function search() {
-            alert("fffff");
-            $.ajax({
-                type: "post",
-                data: {
-                    "courseName": $("#courseName").val()
-                    , "major": $("#major").val(),
-                    "courseProperty": $("#courseProperty").val()
-                    , "term": $("#term").val()
-                },
-                url: "/taskbook/list",
-                success: function () {
-
-                },
-                error: function () {
-                    alert("调用失败");
-                }
-            })
-        }
     </script>
 </head>
 

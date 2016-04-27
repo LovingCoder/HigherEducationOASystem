@@ -42,7 +42,7 @@ public class TaskBookController extends Controller {
         Page<Record> recordPage = Taskbook.dao.taskbookList(pageNumber,pageSize,courseName,courseProperty,term,major);
         System.out.println("总条数："+recordPage.getTotalRow()+"\t总页数："+recordPage.getTotalPage());
         setAttr("recordPage", recordPage);
-        renderJsp("/page/taskbook/list.jsp");
+        render("/page/taskbook/list.jsp");
     }
 
     /**

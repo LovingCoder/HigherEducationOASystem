@@ -39,23 +39,6 @@
 
     <!-- Simplify -->
     <link href="/css/simplify.min.css" rel="stylesheet">
-
-    <script type="application/javascript">
-
-        function taskbookList() {
-            var pageNumber = 1;
-            var pageSize = 10;
-            $.ajax({
-                type: "post",
-                data: {"pageNumber": pageNumber, "pageSize": pageSize},
-                url: "/taskbook/list",
-                success: function (${recordPage}) {//返回数据根据结果进行相应的处理
-
-                }
-            })
-        }
-
-    </script>
 </head>
 <body class="overflow-hidden">
 <jsp:include page="/page/common/common.html"/>

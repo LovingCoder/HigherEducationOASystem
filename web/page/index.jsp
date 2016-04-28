@@ -69,7 +69,7 @@
                 },
                 success: function(data) {
 //                    $("#ajaxDiv").html(data);	//将返回的结果显示到ajaxDiv中
-                    alert("请求成功"+data["data"]);
+                    alert("请求成功"+data["userName"]);
                     window.location.href = "/higherEducation/main";
                 }
             });

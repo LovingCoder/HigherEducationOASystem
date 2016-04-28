@@ -5,7 +5,7 @@ import com.jfinal.core.Controller;
 
 /**
  * Created by Tang on 2016/3/28.
- * ϵͳĬ�ϵ�¼ҳ��
+ *  系统首页的控制器
  */
 public class IndexController extends Controller{
 

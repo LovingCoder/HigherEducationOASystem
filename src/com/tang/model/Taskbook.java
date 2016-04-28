@@ -6,12 +6,15 @@ import com.jfinal.plugin.activerecord.Page;
 import com.jfinal.plugin.activerecord.Record;
 import com.jfinal.plugin.activerecord.tx.Tx;
 import com.tang.bean.PageInfo;
+import com.tang.bean.RequestBean;
 import com.tang.config.OAConfig;
 import com.tang.entity.TaskBookExcel;
 import com.tang.model.base.BaseTaskbook;
 import com.tang.util.DateUtils;
 import com.tang.util.IDKit;
+import com.tang.util.ParamKit;
 import com.tang.util.SysConstant;
+import org.apache.xmlbeans.impl.tool.Extension;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -66,10 +69,14 @@ public class Taskbook extends BaseTaskbook<Taskbook> {
 
 	/**
 	 * 获取任务书列表
-	 * @param term
+	 * @param requestBean
 	 * @return
 	 */
-	public Page<Record> taskbookList(int pageNumber,int pageSize,String courseName,String courseProperty,String term,String major){
+	public Page<Record> taskbookList(RequestBean requestBean){
+		String term = ParamKit.checkObjectNotNull(requestBean,"term");
+		String courseName = ParamKit.checkObjectNotNull(requestBean, "courseName");
+		String major = ParamKit.checkObjectNotNull(requestBean, "major");
+		String courseProperty = ParamKit.checkObjectNotNull(requestBean,"courseProperty");
 		String select = "SELECT *";
 		StringBuilder sqlExcept = new StringBuilder("FROM taskbook WHERE isDelete = ?");
 		List<Object> paras = new ArrayList<Object>();
@@ -91,7 +98,7 @@ public class Taskbook extends BaseTaskbook<Taskbook> {
 			paras.add("%"+term+"%");
 		}
 		sqlExcept.append(" ORDER BY serialNumber ASC ");
-		Page<Record> recordPage = Db.paginate(pageNumber, pageSize, select, sqlExcept.toString(), paras.toArray());
+		Page<Record> recordPage = Db.paginate(requestBean.getPageInfo().getCurrentPage(), requestBean.getPageInfo().getPageSize(), select, sqlExcept.toString(), paras.toArray());
 		return recordPage;
 	}
 }

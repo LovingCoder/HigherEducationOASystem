@@ -1,20 +1,19 @@
 package com.tang.controller;
 
-import com.google.common.base.Strings;
 import com.jfinal.aop.Before;
 import com.jfinal.core.ActionKey;
 import com.jfinal.core.Controller;
+import com.jfinal.kit.JsonKit;
 import com.jfinal.plugin.activerecord.Page;
 import com.jfinal.plugin.activerecord.Record;
 import com.jfinal.plugin.activerecord.tx.Tx;
 import com.jfinal.upload.UploadFile;
+import com.tang.bean.RequestBean;
 import com.tang.entity.TaskBookExcel;
 import com.tang.interceptor.LoginInterceptor;
 import com.tang.model.Taskbook;
-import com.tang.util.RecordKit;
+import com.tang.util.RequestBeanKit;
 import com.tang.util.TaskExcelKit;
-
-import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
@@ -25,6 +24,9 @@ public class TaskBookController extends Controller {
 
     @ActionKey("/taskbook/index")
     public void index(){
+        String aa = getPara("data");
+        String bb = JsonKit.toJson(aa);
+        setAttr("recordPage", aa);
         render("/page/taskbook/list.jsp");
     }
 
@@ -33,16 +35,11 @@ public class TaskBookController extends Controller {
      */
     @ActionKey("/taskbook/list")
     public void taskBookList(){
-        String term = getPara("term");
-        String courseName = getPara("courseName");
-        String major = getPara("major");
-        String courseProperty = getPara("courseProperty");
-        int pageNumber = Strings.isNullOrEmpty(getPara("pageNumber")) ? 1 : getParaToInt("pageNumber");
-        int pageSize = Strings.isNullOrEmpty(getPara("pageSize")) ? 10 : getParaToInt("pageSize");
-        Page<Record> recordPage = Taskbook.dao.taskbookList(pageNumber,pageSize,courseName,courseProperty,term,major);
-        System.out.println("总条数："+recordPage.getTotalRow()+"\t总页数："+recordPage.getTotalPage());
-        setAttr("recordPage", recordPage);
-        render("/page/taskbook/list.jsp");
+        RequestBean requestBean = RequestBeanKit.getRequestBean(getRequest());
+        Page<Record> recordPage = Taskbook.dao.taskbookList(requestBean);
+        System.out.println("总条数：" + recordPage.getTotalRow() + "\t总页数：" + recordPage.getTotalPage());
+        System.out.println(JsonKit.toJson(recordPage));
+        renderJson(JsonKit.toJson(recordPage));
     }
 
     /**

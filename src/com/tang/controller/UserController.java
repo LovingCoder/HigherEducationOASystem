@@ -1,6 +1,4 @@
 package com.tang.controller;
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
 import com.jfinal.core.ActionKey;
 import com.jfinal.core.Controller;
 import com.jfinal.kit.HttpKit;
@@ -26,10 +24,9 @@ public class UserController extends Controller {
         RequestBean requestBean = RequestBeanKit.getRequestBean(getRequest());
         Record record = User.me.userRegister(requestBean);
         if (null != record){
-            setSessionAttr("user", record);
+            getSession().setAttribute("user", record);
             record.remove("password");
-            setAttr("data",JsonKit.toJson(record.getColumns()));
-            renderJson();
+            renderJson(JsonKit.toJson(record.getColumns()));
         }else {
             redirect("/index");
         }
@@ -44,10 +41,9 @@ public class UserController extends Controller {
         RequestBean requestBean = RequestBeanKit.getRequestBean(getRequest());
         Record record = User.me.userLogin(requestBean);
         if (null != record){
-            setSessionAttr("user", record);
+            getSession().setAttribute("user", record);
             record.remove("password");
-            setAttr("data", JsonKit.toJson(record.getColumns()));
-            renderJson();
+            renderJson(JsonKit.toJson(record.getColumns()));
         }else {
             redirect("/index");
         }

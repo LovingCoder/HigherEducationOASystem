@@ -32,9 +32,9 @@
 </head>
 
 <body class="overflow-hidden">
-<jsp:include page="/page/common/common.html"/>
+<%--<jsp:include page="/page/common/common.html"/>--%>
 
-  <div class="main-container">
+  <%--<div class="main-container">--%>
     <div class="padding-md">
       <ul class="breadcrumb">
         <li><span class="primary-font"><i class="icon-home"></i></span><a href="index.html"> Home</a></li>
@@ -58,7 +58,7 @@
         <button type="submit" class="btn btn-success btn-sm">确认上传</button>
       </form>
     </div><!-- ./padding-md -->
-  </div><!-- /main-container -->
+  <%--</div><!-- /main-container -->--%>
 
   <footer class="footer">
 				<span class="footer-brand">

@@ -58,29 +58,24 @@
     </script>
 </head>
 <body class="overflow-hidden">
-<jsp:include page="/page/common/common.html"/>
-<br>
-<br>
-<br>
-
-<div class="main-container">
+<%--<div class="main-container">--%>
     <div class="padding-md">
         <div class="row">
             <div class="col-sm-6">
                 <div class="page-title">
                     <%--Dashboard--%>
-                    欢迎使用
+                    Welcome to use!
                 </div>
                 <br>
                 <div class="page-sub-header">
                     Welcome Back, ${sessionScope.user.userName} , <i class="fa fa-map-marker text-danger"></i>
-                    河南工业大学
+                    Henan University of Technology
                 </div>
             </div>
         </div>
     </div>
     <!-- ./padding-md -->
-</div>
+<%--</div>--%>
 
 <a href="#" class="scroll-to-top hidden-print"><i class="fa fa-chevron-up fa-lg"></i></a>
 

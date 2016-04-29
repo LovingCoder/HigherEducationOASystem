@@ -32,19 +32,20 @@
     <!-- Simplify -->
     <link href="/css/simplify.min.css" rel="stylesheet">
 
+
+    <base target="mainFrame">
 </head>
 <body>
-
-<aside class="sidebar-menu fixed">
-    <div class="sidebar-inner scrollable-sidebar">
-        <div class="main-menu">
-            <ul class="accordion">
-                <li class="menu-header">
-                    Main Menu
-                </li>
-                <!-- 任务书管理 -->
-                <li class="openable bg-palette3">
-                    <a href="#">
+<div class="sidebar-menu fixed">
+    <%--<div class="sidebar-inner scrollable-sidebar">--%>
+    <div class="main-menu">
+        <ul class="accordion">
+            <li class="menu-header">
+                Main Menu
+            </li>
+            <!-- 任务书管理 -->
+            <li class="openable bg-palette2">
+                <a href="#">
 									<span class="menu-content block openable">
 										<span class="menu-icon"><i class="block fa fa-list fa-lg"></i></span>
 										<span class="text m-left-sm">任务书管理</span>
@@ -53,18 +54,18 @@
 									<span class="menu-content-hover block">
 										Form
 									</span>
-                    </a>
-                    <ul class="submenu bg-palette4">
-                        <li><a href="/page/taskbook/uploadTaskBook.jsp"><span class="submenu-label">上传任务书</span></a>
-                        </li>
-                        <li><a href="/taskbook/list"><span
-                                class="submenu-label">查看任务书</span></a></li>
-                    </ul>
-                </li>
+                </a>
+                <ul class="submenu bg-palette4">
+                    <li><a href="/page/taskbook/uploadTaskBook.jsp" ><span class="submenu-label">上传任务书</span></a>
+                    </li>
+                    <li><a href="/taskbook/list"><span
+                            class="submenu-label">查看任务书</span></a></li>
+                </ul>
+            </li>
 
-                <!-- 选课管理 -->
-                <li class="openable bg-palette4">
-                    <a href="#">
+            <!-- 选课管理 -->
+            <li class="openable bg-palette4">
+                <a href="#">
 									<span class="menu-content block">
 										<span class="menu-icon"><i class="block fa fa-tags fa-lg"></i></span>
 										<span class="text m-left-sm">选课管理</span>
@@ -73,16 +74,16 @@
 									<span class="menu-content-hover block">
 										UI Kits
 									</span>
-                    </a>
-                    <ul class="submenu">
-                        <li><a href="ui_element.html"><span class="submenu-label">我要选课</span></a></li>
-                        <li><a href="ui_element.html"><span class="submenu-label">我的选课列表</span></a></li>
-                    </ul>
-                </li>
+                </a>
+                <ul class="submenu">
+                    <li><a href="ui_element.html"><span class="submenu-label">我要选课</span></a></li>
+                    <li><a href="ui_element.html"><span class="submenu-label">我的选课列表</span></a></li>
+                </ul>
+            </li>
 
-                <!-- 期中教学管理 -->
-                <li class="bg-palette1">
-                    <a href="inbox.html">
+            <!-- 期中教学管理 -->
+            <li class="bg-palette1">
+                <a href="inbox.html">
 									<span class="menu-content block">
 										<span class="menu-icon"><i class="block fa fa-envelope fa-lg"></i></span>
 										<span class="text m-left-sm">期中教学管理</span>
@@ -93,12 +94,12 @@
 									<span class="menu-content-hover block">
 										Inboxs
 									</span>
-                    </a>
-                </li>
+                </a>
+            </li>
 
-                <!-- 教师管理 -->
-                <li class="openable bg-palette3">
-                    <a href="#">
+            <!-- 教师管理 -->
+            <li class="openable bg-palette3">
+                <a href="#">
 									<span class="menu-content block openable">
 										<span class="menu-icon"><i class="block fa fa-list fa-lg"></i></span>
 										<span class="text m-left-sm">教师信息管理</span>
@@ -107,18 +108,18 @@
 									<span class="menu-content-hover block">
 										Form
 									</span>
-                    </a>
-                    <ul class="submenu bg-palette4">
-                        <li><a href="/page/teacher/addTeacher.jsp"><span class="submenu-label">添加教师</span></a>
-                        </li>
-                        <li><a href="//list"><span
-                                class="submenu-label">查看本学院教师列表</span></a></li>
-                    </ul>
-                </li>
+                </a>
+                <ul class="submenu bg-palette4">
+                    <li><a href="/teacher/addTeacherUI"><span class="submenu-label">添加教师</span></a>
+                    </li>
+                    <li><a href="/teacher/queryTeacher"><span
+                            class="submenu-label">查看本学院教师列表</span></a></li>
+                </ul>
+            </li>
 
-                <!-- 日常办公管理 -->
-                <li class="openable bg-palette3">
-                    <a href="#">
+            <!-- 日常办公管理 -->
+            <li class="openable bg-palette3">
+                <a href="#">
 									<span class="menu-content block">
 										<span class="menu-icon"><i class="block fa fa-gift fa-lg"></i></span>
 										<span class="text m-left-sm">日常办公管理</span>
@@ -127,16 +128,16 @@
 									<span class="menu-content-hover block">
 										Pages
 									</span>
-                    </a>
-                    <ul class="submenu">
-                        <li><a href="signin.html"><span class="submenu-label">Sign in</span></a></li>
+                </a>
+                <ul class="submenu">
+                    <li><a href="signin.html"><span class="submenu-label">Sign in</span></a></li>
 
-                    </ul>
-                </li>
+                </ul>
+            </li>
 
-                <!-- 关于 -->
-                <li class="bg-palette2">
-                    <a href="timeline.html">
+            <!-- 关于 -->
+            <li class="bg-palette2">
+                <a href="timeline.html">
 									<span class="menu-content block">
 										<span class="menu-icon"><i class="block fa fa-clock-o fa-lg"></i></span>
 										<span class="text m-left-sm">关于</span>
@@ -144,47 +145,13 @@
 									<span class="menu-content-hover block">
 										Timeline
 									</span>
-                    </a>
-                </li>
-
-            </ul>
-        </div>
-
-
-
-        <div class="sidebar-fix-bottom clearfix">
-            <div class="user-dropdown dropup pull-left">
-                <a href="#" class="dropdwon-toggle font-18" data-toggle="dropdown"><i class="ion-person-add"></i>
                 </a>
-                <ul class="dropdown-menu">
-                    <li>
-                        <a href="inbox.html">
-                            Inbox
-                            <span class="badge badge-danger bounceIn animation-delay2 pull-right">1</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            Notification
-                            <span class="badge badge-purple bounceIn animation-delay3 pull-right">2</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="sidebarRight-toggle">
-                            Message
-                            <span class="badge badge-success bounceIn animation-delay4 pull-right">7</span>
-                        </a>
-                    </li>
-                    <li class="divider"></li>
-                    <li>
-                        <a href="#">Setting</a>
-                    </li>
-                </ul>
-            </div>
-            <a href="lockscreen.html" class="pull-right font-18"><i class="ion-log-out"></i></a>
-        </div>
+            </li>
+
+        </ul>
     </div>
-</aside>
+    <%--</div>--%>
+</div>
 
 
 <!-- Jquery -->

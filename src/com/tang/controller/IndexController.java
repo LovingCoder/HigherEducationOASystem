@@ -10,7 +10,7 @@ import javax.xml.ws.Action;
 
 /**
  * Created by Tang on 2016/3/28.
- * ϵͳĬ�ϵ�¼ҳ��
+ * 系统控制器首页
  */
 @Before(LoginInterceptor.class)
 public class IndexController extends Controller {

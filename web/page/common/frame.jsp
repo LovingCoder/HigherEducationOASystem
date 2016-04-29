@@ -7,15 +7,19 @@
 <html>
 <head>
     <title>主页面</title>
+
+    </head>
 </head>
-<body>
-<frameset rows="10%,*" cols="*" frameborder="no" border="0" framespacing="0">
-    <frame src="/index/up" name="topFrame" scrolling="No" noresize="noresize" id="topFrame"/>
-    <frameset cols="10%,*" rows="*" frameborder="no" border="0" framespacing="0">
-        <frame src="/index/left" name="leftFrame" scrolling="No" noresize="noresize" id="leftFrame"/>
-        <frame src="" name="topFrame" scrolling="No" noresize="noresize" id="mainFrame"/>
+
+<frameset rows="58px,*" border="0">
+    <frame src="/index/top" name="topFrame" scrolling="No" noresize="noresize" id="topFrame"/>
+    <frameset cols="250px,*">
+        <frame src="/index/left" name="topFrame" scrolling="No" noresize="noresize" id="leftFrame"/>
+        <frame src="/page/main/main.jsp" name="mainFrame" scrolling="No" noresize="noresize" id="mainFrame"/>
     </frameset>
 </frameset>
+
+<body>
 
 </body>
 </html>

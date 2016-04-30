@@ -646,7 +646,7 @@ a.list-group-item.active, a.list-group-item.active:focus, a.list-group-item.acti
 
 .sidebar-menu.fixed {
     /*position: fixed*/
-    position: inherit;
+    position: static;
 }
 
 .sidebar-menu .notifcation-center {

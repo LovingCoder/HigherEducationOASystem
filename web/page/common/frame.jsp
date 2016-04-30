@@ -14,8 +14,8 @@
 <frameset rows="58px,*" border="0">
     <frame src="/index/top" name="topFrame" scrolling="No" noresize="noresize" id="topFrame"/>
     <frameset cols="250px,*">
-        <frame src="/index/left" name="topFrame" scrolling="No" noresize="noresize" id="leftFrame"/>
-        <frame src="/page/main/main.jsp" name="mainFrame" scrolling="No" noresize="noresize" id="mainFrame"/>
+        <frame src="/index/left" name="topFrame"  noresize="noresize" id="leftFrame"/>
+        <frame src="/page/main/main.jsp" name="mainFrame" noresize="noresize" id="mainFrame"/>
     </frameset>
 </frameset>
 

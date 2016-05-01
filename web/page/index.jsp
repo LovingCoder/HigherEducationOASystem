@@ -20,8 +20,8 @@
     <link href="/css/material-design-iconic-font/css/material-design-iconic-font.min.css" rel="stylesheet" type="text/css">
     <!-- CSS -->
     <link href="/css/app.min.1.css" rel="stylesheet" type="text/css">
-    <script type="application/javascript">
 
+    <script type="application/javascript">
         function login(URL,PARAMS){
 //            if(null == PARAMS.get){
 //                alert("用户名或密码不能为空！");
@@ -265,4 +265,14 @@
 
 <!-- Template Modules -->
 <script src="/js/modules/form.js"></script>
+<script type="text/javascript">
+    $(function (){
+        // 定位到用户名输入框
+        $("#username").focus();
+        } );
+    // 避免session过期后重新登录后输入框嵌套
+    if(window.parent != window) {
+        window.parent.location.reload(true)
+    }
+</script>
 </html>

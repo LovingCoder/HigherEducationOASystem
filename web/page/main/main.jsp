@@ -49,7 +49,7 @@
                 type: "post",
                 data: {"pageNumber": pageNumber, "pageSize": pageSize},
                 url: "/taskbook/list",
-                success: function (${recordPage}) {//返回数据根据结果进行相应的处理
+                success: function (data) {//返回数据根据结果进行相应的处理
 
                 }
             })

@@ -61,8 +61,7 @@ schoolId VARCHAR(32)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 ALTER TABLE college ADD PRIMARY KEY (id);
 
-DROP TABLE teacher;
--- 创建教师表 -- 
+-- 创建教师表 --
 CREATE TABLE teacher (
  id VARCHAR(32) NOT NULL,
  isDelete INT DEFAULT 1,
@@ -76,8 +75,10 @@ collegeId VARCHAR(32),
 schoolId VARCHAR(32)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 ALTER TABLE teacher ADD PRIMARY KEY (id);
+ALTER TABLE teacher ADD email VARCHAR(255);
+ALTER TABLE teacher ADD userId VARCHAR(32);
 
--- 创建班级信息表 -- 
+-- 创建班级信息表 --
 CREATE TABLE class (
  id VARCHAR(32) NOT NULL,
  isDelete INT DEFAULT 1,
@@ -100,4 +101,15 @@ CREATE TABLE teacher_taskbook(
  taskbookId VARCHAR(32)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 ALTER TABLE teacher_taskbook ADD PRIMARY KEY (id);
+
+CREATE TABLE dictionary(
+id VARCHAR(32) NOT NULL,
+isDelete INT DEFAULT 1,
+ createTime timestamp,
+ updateTime timestamp,
+field VARCHAR(100),
+value INT(11),
+mean VARCHAR(100)
+);
+ALTER TABLE dictionary ADD PRIMARY KEY(id);
 

@@ -11,7 +11,7 @@
     </head>
 </head>
 
-<frameset rows="58px,*" border="0">
+<frameset rows="55px,*" border="0">
     <frame src="/index/top" name="topFrame" scrolling="No" noresize="noresize" id="topFrame"/>
     <frameset cols="250px,*">
         <frame src="/index/left" name="topFrame"  noresize="noresize" id="leftFrame"/>

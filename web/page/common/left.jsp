@@ -41,7 +41,7 @@
     <div class="main-menu">
         <ul class="accordion">
             <li class="menu-header">
-                Main Menu
+                主菜单
             </li>
             <!-- 任务书管理 -->
             <li class="openable bg-palette2">
@@ -52,11 +52,11 @@
 										<span class="submenu-icon"></span>
 									</span>
 									<span class="menu-content-hover block">
-										Form
+										任务书
 									</span>
                 </a>
                 <ul class="submenu bg-palette4">
-                    <li><a href="/page/taskbook/uploadTaskBook.jsp" ><span class="submenu-label">上传任务书</span></a>
+                    <li><a href="/page/taskbook/uploadTaskBook.jsp"><span class="submenu-label">上传任务书</span></a>
                     </li>
                     <li><a href="/taskbook/list"><span
                             class="submenu-label">查看任务书</span></a></li>
@@ -72,7 +72,7 @@
 										<span class="submenu-icon"></span>
 									</span>
 									<span class="menu-content-hover block">
-										UI Kits
+										选课
 									</span>
                 </a>
                 <ul class="submenu">
@@ -92,7 +92,7 @@
                                         <!--</small>-->
 									</span>
 									<span class="menu-content-hover block">
-										Inboxs
+										教学
 									</span>
                 </a>
             </li>
@@ -106,7 +106,7 @@
 										<span class="submenu-icon"></span>
 									</span>
 									<span class="menu-content-hover block">
-										Form
+										教师
 									</span>
                 </a>
                 <ul class="submenu bg-palette4">
@@ -126,7 +126,7 @@
 										<span class="submenu-icon"></span>
 									</span>
 									<span class="menu-content-hover block">
-										Pages
+										办公
 									</span>
                 </a>
                 <ul class="submenu">
@@ -143,7 +143,7 @@
 										<span class="text m-left-sm">关于</span>
 									</span>
 									<span class="menu-content-hover block">
-										Timeline
+										关于
 									</span>
                 </a>
             </li>

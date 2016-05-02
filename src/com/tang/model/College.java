@@ -3,10 +3,13 @@ package com.tang.model;
 import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.Record;
 import com.sun.xml.internal.ws.addressing.W3CAddressingConstants;
+import com.tang.bean.RequestBean;
 import com.tang.model.base.BaseCollege;
 import com.tang.util.DateUtils;
 import com.tang.util.IDKit;
+import com.tang.util.ParamKit;
 import com.tang.util.SysConstant;
+import org.apache.xmlbeans.impl.tool.Extension;
 
 import java.util.List;
 
@@ -20,12 +23,13 @@ public class College extends BaseCollege<College> {
     /**
      * 新增学院信息
      *
-     * @param collegeName
-     * @param collegeDes
+     * @param requestBean
      * @param schoolId
      * @return
      */
-    public Boolean saveCollegeInfo(String collegeName, String collegeDes, String schoolId) {
+    public Boolean saveCollegeInfo(RequestBean requestBean, String schoolId) throws Exception{
+        String collegeName = ParamKit.checkObjectNotNull(requestBean,"collegeName");
+        String collegeDes = ParamKit.checkObjectNotNull(requestBean,"collegeDes");
         Record college = new Record();
         college.set("id", IDKit.uuid())
                 .set("isDelete", SysConstant.ISDELETE.NO)
@@ -35,6 +39,9 @@ public class College extends BaseCollege<College> {
                 .set("collegeDes", collegeDes)
                 .set("schoolId", schoolId);
         Boolean result = Db.save("college", college);
+        if (!result){
+            throw new Exception("添加学院信息失败！");
+        }
         return result;
     }
 

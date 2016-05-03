@@ -1,20 +1,12 @@
 <%--
-  Created by IntelliJ IDEA.
-  User: Tang
-  Date: 2016/4/6
-  Time: 9:53
-  To change this template use File | Settings | File Templates.
+  User: Administrator
+  Date: 2016/4/28 0028
+  Time: 上午 9:40
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
-<html lang="en">
+<html>
 <head>
-    <meta charset="utf-8">
-    <title>系统主页</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
+    <title>Title</title>
     <!-- Bootstrap core CSS -->
     <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -40,49 +32,77 @@
     <!-- Simplify -->
     <link href="/css/simplify.min.css" rel="stylesheet">
 
-    <script type="application/javascript">
-
-        function taskbookList() {
-            var pageNumber = 1;
-            var pageSize = 10;
-            $.ajax({
-                type: "post",
-                data: {"pageNumber": pageNumber, "pageSize": pageSize},
-                url: "/taskbook/list",
-                success: function (data) {//返回数据根据结果进行相应的处理
-
-                }
-            })
-        }
-
-    </script>
 </head>
-<body class="overflow-hidden">
-<%--<div class="main-container">--%>
-    <div class="padding-md">
-        <div class="row">
-            <div class="col-sm-6">
-                <div class="page-title">
-                    <%--Dashboard--%>
-                    Welcome to use!
+<body>
+
+<header class="top-nav">
+    <div class="top-nav-inner">
+        <div class="nav-header">
+
+            <a href="/higherEducation/main" class="brand">
+                <i class="fa fa-database"></i><span class="brand-name">
+                HAUT OA System
+            </span>
+            </a>
+        </div>
+        <button type="button" class="navbar-toggle pull-left sidebar-toggle" id="sidebarToggleLG">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <ul class="nav-notification">
+            <li class="search-list">
+                <div class="search-input-wrapper">
+                    <div class="search-input">
+                        <input type="text" class="form-control input-sm inline-block">
+                        <a href="#" class="input-icon text-normal"><i class="ion-ios7-search-strong"></i></a>
+                    </div>
                 </div>
-                <br>
-                <div class="page-sub-header">
-                    Welcome Back, ${sessionScope.user.userName} , <i class="fa fa-map-marker text-danger"></i>
-                    Henan University of Technology
+            </li>
+        </ul>
+
+        <div class="nav-container">
+            <div class="pull-right m-right-sm">
+                <div class="user-block hidden-xs">
+                    <a href="#" id="userToggle" data-toggle="dropdown">
+                        <img src="/images/profile/profile1.jpg" alt=""
+                             class="img-circle inline-block user-profile-pic">
+
+                        <div class="user-detail inline-block">
+                            UserName
+                            <i class="fa fa-angle-down"></i>
+                        </div>
+                    </a>
+
+                    <div class="panel border dropdown-menu user-panel">
+                        <div class="panel-body paddingTB-sm">
+                            <ul>
+                                <li>
+                                    <a href="profile.html">
+                                        <i class="fa fa-edit fa-lg"></i><span class="m-left-xs">My Profile</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="inbox.html">
+                                        <i class="fa fa-inbox fa-lg"></i><span class="m-left-xs">Inboxes</span>
+                                        <span class="badge badge-danger bounceIn animation-delay3">2</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="signin.html">
+                                        <i class="fa fa-power-off fa-lg"></i><span class="m-left-xs">Sign out</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+
     </div>
-    <!-- ./padding-md -->
-<%--</div>--%>
 
-<a href="#" class="scroll-to-top hidden-print"><i class="fa fa-chevron-up fa-lg"></i></a>
-
-<!-- Le javascript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-
+</header>
 <!-- Jquery -->
 <script src="/js/jquery-1.11.1.min.js"></script>
 
@@ -164,6 +184,5 @@
     });
 
 </script>
-
 </body>
 </html>

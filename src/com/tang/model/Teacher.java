@@ -4,11 +4,14 @@ import com.google.common.base.Strings;
 import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.Page;
 import com.jfinal.plugin.activerecord.Record;
+import com.tang.bean.RequestBean;
 import com.tang.config.OAConfig;
 import com.tang.model.base.BaseTeacher;
 import com.tang.util.DateUtils;
 import com.tang.util.IDKit;
+import com.tang.util.ParamKit;
 import com.tang.util.SysConstant;
+import org.apache.xmlbeans.impl.tool.Extension;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -22,17 +25,18 @@ public class Teacher extends BaseTeacher<Teacher> {
 	public static final Teacher dao = new Teacher();
 
 	/**
-	 * 填写教师信息（完善个人信息）
-	 * @param userId
-	 * @param schoolId
-	 * @param collegeId
-	 * @param classId
-	 * @param bornDate
-	 * @param sex
-	 * @param name
+	 * 系主任添加教师
+	 * @param requestBean
 	 * @return
 	 */
-	public Boolean saveTeacherInfo(String userId,String schoolId,String collegeId,String classId,Date bornDate,int sex,String name){
+	public Boolean addTeacherInfo(RequestBean requestBean) throws Exception{
+		String name = ParamKit.checkObjectNotNull(requestBean,"teacherName");
+		String sex = ParamKit.checkObjectNotNull(requestBean,"sex");
+		String bornDate = ParamKit.checkObjectNotNull(requestBean,"bornDate");
+		String classId = ParamKit.checkObjectNotNull(requestBean,"classId");
+		String collegeId = ParamKit.checkObjectNotNull(requestBean,"collegeId");
+		String schoolId = ParamKit.checkObjectNotNull(requestBean,"schoolId");
+		String email = ParamKit.checkObjectNotNull(requestBean,"email");
 		Record teacher = new Record();
 		teacher.set("id", IDKit.uuid())
 				.set("isDelete", SysConstant.ISDELETE.NO)
@@ -44,22 +48,26 @@ public class Teacher extends BaseTeacher<Teacher> {
 				.set("classId",classId)
 				.set("collegeId",collegeId)
 				.set("schoolId",schoolId)
-				.set("userId", userId);
+				.set("email",email);
 		Boolean result = Db.save("teacher", teacher);
-		return result;
+		if (result){
+			return result;
+		}else {
+			throw new Exception("添加教师失败！");
+		}
 	}
 
 	/**
 	 * 获取教师列表
-	 * @param teacherName
-	 * @param collegeId
-	 * @param schoolId
-	 * @param classId
-	 * @param pageNumber
-	 * @param pageSize
+	 * @param requestBean
 	 * @return
 	 */
-	public Page<Record> queryTeacher(String teacherName,String collegeId,String schoolId,String classId,int pageNumber,int pageSize){
+	public Page<Record> queryTeacher(RequestBean requestBean){
+
+		String teacherName = ParamKit.checkObjectNotNull(requestBean,"teacherName");
+		String collegeId = ParamKit.checkObjectNotNull(requestBean,"collegeId");
+		String schoolId = ParamKit.checkObjectNotNull(requestBean,"schoolId");
+		String classId = ParamKit.checkObjectNotNull(requestBean,"classId");
 		String select = "SELECT teacher.*,class.className,college.collegeName,school.schoolName";
 		StringBuilder sqlExcept = new StringBuilder("FROM teacher,class,college,school " +
 				"WHERE teacher.schoolId = ? AND teacher.collegeId = ? " +
@@ -76,7 +84,7 @@ public class Teacher extends BaseTeacher<Teacher> {
 			sqlExcept.append(" AND teacher.teacherName LIKE ? ");
 			paras.add("%"+teacherName+"%");
 		}
-		Page<Record> recordPage = Db.paginate(pageNumber, pageSize, select, sqlExcept.toString(), paras.toArray());
+		Page<Record> recordPage = Db.paginate(requestBean.getPageInfo().getCurrentPage(), requestBean.getPageInfo().getPageSize(), select, sqlExcept.toString(), paras.toArray());
 		return recordPage;
 	}
 

@@ -5,8 +5,9 @@ package com.tang.bean;
  */
 public class PageInfo {
     private int currentPage = 1;
-    private int pageSize = 20;
+    private int pageSize = 10;
     private int count = 0;
+    private int totalPage = 0;
     public PageInfo() {
 
     }
@@ -32,6 +33,14 @@ public class PageInfo {
     public PageInfo setCount(int count) {
         this.count = count;
         return this;
+    }
+
+    public int getTotalPage() {
+        return totalPage;
+    }
+
+    public void setTotalPage(int totalPage) {
+        this.totalPage = totalPage;
     }
 
     public int ggetStart() {

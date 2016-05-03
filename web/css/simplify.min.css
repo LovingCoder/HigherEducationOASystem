@@ -442,7 +442,7 @@ a.list-group-item.active, a.list-group-item.active:focus, a.list-group-item.acti
 }
 
 .top-nav .user-block .user-panel .panel-body {
-    padding: 0
+    padding: 0;
 }
 
 .top-nav .user-block .user-panel ul {
@@ -626,7 +626,7 @@ a.list-group-item.active, a.list-group-item.active:focus, a.list-group-item.acti
     left: 0;
     z-index: 2;
     border-right: 1px solid #17232c;
-    padding-top: 54px;
+    padding-top: 0px;
     padding-bottom: 35px;
     width: 240px;
     background-color: #1c2b36;
@@ -645,8 +645,10 @@ a.list-group-item.active, a.list-group-item.active:focus, a.list-group-item.acti
 }
 
 .sidebar-menu.fixed {
-    position: fixed
+    /*position: fixed*/
+   position: static;
 }
+
 
 .sidebar-menu .notifcation-center {
     background-color: #1b1e24;
@@ -3237,7 +3239,7 @@ table tbody td.text-right {
 .panel {
     position: relative;
     border-color: #e6e6e6;
-    border-top-width: 4px
+    border-top-width: 4px;
 }
 
 .panel.bg-palette1 .panel-footer, .panel.bg-palette2 .panel-footer, .panel.bg-palette3 .panel-footer, .panel.bg-palette4 .panel-footer, .panel.bg-palette5 .panel-footer {
@@ -6860,7 +6862,7 @@ label.parsley-error {
 
 .paddingTB-sm {
     padding-top: 10px !important;
-    padding-bottom: 10px !important
+    padding-bottom: 10px !important;
 }
 
 .paddingTB-md {

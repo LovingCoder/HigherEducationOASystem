@@ -1,268 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ddea8668-a321-4e1f-b576-45e9202343f9" name="Default" comment="">
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\classes\com\tang\bean\PageInfo.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\classes\com\tang\bean\RequestBean.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\classes\com\tang\config\OAConfig.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\classes\com\tang\controller\CollegeController.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\classes\com\tang\controller\HigherEducationController.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\classes\com\tang\controller\IndexController.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\classes\com\tang\controller\SchoolController.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\classes\com\tang\controller\TaskBookController.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\classes\com\tang\controller\TeacherController.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\classes\com\tang\controller\UserController.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\classes\com\tang\entity\TaskBookExcel.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\classes\com\tang\handler\LoginHandler.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\classes\com\tang\interceptor\LoginInterceptor.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\classes\com\tang\model\Class.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\classes\com\tang\model\College.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\classes\com\tang\model\School.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\classes\com\tang\model\Taskbook.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\classes\com\tang\model\Teacher.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\classes\com\tang\model\TeacherTaskbook.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\classes\com\tang\model\User.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\classes\com\tang\model\_JFinalDemoGenerator.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\classes\com\tang\model\_MappingKit.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\classes\com\tang\model\base\BaseClass.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\classes\com\tang\model\base\BaseCollege.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\classes\com\tang\model\base\BaseSchool.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\classes\com\tang\model\base\BaseTaskbook.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\classes\com\tang\model\base\BaseTeacher.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\classes\com\tang\model\base\BaseTeacherTaskbook.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\classes\com\tang\model\base\BaseUser.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\classes\com\tang\route\OARoute.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\classes\com\tang\testcase\Test.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\classes\com\tang\util\DateUtils.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\classes\com\tang\util\IDKit.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\classes\com\tang\util\RecordKit.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\classes\com\tang\util\RequestBeanKit.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\classes\com\tang\util\SysConstant$ISDELETE.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\classes\com\tang\util\SysConstant.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\classes\com\tang\util\TaskExcelKit.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\classes\com\tang\util\_MappingKit.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\classes\com\tang\validator\LoginValidator.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\classes\database_config.txt" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\classes\log4j.properties" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\lib\c3p0-0.9.1.2.jar" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\lib\commons-io-2.4.jar" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\lib\commons-lang3-3.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\lib\cos-26Dec2008.jar" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\lib\easypoi-annotation-2.0.9.jar" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\lib\easypoi-base-2.0.9.jar" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\lib\easypoi-web-2.0.9.jar" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\lib\fastjson-1.2.7.jar" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\lib\freemarker-2.3.20.jar" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\lib\guava-19.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\lib\hamcrest-core-1.3.rc2.jar" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\lib\hamcrest-library-1.3.rc2.jar" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\lib\javax.servlet.jsp.jstl-1.2.0.v201105211821.jar" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\lib\jetty-server-8.1.8.jar" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\lib\jfinal-2.2-bin-with-src.jar" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\lib\junit-4.12.jar" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\lib\log4j-1.2.17.jar" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\lib\mysql-connector-java-5.1.20-bin.jar" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\lib\org.apache.taglibs.standard.glassfish-1.2.0.v201112081803.jar" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\lib\poi-3.13-20150929.jar" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\lib\poi-ooxml-3.13-20150929.jar" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\lib\poi-ooxml-schemas-3.13-20150929.jar" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\lib\slf4j-api-1.7.13.jar" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\lib\slf4j-log4j12-1.7.13.jar" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\lib\xmlbeans-2.6.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\WEB-INF\web.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\bootstrap\css\bootstrap-theme.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\bootstrap\css\bootstrap-theme.css.map" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\bootstrap\css\bootstrap-theme.min.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\bootstrap\css\bootstrap.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\bootstrap\css\bootstrap.css.map" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\bootstrap\css\bootstrap.min.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\bootstrap\fonts\glyphicons-halflings-regular.eot" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\bootstrap\fonts\glyphicons-halflings-regular.svg" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\bootstrap\fonts\glyphicons-halflings-regular.ttf" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\bootstrap\fonts\glyphicons-halflings-regular.woff" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\bootstrap\fonts\glyphicons-halflings-regular.woff2" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\bootstrap\js\bootstrap.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\bootstrap\js\bootstrap.min.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\bootstrap\js\npm.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\css\Pager.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\css\animate.min.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\css\app.min.1.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\css\app.min.2.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\css\bootstrap-slider.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\css\datepicker.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\css\extralayers.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\css\font-awesome.min.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\css\ionicons.min.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\css\jBootsrapPage.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\css\jquery.tagsinput.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\css\material-design-iconic-font\animate.css\animate.min.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\css\material-design-iconic-font\css\material-design-iconic-font.min.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\css\material-design-iconic-font\fonts\Material-Design-Iconic-Fontf066.ttf" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\css\material-design-iconic-font\fonts\Material-Design-Iconic-Fontf066.woff" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\css\morris.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\css\owl.carousel.min.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\css\owl.theme.default.min.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\css\pagination.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\css\reset.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\css\settings.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\css\simplify.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\css\simplify.min.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\css\style.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\FontAwesome.otf" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\Material-Design-Iconic-Fontf066.ttf" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\Material-Design-Iconic-Fontf066.woff" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\fontawesome-webfont.eot" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\fontawesome-webfont.svg" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\fontawesome-webfont.ttf" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\fontawesome-webfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\fontawesome-webfont.woff2" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\glyphicons-halflings-regular.eot" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\glyphicons-halflings-regular.svg" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\glyphicons-halflings-regular.ttf" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\glyphicons-halflings-regular.woff" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\glyphicons-halflings-regular.woff2" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\glyphicons-halflings-regulard41d.eot" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\ionicons.eot" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\ionicons.svg" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\ionicons.ttf" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\ionicons.woff" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\roboto\Roboto-Bold-webfont.eot" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\roboto\Roboto-Bold-webfont.svg" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\roboto\Roboto-Bold-webfont.ttf" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\roboto\Roboto-Bold-webfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\roboto\Roboto-Bold-webfontd41d.eot" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\roboto\Roboto-Light-webfont.eot" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\roboto\Roboto-Light-webfont.svg" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\roboto\Roboto-Light-webfont.ttf" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\roboto\Roboto-Light-webfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\roboto\Roboto-Light-webfontd41d.eot" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\roboto\Roboto-Medium-webfont.eot" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\roboto\Roboto-Medium-webfont.svg" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\roboto\Roboto-Medium-webfont.ttf" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\roboto\Roboto-Medium-webfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\roboto\Roboto-Medium-webfontd41d.eot" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\roboto\Roboto-Regular-webfont.eot" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\roboto\Roboto-Regular-webfont.svg" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\roboto\Roboto-Regular-webfont.ttf" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\roboto\Roboto-Regular-webfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\roboto\Roboto-Regular-webfontd41d.eot" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\shadowsintolight\shadowsintolight-webfont-2.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\shadowsintolight\shadowsintolight-webfont-3.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\shadowsintolight\shadowsintolight-webfont-4.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\shadowsintolight\shadowsintolight-webfont.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\fonts\shadowsintolight\shadowsintolight-webfontd41d.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\images\blog\blog1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\images\blog\blog2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\images\blog\blog3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\images\dummy.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\images\frontend\mockup1.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\images\gallery\gallery1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\images\gallery\gallery2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\images\gallery\gallery3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\images\gallery\gallery4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\images\gallery\gallery5.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\images\gallery\gallery6.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\images\gallery\gallery7.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\images\gallery\gallery8.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\images\img11.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\images\profile\profile1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\images\profile\profile2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\images\profile\profile3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\images\profile\profile4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\images\profile\profile5.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\images\profile\profile6.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\images\profile\profile7.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\images\profile\profile8.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\images\profile\profile9.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\jquery\index.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\jquery\jquery.min.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\app.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\angular-animate\angular-animate.min.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\angular-bootstrap\ui-bootstrap-tpls.min.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\angular-chosen-localytics\chosen.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\angular-loading-bar\src\loading-bar.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\angular-loading-bar\src\loading-bar.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\angular-nouislider\src\nouislider.min.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\angular-resource\angular-resource.min.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\angular-ui-router\release\angular-ui-router.min.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\angular\angular.min.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\animate.css\animate.min.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\autosize\dist\autosize.min.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\bootstrap-sweetalert\lib\sweet-alert.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\bootstrap-sweetalert\lib\sweet-alert.min.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\chosen\chosen.jquery.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\chosen\chosen.min.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\eonasdan-bootstrap-datetimepicker\build\css\bootstrap-datetimepicker.min.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\eonasdan-bootstrap-datetimepicker\build\js\bootstrap-datetimepicker.min.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\flot-orderBars\js\jquery.flot.orderBars.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\flot.curvedlines\curvedLines.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\flot.tooltip\js\jquery.flot.tooltip.min.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\flot\jquery.flot.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\flot\jquery.flot.pie.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\flot\jquery.flot.resize.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\fullcalendar\dist\fullcalendar.min.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\fullcalendar\dist\fullcalendar.min.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\jquery.easy-pie-chart\dist\jquery.easypiechart.min.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\jquery\dist\jquery.min.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\lightgallery\light-gallery\css\lightGallery.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\lightgallery\light-gallery\fronts\Slide-icons.eot" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\lightgallery\light-gallery\js\lightGallery.min.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\material-design-iconic-font\dist\css\material-design-iconic-font.min.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\material-design-iconic-font\dist\fonts\Material-Design-Iconic-Fontf066.ttf" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\material-design-iconic-font\dist\fonts\Material-Design-Iconic-Fontf066.woff" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\mediaelement\build\mediaelement-and-player.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\mediaelement\build\mediaelementplayer.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\moment\min\moment.min.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\ng-table\dist\ng-table.min.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\nouislider\jquery.nouislider.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\nouislider\jquery.nouislider.min.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\oclazyload\dist\ocLazyLoad.min.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\simpleWeather\jquery.simpleWeather.min.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\summernote\dist\summernote.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\bower_components\summernote\dist\summernote.min.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\controllers\main.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\controllers\ui-bootstrap.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\jquery-1.11.1.min.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\jquery.easypiechart.min.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\jquery.flot.min.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\jquery.localScroll.min.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\jquery.popupoverlay.min.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\jquery.scrollTo.min.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\jquery.slimscroll.min.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\jquery.themepunch.revolution.min.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\jquery.themepunch.tools.min.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\log.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\modernizr.min.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\modules\calendar.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\modules\charts\flot.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\modules\charts\other-charts.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\modules\components.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\modules\demo.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\modules\form.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\modules\media.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\morris.min.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\owl.carousel.min.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\rapheal.min.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\simplify\simplify.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\simplify\simplify_dashboard.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\sparkline.min.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\uncompressed\datepicker.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\uncompressed\jquery.sortable.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\uncompressed\skycons.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\js\waypoints.min.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\page\index.jsp" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\page\main\loading.jsp" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\page\main\lockscreen.jsp" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\page\main\main.jsp" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\page\taskbook\list.jsp" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\page\taskbook\uploadTaskBook.jsp" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\page\user\register.jsp" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\res\background.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\responsive\responsive-nav.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\responsive\responsive-nav.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEAWorkSpaces\HigherEducationOASystem\out\artifacts\HigherEducationOASystem_war_exploded\responsive\responsive-nav.min.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+    <list default="true" id="ddea8668-a321-4e1f-b576-45e9202343f9" name="Default" comment="Merge branch 'master' of github.com:LovingCoder/HigherEducationOASystem&#10;&#10;# Conflicts:&#10;#&#9;src/com/tang/controller/IndexController.java&#10;">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/controller/TaskBookController.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/controller/TaskBookController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/controller/UserController.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/controller/UserController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/model/Taskbook.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/model/Taskbook.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/model/User.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/tang/model/User.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/tang/controller/IndexController.java" afterPath="$PROJECT_DIR$/src/com/tang/controller/IndexController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/tang/controller/TeacherController.java" afterPath="$PROJECT_DIR$/src/com/tang/controller/TeacherController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/tang/route/OARoute.java" afterPath="$PROJECT_DIR$/src/com/tang/route/OARoute.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/simplify.min.css" afterPath="$PROJECT_DIR$/web/css/simplify.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/page/common/frame.jsp" afterPath="$PROJECT_DIR$/web/page/common/frame.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/page/common/left.jsp" afterPath="$PROJECT_DIR$/web/page/common/left.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/page/common/top.jsp" afterPath="$PROJECT_DIR$/web/page/common/top.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/page/index.jsp" afterPath="$PROJECT_DIR$/web/page/index.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/page/main/main.jsp" afterPath="$PROJECT_DIR$/web/page/main/main.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/page/taskbook/uploadTaskBook.jsp" afterPath="$PROJECT_DIR$/web/page/taskbook/uploadTaskBook.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/page/teacher/addTeacher.jsp" afterPath="$PROJECT_DIR$/web/page/teacher/addTeacher.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/page/teacher/queryTeacher.jsp" afterPath="$PROJECT_DIR$/web/page/teacher/queryTeacher.jsp" />
     </list>
     <ignored path="HigherEducationOASystem.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -290,12 +46,62 @@
     <favorites_list name="HigherEducationOASystem" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="main.jsp" pinned="false" current-in-tab="true">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="main.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/page/main/main.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.16">
-              <caret line="119" column="14" selection-start-line="119" selection-start-column="14" selection-end-line="119" selection-end-column="14" />
+            <state vertical-scroll-proportion="-31.838709">
+              <caret line="74" column="14" selection-start-line="74" selection-start-column="14" selection-end-line="74" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="simplify.min.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/css/simplify.min.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-7.129032">
+              <caret line="6876" column="1" selection-start-line="6876" selection-start-column="1" selection-end-line="6876" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="top.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/page/common/top.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-20.193548">
+              <caret line="61" column="13" selection-start-line="61" selection-start-column="13" selection-end-line="61" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="addTeacher.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/page/teacher/addTeacher.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-2.881356">
+              <caret line="11" column="2" selection-start-line="11" selection-start-column="2" selection-end-line="26" selection-end-column="47" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="queryTeacher.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/page/teacher/queryTeacher.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.14307229">
+              <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="uploadTaskBook.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/page/taskbook/uploadTaskBook.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-9.193548">
+              <caret line="66" column="17" selection-start-line="66" selection-start-column="17" selection-end-line="66" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -308,8 +114,8 @@
       <list>
         <option value="Singleton" />
         <option value="Class" />
-        <option value="Jsp File" />
         <option value="Html5" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -324,16 +130,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/com/tang/bean/PageInfo.java" />
-        <option value="$PROJECT_DIR$/src/com/tang/bean/RequestBean.java" />
-        <option value="$PROJECT_DIR$/web/index.jsp" />
-        <option value="$PROJECT_DIR$/src/com/tang/util/SysConst.java" />
-        <option value="$PROJECT_DIR$/web/page/user/register.jsp" />
-        <option value="$PROJECT_DIR$/src/com/tang/route/AORoute.java" />
         <option value="$PROJECT_DIR$/src/com/tang/util/RequestBeanKit.java" />
         <option value="$PROJECT_DIR$/src/com/tang/entity/TeacherInfoForExcel.java" />
         <option value="$PROJECT_DIR$/src/com/tang/entity/TaskExcel.java" />
-        <option value="$PROJECT_DIR$/src/com/tang/controller/IndexController.java" />
         <option value="$PROJECT_DIR$/src/com/tang/controller/higherEducationController.java" />
         <option value="$PROJECT_DIR$/src/com/tang/util/_MappingKit.java" />
         <option value="$PROJECT_DIR$/web/css/style.css" />
@@ -345,11 +144,8 @@
         <option value="$PROJECT_DIR$/src/com/tang/entity/TaskBookExcel.java" />
         <option value="$PROJECT_DIR$/src/com/tang/util/TaskExcelKit.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/src/com/tang/model/Taskbook.java" />
-        <option value="$PROJECT_DIR$/res/database_config.txt" />
         <option value="$PROJECT_DIR$/src/com/tang/model/User.java" />
         <option value="$PROJECT_DIR$/src/com/tang/interceptor/loginInterceptor.java" />
-        <option value="$PROJECT_DIR$/src/com/tang/controller/TeacherController.java" />
         <option value="$PROJECT_DIR$/src/com/tang/validator/LoginValidator.java" />
         <option value="$PROJECT_DIR$/src/com/tang/handle/LoginHandle.java" />
         <option value="$PROJECT_DIR$/src/com/tang/handle/LoginHandler.java" />
@@ -359,26 +155,37 @@
         <option value="$PROJECT_DIR$/src/com/tang/model/Teacher.java" />
         <option value="$PROJECT_DIR$/src/com/tang/model/School.java" />
         <option value="$PROJECT_DIR$/src/com/tang/controller/SchoolController.java" />
-        <option value="$PROJECT_DIR$/src/com/tang/route/OARoute.java" />
         <option value="$PROJECT_DIR$/src/com/tang/model/College.java" />
         <option value="$PROJECT_DIR$/src/com/tang/controller/CollegeController.java" />
         <option value="$PROJECT_DIR$/web/page/main/left.jsp" />
         <option value="$PROJECT_DIR$/web/page/main/right.jsp" />
         <option value="$PROJECT_DIR$/web/page/main/inner.jsp" />
-        <option value="$PROJECT_DIR$/web/css/simplify.min.css" />
         <option value="$PROJECT_DIR$/web/page/top.html" />
         <option value="$PROJECT_DIR$/web/page/main/top.jsp" />
         <option value="$PROJECT_DIR$/src/com/tang/controller/UserController.java" />
         <option value="$PROJECT_DIR$/src/com/tang/controller/HigherEducationController.java" />
         <option value="$PROJECT_DIR$/src/com/tang/controller/TaskBookController.java" />
-        <option value="$PROJECT_DIR$/web/page/index.jsp" />
         <option value="$PROJECT_DIR$/web/page/taskbook/list.jsp" />
-        <option value="$PROJECT_DIR$/web/page/taskbook/uploadTaskBook.jsp" />
+        <option value="$PROJECT_DIR$/src/com/tang/model/Taskbook.java" />
+        <option value="$PROJECT_DIR$/res/database_config.txt" />
+        <option value="$PROJECT_DIR$/web/page/common/up.jsp" />
+        <option value="$PROJECT_DIR$/web/page/index.jsp" />
+        <option value="$PROJECT_DIR$/web/page/common/left.jsp" />
+        <option value="$PROJECT_DIR$/web/css/simplify.min.css" />
+        <option value="$PROJECT_DIR$/src/com/tang/route/OARoute.java" />
+        <option value="$PROJECT_DIR$/src/com/tang/controller/IndexController.java" />
+        <option value="$PROJECT_DIR$/src/com/tang/controller/TeacherController.java" />
+        <option value="$PROJECT_DIR$/web/page/common/frame.jsp" />
         <option value="$PROJECT_DIR$/web/page/main/main.jsp" />
+        <option value="$PROJECT_DIR$/web/page/taskbook/uploadTaskBook.jsp" />
+        <option value="$PROJECT_DIR$/web/page/common/top.jsp" />
+        <option value="$PROJECT_DIR$/web/page/teacher/addTeacher.jsp" />
+        <option value="$PROJECT_DIR$/web/page/teacher/queryTeacher.jsp" />
       </list>
     </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" />
+  <component name="JsBuildToolPackageJson" detection-done="true" />
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
   </component>
@@ -396,12 +203,11 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="NamedScopeManager">
-    <order />
-  </component>
   <component name="ProjectFrameBounds">
-    <option name="width" value="1920" />
-    <option name="height" value="1040" />
+    <option name="x" value="-4" />
+    <option name="y" value="-4" />
+    <option name="width" value="1928" />
+    <option name="height" value="1060" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -424,9 +230,10 @@
       <autoscrollToSource />
       <autoscrollFromSource />
       <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
@@ -497,7 +304,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="user" />
+              <option name="myItemId" value="teacher" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -545,14 +352,69 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HigherEducationOASystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HigherEducationOASystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="page" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HigherEducationOASystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HigherEducationOASystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tang" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HigherEducationOASystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HigherEducationOASystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="document" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="File.Encoding" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../yuanzhuangzhushou_houtai" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../wto20160218" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -563,7 +425,6 @@
     <property name="recentsLimit" value="5" />
     <property name="dynamic.classpath" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
-    <property name="FullScreen" value="false" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="63" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
@@ -603,7 +464,7 @@
       <recent name="com.tang.bean" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.AppStart">
+  <component name="RunManager" selected="Application.OAConfig">
     <configuration default="false" name="AppStart" type="Application" factoryName="Application" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -709,6 +570,26 @@
         </option>
       </method>
     </configuration>
+    <configuration default="false" name="OAConfig" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.tang.config.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="com.tang.config.OAConfig" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="HigherEducationOASystem" />
+      <envs />
+      <method />
+    </configuration>
     <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
       <deployment />
       <server-settings />
@@ -744,6 +625,15 @@
       <option name="CLEAR_LOGCAT" value="false" />
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
       <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="0" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="SELECTED_CLOUD_DEVICE_CONFIGURATION_ID" value="0" />
+      <option name="SELECTED_CLOUD_DEVICE_PROJECT_ID" value="" />
+      <option name="IS_VALID_CLOUD_MATRIX_SELECTION" value="false" />
+      <option name="INVALID_CLOUD_MATRIX_SELECTION_ERROR" value="" />
+      <option name="IS_VALID_CLOUD_DEVICE_SELECTION" value="false" />
+      <option name="INVALID_CLOUD_DEVICE_SELECTION_ERROR" value="" />
+      <option name="CLOUD_DEVICE_SERIAL_NUMBER" value="" />
       <method />
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
@@ -765,6 +655,15 @@
       <option name="CLEAR_LOGCAT" value="false" />
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
       <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="0" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="SELECTED_CLOUD_DEVICE_CONFIGURATION_ID" value="0" />
+      <option name="SELECTED_CLOUD_DEVICE_PROJECT_ID" value="" />
+      <option name="IS_VALID_CLOUD_MATRIX_SELECTION" value="false" />
+      <option name="INVALID_CLOUD_MATRIX_SELECTION_ERROR" value="" />
+      <option name="IS_VALID_CLOUD_DEVICE_SELECTION" value="false" />
+      <option name="INVALID_CLOUD_DEVICE_SELECTION_ERROR" value="" />
+      <option name="CLOUD_DEVICE_SERIAL_NUMBER" value="" />
       <method />
     </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
@@ -787,6 +686,65 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="" />
       <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="ArquillianTestNG" factoryName="">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
       <method />
     </configuration>
     <configuration default="true" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java">
@@ -904,13 +862,75 @@
       <patterns />
       <method />
     </configuration>
+    <configuration default="true" type="JUnitTestDiscovery" factoryName="JUnit Test Discovery" changeList="All">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
     <configuration default="true" type="JarApplication" factoryName="JAR Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="JAR_PATH" value="$PROJECT_DIR$/web/WEB-INF/lib/standard.jar" />
       <envs />
       <method />
     </configuration>
+    <configuration default="true" type="Java Scratch" factoryName="Java Scratch">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="SCRATCH_FILE_ID" value="0" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="HigherEducationOASystem" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
@@ -955,6 +975,34 @@
       <listeners />
       <method />
     </configuration>
+    <configuration default="true" type="TestNGTestDiscovery" factoryName="TestNG Test Discovery" changeList="All">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-options />
       <gulpfile />
@@ -964,24 +1012,32 @@
       <envs />
       <method />
     </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run-script" />
+      <scripts />
+      <envs />
+      <method />
+    </configuration>
     <configuration default="true" type="osgi.bnd.run" factoryName="Run Launcher">
       <method />
     </configuration>
     <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
       <method />
     </configuration>
-    <list size="4">
+    <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Application.AppStart" />
       <item index="1" class="java.lang.String" itemvalue="Application._JFinalDemoGenerator" />
       <item index="2" class="java.lang.String" itemvalue="JUnit.Test.testImportExcel" />
       <item index="3" class="java.lang.String" itemvalue="Tomcat Server.lockscreen.jsp" />
+      <item index="4" class="java.lang.String" itemvalue="Application.OAConfig" />
     </list>
     <recent_temporary>
-      <list size="4">
-        <item index="0" class="java.lang.String" itemvalue="Application.AppStart" />
-        <item index="1" class="java.lang.String" itemvalue="Application._JFinalDemoGenerator" />
-        <item index="2" class="java.lang.String" itemvalue="Tomcat Server.lockscreen.jsp" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.Test.testImportExcel" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Application.OAConfig" />
+        <item index="1" class="java.lang.String" itemvalue="Application.AppStart" />
+        <item index="2" class="java.lang.String" itemvalue="Application._JFinalDemoGenerator" />
+        <item index="3" class="java.lang.String" itemvalue="Tomcat Server.lockscreen.jsp" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.Test.testImportExcel" />
       </list>
     </recent_temporary>
   </component>
@@ -1020,70 +1076,72 @@
       <workItem from="1461489282149" duration="19231000" />
       <workItem from="1461630835530" duration="31246000" />
       <workItem from="1461721757823" duration="552000" />
+      <workItem from="1461803587057" duration="21549000" />
+      <workItem from="1461889395202" duration="1093000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="228908000" />
+    <option name="totallyTimeSpent" value="251550000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1920" height="1040" extended-state="0" />
+    <frame x="-4" y="-4" width="1928" height="1060" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32893288" sideWeight="0.50215054" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972974" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32893288" sideWeight="0.49784946" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26702702" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1688172" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32995737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3740374" sideWeight="0.4978678" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33223322" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32864866" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3312034" sideWeight="0.4978678" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37380192" sideWeight="0.5042644" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972974" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2571732" sideWeight="0.49573562" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26702702" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15548456" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23273113" sideWeight="0.49573562" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17215727" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37945947" sideWeight="0.5021322" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972974" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32995737" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3740374" sideWeight="0.4978678" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33223322" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26702702" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2811828" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32864866" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37945947" sideWeight="0.5021322" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972974" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3740374" sideWeight="0.4978678" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33223322" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26702702" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2811828" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32864866" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1097,9 +1155,13 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Merge branch 'master' of github.com:LovingCoder/HigherEducationOASystem&#10;&#10;# Conflicts:&#10;#&#9;src/com/tang/controller/IndexController.java&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'master' of github.com:LovingCoder/HigherEducationOASystem&#10;&#10;# Conflicts:&#10;#&#9;src/com/tang/controller/IndexController.java&#10;" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="105" />
+      <option name="time" value="111" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1108,226 +1170,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/page/taskbook/list.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="712" column="61" selection-start-line="712" selection-start-column="61" selection-end-line="712" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/tang/testcase/Test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="45" selection-start-line="18" selection-start-column="45" selection-end-line="18" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/tang/util/SysConstant.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="33" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/tang/model/base/BaseTaskbook.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.4606204">
-          <caret line="106" column="0" selection-start-line="106" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_74/src.zip!/java/lang/NumberFormatException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5373832">
-          <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/tang/model/_MappingKit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.77156174">
-          <caret line="19" column="43" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/tang/util/TaskExcelKit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="77" selection-start-line="20" selection-start-column="77" selection-end-line="20" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="115" selection-start-line="3" selection-start-column="115" selection-end-line="3" selection-end-column="115" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/web/WEB-INF/lib/jetty-server-8.1.8.jar!/org/eclipse/jetty/server/Request.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35320088">
-          <caret line="1006" column="0" selection-start-line="1006" selection-start-column="0" selection-end-line="1006" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/tang/entity/TaskBookExcel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7669725">
-          <caret line="45" column="27" selection-start-line="45" selection-start-column="27" selection-end-line="45" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/database_config.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.07366072">
-          <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/images/profile/profile3.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/web/WEB-INF/lib/jfinal-2.2-bin-with-src.jar!/com/jfinal/aop/Invocation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334">
-          <caret line="64" column="16" selection-start-line="64" selection-start-column="16" selection-end-line="64" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/tang/validator/LoginValidator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.77272725">
-          <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/css/material-design-iconic-font/css/material-design-iconic-font.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33386075">
-          <caret line="6302" column="1" selection-start-line="6302" selection-start-column="1" selection-end-line="6302" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/web/WEB-INF/lib/jetty-server-8.1.8.jar!/javax/servlet/http/HttpServletRequest.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.857143">
-          <caret line="62" column="23" selection-start-line="62" selection-start-column="23" selection-end-line="62" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/web/WEB-INF/lib/jfinal-2.2-bin-with-src.jar!/com/jfinal/core/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3322785">
-          <caret line="1085" column="16" selection-start-line="1085" selection-start-column="16" selection-end-line="1085" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/tang/handler/LoginHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5822785">
-          <caret line="24" column="34" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/tang/model/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.72991073">
-          <caret line="41" column="23" selection-start-line="41" selection-start-column="23" selection-end-line="41" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/tang/controller/TeacherController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/tang/config/OAConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="32" column="23" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/tang/route/OARoute.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="37" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/tang/model/Teacher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="42" column="22" selection-start-line="42" selection-start-column="22" selection-end-line="42" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/tang/util/DateUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="262" column="43" selection-start-line="262" selection-start-column="43" selection-end-line="262" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/tang/model/School.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="27" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/tang/model/Class.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/tang/model/_JFinalDemoGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.140625">
-          <caret line="21" column="44" selection-start-line="21" selection-start-column="44" selection-end-line="21" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/tang/controller/SchoolController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="3" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/tang/controller/IndexController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/images/profile/profile1.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/css/simplify.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4045677">
-          <caret line="274" column="19" selection-start-line="274" selection-start-column="19" selection-end-line="274" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/css/simplify.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.910277">
-          <caret line="314" column="31" selection-start-line="314" selection-start-column="31" selection-end-line="314" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/web/WEB-INF/lib/jetty-server-8.1.8.jar!/javax/el/BeanELResolver.class">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.34871796">
@@ -1342,24 +1184,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/tang/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="42" column="40" selection-start-line="42" selection-start-column="34" selection-end-line="42" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/web/WEB-INF/lib/jfinal-2.2-bin-with-src.jar!/com/jfinal/plugin/activerecord/Page.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6925926">
           <caret line="32" column="25" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/tang/controller/HigherEducationController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="16" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="37" />
         </state>
       </provider>
     </entry>
@@ -1381,20 +1209,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33203125">
           <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/tang/model/Taskbook.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3074074">
-          <caret line="74" column="52" selection-start-line="74" selection-start-column="52" selection-end-line="74" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/page/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.93777776">
-          <caret line="94" column="51" selection-start-line="94" selection-start-column="51" selection-end-line="94" selection-end-column="51" />
         </state>
       </provider>
     </entry>
@@ -1426,27 +1240,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/page/taskbook/uploadTaskBook.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38222224">
-          <caret line="668" column="36" selection-start-line="668" selection-start-column="36" selection-end-line="668" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/tang/interceptor/LoginInterceptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.52962965">
-          <caret line="15" column="16" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/tang/controller/TaskBookController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334">
-          <caret line="41" column="118" selection-start-line="41" selection-start-column="118" selection-end-line="41" selection-end-column="118" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/idea.jar!/resources/html5-schema/html5/common.rnc">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33295456">
@@ -1454,10 +1247,338 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/tang/model/Taskbook.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6995582">
+          <caret line="74" column="31" selection-start-line="74" selection-start-column="31" selection-end-line="74" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/tang/util/DateUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="7.2828856">
+          <caret line="283" column="33" selection-start-line="283" selection-start-column="33" selection-end-line="283" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/tang/util/RecordKit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.080622345">
+          <caret line="73" column="40" selection-start-line="73" selection-start-column="40" selection-end-line="73" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/tang/config/OAConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="32" column="20" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/database_config.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.10749646">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/tang/validator/LoginValidator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/tang/controller/HigherEducationController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/tang/controller/TaskBookController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="46" column="7" selection-start-line="46" selection-start-column="7" selection-end-line="46" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/tang/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="37" column="29" selection-start-line="37" selection-start-column="29" selection-end-line="37" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/page/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="31.774193">
+          <caret line="76" column="15" selection-start-line="76" selection-start-column="15" selection-end-line="76" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/bootstrap/css/bootstrap.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.2735043">
+          <caret line="4" column="95910" selection-start-line="4" selection-start-column="95910" selection-end-line="4" selection-end-column="95910" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/simplify/simplify_dashboard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.043613706">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/modernizr.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/owl.carousel.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.043613706">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/uncompressed/jquery.sortable.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.043613706">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/jquery.easypiechart.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/jquery.popupoverlay.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/jquery.flot.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.043613706">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/jquery.slimscroll.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/rapheal.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.043613706">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/page/common/common.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.645162">
+          <caret line="617" column="7" selection-start-line="617" selection-start-column="7" selection-end-line="617" selection-end-column="7" />
+          <folding>
+            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#header#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#aside#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/simplify/simplify.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.535714">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/web/WEB-INF/lib/jfinal-2.2-bin-with-src.jar!/com/jfinal/core/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33283582">
+          <caret line="967" column="0" selection-start-line="967" selection-start-column="0" selection-end-line="967" selection-end-column="0" />
+          <folding>
+            <element signature="e#30220#30221#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/tang/interceptor/LoginInterceptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/web/WEB-INF/lib/jfinal-2.2-bin-with-src.jar!/com/jfinal/aop/Invocation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/web/WEB-INF/lib/jfinal-2.2-bin-with-src.jar!/com/jfinal/core/ActionHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="74" column="0" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/web/WEB-INF/lib/jfinal-2.2-bin-with-src.jar!/com/jfinal/core/JFinalFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/web/WEB-INF/lib/jetty-server-8.1.8.jar!/org/eclipse/jetty/servlet/ServletHandler.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.642857">
+          <caret line="324" column="0" selection-start-line="324" selection-start-column="0" selection-end-line="324" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/web/WEB-INF/lib/jetty-server-8.1.8.jar!/org/eclipse/jetty/server/handler/ScopedHandler.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9470405">
+          <caret line="40" column="22" selection-start-line="40" selection-start-column="22" selection-end-line="40" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/page/common/left.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.50509626">
+          <caret line="38" column="27" selection-start-line="38" selection-start-column="27" selection-end-line="38" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/tang/route/OARoute.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3118162">
+          <caret line="16" column="64" selection-start-line="16" selection-start-column="64" selection-end-line="16" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/tang/controller/IndexController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="27" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/tang/controller/TeacherController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#427#428#0" expanded="false" />
+            <element signature="e#467#468#0" expanded="false" />
+            <element signature="e#703#704#0" expanded="false" />
+            <element signature="e#745#746#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/page/common/frame.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3657984">
+          <caret line="17" column="48" selection-start-line="17" selection-start-column="48" selection-end-line="17" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/css/simplify.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.129032">
+          <caret line="6876" column="1" selection-start-line="6876" selection-start-column="1" selection-end-line="6876" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/page/main/main.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16">
-          <caret line="119" column="14" selection-start-line="119" selection-start-column="14" selection-end-line="119" selection-end-column="14" />
+        <state vertical-scroll-proportion="-31.838709">
+          <caret line="74" column="14" selection-start-line="74" selection-start-column="14" selection-end-line="74" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/page/taskbook/uploadTaskBook.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.193548">
+          <caret line="66" column="17" selection-start-line="66" selection-start-column="17" selection-end-line="66" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/page/common/top.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-20.193548">
+          <caret line="61" column="13" selection-start-line="61" selection-start-column="13" selection-end-line="61" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/page/teacher/addTeacher.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.881356">
+          <caret line="11" column="2" selection-start-line="11" selection-start-column="2" selection-end-line="26" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/page/teacher/queryTeacher.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.14307229">
+          <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
           <folding />
         </state>
       </provider>
@@ -1521,6 +1642,7 @@
             <option name="proportions">
               <list>
                 <option value="0.28045976" />
+                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
@@ -1529,6 +1651,17 @@
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
           <last-edited>lib</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.28045976" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
           <splitter-proportions>
             <option name="proportions">
               <list>

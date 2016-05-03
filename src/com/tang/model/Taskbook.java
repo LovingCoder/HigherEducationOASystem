@@ -36,6 +36,7 @@ public class Taskbook extends BaseTaskbook<Taskbook> {
 	@Before(Tx.class)
 	public List<Record> importTaskbook(List<TaskBookExcel> list,String term) throws Exception{
 		Record record;
+		Boolean result = false;
 		for (TaskBookExcel taskBookExcel:list){
 			record = new Record();
 			record.set("id", IDKit.uuid())
@@ -62,7 +63,10 @@ public class Taskbook extends BaseTaskbook<Taskbook> {
 					.set("mergeClassOpinion",Strings.isNullOrEmpty(taskBookExcel.getMergeClassOpinion()) ? null : taskBookExcel.getMergeClassOpinion())
 					.set("classRoomType",Strings.isNullOrEmpty(taskBookExcel.getClassRoomType()) ? null : taskBookExcel.getClassRoomType())
 					.set("term", term);
-			Db.save("taskbook",record);
+			result = Db.save("taskbook",record);
+			if (!result){
+				throw new Exception("导入任务书失败！");
+			}
 		}
 		return 	Db.find("SELECT * FROM taskbook WHERE term = ? AND isDelete = ?",term,SysConstant.ISDELETE.NO);
 	}

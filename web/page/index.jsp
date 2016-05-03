@@ -20,8 +20,8 @@
     <link href="/css/material-design-iconic-font/css/material-design-iconic-font.min.css" rel="stylesheet" type="text/css">
     <!-- CSS -->
     <link href="/css/app.min.1.css" rel="stylesheet" type="text/css">
-    <script type="application/javascript">
 
+    <script type="application/javascript">
         function login(URL,PARAMS){
 //            if(null == PARAMS.get){
 //                alert("用户名或密码不能为空！");
@@ -65,13 +65,19 @@
                 data:para,	//要发送的是para中的数据
                 async: false,
                 error: function(data) {
-                    alert("发送请求失败！");
+                    alert("用户名或密码错误！");
                 },
                 success: function(data) {
 //                    $("#ajaxDiv").html(data);	//将返回的结果显示到ajaxDiv中
-                    alert("请求成功"+data["userName"]);
-                    window.location.href = "/higherEducation/main";
+//                    window.location.href = "/higherEducation/main";
+                    /*如果返回状态等于0 登录成功 跳转到主页面*/
+                    if(0 == data["status"]){
+                        window.location.href = "/index/frame";
+                    }else {
+                        alert(data["message"]);
+                    }
                 }
+
             });
         }
 
@@ -106,9 +112,15 @@
                 },
                 success: function(data) {
 //                    $("#ajaxDiv").html(data);	//将返回的结果显示到ajaxDiv中
-                    alert("请求成功"+data["data"]);
-                    window.location.href = "/higherEducation/main";
+//                    alert("请求成功"+data["data"]);
+//                    window.location.href = "/higherEducation/main";
+                    if(0 == data["status"]){
+                        window.location.href = "/index/frame";
+                    }else {
+                        alert(data["message"]);
+                    }
                 }
+
             });
         }
 
@@ -214,7 +226,7 @@
 
 <div class="lc-block" id="l-forget-password" data-ng-class="{ 'toggled': lctrl.forgot === 1 }" data-ng-if="lctrl.forgot === 1">
     <h1 class="lean">HAUT OA</h1>
-    <p class="text-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eu risus. Curabitur commodo lorem fringilla enim feugiat commodo sed ac lacus.</p>
+    <p class="text-left">请输入您注册账户所用的邮箱，我们将发送验证文件到您的邮箱中，请注意查收</p>
     <div class="input-group m-b-20">
         <span class="input-group-addon"><i class="zmdi zmdi-email"></i></span>
         <div class="fg-line">
@@ -261,4 +273,14 @@
 
 <!-- Template Modules -->
 <script src="/js/modules/form.js"></script>
+<script type="text/javascript">
+    $(function (){
+        // 定位到用户名输入框
+        $("#username").focus();
+        } );
+    // 避免session过期后重新登录后输入框嵌套
+    if(window.parent != window) {
+        window.parent.location.reload(true)
+    }
+</script>
 </html>

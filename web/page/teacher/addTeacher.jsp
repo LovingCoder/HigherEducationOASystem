@@ -27,6 +27,7 @@
   <script src="/jquery/jquery.min.js"></script>
 </head>
 <body class="overflow-hidden">
-  <jsp:include page="/page/common/common.html"></jsp:include>
+
+
 </body>
 </html>

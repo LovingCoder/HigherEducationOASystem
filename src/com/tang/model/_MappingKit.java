@@ -18,6 +18,7 @@ public class _MappingKit {
 	public static void mapping(ActiveRecordPlugin arp) {
 		arp.addMapping("class", "id", Class.class);
 		arp.addMapping("college", "id", College.class);
+		arp.addMapping("dictionary", "id", Dictionary.class);
 		arp.addMapping("school", "id", School.class);
 		arp.addMapping("taskbook", "id", Taskbook.class);
 		arp.addMapping("teacher", "id", Teacher.class);

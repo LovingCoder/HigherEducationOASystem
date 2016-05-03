@@ -49,11 +49,11 @@ public abstract class BaseTeacher<M extends BaseTeacher<M>> extends Model<M> imp
 		return get("teacherName");
 	}
 
-	public void setSex(java.lang.String sex) {
+	public void setSex(java.lang.Integer sex) {
 		set("sex", sex);
 	}
 
-	public java.lang.String getSex() {
+	public java.lang.Integer getSex() {
 		return get("sex");
 	}
 
@@ -87,6 +87,22 @@ public abstract class BaseTeacher<M extends BaseTeacher<M>> extends Model<M> imp
 
 	public java.lang.String getSchoolId() {
 		return get("schoolId");
+	}
+
+	public void setEmail(java.lang.String email) {
+		set("email", email);
+	}
+
+	public java.lang.String getEmail() {
+		return get("email");
+	}
+
+	public void setUserId(java.lang.String userId) {
+		set("userId", userId);
+	}
+
+	public java.lang.String getUserId() {
+		return get("userId");
 	}
 
 }

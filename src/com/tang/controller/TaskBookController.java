@@ -8,12 +8,13 @@ import com.jfinal.plugin.activerecord.Page;
 import com.jfinal.plugin.activerecord.Record;
 import com.jfinal.plugin.activerecord.tx.Tx;
 import com.jfinal.upload.UploadFile;
+import com.tang.bean.PageInfo;
 import com.tang.bean.RequestBean;
 import com.tang.entity.TaskBookExcel;
 import com.tang.interceptor.LoginInterceptor;
 import com.tang.model.Taskbook;
-import com.tang.util.RequestBeanKit;
-import com.tang.util.TaskExcelKit;
+import com.tang.util.*;
+
 import java.util.List;
 
 /**
@@ -24,9 +25,6 @@ public class TaskBookController extends Controller {
 
     @ActionKey("/taskbook/index")
     public void index(){
-        String aa = getPara("data");
-        String bb = JsonKit.toJson(aa);
-        setAttr("recordPage", aa);
         render("/page/taskbook/list.jsp");
     }
 
@@ -37,9 +35,14 @@ public class TaskBookController extends Controller {
     public void taskBookList(){
         RequestBean requestBean = RequestBeanKit.getRequestBean(getRequest());
         Page<Record> recordPage = Taskbook.dao.taskbookList(requestBean);
-        System.out.println("总条数：" + recordPage.getTotalRow() + "\t总页数：" + recordPage.getTotalPage());
-        System.out.println(JsonKit.toJson(recordPage));
-        renderJson(JsonKit.toJson(recordPage));
+        PageInfo pageInfo = requestBean.getPageInfo();
+        if (null != recordPage){
+            pageInfo.setCount(recordPage.getTotalRow());
+            pageInfo.setTotalPage(recordPage.getTotalPage());
+            renderJson(ResponseBeanKit.responseBean(SysConstant.CODE.SUCCESS,null,RecordKit.listRecordToMap(recordPage.getList()),pageInfo));
+        }else {
+            renderJson(ResponseBeanKit.responseBean(SysConstant.CODE.SUCCESS,null,null,pageInfo));
+        }
     }
 
     /**
@@ -53,7 +56,7 @@ public class TaskBookController extends Controller {
         String term = getPara("term");
         List<TaskBookExcel> list = TaskExcelKit.readTaskExcel(uploadFile.getFile());
         System.out.println(list.size());
-        setAttr("taskbookList",Taskbook.dao.importTaskbook(list,term));
-        redirect("/taskbook/list");
+        List<Record> recordList = Taskbook.dao.importTaskbook(list,term);
+        renderJson(ResponseBeanKit.responseBean(SysConstant.CODE.SUCCESS,null, RecordKit.listRecordToMap(recordList),null));
     }
 }

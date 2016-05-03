@@ -40,26 +40,10 @@
     <!-- Simplify -->
     <link href="/css/simplify.min.css" rel="stylesheet">
 
-    <script type="application/javascript">
-
-        function taskbookList() {
-            var pageNumber = 1;
-            var pageSize = 10;
-            $.ajax({
-                type: "post",
-                data: {"pageNumber": pageNumber, "pageSize": pageSize},
-                url: "/taskbook/list",
-                success: function (data) {//返回数据根据结果进行相应的处理
-
-                }
-            })
-        }
-
-    </script>
 </head>
 <body class="overflow-hidden">
 <%--<div class="main-container">--%>
-    <div class="padding-md">
+    <div class="padding-md" id="main">
         <div class="row">
             <div class="col-sm-6">
                 <div class="page-title">

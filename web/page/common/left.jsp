@@ -32,6 +32,46 @@
     <!-- Simplify -->
     <link href="/css/simplify.min.css" rel="stylesheet">
 
+    <script type="application/javascript">
+
+        function doQueryTaskBookByAjax() {
+            var para = {
+                "requestTime": "2016-03-15 15:38:09.009",
+                "requestMethod": "",
+                "sessionId": "2c88449748214631ac43e6b370bd1034",
+                "requestId": "1a30fa8c-362d-4634-86f6-6f1e600e40db",
+                "requestContent": {},
+                "pageInfo": {
+                    "pageSize": 20,
+                    "currentPage": 1
+                }
+            };
+            $.ajax({
+                cache: false,
+                type: "POST",
+                dataType: "json",		  //json格式，重要
+                url: "/taskbook/list",	//把表单数据发送到/taskbook/list
+                data: para,	//要发送的是para中的数据
+                async: false,
+                error: function (data) {
+                    alert("数据错误！");
+                },
+                success: function (data) {
+//                    $("#ajaxDiv").html(data);	//将返回的结果显示到ajaxDiv中
+//                    window.location.href = "/higherEducation/main";
+                    /*如果返回状态等于0 请求成功*/
+                    if (0 == data["status"]) {
+                        alert($("#main").html);
+                        $("#main").html(data);
+                    } else {
+                        alert(data["message"]);
+                    }
+                }
+
+            });
+        }
+
+    </script>
 
     <base target="mainFrame">
 </head>
@@ -58,7 +98,7 @@
                 <ul class="submenu bg-palette4">
                     <li><a href="/page/taskbook/uploadTaskBook.jsp"><span class="submenu-label">上传任务书</span></a>
                     </li>
-                    <li><a href="/taskbook/list"><span
+                    <li><a href="javascript:doQueryTaskBookByAjax()"><span
                             class="submenu-label">查看任务书</span></a></li>
                 </ul>
             </li>
@@ -112,7 +152,7 @@
                 <ul class="submenu bg-palette4">
                     <li><a href="/teacher/addTeacherUI"><span class="submenu-label">添加教师</span></a>
                     </li>
-                    <li><a href="/teacher/queryTeacher"><span
+                    <li><a href="/page/teacher/queryTeacher.jsp"><span
                             class="submenu-label">查看本学院教师列表</span></a></li>
                 </ul>
             </li>

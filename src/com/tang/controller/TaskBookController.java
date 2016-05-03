@@ -14,6 +14,7 @@ import com.tang.entity.TaskBookExcel;
 import com.tang.interceptor.LoginInterceptor;
 import com.tang.model.Taskbook;
 import com.tang.util.*;
+import org.apache.log4j.Logger;
 
 import java.util.List;
 
@@ -22,6 +23,8 @@ import java.util.List;
  */
 @Before(LoginInterceptor.class)
 public class TaskBookController extends Controller {
+
+    public static final Logger log = Logger.getLogger(TaskBookController.class);
 
     @ActionKey("/taskbook/index")
     public void index(){

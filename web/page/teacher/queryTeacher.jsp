@@ -39,7 +39,7 @@
 <%--教师信息列表--%>
 <table class="table table-striped" id="dataTable">
     <thead>
-         <tr>
+    <tr>
         <th>编号</th>
         <th>姓名</th>
         <th>性别</th>
@@ -50,17 +50,17 @@
     </tr>
     </thead>
     <tbody>
-        <!-- 此处开始迭代 -->
-        <tr>
-            <td>#1001</td>
-            <td>张小三</td>
-            <td>男</td>
-            <td>莲花街校区</td>
-            <td>软件工程</td>
-            <td>Oct 08,2013</td>
-            <td><span class="label label-success">可用</span></td>
-        </tr>
-        <tr>
+    <!-- 此处开始迭代 -->
+    <tr>
+        <td>#1001</td>
+        <td>张小三</td>
+        <td>男</td>
+        <td>莲花街校区</td>
+        <td>软件工程</td>
+        <td>Oct 08,2013</td>
+        <td><span class="label label-success">可用</span></td>
+    </tr>
+    <tr>
         <td>#1002</td>
         <td>李小四</td>
         <td>女</td>

@@ -33,6 +33,44 @@
     <script src="/jquery/jquery.min.js"></script>
 
     <script type="text/javascript">
+
+        /*获取任务书列表 页面加载就获取*/
+        $(function () {
+            var para = {
+                "requestTime": "2016-03-15 15:38:09.009",
+                "requestMethod": "",
+                "sessionId": "2c88449748214631ac43e6b370bd1034",
+                "requestId": "1a30fa8c-362d-4634-86f6-6f1e600e40db",
+                "requestContent": {},
+                "pageInfo": {
+                    "pageSize": 20,
+                    "currentPage": 1
+                }
+            };
+            $.ajax({
+                cache: false,
+                type: "POST",
+                dataType: "json",		  //json格式，重要
+                url: "/taskbook/list",	//把表单数据发送到/taskbook/list
+                data: para,	//要发送的是para中的数据
+                async: false,
+                error: function (data) {
+                    alert("数据错误！");
+                },
+                success: function (data) {
+//                    $("#ajaxDiv").html(data);	//将返回的结果显示到ajaxDiv中
+//                    window.location.href = "/higherEducation/main";
+                    /*如果返回状态等于0 请求成功*/
+                    if (0 == data["status"]) {
+                        //请求成功的数据
+                    } else {
+                        alert(data["message"]);
+                    }
+                }
+
+            });
+        });
+
         function go() {
             var number = document.getElementById("jump").value;
 //            var recordPage = eval("("+XMLHttpRequest.response()+")");
@@ -50,7 +88,7 @@
             })
         };
 
-        $("#search").click(function(){
+        $("#search").click(function () {
             alert("123");
             $.ajax({
                 type: "post",
@@ -72,323 +110,305 @@
     </script>
 </head>
 
-<body class="overflow-hidden">
-<div class="wrapper preload">
-    
-    <jsp:include page="/page/common/common.html"/>
+<body>
 
+<div>
+    <div class="padding-md">
+        <ul class="breadcrumb">
+            <li><span class="primary-font"><i class="icon-home"></i></span><a href="index.html"> Home</a></li>
+            <li>任务书管理</li>
+            <li>任务书列表</li>
+        </ul>
+        <div>
+            <form class="form-inline no-margin" id="searchForm">
+                <div class="form-group">
+                    <label class="sr-only">课程名称</label>
+                    <input type="text" class="form-control" placeholder="课程名称" id="courseName" name="courseName">
+                </div>
+                <!-- /form-group -->
+                <div class="form-group">
+                    <label class="sr-only">专业</label>
+                    <input type="text" class="form-control" placeholder="专业" id="major" name="major">
+                </div>
+                <!-- /form-group -->
+                <div class="form-group">
+                    <label class="sr-only">课程性质</label>
+                    <input type="text" class="form-control" placeholder="课程性质" id="courseProperty"
+                           name="courseProperty">
+                </div>
+                <!-- /form-group -->
+                <div class="form-group">
+                    <label class="sr-only">学期</label>
+                    <input type="text" class="form-control" placeholder="学期" id="term" name="term">
+                </div>
+                <!-- /form-group -->
+                <button type="button" class="btn btn-sm btn-success" id="search">Search</button>
+                <script>
+                    $("#search").click(function () {
+                        $.ajax({
+                            type: "post",
+                            data: {
+                                "courseName": document.getElementById("courseName").value
+                                , "major": document.getElementById("major").value,
+                                "courseProperty": document.getElementById("courseProperty").value
+                                , "term": document.getElementById("term").value
+                            },
+                            url: "/taskbook/list",
+                            success: function () {
 
-    <div class="main-container">
-        <div class="padding-md">
-            <ul class="breadcrumb">
-                <li><span class="primary-font"><i class="icon-home"></i></span><a href="index.html"> Home</a></li>
-                <li>任务书管理</li>
-                <li>任务书列表</li>
-            </ul>
-            <div>
-                <form class="form-inline no-margin" id="searchForm">
-                    <div class="form-group">
-                        <label class="sr-only">课程名称</label>
-                        <input type="text" class="form-control" placeholder="课程名称" id="courseName" name="courseName">
-                    </div>
-                    <!-- /form-group -->
-                    <div class="form-group">
-                        <label class="sr-only">专业</label>
-                        <input type="text" class="form-control" placeholder="专业" id="major" name="major">
-                    </div>
-                    <!-- /form-group -->
-                    <div class="form-group">
-                        <label class="sr-only">课程性质</label>
-                        <input type="text" class="form-control" placeholder="课程性质" id="courseProperty"
-                               name="courseProperty">
-                    </div>
-                    <!-- /form-group -->
-                    <div class="form-group">
-                        <label class="sr-only">学期</label>
-                        <input type="text" class="form-control" placeholder="学期" id="term" name="term">
-                    </div>
-                    <!-- /form-group -->
-                    <button type="button" class="btn btn-sm btn-success" id="search">Search</button>
-                    <script>
-                        $("#search").click(function(){
-                            $.ajax({
-                                type: "post",
-                                data: {
-                                    "courseName": document.getElementById("courseName").value
-                                    , "major": document.getElementById("major").value,
-                                    "courseProperty": document.getElementById("courseProperty").value
-                                    , "term": document.getElementById("term").value
-                                },
-                                url: "/taskbook/list",
-                                success: function () {
-
-                                },
-                                error: function () {
-                                    alert("调用失败");
-                                }
-                            })
+                            },
+                            error: function () {
+                                alert("调用失败");
+                            }
                         })
-                    </script>
-                </form>
-            </div>
-            <table class="table table-striped" id="dataTable" >
-                <thead>
-                <tr>
-                    <th>序号</th>
-                    <th>课程代码</th>
-                    <th>课程名称</th>
-                    <th>教学计划号</th>
-                    <th>专业</th>
-                    <th>校区</th>
-                    <th>班级及人数</th>
-                    <th>年级</th>
-                    <th>总人数</th>
-                    <th>考核方式</th>
-                    <th>周学时</th>
-                    <th>总学时</th>
-                    <th>上课起止周次</th>
-                    <th>时数</th>
-                    <th>教师签名</th>
-                    <th>职称</th>
-                    <th>课程性质</th>
-                    <th>合班意见</th>
-                    <th>教室类型</th>
-                    <th>学期</th>
-                </tr>
-                </thead>
-                <tbody>
-                <c:forEach var="taskbook" items="${recordPage.list}">
-                    <tr>
-                        <td>
-                            <c:choose>
-                                <c:when test="${taskbook.serialNumber == null || taskbook.serialNumber == ''}">
-                                    <span class="label label-danger">未填写</span>
-                                </c:when>
-                                <c:otherwise>
-                                    ${taskbook.serialNumber}
-                                </c:otherwise>
-                            </c:choose>
-                        </td>
-                        <td>
-                            <c:choose>
-                                <c:when test="${taskbook.courseCode == null || taskbook.courseCode == ''}">
-                                    <span class="label label-danger">未填写</span>
-                                </c:when>
-                                <c:otherwise>
-                                    ${taskbook.courseCode}
-                                </c:otherwise>
-                            </c:choose>
-                        </td>
-                        <td>
-                            <c:choose>
-                                <c:when test="${taskbook.courseName == null || taskbook.courseName == ''}">
-                                    <span class="label label-danger">未填写</span>
-                                </c:when>
-                                <c:otherwise>
-                                    ${taskbook.courseName}
-                                </c:otherwise>
-                            </c:choose>
-                        </td>
-                        <td>
-                            <c:choose>
-                                <c:when test="${taskbook.teachingNumber == null || taskbook.teachingNumber == ''}">
-                                    <span class="label label-danger">未填写</span>
-                                </c:when>
-                                <c:otherwise>
-                                    ${taskbook.teachingNumber}
-                                </c:otherwise>
-                            </c:choose>
-                        </td>
-                        <td>
-                            <c:choose>
-                                <c:when test="${taskbook.major == null || taskbook.major == ''}">
-                                    <span class="label label-danger">未填写</span>
-                                </c:when>
-                                <c:otherwise>
-                                    ${taskbook.major}
-                                </c:otherwise>
-                            </c:choose>
-                        </td>
-                        <td>
-                            <c:choose>
-                                <c:when test="${taskbook.schoolZone == null || taskbook.schoolZone == ''}">
-                                    <span class="label label-danger">未填写</span>
-                                </c:when>
-                                <c:otherwise>
-                                    ${taskbook.schoolZone}
-                                </c:otherwise>
-                            </c:choose>
-                        </td>
-                        <td>
-                            <c:choose>
-                                <c:when test="${taskbook.classAndStudent == null || taskbook.classAndStudent == ''}">
-                                    <span class="label label-danger">未填写</span>
-                                </c:when>
-                                <c:otherwise>
-                                    ${taskbook.classAndStudent}
-                                </c:otherwise>
-                            </c:choose>
-                        </td>
-                        <td>
-                            <c:choose>
-                                <c:when test="${taskbook.grade == null || taskbook.grade == ''}">
-                                    <span class="label label-danger">未填写</span>
-                                </c:when>
-                                <c:otherwise>
-                                    ${taskbook.grade}
-                                </c:otherwise>
-                            </c:choose>
-                        </td>
-                        <td>
-                            <c:choose>
-                                <c:when test="${taskbook.totalStudent == null || taskbook.totalStudent == ''}">
-                                    <span class="label label-danger">未填写</span>
-                                </c:when>
-                                <c:otherwise>
-                                    ${taskbook.totalStudent}
-                                </c:otherwise>
-                            </c:choose>
-                        </td>
-                        <td>
-                            <c:choose>
-                                <c:when test="${taskbook.testType == null || taskbook.testType == ''}">
-                                    <span class="label label-danger">未填写</span>
-                                </c:when>
-                                <c:otherwise>
-                                    ${taskbook.testType}
-                                </c:otherwise>
-                            </c:choose>
-                        </td>
-                        <td>
-                            <c:choose>
-                                <c:when test="${taskbook.weekTime == null || taskbook.weekTime == ''}">
-                                    <span class="label label-danger">未填写</span>
-                                </c:when>
-                                <c:otherwise>
-                                    ${taskbook.weekTime}
-                                </c:otherwise>
-                            </c:choose>
-                        </td>
-                        <td>
-                            <c:choose>
-                                <c:when test="${taskbook.totalTime == null || taskbook.totalTime == ''}">
-                                    <span class="label label-danger">未填写</span>
-                                </c:when>
-                                <c:otherwise>
-                                    ${taskbook.totalTime}
-                                </c:otherwise>
-                            </c:choose>
-                        </td>
-                        <td>
-                            <c:choose>
-                                <c:when test="${taskbook.startAndEndWeek == null || taskbook.startAndEndWeek == ''}">
-                                    <span class="label label-danger">未填写</span>
-                                </c:when>
-                                <c:otherwise>
-                                    ${taskbook.startAndEndWeek}
-                                </c:otherwise>
-                            </c:choose>
-                        </td>
-                        <td>
-                            <c:choose>
-                                <c:when test="${taskbook.classHour == null || taskbook.classHour == ''}">
-                                    <span class="label label-danger">未填写</span>
-                                </c:when>
-                                <c:otherwise>
-                                    ${taskbook.classHour}
-                                </c:otherwise>
-                            </c:choose>
-                        </td>
-                        <td>
-                            <c:choose>
-                                <c:when test="${taskbook.teacherSign == null || taskbook.teacherSign == ''}">
-                                    <span class="label label-danger">未填写</span>
-                                </c:when>
-                                <c:otherwise>
-                                    ${taskbook.teacherSign}
-                                </c:otherwise>
-                            </c:choose>
-                        </td>
-                        <td>
-                            <c:choose>
-                                <c:when test="${taskbook.title == null || taskbook.title == ''}">
-                                    <span class="label label-danger">未填写</span>
-                                </c:when>
-                                <c:otherwise>
-                                    ${taskbook.title}
-                                </c:otherwise>
-                            </c:choose>
-                        </td>
-                        <td>
-                            <c:choose>
-                                <c:when test="${taskbook.courseProperty == null || taskbook.courseProperty == ''}">
-                                    <span class="label label-danger">未填写</span>
-                                </c:when>
-                                <c:otherwise>
-                                    ${taskbook.courseProperty}
-                                </c:otherwise>
-                            </c:choose>
-                        </td>
-                        <td>
-                            <c:choose>
-                                <c:when test="${taskbook.mergeClassOpinion == null || taskbook.mergeClassOpinion == ''}">
-                                    <span class="label label-danger">未填写</span>
-                                </c:when>
-                                <c:otherwise>
-                                    ${taskbook.mergeClassOpinion}
-                                </c:otherwise>
-                            </c:choose>
-                        </td>
-                        <td>
-                            <c:choose>
-                                <c:when test="${taskbook.classRoomType == null || taskbook.classRoomType == ''}">
-                                    <span class="label label-danger">未填写</span>
-                                </c:when>
-                                <c:otherwise>
-                                    ${taskbook.classRoomType}
-                                </c:otherwise>
-                            </c:choose>
-                        </td>
-                        <td>
-                            <c:choose>
-                                <c:when test="${taskbook.term == null || taskbook.term == ''}">
-                                    <span class="label label-danger">未填写</span>
-                                </c:when>
-                                <c:otherwise>
-                                    ${taskbook.term}
-                                </c:otherwise>
-                            </c:choose>
-                        </td>
-                    </tr>
-                </c:forEach>
-                </tbody>
-            </table>
+                    })
+                </script>
+            </form>
         </div>
-        <!-- ./padding-md -->
-        <%--<div id="pager">
-            <ul class="pagination pagination-split">
-                <li class="disabled"><a href="#">&laquo;</a></li>
-                <li class="active"><a href="/taskbook/list?pageNumber=1">1</a></li>
-                <li><a href="/taskbook/list?pageNumber=2">2</a></li>
-                <li><a href="/taskbook/list?pageNumber=3">3</a></li>
-                <li><a href="/taskbook/list?pageNumber=4">4</a></li>
-                <li><a href="/taskbook/list?pageNumber=5">5</a></li>
-                <li><a href="#">&raquo;</a></li>
-            </ul>
-        </div>--%>
-        <div class="pages">
-            <div id="Pagination">
-                <ul class="pagination pagination-split"></ul>
-            </div>
-            <div class="searchPage">
-                <span class="page-sum">共<strong class="allPage">${recordPage.totalPage}</strong>页</span>
-                <span class="page-go">跳转到第<input type="text" id="jump">页</span>
-                <button type="button" class="btn btn-success marginTB-xs" onclick="go()">GO<i
-                        class="fa fa-angle-double-right m-left-xs"></i></button>
-            </div>
+        <table class="table table-striped" id="dataTable">
+            <thead>
+            <tr>
+                <th>序号</th>
+                <th>课程代码</th>
+                <th>课程名称</th>
+                <th>教学计划号</th>
+                <th>专业</th>
+                <th>校区</th>
+                <th>班级及人数</th>
+                <th>年级</th>
+                <th>总人数</th>
+                <th>考核方式</th>
+                <th>周学时</th>
+                <th>总学时</th>
+                <th>上课起止周次</th>
+                <th>时数</th>
+                <th>教师签名</th>
+                <th>职称</th>
+                <th>课程性质</th>
+                <th>合班意见</th>
+                <th>教室类型</th>
+                <th>学期</th>
+            </tr>
+            </thead>
+            <tbody>
+            <c:forEach var="taskbook" items="${recordPage.list}">
+                <tr>
+                    <td>
+                        <c:choose>
+                            <c:when test="${taskbook.serialNumber == null || taskbook.serialNumber == ''}">
+                                <span class="label label-danger">未填写</span>
+                            </c:when>
+                            <c:otherwise>
+                                ${taskbook.serialNumber}
+                            </c:otherwise>
+                        </c:choose>
+                    </td>
+                    <td>
+                        <c:choose>
+                            <c:when test="${taskbook.courseCode == null || taskbook.courseCode == ''}">
+                                <span class="label label-danger">未填写</span>
+                            </c:when>
+                            <c:otherwise>
+                                ${taskbook.courseCode}
+                            </c:otherwise>
+                        </c:choose>
+                    </td>
+                    <td>
+                        <c:choose>
+                            <c:when test="${taskbook.courseName == null || taskbook.courseName == ''}">
+                                <span class="label label-danger">未填写</span>
+                            </c:when>
+                            <c:otherwise>
+                                ${taskbook.courseName}
+                            </c:otherwise>
+                        </c:choose>
+                    </td>
+                    <td>
+                        <c:choose>
+                            <c:when test="${taskbook.teachingNumber == null || taskbook.teachingNumber == ''}">
+                                <span class="label label-danger">未填写</span>
+                            </c:when>
+                            <c:otherwise>
+                                ${taskbook.teachingNumber}
+                            </c:otherwise>
+                        </c:choose>
+                    </td>
+                    <td>
+                        <c:choose>
+                            <c:when test="${taskbook.major == null || taskbook.major == ''}">
+                                <span class="label label-danger">未填写</span>
+                            </c:when>
+                            <c:otherwise>
+                                ${taskbook.major}
+                            </c:otherwise>
+                        </c:choose>
+                    </td>
+                    <td>
+                        <c:choose>
+                            <c:when test="${taskbook.schoolZone == null || taskbook.schoolZone == ''}">
+                                <span class="label label-danger">未填写</span>
+                            </c:when>
+                            <c:otherwise>
+                                ${taskbook.schoolZone}
+                            </c:otherwise>
+                        </c:choose>
+                    </td>
+                    <td>
+                        <c:choose>
+                            <c:when test="${taskbook.classAndStudent == null || taskbook.classAndStudent == ''}">
+                                <span class="label label-danger">未填写</span>
+                            </c:when>
+                            <c:otherwise>
+                                ${taskbook.classAndStudent}
+                            </c:otherwise>
+                        </c:choose>
+                    </td>
+                    <td>
+                        <c:choose>
+                            <c:when test="${taskbook.grade == null || taskbook.grade == ''}">
+                                <span class="label label-danger">未填写</span>
+                            </c:when>
+                            <c:otherwise>
+                                ${taskbook.grade}
+                            </c:otherwise>
+                        </c:choose>
+                    </td>
+                    <td>
+                        <c:choose>
+                            <c:when test="${taskbook.totalStudent == null || taskbook.totalStudent == ''}">
+                                <span class="label label-danger">未填写</span>
+                            </c:when>
+                            <c:otherwise>
+                                ${taskbook.totalStudent}
+                            </c:otherwise>
+                        </c:choose>
+                    </td>
+                    <td>
+                        <c:choose>
+                            <c:when test="${taskbook.testType == null || taskbook.testType == ''}">
+                                <span class="label label-danger">未填写</span>
+                            </c:when>
+                            <c:otherwise>
+                                ${taskbook.testType}
+                            </c:otherwise>
+                        </c:choose>
+                    </td>
+                    <td>
+                        <c:choose>
+                            <c:when test="${taskbook.weekTime == null || taskbook.weekTime == ''}">
+                                <span class="label label-danger">未填写</span>
+                            </c:when>
+                            <c:otherwise>
+                                ${taskbook.weekTime}
+                            </c:otherwise>
+                        </c:choose>
+                    </td>
+                    <td>
+                        <c:choose>
+                            <c:when test="${taskbook.totalTime == null || taskbook.totalTime == ''}">
+                                <span class="label label-danger">未填写</span>
+                            </c:when>
+                            <c:otherwise>
+                                ${taskbook.totalTime}
+                            </c:otherwise>
+                        </c:choose>
+                    </td>
+                    <td>
+                        <c:choose>
+                            <c:when test="${taskbook.startAndEndWeek == null || taskbook.startAndEndWeek == ''}">
+                                <span class="label label-danger">未填写</span>
+                            </c:when>
+                            <c:otherwise>
+                                ${taskbook.startAndEndWeek}
+                            </c:otherwise>
+                        </c:choose>
+                    </td>
+                    <td>
+                        <c:choose>
+                            <c:when test="${taskbook.classHour == null || taskbook.classHour == ''}">
+                                <span class="label label-danger">未填写</span>
+                            </c:when>
+                            <c:otherwise>
+                                ${taskbook.classHour}
+                            </c:otherwise>
+                        </c:choose>
+                    </td>
+                    <td>
+                        <c:choose>
+                            <c:when test="${taskbook.teacherSign == null || taskbook.teacherSign == ''}">
+                                <span class="label label-danger">未填写</span>
+                            </c:when>
+                            <c:otherwise>
+                                ${taskbook.teacherSign}
+                            </c:otherwise>
+                        </c:choose>
+                    </td>
+                    <td>
+                        <c:choose>
+                            <c:when test="${taskbook.title == null || taskbook.title == ''}">
+                                <span class="label label-danger">未填写</span>
+                            </c:when>
+                            <c:otherwise>
+                                ${taskbook.title}
+                            </c:otherwise>
+                        </c:choose>
+                    </td>
+                    <td>
+                        <c:choose>
+                            <c:when test="${taskbook.courseProperty == null || taskbook.courseProperty == ''}">
+                                <span class="label label-danger">未填写</span>
+                            </c:when>
+                            <c:otherwise>
+                                ${taskbook.courseProperty}
+                            </c:otherwise>
+                        </c:choose>
+                    </td>
+                    <td>
+                        <c:choose>
+                            <c:when test="${taskbook.mergeClassOpinion == null || taskbook.mergeClassOpinion == ''}">
+                                <span class="label label-danger">未填写</span>
+                            </c:when>
+                            <c:otherwise>
+                                ${taskbook.mergeClassOpinion}
+                            </c:otherwise>
+                        </c:choose>
+                    </td>
+                    <td>
+                        <c:choose>
+                            <c:when test="${taskbook.classRoomType == null || taskbook.classRoomType == ''}">
+                                <span class="label label-danger">未填写</span>
+                            </c:when>
+                            <c:otherwise>
+                                ${taskbook.classRoomType}
+                            </c:otherwise>
+                        </c:choose>
+                    </td>
+                    <td>
+                        <c:choose>
+                            <c:when test="${taskbook.term == null || taskbook.term == ''}">
+                                <span class="label label-danger">未填写</span>
+                            </c:when>
+                            <c:otherwise>
+                                ${taskbook.term}
+                            </c:otherwise>
+                        </c:choose>
+                    </td>
+                </tr>
+            </c:forEach>
+            </tbody>
+        </table>
+    </div>
+    <div class="pages">
+        <div id="Pagination">
+            <ul class="pagination pagination-split"></ul>
+        </div>
+        <div class="searchPage">
+            <span class="page-sum">共<strong class="allPage">${recordPage.totalPage}</strong>页</span>
+            <span class="page-go">跳转到第<input type="text" id="jump">页</span>
+            <button type="button" class="btn btn-success marginTB-xs" onclick="go()">GO<i
+                    class="fa fa-angle-double-right m-left-xs"></i></button>
         </div>
     </div>
-    <!-- /main-container -->
     <footer class="footer">
 				<span class="footer-brand">
 					<strong class="text-danger">HAUT OA System</strong>
@@ -398,8 +418,6 @@
             &copy; 2016 <strong>CoderKK</strong>. ALL Rights Reserved.
         </p>
     </footer>
-</div>
-<!-- /wrapper -->
 </div>
 <a href="#" class="scroll-to-top hidden-print"><i class="fa fa-chevron-up fa-lg"></i></a>
 

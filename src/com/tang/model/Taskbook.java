@@ -34,7 +34,7 @@ public class Taskbook extends BaseTaskbook<Taskbook> {
 	 * @throws Exception
 	 */
 	@Before(Tx.class)
-	public List<Record> importTaskbook(List<TaskBookExcel> list,String term) throws Exception{
+	public Boolean importTaskbook(List<TaskBookExcel> list,String term) throws Exception{
 		Record record;
 		Boolean result = false;
 		for (TaskBookExcel taskBookExcel:list){
@@ -68,7 +68,7 @@ public class Taskbook extends BaseTaskbook<Taskbook> {
 				throw new Exception("导入任务书失败！");
 			}
 		}
-		return 	Db.find("SELECT * FROM taskbook WHERE term = ? AND isDelete = ?",term,SysConstant.ISDELETE.NO);
+		return result;
 	}
 
 	/**

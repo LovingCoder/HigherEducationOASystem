@@ -1,5 +1,7 @@
 package com.tang.util;
 
+import org.omg.CORBA.PUBLIC_MEMBER;
+
 /**
  * Created by Tang on 2016/4/20.
  * 系统常量配置
@@ -56,5 +58,15 @@ public class SysConstant {
     public static class COLLEGE{
         public static final String ADDSUCCESS = "新增学院信息成功！";
         public static final String ADDFAIL = "新增学院信息失败！";
+    }
+
+    /**
+     * 任务书返回提示
+     */
+    public static class TASKBOOK{
+        public static final String UPLOADSUCCESS = "上传任务书成功！";
+        public static final String UPLOADFAIL = "上传任务书失败！";
+        public static final String QUERYSUCCESS = "获取任务书列表成功！";
+        public static final String QUERYFAIL = "获取任务书列表失败！";
     }
 }

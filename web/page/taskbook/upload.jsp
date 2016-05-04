@@ -29,6 +29,39 @@
   <!-- Simplify -->
   <link href="/css/simplify.min.css" rel="stylesheet">
 
+  <script src="/jquery/jquery.min.js"></script>
+  <script type="application/javascript">
+    function uploadTaskbook(){
+      var formData = new FormData();
+      if(null == $("#termName").val() || "" == $.trim($("#termName").val())){
+        alert("请填写学期！");
+        return false;
+      }
+      if(null == $("#file")[0].files[0]){
+        alert("请选择要上传的任务书excel文件！");
+        return false;
+      }
+      formData.append('term',$("#termName").val());
+      formData.append('file', $("#file")[0].files[0]);
+      $.ajax({
+        url: '/taskbook/uploadTaskbook',
+        type: 'POST',
+        cache: false,
+        data: formData,
+        processData: false,
+        contentType: false
+      }).done(function(res) {
+        if(res["status"] == 0){
+          alert(res["message"]);
+          window.location.href = "/UI/queryTaskbookUI";
+        }else{
+          alert(res["message"]);
+        }
+      }).fail(function(res) {
+        alert(res["message"]);
+      });
+    }
+  </script>
 </head>
 
 <body class="overflow-hidden">
@@ -41,22 +74,18 @@
         <li>任务书管理</li>
         <li>上传任务书</li>
       </ul>
-
       <div class="alert alert-info alert-custom">
         <i class="fa fa-warning"></i><span class="m-left-xs">请选择要上传的任务书.</span>
       </div>
-
-      <form action="/taskbook/uploadTaskbook" class="form-inline" enctype="multipart/form-data" method="post">
         <div class="form-group">
           <label for="termName">请填写学期名称（如：2015-2016学年第一学期）</label>
           <input name="term" type="text" class="form-control" id="termName" placeholder="学期名称"/>
         </div>
         <div class="form-group">
-          <label for="fileName">请选择文件</label>
-          <input name="file" type="file" class="form-control" id="fileName"/>
+          <label for="file">请选择文件</label>
+          <input name="file" type="file" class="form-control" id="file"/>
         </div>
-        <button type="submit" class="btn btn-success btn-sm">确认上传</button>
-      </form>
+        <button type="button" class="btn btn-success btn-sm" onclick="uploadTaskbook()">确认上传</button>
     </div><!-- ./padding-md -->
   <%--</div><!-- /main-container -->--%>
 

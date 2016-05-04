@@ -28,7 +28,7 @@ public class TaskBookController extends Controller {
 
     @ActionKey("/taskbook/index")
     public void index(){
-        render("/page/taskbook/list.jsp");
+        render("/page/taskbook/query.jsp");
     }
 
     /**
@@ -42,9 +42,9 @@ public class TaskBookController extends Controller {
         if (null != recordPage){
             pageInfo.setCount(recordPage.getTotalRow());
             pageInfo.setTotalPage(recordPage.getTotalPage());
-            renderJson(ResponseBeanKit.responseBean(SysConstant.CODE.SUCCESS,null,RecordKit.listRecordToMap(recordPage.getList()),pageInfo));
+            renderJson(ResponseBeanKit.responseBean(SysConstant.CODE.SUCCESS,SysConstant.TASKBOOK.QUERYSUCCESS,RecordKit.listRecordToMap(recordPage.getList()),pageInfo));
         }else {
-            renderJson(ResponseBeanKit.responseBean(SysConstant.CODE.SUCCESS,null,null,pageInfo));
+            renderJson(ResponseBeanKit.responseBean(SysConstant.CODE.SUCCESS,SysConstant.TASKBOOK.UPLOADFAIL,null,pageInfo));
         }
     }
 
@@ -59,7 +59,11 @@ public class TaskBookController extends Controller {
         String term = getPara("term");
         List<TaskBookExcel> list = TaskExcelKit.readTaskExcel(uploadFile.getFile());
         System.out.println(list.size());
-        List<Record> recordList = Taskbook.dao.importTaskbook(list,term);
-        renderJson(ResponseBeanKit.responseBean(SysConstant.CODE.SUCCESS,null, RecordKit.listRecordToMap(recordList),null));
+        Boolean result = Taskbook.dao.importTaskbook(list,term);
+        if (result){
+            renderJson(ResponseBeanKit.responseBean(SysConstant.CODE.SUCCESS,SysConstant.TASKBOOK.UPLOADSUCCESS, null,null));
+        }else {
+            renderJson(ResponseBeanKit.responseBean(SysConstant.CODE.FAIL,SysConstant.TASKBOOK.UPLOADFAIL,null,null));
+        }
     }
 }

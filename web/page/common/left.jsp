@@ -111,7 +111,7 @@
                 <ul class="submenu bg-palette4">
                     <li><a href="/teacher/addTeacherUI"><span class="submenu-label">添加教师</span></a>
                     </li>
-                    <li><a href="/page/teacher/queryTeacher.jsp"><span
+                    <li><a href="/UI/queryTeacherUI"><span
                             class="submenu-label">查看本学院教师列表</span></a></li>
                 </ul>
             </li>

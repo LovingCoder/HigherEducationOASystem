@@ -22,15 +22,6 @@ import com.tang.util.RequestBeanKit;
 public class TeacherController extends Controller {
 
     /**
-     * 添加教师界面，跳转到添加教师界面
-     */
-    @ActionKey("/teacher/addTeacherUI")
-    public void addTeacherUI() {
-        render("addTeacher.jsp");
-    }
-
-
-    /**
      * 添加教师
      * @throws Exception
      */

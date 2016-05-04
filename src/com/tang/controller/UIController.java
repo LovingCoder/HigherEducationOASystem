@@ -16,7 +16,7 @@ public class UIController extends CollegeController {
      */
     @ActionKey("/UI/uploadTaskbookUI")
     public void uploadTaskbookUI(){
-        render("/page/taskbook/uploadTaskBook.jsp");
+        render("/page/taskbook/upload.jsp");
     }
 
     /**
@@ -24,11 +24,22 @@ public class UIController extends CollegeController {
      */
     @ActionKey("/UI/queryTaskbookUI")
     public void queryTaskbookUI(){
-        render("/page/taskbook/list.jsp");
+        render("/page/taskbook/query.jsp");
     }
 
+    /**
+     * 添加教师页面
+     */
+    @ActionKey("/UI/addTeacherUI")
     public void addTeacherUI(){
-        render("/page/tacher/addTeacher.jsp");
+        render("/page/teacher/add.jsp");
     }
 
+    /**
+     * 教师列表页面
+     */
+    @ActionKey("/UI/queryTeacherUI")
+    public void queryTeacherUI(){
+        render("/page/teacher/query.jsp");
+    }
 }

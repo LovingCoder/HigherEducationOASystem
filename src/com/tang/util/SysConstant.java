@@ -69,4 +69,18 @@ public class SysConstant {
         public static final String QUERYSUCCESS = "获取任务书列表成功！";
         public static final String QUERYFAIL = "获取任务书列表失败！";
     }
+
+    /**
+     * 学校返回提示
+     */
+    public static class SCHOOL{
+        public static final String NOTFINDTHISSCHOOL = "没有找到该学校！";
+    }
+
+    /**
+     * 日期格式
+     */
+    public static class TIMEFORMAT{
+        public static final String DATE = "yyyy-MM-dd HH:mm:ss";
+    }
 }

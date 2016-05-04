@@ -1,8 +1,10 @@
 package com.tang.controller;
+import com.alibaba.fastjson.JSONObject;
 import com.jfinal.aop.Before;
 import com.jfinal.core.ActionKey;
 import com.jfinal.core.Controller;
 import com.jfinal.kit.HttpKit;
+import com.jfinal.kit.JsonKit;
 import com.jfinal.plugin.activerecord.Record;
 import com.jfinal.plugin.activerecord.tx.Tx;
 import com.tang.bean.PageInfo;
@@ -31,9 +33,9 @@ public class UserController extends Controller {
         if (null != record){
             getSession().setAttribute("user", record);
             record.remove("password");
-            renderJson(ResponseBeanKit.responseBean(SysConstant.CODE.SUCCESS,null,record.getColumns()));
+            renderJson(ResponseBeanKit.responseBean(SysConstant.CODE.SUCCESS,null,record.getColumns(),null));
         }else {
-            renderJson(ResponseBeanKit.responseBean(SysConstant.CODE.FAIL,SysConstant.REGISTER.ERROR,null));
+            renderJson(ResponseBeanKit.responseBean(SysConstant.CODE.FAIL,SysConstant.REGISTER.ERROR,null,null));
         }
     }
 
@@ -46,12 +48,14 @@ public class UserController extends Controller {
         RequestBean requestBean = RequestBeanKit.getRequestBean(getRequest());
         Record record = User.me.userLogin(requestBean);
         if (null != record){
-            getSession().setAttribute("user", record);
+            JSONObject jsonObject = JSONObject.parseObject(JsonKit.toJson(record.getColumns()));
+            System.out.println(jsonObject);
+            getSession().setAttribute("user", jsonObject);
+            getSession().setMaxInactiveInterval(300);
             record.remove("password");
-            System.out.println(ResponseBeanKit.responseBean(SysConstant.CODE.SUCCESS,null,record.getColumns(),new PageInfo()));
             renderJson(ResponseBeanKit.responseBean(SysConstant.CODE.SUCCESS,null,record.getColumns(),new PageInfo()));
         }else {
-            renderJson(ResponseBeanKit.responseBean(SysConstant.CODE.FAIL,SysConstant.LOGIN.ERROR,null));
+            renderJson(ResponseBeanKit.responseBean(SysConstant.CODE.FAIL,SysConstant.LOGIN.ERROR,null,null));
         }
     }
 
@@ -68,9 +72,9 @@ public class UserController extends Controller {
         Boolean result = User.me.completUserInfo(requestBean,userId);
         //返回结果 成功返回0 失败返回1
         if (result){
-            renderJson(ResponseBeanKit.responseBean(SysConstant.CODE.SUCCESS,null,null));
+            renderJson(ResponseBeanKit.responseBean(SysConstant.CODE.SUCCESS,null,null,null));
         }else {
-            renderJson(ResponseBeanKit.responseBean(SysConstant.CODE.FAIL,null,null));
+            renderJson(ResponseBeanKit.responseBean(SysConstant.CODE.FAIL,null,null,null));
         }
     }
 }

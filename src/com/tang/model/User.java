@@ -68,6 +68,11 @@ public class User extends BaseUser<User> {
 		String password = ParamKit.checkObjectNotNull(requestBean,"password");
         String sql = "SELECT * FROM user WHERE userName = ? AND password = ? AND isDelete = ?";
 		Record record = Db.findFirst(sql, username, password, SysConstant.ISDELETE.NO);
+		if (null == record){
+			return null;
+		}
+		Record teacher = Db.findFirst("SELECT * FROM teacher WHERE userId = ? AND isDelete = ?", record.get("id"), SysConstant.ISDELETE.NO);
+		record.set("teacher",(null == teacher) ? null : teacher.getColumns());
 		return  record;
 	}
 

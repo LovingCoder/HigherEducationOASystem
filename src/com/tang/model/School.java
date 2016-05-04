@@ -2,7 +2,10 @@ package com.tang.model;
 
 import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.Record;
+import com.tang.bean.RequestBean;
 import com.tang.model.base.BaseSchool;
+import com.tang.util.ParamKit;
+import com.tang.util.RecordKit;
 import com.tang.util.SysConstant;
 
 import java.util.List;
@@ -14,7 +17,27 @@ import java.util.List;
 public class School extends BaseSchool<School> {
 	public static final School dao = new School();
 
+	/**
+	 * 获取所有的学校
+	 * @return
+	 */
 	public List<Record> querySchoolInfo(){
 		return Db.find("SELECT * FROM school WHERE isDelete = ?", SysConstant.ISDELETE.NO);
+	}
+
+	/**
+	 * 获取学校信息
+	 * @param requestBean
+	 * @return
+	 */
+	public Record getSchoolById(RequestBean requestBean){
+		String id = ParamKit.checkObjectNotNull(requestBean,"schoolId");
+		Record school = Db.findFirst("SELECT * FROM school WHERE id = ? AND isDelete = ?",id,SysConstant.ISDELETE.NO);
+		if (null == school){
+			return null;
+		}
+		List<Record> colleges = Db.find("SELECT * FROM college WHERE schoolId = ? AND isDelete = ?",id,SysConstant.ISDELETE.NO);
+		school.set("colleges", (null == colleges || colleges.size() == 0) ? null : RecordKit.listRecordToMap(colleges));
+		return school;
 	}
 }

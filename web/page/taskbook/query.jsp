@@ -123,11 +123,9 @@
                     alert("调用失败");
                 }
             })
-        }
-        ;
+        };
 
         $("#search").click(function () {
-            alert("搜索任务书");
             var para = {
                 "requestTime": "2016-03-15 15:38:09.009",
                 "requestMethod": "",

@@ -1,8 +1,8 @@
 package com.tang.interceptor;
 
+import com.alibaba.fastjson.JSONObject;
 import com.jfinal.aop.Interceptor;
 import com.jfinal.aop.Invocation;
-import com.jfinal.plugin.activerecord.Record;
 
 /**
  * Created by Tang on 2016/4/21.
@@ -10,7 +10,7 @@ import com.jfinal.plugin.activerecord.Record;
 public class LoginInterceptor implements Interceptor {
     @Override
     public void intercept(Invocation inv) {
-        Record user = inv.getController().getSessionAttr("user");
+        JSONObject user = inv.getController().getSessionAttr("user");
         if (null == user) {
             inv.getController().redirect("/index");
         } else {

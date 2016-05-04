@@ -77,6 +77,7 @@ schoolId VARCHAR(32)
 ALTER TABLE teacher ADD PRIMARY KEY (id);
 ALTER TABLE teacher ADD email VARCHAR(255);
 ALTER TABLE teacher ADD userId VARCHAR(32);
+ALTER TABLE teacher MODIFY sex INT(11); 
 
 -- 创建班级信息表 --
 CREATE TABLE class (

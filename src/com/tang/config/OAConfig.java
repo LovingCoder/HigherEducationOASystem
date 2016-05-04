@@ -24,6 +24,7 @@ public class OAConfig extends JFinalConfig{
         me.setDevMode(PropKit.getBoolean("devMode", false));
         me.setBaseUploadPath("uploadFiles");
         me.setViewType(ViewType.JSP);
+        me.setError404View("/page/error404.html");
     }
 
     /**

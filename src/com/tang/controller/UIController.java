@@ -42,4 +42,12 @@ public class UIController extends CollegeController {
     public void queryTeacherUI(){
         render("/page/teacher/query.jsp");
     }
+
+    /**
+     * 教师详情页面
+     */
+    @ActionKey("/UI/detailTeacherUI")
+    public void detailTeacherUI(){
+        render("/page/teacher/detail.jsp");
+    }
 }

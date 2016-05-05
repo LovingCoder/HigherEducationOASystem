@@ -26,22 +26,23 @@ public class TeacherController extends Controller {
 
     /**
      * 添加教师
+     *
      * @throws Exception
      */
     @ActionKey("/teacher/addTeacher")
     @Before(Tx.class)
-    public void addTeacher() throws Exception{
+    public void addTeacher() throws Exception {
         HttpKit.setCharSet("utf-8");
         RequestBean requestBean = RequestBeanKit.getRequestBean(getRequest());
         Boolean result = Teacher.dao.addTeacherInfo(requestBean);
         JSONObject responseObject;
         //返回结果 成功返回0 失败返回1
-        if (result){
-            responseObject = ResponseBeanKit.responseBean(SysConstant.CODE.SUCCESS,SysConstant.TEACHER.ADDSUCCESS,null,null);
-        }else {
-            responseObject = ResponseBeanKit.responseBean(SysConstant.CODE.FAIL,SysConstant.TEACHER.ADDFAIL,null,null);
+        if (result) {
+            responseObject = ResponseBeanKit.responseBean(SysConstant.CODE.SUCCESS, SysConstant.TEACHER.ADDSUCCESS, null, null);
+        } else {
+            responseObject = ResponseBeanKit.responseBean(SysConstant.CODE.FAIL, SysConstant.TEACHER.ADDFAIL, null, null);
         }
-        System.out.println("/teacher/addTeacher---"+responseObject);
+        System.out.println("/teacher/addTeacher---" + responseObject);
         renderJson(responseObject);
     }
 
@@ -49,19 +50,37 @@ public class TeacherController extends Controller {
      * 查看本学院教师列表
      */
     @ActionKey("/teacher/queryTeacher")
-    public void queryTeacher(){
+    public void queryTeacher() {
         HttpKit.setCharSet("utf-8");
         RequestBean requestBean = RequestBeanKit.getRequestBean(getRequest());
         Page<Record> recordPage = Teacher.dao.queryTeacher(requestBean);
         JSONObject responseObject;
-        if (null != recordPage){
+        if (null != recordPage) {
             requestBean.getPageInfo().setCount(recordPage.getTotalRow());
             requestBean.getPageInfo().setTotalPage(recordPage.getTotalPage());
-            responseObject = ResponseBeanKit.responseBean(SysConstant.CODE.SUCCESS,null, RecordKit.listRecordToMap(recordPage.getList()),requestBean.getPageInfo());
-        }else {
-            responseObject = ResponseBeanKit.responseBean(SysConstant.CODE.FAIL,SysConstant.TEACHER.QUERYTEACHERNULL,null,null);
+            responseObject = ResponseBeanKit.responseBean(SysConstant.CODE.SUCCESS, null, RecordKit.listRecordToMap(recordPage.getList()), requestBean.getPageInfo());
+        } else {
+            responseObject = ResponseBeanKit.responseBean(SysConstant.CODE.FAIL, SysConstant.TEACHER.QUERYTEACHERNULL, null, null);
         }
-        System.out.println("/teacher/queryTeacher---"+responseObject);
+        System.out.println("/teacher/queryTeacher---" + responseObject);
+        renderJson(responseObject);
+    }
+
+    /**
+     * 获取教师详情
+     */
+    @ActionKey("/teacher/detailTeacher")
+    public void detailTeacher() {
+        HttpKit.setCharSet("utf-8");
+        RequestBean requestBean = RequestBeanKit.getRequestBean(getRequest());
+        Record record = Teacher.dao.detailTeacher(requestBean);
+        JSONObject responseObject;
+        if (null != record) {
+            responseObject = ResponseBeanKit.responseBean(SysConstant.CODE.SUCCESS, null, record.getColumns(), null);
+        } else {
+            responseObject = ResponseBeanKit.responseBean(SysConstant.CODE.FAIL, SysConstant.TEACHER.TEACHERNOTEXIST, null, null);
+        }
+        System.out.println("/teacher/queryTeacher---" + responseObject);
         renderJson(responseObject);
     }
 }

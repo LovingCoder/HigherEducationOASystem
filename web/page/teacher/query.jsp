@@ -74,7 +74,7 @@
                                 "<td> " + checkTdNUllOrEmpty(teacherList[i].schoolName) + " </td>" +
                                 "<td> " + checkTdNUllOrEmpty(teacherList[i].collegeName) + " </td>" +
                                 "<td> " + checkTdNUllOrEmpty(teacherList[i].className) + " </td>" +
-                                "<td><button type='button' class='btn btn-warning marginTB-xs'>详情</button>&nbsp;<button type='button' class='btn btn-danger marginTB-xs'>删除</button></td>" +
+                                "<td><button class='btn btn-warning marginTB-xs' onclick=toDetailPgae(teacherList[i].id)>详情</button>&nbsp;<button type='button' class='btn btn-danger marginTB-xs'>删除</button></td>" +
                                 "</tr>"
                         $("#tbody").append(str);
                     }
@@ -85,7 +85,16 @@
             })
         });
 
-        function
+//        $("button").live('click',function (teacherId){
+//            $(this) //就是点击那那个button
+//            alert(teacherId);
+//            window.location.href = "/UI/detailTeacherUI?teacherId="+teacherId;
+//        });
+
+        function toDetailPgae(teacherId){
+            alert(teacherId);
+            window.location.href = "/UI/detailTeacherUI?teacherId="+teacherId;
+        }
     </script>
 
 </head>

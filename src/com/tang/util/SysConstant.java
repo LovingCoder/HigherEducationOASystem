@@ -93,5 +93,6 @@ public class SysConstant {
         public static final String ADDSUCCESS = "添加教师成功！";
         public static final String ADDFAIL = "添加教师失败！";
         public static final String QUERYTEACHERNULL = "没有教师！";
+        public static final String TEACHERNOTEXIST = "教师不存在！";
     }
 }

@@ -8,10 +8,7 @@ import com.jfinal.plugin.activerecord.Record;
 import com.tang.bean.RequestBean;
 import com.tang.config.OAConfig;
 import com.tang.model.base.BaseTeacher;
-import com.tang.util.DateUtils;
-import com.tang.util.IDKit;
-import com.tang.util.ParamKit;
-import com.tang.util.SysConstant;
+import com.tang.util.*;
 import org.apache.xmlbeans.impl.tool.Extension;
 
 import java.util.ArrayList;
@@ -23,88 +20,106 @@ import java.util.List;
  */
 @SuppressWarnings("serial")
 public class Teacher extends BaseTeacher<Teacher> {
-	public static final Teacher dao = new Teacher();
+    public static final Teacher dao = new Teacher();
 
-	/**
-	 * 系主任添加教师
-	 * @param requestBean
-	 * @return
-	 */
-	public Boolean addTeacherInfo(RequestBean requestBean) throws Exception{
-		String name = ParamKit.checkObjectNotNull(requestBean,"teacherName");
-		String sex = ParamKit.checkObjectNotNull(requestBean,"sex");
-		String bornDateStr = ParamKit.checkObjectNotNull(requestBean,"bornDate");
-		Date bornDate = DateUtils.formateDate(bornDateStr,"yyyyMMdd");
-		String classId = ParamKit.checkObjectNotNull(requestBean,"classId");
-		String collegeId = ParamKit.checkObjectNotNull(requestBean,"collegeId");
-		String schoolId = ParamKit.checkObjectNotNull(requestBean,"schoolId");
-		String email = ParamKit.checkObjectNotNull(requestBean,"email");
-		Record teacher = new Record();
-		teacher.set("id", IDKit.uuid())
-				.set("isDelete", SysConstant.ISDELETE.NO)
-				.set("createTime", DateUtils.getCurrentDate())
-				.set("updateTime",DateUtils.getCurrentDate())
-				.set("teacherName",name)
-				.set("sex",sex)
-				.set("bornDate",bornDate)
-				.set("classId",classId)
-				.set("collegeId",collegeId)
-				.set("schoolId",schoolId)
-				.set("email",email);
-		Boolean result = Db.save("teacher", teacher);
-		if (result){
-			return result;
-		}else {
-			throw new Exception("添加教师失败！");
-		}
-	}
+    /**
+     * 系主任添加教师
+     *
+     * @param requestBean
+     * @return
+     */
+    public Boolean addTeacherInfo(RequestBean requestBean) throws Exception {
+        String name = ParamKit.checkObjectNotNull(requestBean, "teacherName");
+        String sex = ParamKit.checkObjectNotNull(requestBean, "sex");
+        String bornDateStr = ParamKit.checkObjectNotNull(requestBean, "bornDate");
+        Date bornDate = DateUtils.formateDate(bornDateStr, "yyyyMMdd");
+        String classId = ParamKit.checkObjectNotNull(requestBean, "classId");
+        String collegeId = ParamKit.checkObjectNotNull(requestBean, "collegeId");
+        String schoolId = ParamKit.checkObjectNotNull(requestBean, "schoolId");
+        String email = ParamKit.checkObjectNotNull(requestBean, "email");
+        Record teacher = new Record();
+        teacher.set("id", IDKit.uuid())
+                .set("isDelete", SysConstant.ISDELETE.NO)
+                .set("createTime", DateUtils.getCurrentDate())
+                .set("updateTime", DateUtils.getCurrentDate())
+                .set("teacherName", name)
+                .set("sex", sex)
+                .set("bornDate", bornDate)
+                .set("classId", classId)
+                .set("collegeId", collegeId)
+                .set("schoolId", schoolId)
+                .set("email", email);
+        Boolean result = Db.save("teacher", teacher);
+        if (result) {
+            return result;
+        } else {
+            throw new Exception("添加教师失败！");
+        }
+    }
 
-	/**
-	 * 获取教师列表
-	 * @param requestBean
-	 * @return
-	 */
-	public Page<Record> queryTeacher(RequestBean requestBean){
+    /**
+     * 获取教师列表
+     *
+     * @param requestBean
+     * @return
+     */
+    public Page<Record> queryTeacher(RequestBean requestBean) {
 
-		String teacherName = ParamKit.checkObjectNotNull(requestBean,"teacherName");
-		String collegeId = ParamKit.checkObjectNotNull(requestBean,"collegeId");
-		String schoolId = ParamKit.checkObjectNotNull(requestBean,"schoolId");
-		String classId = ParamKit.checkObjectNotNull(requestBean, "classId");
-		String select = "SELECT teacher.*,class.className,college.collegeName,school.schoolName";
-		StringBuilder sqlExcept = new StringBuilder("FROM teacher " +
-				"LEFT JOIN college ON college.id = teacher.collegeId AND college.isDelete = ? " +
-				"LEFT JOIN school ON school.id = teacher.schoolId AND school.isDelete = ? " +
-				"LEFT JOIN class ON class.id = teacher.classId AND class.isDelete = ? " +
-				"WHERE teacher.schoolId = ? " +
-				"AND teacher.collegeId = ? ");
-		List<Object> paras = new ArrayList<Object>();
-		paras.add(SysConstant.ISDELETE.NO);
-		paras.add(SysConstant.ISDELETE.NO);
-		paras.add(SysConstant.ISDELETE.NO);
-		paras.add(schoolId);
-		paras.add(collegeId);
-		if (!Strings.isNullOrEmpty(classId)){
-			sqlExcept.append(" AND class.id = ? ");
-			paras.add(classId);
-		}
-		if (!Strings.isNullOrEmpty(teacherName)){
-			sqlExcept.append(" AND teacher.teacherName LIKE ? ");
-			paras.add("%"+teacherName+"%");
-		}
-		sqlExcept.append(" AND teacher.isDelete = ? ");
-		paras.add(SysConstant.ISDELETE.NO);
-		Page<Record> recordPage = Db.paginate(requestBean.getPageInfo().getCurrentPage(), requestBean.getPageInfo().getPageSize(), select, sqlExcept.toString(), paras.toArray());
-		return recordPage;
-	}
+        String teacherName = ParamKit.checkObjectNotNull(requestBean, "teacherName");
+        String collegeId = ParamKit.checkObjectNotNull(requestBean, "collegeId");
+        String schoolId = ParamKit.checkObjectNotNull(requestBean, "schoolId");
+        String classId = ParamKit.checkObjectNotNull(requestBean, "classId");
+        String select = "SELECT teacher.*,class.className,college.collegeName,school.schoolName";
+        StringBuilder sqlExcept = new StringBuilder("FROM teacher " +
+                "LEFT JOIN college ON college.id = teacher.collegeId AND college.isDelete = ? " +
+                "LEFT JOIN school ON school.id = teacher.schoolId AND school.isDelete = ? " +
+                "LEFT JOIN class ON class.id = teacher.classId AND class.isDelete = ? " +
+                "WHERE teacher.schoolId = ? " +
+                "AND teacher.collegeId = ? ");
+        List<Object> paras = new ArrayList<Object>();
+        paras.add(SysConstant.ISDELETE.NO);
+        paras.add(SysConstant.ISDELETE.NO);
+        paras.add(SysConstant.ISDELETE.NO);
+        paras.add(schoolId);
+        paras.add(collegeId);
+        if (!Strings.isNullOrEmpty(classId)) {
+            sqlExcept.append(" AND class.id = ? ");
+            paras.add(classId);
+        }
+        if (!Strings.isNullOrEmpty(teacherName)) {
+            sqlExcept.append(" AND teacher.teacherName LIKE ? ");
+            paras.add("%" + teacherName + "%");
+        }
+        sqlExcept.append(" AND teacher.isDelete = ? ");
+        paras.add(SysConstant.ISDELETE.NO);
+        Page<Record> recordPage = Db.paginate(requestBean.getPageInfo().getCurrentPage(), requestBean.getPageInfo().getPageSize(), select, sqlExcept.toString(), paras.toArray());
+        return recordPage;
+    }
 
-	/**
-	 * 获取教师信息详情 包括选课信息
-	 * @param requestBean
-	 * @return
-	 */
-	public Record detailTeacher(RequestBean requestBean){
-		String teacherId = ParamKit.checkObjectNotNull(requestBean,"teacherId");
-
-		return null;
-	}
+    /**
+     * 获取教师信息详情 包括选课信息
+     *
+     * @param requestBean
+     * @return
+     */
+    public Record detailTeacher(RequestBean requestBean) {
+        String teacherId = ParamKit.checkObjectNotNull(requestBean, "teacherId");
+        //获取教师信息
+        String sqlTeacher = "SELECT teacher.*,class.className,college.collegeName,school.schoolName FROM teacher " +
+                "LEFT JOIN college ON college.id = teacher.collegeId AND college.isDelete = ? " +
+                "LEFT JOIN school ON school.id = teacher.schoolId AND school.isDelete = ? " +
+                "LEFT JOIN class ON class.id = teacher.classId AND class.isDelete = ? " +
+                "WHERE teacher.id = ? AND teacher.isDelete = ?";
+        Record teacher = Db.findFirst(sqlTeacher, SysConstant.ISDELETE.NO, SysConstant.ISDELETE.NO, SysConstant.ISDELETE.NO, teacherId, SysConstant.ISDELETE.NO);
+        if (null == teacher) {
+            return null;
+        }
+        //获取教师所选的课 任务书
+        String sqlTaskbook = "SELECT teacher_taskbook.teacherId,taskbook.* FROM teacher_taskbook " +
+                "LEFT JOIN taskbook ON taskbook.id = teacher_taskbook.taskbookId AND taskbook.isDelete = ? " +
+                "WHERE teacher_taskbook.teacherId = ? AND teacher_taskbook.isDelete = ?";
+        List<Record> taskbookList = Db.find(sqlTaskbook, SysConstant.ISDELETE.NO, teacherId, SysConstant.ISDELETE.NO);
+        teacher.set("teskbookList", RecordKit.listRecordToMap(taskbookList));
+        return teacher;
+    }
 }

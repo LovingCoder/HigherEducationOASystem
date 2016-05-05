@@ -58,6 +58,8 @@ public class SysConstant {
     public static class COLLEGE{
         public static final String ADDSUCCESS = "新增学院信息成功！";
         public static final String ADDFAIL = "新增学院信息失败！";
+        public static final String DETAILSUCCESS = "获取学院信息详情成功！";
+        public static final String DETAILFAIL = "获取学院信息详情失败！";
     }
 
     /**
@@ -82,5 +84,14 @@ public class SysConstant {
      */
     public static class TIMEFORMAT{
         public static final String DATE = "yyyy-MM-dd HH:mm:ss";
+    }
+
+    /**
+     * 教师返回提示
+     */
+    public static class TEACHER{
+        public static final String ADDSUCCESS = "添加教师成功！";
+        public static final String ADDFAIL = "添加教师失败！";
+        public static final String QUERYTEACHERNULL = "没有教师！";
     }
 }

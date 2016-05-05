@@ -69,7 +69,7 @@
                              class="img-circle inline-block user-profile-pic">
 
                         <div class="user-detail inline-block">
-                            UserName
+                            ${sessionScope.user.userName}
                             <i class="fa fa-angle-down"></i>
                         </div>
                     </a>

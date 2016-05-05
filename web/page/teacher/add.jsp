@@ -21,22 +21,36 @@
     <!-- Simplify -->
     <link href="/css/simplify.min.css" rel="stylesheet">
 
-    <link href="/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    <link href="/css/DateTimePicker.css" rel="stylesheet">
 
     <script src="/jquery/jquery.min.js"></script>
     <script src="/bootstrap/js/bootstrap.min.js"></script>
-    <script src="/js/bootstrap-datetimepicker.zh-CN.js"></script>
-    <script src="/js/bootstrap-datetimepicker.js"></script>
     <script src="/jquery/jquerysession.js"></script>
+    <script src="/js/DatetimePicker-i18n-zh-CN.js"></script>
+    <script src="/js/DateTimePicker.js"></script>
+
+    <script src="/js/validation.js"></script>
     <script type="application/javascript">
 
+
+        $(document).ready(function () {
+            $("#dtBox").DateTimePicker({
+
+                isPopup: false
+
+            });
+        });
+
         /**
-        * 获取学校信息
+         * 获取当前登录教师所在的学院信息详情
          */
-        $(function(){
-            var schoolId = $("#session").val();
-            if(null == schoolId || '' == schoolId){
-                alert("对不起！您没有在学校任职！无法执行操作！");
+        $(function () {
+            //获取session 得到当前登录教师所在学院id
+            var session =<%=session.getAttribute("user")%>;
+            var collegeId = session.teacher.collegeId;
+            if (null == collegeId || '' == collegeId) {
+                alert("对不起！您没有在任何学院任职！无法执行操作！");
+                window.location.reload();
                 return false;
             }
             var para = {
@@ -45,7 +59,7 @@
                 "sessionId": "2c88449748214631ac43e6b370bd1034",
                 "requestId": "1a30fa8c-362d-4634-86f6-6f1e600e40db",
                 "requestContent": {
-                    "schoolId":schoolId
+                    "collegeId": collegeId
                 },
                 "pageInfo": {
                     "pageSize": 10,
@@ -53,33 +67,90 @@
                 }
             };
             $.ajax({
-                data:para,
-                type:"post",
-                url:"/school/getSchoolById",
-                dataType:"json",
-                cache:false,
-                async:false,
-                success:function(data){
-                    alert("请求成功"+data.responseContent.schoolName);
-                    $("#school").attr("value",data.responseContent.schoolName);;
+                data: para,
+                type: "post",
+                url: "/college/getCollegeByTeacherId",
+                dataType: "json",
+                cache: false,
+                async: false,
+                success: function (data) {
+                    //给学校输入框赋值
+                    $("#schoolId").attr("value", data.responseContent.schoolId);
+//                    alert($("#schoolId").val());
+                    $("#school").attr("value", data.responseContent.schoolName);
+                    //给学院输入框赋值
+                    $("#collegeId").attr("value", data.responseContent.id);
+//                    alert($("#collegeId").val());
+                    $("#college").attr("value", data.responseContent.collegeName);
                 },
-                error:function(){
+                error: function () {
                     alert("请求失败");
                 }
             })
         });
 
-        function addTeacher() {
+        /**
+         * 获取当前学院下的所有班级
+         */
+        $(function () {
+            var session =<%=session.getAttribute("user")%>;
+            var collegeId = session.teacher.collegeId;
+            var schoolId = session.teacher.schoolId;
+            if (null == collegeId || '' == collegeId || null == schoolId || '' == schoolId) {
+                alert("对不起！您没有在该学校或者学院任职！无法执行操作！");
+                return false;
+            }
             var para = {
                 "requestTime": "2016-03-15 15:38:09.009",
                 "requestMethod": "",
                 "sessionId": "2c88449748214631ac43e6b370bd1034",
                 "requestId": "1a30fa8c-362d-4634-86f6-6f1e600e40db",
                 "requestContent": {
-                    "courseName": $("#courseName").val(),
-                    "major": $("#major").val(),
-                    "courseProperty": $("#courseProperty").val(),
-                    "term": $("#term").val()
+                    "collegeId": collegeId,
+                    "schoolId": schoolId
+                },
+                "pageInfo": {
+                    "pageSize": 10,
+                    "currentPage": 1
+                }
+            };
+            $.ajax({
+                data: para,
+                type: "post",
+                url: "/class/queryClass",
+                dataType: "json",
+                cache: false,
+                async: false,
+                success: function (data) {
+                    //给班级下拉框填充值
+                    classList = data.responseContent;
+                    for (var i in classList) {
+                        var str = "<option value='" + classList[i].id + "'>" + classList[i].className + "</option>";
+                        $("#selectClass").append(str);
+                    }
+                },
+                error: function () {
+                    alert("请求失败");
+                }
+            })
+        });
+
+        function addTeacher() {
+            var classId = $("#selectClass").val();
+            var sex = $("input[name='sex']:checked").val();
+            var para = {
+                "requestTime": "2016-03-15 15:38:09.009",
+                "requestMethod": "",
+                "sessionId": "2c88449748214631ac43e6b370bd1034",
+                "requestId": "1a30fa8c-362d-4634-86f6-6f1e600e40db",
+                "requestContent": {
+                    "teacherName": $("#teacherName").val(),
+                    "sex": sex,
+                    "bornDate": $("#bornDate").val(),
+                    "classId": classId,
+                    "collegeId": $("#collegeId").val(),
+                    "schoolId": $("#schoolId").val(),
+                    "email": $("#email").val()
                 },
                 "pageInfo": {
                     "pageSize": 10,
@@ -92,27 +163,24 @@
                 cache: false,
                 type: "POST",
                 dataType: "json",		  //json格式，重要
-                url: "/taskbook/list",
-                async: false,
+                url: "/teacher/addTeacher",
+                async: true,
                 success: function (data) {
                     if (0 == data.status) {
-                        //将请求成功的数据显示出来
-                        var responseContent = data.responseContent;
-                        var tbody = $("#tbody");
+                        alert(data.message);
+                        window.location.href = "/UI/queryTeacherUI";
                     } else {
-                        alert(data["message"]);
+                        alert(data.message);
                     }
                 },
                 error: function () {
-                    alert("调用失败");
+                    alert("发生异常！");
                 }
             })
         }
     </script>
 </head>
 <body>
-
-<input hidden="hidden" id="session" value="${sessionScope.user.teacher.schoolId}">
 
 <%--顶部导航栏--%>
 <div class="padding-md">
@@ -155,30 +223,16 @@
                 </div>
             </div>
         </div>
-
         <%--出生日期--%>
         <div class="form-group">
             <label class="control-label col-sm-1">出生日期：</label>
 
-            <div class="input-group date form_date col-sm-3" data-date="" data-date-format="dd MM yyyy"
-                 data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
-                <input class="form-control" size="16" type="text" value="选择日期" readonly="readonly" id="bornDate">
-                <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
-                <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+            <div class="col-sm-3">
+                <input type="text" size="16" data-field="date" readonly="readonly" id="bornDate" class="form-control"
+                       value="选择日期" data-format="yyyy-MM-dd">
             </div>
+            <div id="dtBox"></div>
         </div>
-        <script type="application/javascript">
-            $('.form_date').datetimepicker({
-                language: 'zh-CN',
-                weekStart: 1,
-                todayBtn: 1,
-                autoclose: 1,
-                todayHighlight: 1,
-                startView: 2,
-                minView: 2,
-                forceParse: 0
-            });
-        </script>
         <div class="form-group">
             <label class="col-sm-1 control-label">Email</label>
 
@@ -193,7 +247,9 @@
             <label class="col-sm-1 control-label">学校：</label>
 
             <div class="col-sm-3">
-                <input type="text" placeholder="学校" class="form-control input-sm" data-parsley-required="true" readonly="readonly"
+                <input type="hidden" id="schoolId">
+                <input type="text" placeholder="学校" class="form-control input-sm" data-parsley-required="true"
+                       readonly="readonly"
                        data-parsley-type="email" id="school">
             </div>
         </div>
@@ -202,9 +258,10 @@
             <label class="col-sm-1 control-label">学院：</label>
 
             <div class="col-sm-3">
-                <select class="form-control" id="selectCollege">
-
-                </select>
+                <input type="hidden" id="collegeId">
+                <input type="text" placeholder="学院" class="form-control input-sm" data-parsley-required="true"
+                       readonly="readonly"
+                       data-parsley-type="email" id="college">
             </div>
         </div>
 
@@ -214,14 +271,13 @@
 
             <div class="col-sm-3">
                 <select class="form-control" id="selectClass">
-
                 </select>
             </div>
         </div>
 
 
         <div style="margin-left: 70px">
-            <button type="submit" class="btn btn-info">添加</button>
+            <button type="submit" class="btn btn-info" onclick="addTeacher()">添加</button>
         </div>
     </div>
 

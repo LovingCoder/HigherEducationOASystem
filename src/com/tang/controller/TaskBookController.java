@@ -1,5 +1,6 @@
 package com.tang.controller;
 
+import com.alibaba.fastjson.JSONObject;
 import com.jfinal.aop.Before;
 import com.jfinal.core.ActionKey;
 import com.jfinal.core.Controller;
@@ -39,13 +40,16 @@ public class TaskBookController extends Controller {
         RequestBean requestBean = RequestBeanKit.getRequestBean(getRequest());
         Page<Record> recordPage = Taskbook.dao.taskbookList(requestBean);
         PageInfo pageInfo = requestBean.getPageInfo();
+        JSONObject responseObject;
         if (null != recordPage){
             pageInfo.setCount(recordPage.getTotalRow());
             pageInfo.setTotalPage(recordPage.getTotalPage());
-            renderJson(ResponseBeanKit.responseBean(SysConstant.CODE.SUCCESS,SysConstant.TASKBOOK.QUERYSUCCESS,RecordKit.listRecordToMap(recordPage.getList()),pageInfo));
+            responseObject = ResponseBeanKit.responseBean(SysConstant.CODE.SUCCESS,SysConstant.TASKBOOK.QUERYSUCCESS,RecordKit.listRecordToMap(recordPage.getList()),pageInfo);
         }else {
-            renderJson(ResponseBeanKit.responseBean(SysConstant.CODE.SUCCESS,SysConstant.TASKBOOK.UPLOADFAIL,null,pageInfo));
+            responseObject = ResponseBeanKit.responseBean(SysConstant.CODE.FAIL,SysConstant.TASKBOOK.UPLOADFAIL,null,pageInfo);
         }
+        System.out.println("/taskbook/list---"+responseObject);
+        renderJson(responseObject);
     }
 
     /**
@@ -58,12 +62,14 @@ public class TaskBookController extends Controller {
         UploadFile uploadFile = getFile("file","uploadFiles");
         String term = getPara("term");
         List<TaskBookExcel> list = TaskExcelKit.readTaskExcel(uploadFile.getFile());
-        System.out.println(list.size());
-        Boolean result = Taskbook.dao.importTaskbook(list,term);
+        Boolean result = Taskbook.dao.importTaskbook(list, term);
+        JSONObject responseObejct;
         if (result){
-            renderJson(ResponseBeanKit.responseBean(SysConstant.CODE.SUCCESS,SysConstant.TASKBOOK.UPLOADSUCCESS, null,null));
+            responseObejct = ResponseBeanKit.responseBean(SysConstant.CODE.SUCCESS,SysConstant.TASKBOOK.UPLOADSUCCESS, null,null);
         }else {
-            renderJson(ResponseBeanKit.responseBean(SysConstant.CODE.FAIL,SysConstant.TASKBOOK.UPLOADFAIL,null,null));
+            responseObejct = ResponseBeanKit.responseBean(SysConstant.CODE.FAIL,SysConstant.TASKBOOK.UPLOADFAIL,null,null);
         }
+        System.out.println("/taskbook/uploadTaskbook---"+responseObejct);
+        renderJson(responseObejct);
     }
 }

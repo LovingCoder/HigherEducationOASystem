@@ -7,8 +7,16 @@
 <html>
 <head>
     <title>主页面</title>
+    <script src="/jquery/jquery.min.js"></script>
+    <script type="application/javascript">
+        $(function(){
+            var session =<%=session.getAttribute("user")%>;
+            if(null == session){
+                alert("登录超时！");
+            }
+        });
 
-    </head>
+    </script>
 </head>
 
 <frameset rows="55px,*" border="0">

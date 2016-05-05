@@ -32,6 +32,8 @@
 
     <script src="/jquery/jquery.min.js"></script>
 
+    <script src="/js/validation.js"></script>
+
     <script type="text/javascript">
 
         /*获取任务书列表 页面加载就获取*/
@@ -67,26 +69,26 @@
                         var tbody = $("#tbody");
                         for (var i in responseContent) {
                             var str = "<tr> " +
-                                    "<td> " + checkNUllOrEmpty(responseContent[i].serialNumber) + " </td>" +
-                                    "<td> " + checkNUllOrEmpty(responseContent[i].courseCode) + " </td> " +
-                                    "<td> " + checkNUllOrEmpty(responseContent[i].courseName) + " </td>" +
-                                    "<td> " + checkNUllOrEmpty(responseContent[i].teachingNumber) + " </td>" +
-                                    "<td> " + checkNUllOrEmpty(responseContent[i].major) + " </td>" +
-                                    "<td> " + checkNUllOrEmpty(responseContent[i].schoolZone) + " </td>" +
-                                    "<td> " + checkNUllOrEmpty(responseContent[i].classAndStudent) + " </td>" +
-                                    "<td> " + checkNUllOrEmpty(responseContent[i].grade) + " </td>" +
-                                    "<td> " + checkNUllOrEmpty(responseContent[i].totalStudent) + " </td>" +
-                                    "<td> " + checkNUllOrEmpty(responseContent[i].testType) + " </td>" +
-                                    "<td> " + checkNUllOrEmpty(responseContent[i].weekTime) + " </td>" +
-                                    "<td> " + checkNUllOrEmpty(responseContent[i].totalTime) + " </td>" +
-                                    "<td> " + checkNUllOrEmpty(responseContent[i].startAndEndWeek) + " </td>" +
-                                    "<td> " + checkNUllOrEmpty(responseContent[i].classHour) + " </td>" +
-                                    "<td> " + checkNUllOrEmpty(responseContent[i].teacherSign) + " </td>" +
-                                    "<td> " + checkNUllOrEmpty(responseContent[i].title) + " </td>" +
-                                    "<td> " + checkNUllOrEmpty(responseContent[i].courseProperty) + " </td>" +
-                                    "<td> " + checkNUllOrEmpty(responseContent[i].mergeClassOpinion) + " </td>" +
-                                    "<td> " + checkNUllOrEmpty(responseContent[i].classRoomType) + " </td>" +
-                                    "<td> " + checkNUllOrEmpty(responseContent[i].term) + " </td>" +
+                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].serialNumber) + " </td>" +
+                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].courseCode) + " </td> " +
+                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].courseName) + " </td>" +
+                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].teachingNumber) + " </td>" +
+                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].major) + " </td>" +
+                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].schoolZone) + " </td>" +
+                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].classAndStudent) + " </td>" +
+                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].grade) + " </td>" +
+                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].totalStudent) + " </td>" +
+                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].testType) + " </td>" +
+                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].weekTime) + " </td>" +
+                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].totalTime) + " </td>" +
+                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].startAndEndWeek) + " </td>" +
+                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].classHour) + " </td>" +
+                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].teacherSign) + " </td>" +
+                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].title) + " </td>" +
+                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].courseProperty) + " </td>" +
+                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].mergeClassOpinion) + " </td>" +
+                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].classRoomType) + " </td>" +
+                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].term) + " </td>" +
                                     "</tr>"
                             tbody.append(str);
                         }
@@ -97,18 +99,6 @@
 
             });
         });
-
-        /**
-         * 判断是否为空
-         * @param data
-         */
-        function checkNUllOrEmpty(data) {
-            if (null == data || '' == data) {
-                return "<span class='label label-danger'>未填写</span>";
-            } else {
-                return data;
-            }
-        }
 
         function go() {
             var number = document.getElementById("jump").value;
@@ -157,26 +147,26 @@
                         var tbody = $("#tbody");
                         for (var i in responseContent) {
                             var str = "<tr> " +
-                                    "<td> " + checkNUllOrEmpty(responseContent[i].serialNumber) + " </td>" +
-                                    "<td> " + checkNUllOrEmpty(responseContent[i].courseCode) + " </td> " +
-                                    "<td> " + checkNUllOrEmpty(responseContent[i].courseName) + " </td>" +
-                                    "<td> " + checkNUllOrEmpty(responseContent[i].teachingNumber) + " </td>" +
-                                    "<td> " + checkNUllOrEmpty(responseContent[i].major) + " </td>" +
-                                    "<td> " + checkNUllOrEmpty(responseContent[i].schoolZone) + " </td>" +
-                                    "<td> " + checkNUllOrEmpty(responseContent[i].classAndStudent) + " </td>" +
-                                    "<td> " + checkNUllOrEmpty(responseContent[i].grade) + " </td>" +
-                                    "<td> " + checkNUllOrEmpty(responseContent[i].totalStudent) + " </td>" +
-                                    "<td> " + checkNUllOrEmpty(responseContent[i].testType) + " </td>" +
-                                    "<td> " + checkNUllOrEmpty(responseContent[i].weekTime) + " </td>" +
-                                    "<td> " + checkNUllOrEmpty(responseContent[i].totalTime) + " </td>" +
-                                    "<td> " + checkNUllOrEmpty(responseContent[i].startAndEndWeek) + " </td>" +
-                                    "<td> " + checkNUllOrEmpty(responseContent[i].classHour) + " </td>" +
-                                    "<td> " + checkNUllOrEmpty(responseContent[i].teacherSign) + " </td>" +
-                                    "<td> " + checkNUllOrEmpty(responseContent[i].title) + " </td>" +
-                                    "<td> " + checkNUllOrEmpty(responseContent[i].courseProperty) + " </td>" +
-                                    "<td> " + checkNUllOrEmpty(responseContent[i].mergeClassOpinion) + " </td>" +
-                                    "<td> " + checkNUllOrEmpty(responseContent[i].classRoomType) + " </td>" +
-                                    "<td> " + checkNUllOrEmpty(responseContent[i].term) + " </td>" +
+                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].serialNumber) + " </td>" +
+                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].courseCode) + " </td> " +
+                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].courseName) + " </td>" +
+                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].teachingNumber) + " </td>" +
+                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].major) + " </td>" +
+                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].schoolZone) + " </td>" +
+                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].classAndStudent) + " </td>" +
+                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].grade) + " </td>" +
+                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].totalStudent) + " </td>" +
+                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].testType) + " </td>" +
+                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].weekTime) + " </td>" +
+                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].totalTime) + " </td>" +
+                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].startAndEndWeek) + " </td>" +
+                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].classHour) + " </td>" +
+                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].teacherSign) + " </td>" +
+                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].title) + " </td>" +
+                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].courseProperty) + " </td>" +
+                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].mergeClassOpinion) + " </td>" +
+                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].classRoomType) + " </td>" +
+                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].term) + " </td>" +
                                     "</tr>"
                             tbody.append(str);
                         }
@@ -226,26 +216,26 @@
                         tbody.empty();
                         for (var i in responseContent) {
                             var str = "<tr> " +
-                                    "<td> " + checkNUllOrEmpty(responseContent[i].serialNumber) + " </td>" +
-                                    "<td> " + checkNUllOrEmpty(responseContent[i].courseCode) + " </td> " +
-                                    "<td> " + checkNUllOrEmpty(responseContent[i].courseName) + " </td>" +
-                                    "<td> " + checkNUllOrEmpty(responseContent[i].teachingNumber) + " </td>" +
-                                    "<td> " + checkNUllOrEmpty(responseContent[i].major) + " </td>" +
-                                    "<td> " + checkNUllOrEmpty(responseContent[i].schoolZone) + " </td>" +
-                                    "<td> " + checkNUllOrEmpty(responseContent[i].classAndStudent) + " </td>" +
-                                    "<td> " + checkNUllOrEmpty(responseContent[i].grade) + " </td>" +
-                                    "<td> " + checkNUllOrEmpty(responseContent[i].totalStudent) + " </td>" +
-                                    "<td> " + checkNUllOrEmpty(responseContent[i].testType) + " </td>" +
-                                    "<td> " + checkNUllOrEmpty(responseContent[i].weekTime) + " </td>" +
-                                    "<td> " + checkNUllOrEmpty(responseContent[i].totalTime) + " </td>" +
-                                    "<td> " + checkNUllOrEmpty(responseContent[i].startAndEndWeek) + " </td>" +
-                                    "<td> " + checkNUllOrEmpty(responseContent[i].classHour) + " </td>" +
-                                    "<td> " + checkNUllOrEmpty(responseContent[i].teacherSign) + " </td>" +
-                                    "<td> " + checkNUllOrEmpty(responseContent[i].title) + " </td>" +
-                                    "<td> " + checkNUllOrEmpty(responseContent[i].courseProperty) + " </td>" +
-                                    "<td> " + checkNUllOrEmpty(responseContent[i].mergeClassOpinion) + " </td>" +
-                                    "<td> " + checkNUllOrEmpty(responseContent[i].classRoomType) + " </td>" +
-                                    "<td> " + checkNUllOrEmpty(responseContent[i].term) + " </td>" +
+                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].serialNumber) + " </td>" +
+                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].courseCode) + " </td> " +
+                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].courseName) + " </td>" +
+                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].teachingNumber) + " </td>" +
+                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].major) + " </td>" +
+                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].schoolZone) + " </td>" +
+                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].classAndStudent) + " </td>" +
+                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].grade) + " </td>" +
+                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].totalStudent) + " </td>" +
+                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].testType) + " </td>" +
+                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].weekTime) + " </td>" +
+                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].totalTime) + " </td>" +
+                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].startAndEndWeek) + " </td>" +
+                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].classHour) + " </td>" +
+                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].teacherSign) + " </td>" +
+                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].title) + " </td>" +
+                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].courseProperty) + " </td>" +
+                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].mergeClassOpinion) + " </td>" +
+                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].classRoomType) + " </td>" +
+                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].term) + " </td>" +
                                     "</tr>"
                             tbody.append(str);
                         }

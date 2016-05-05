@@ -27,7 +27,9 @@ public class ClassController extends Controller{
         HttpKit.setCharSet("utf-8");
         RequestBean requestBean = RequestBeanKit.getRequestBean(getRequest());
         List<Record> recordList = Class.dao.queryClass(requestBean);
-        renderJson(ResponseBeanKit.responseBean(SysConstant.CODE.SUCCESS,null, RecordKit.listRecordToMap(recordList),null));
+        JSONObject responseObject = ResponseBeanKit.responseBean(SysConstant.CODE.SUCCESS, null, RecordKit.listRecordToMap(recordList), null);
+        System.out.println("/class/queryClass---"+responseObject);
+        renderJson(responseObject);
     }
 
 }

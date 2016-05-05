@@ -1,6 +1,7 @@
 package com.tang.model;
 
 import com.google.common.base.Strings;
+import com.jfinal.ext.kit.DateKit;
 import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.Page;
 import com.jfinal.plugin.activerecord.Record;
@@ -32,7 +33,8 @@ public class Teacher extends BaseTeacher<Teacher> {
 	public Boolean addTeacherInfo(RequestBean requestBean) throws Exception{
 		String name = ParamKit.checkObjectNotNull(requestBean,"teacherName");
 		String sex = ParamKit.checkObjectNotNull(requestBean,"sex");
-		String bornDate = ParamKit.checkObjectNotNull(requestBean,"bornDate");
+		String bornDateStr = ParamKit.checkObjectNotNull(requestBean,"bornDate");
+		Date bornDate = DateUtils.formateDate(bornDateStr,"yyyyMMdd");
 		String classId = ParamKit.checkObjectNotNull(requestBean,"classId");
 		String collegeId = ParamKit.checkObjectNotNull(requestBean,"collegeId");
 		String schoolId = ParamKit.checkObjectNotNull(requestBean,"schoolId");
@@ -67,25 +69,42 @@ public class Teacher extends BaseTeacher<Teacher> {
 		String teacherName = ParamKit.checkObjectNotNull(requestBean,"teacherName");
 		String collegeId = ParamKit.checkObjectNotNull(requestBean,"collegeId");
 		String schoolId = ParamKit.checkObjectNotNull(requestBean,"schoolId");
-		String classId = ParamKit.checkObjectNotNull(requestBean,"classId");
+		String classId = ParamKit.checkObjectNotNull(requestBean, "classId");
 		String select = "SELECT teacher.*,class.className,college.collegeName,school.schoolName";
-		StringBuilder sqlExcept = new StringBuilder("FROM teacher,class,college,school " +
-				"WHERE teacher.schoolId = ? AND teacher.collegeId = ? " +
-				"AND teacher.isDelete = ? AND teacher.classId = class.id ");
+		StringBuilder sqlExcept = new StringBuilder("FROM teacher " +
+				"LEFT JOIN college ON college.id = teacher.collegeId AND college.isDelete = ? " +
+				"LEFT JOIN school ON school.id = teacher.schoolId AND school.isDelete = ? " +
+				"LEFT JOIN class ON class.id = teacher.classId AND class.isDelete = ? " +
+				"WHERE teacher.schoolId = ? " +
+				"AND teacher.collegeId = ? ");
 		List<Object> paras = new ArrayList<Object>();
+		paras.add(SysConstant.ISDELETE.NO);
+		paras.add(SysConstant.ISDELETE.NO);
+		paras.add(SysConstant.ISDELETE.NO);
 		paras.add(schoolId);
 		paras.add(collegeId);
-		paras.add(SysConstant.ISDELETE.NO);
 		if (!Strings.isNullOrEmpty(classId)){
-			sqlExcept.append(" AND teacher.classId = ? ");
+			sqlExcept.append(" AND class.id = ? ");
 			paras.add(classId);
 		}
 		if (!Strings.isNullOrEmpty(teacherName)){
 			sqlExcept.append(" AND teacher.teacherName LIKE ? ");
 			paras.add("%"+teacherName+"%");
 		}
+		sqlExcept.append(" AND teacher.isDelete = ? ");
+		paras.add(SysConstant.ISDELETE.NO);
 		Page<Record> recordPage = Db.paginate(requestBean.getPageInfo().getCurrentPage(), requestBean.getPageInfo().getPageSize(), select, sqlExcept.toString(), paras.toArray());
 		return recordPage;
 	}
 
+	/**
+	 * 获取教师信息详情 包括选课信息
+	 * @param requestBean
+	 * @return
+	 */
+	public Record detailTeacher(RequestBean requestBean){
+		String teacherId = ParamKit.checkObjectNotNull(requestBean,"teacherId");
+
+		return null;
+	}
 }

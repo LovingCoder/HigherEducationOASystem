@@ -5,6 +5,8 @@ import com.jfinal.core.ActionKey;
 import com.jfinal.core.Controller;
 import com.jfinal.kit.HttpKit;
 import com.jfinal.kit.JsonKit;
+import com.jfinal.log.Log;
+import com.jfinal.log.Log4jLog;
 import com.jfinal.plugin.activerecord.Record;
 import com.jfinal.plugin.activerecord.tx.Tx;
 import com.tang.bean.PageInfo;
@@ -13,6 +15,7 @@ import com.tang.model.User;
 import com.tang.util.RequestBeanKit;
 import com.tang.util.ResponseBeanKit;
 import com.tang.util.SysConstant;
+import org.apache.log4j.Logger;
 
 
 /**
@@ -30,13 +33,16 @@ public class UserController extends Controller {
         HttpKit.setCharSet("utf-8");
         RequestBean requestBean = RequestBeanKit.getRequestBean(getRequest());
         Record record = User.me.userRegister(requestBean);
+        JSONObject responseObject;
         if (null != record){
             getSession().setAttribute("user", record);
             record.remove("password");
-            renderJson(ResponseBeanKit.responseBean(SysConstant.CODE.SUCCESS,null,record.getColumns(),null));
+            responseObject = ResponseBeanKit.responseBean(SysConstant.CODE.SUCCESS,null,record.getColumns(),null);
         }else {
-            renderJson(ResponseBeanKit.responseBean(SysConstant.CODE.FAIL,SysConstant.REGISTER.ERROR,null,null));
+            responseObject = ResponseBeanKit.responseBean(SysConstant.CODE.FAIL,SysConstant.REGISTER.ERROR,null,null);
         }
+        System.out.println("/user/register---"+responseObject);
+        renderJson(responseObject);
     }
 
     /**
@@ -47,16 +53,18 @@ public class UserController extends Controller {
         HttpKit.setCharSet("utf-8");
         RequestBean requestBean = RequestBeanKit.getRequestBean(getRequest());
         Record record = User.me.userLogin(requestBean);
+        JSONObject responseObject;
         if (null != record){
             JSONObject jsonObject = JSONObject.parseObject(JsonKit.toJson(record.getColumns()));
-            System.out.println(jsonObject);
             getSession().setAttribute("user", jsonObject);
             getSession().setMaxInactiveInterval(300);
             record.remove("password");
-            renderJson(ResponseBeanKit.responseBean(SysConstant.CODE.SUCCESS,null,record.getColumns(),new PageInfo()));
+            responseObject = ResponseBeanKit.responseBean(SysConstant.CODE.SUCCESS,null,record.getColumns(),new PageInfo());
         }else {
-            renderJson(ResponseBeanKit.responseBean(SysConstant.CODE.FAIL,SysConstant.LOGIN.ERROR,null,null));
+            responseObject = ResponseBeanKit.responseBean(SysConstant.CODE.FAIL,SysConstant.LOGIN.ERROR,null,null);
         }
+        System.out.println("/user/login---"+responseObject);
+        renderJson(responseObject);
     }
 
     /**
@@ -69,12 +77,15 @@ public class UserController extends Controller {
         HttpKit.setCharSet("utf-8");
         RequestBean requestBean = RequestBeanKit.getRequestBean(getRequest());
         String userId = getSession().getAttribute("id").toString();
-        Boolean result = User.me.completUserInfo(requestBean,userId);
+        Boolean result = User.me.completUserInfo(requestBean, userId);
+        JSONObject responseObject;
         //返回结果 成功返回0 失败返回1
         if (result){
-            renderJson(ResponseBeanKit.responseBean(SysConstant.CODE.SUCCESS,null,null,null));
+            responseObject = ResponseBeanKit.responseBean(SysConstant.CODE.SUCCESS,null,null,null);
         }else {
-            renderJson(ResponseBeanKit.responseBean(SysConstant.CODE.FAIL,null,null,null));
+            responseObject = ResponseBeanKit.responseBean(SysConstant.CODE.FAIL,null,null,null);
         }
+        System.out.println("/user/complet---"+responseObject);
+        renderJson(responseObject);
     }
 }

@@ -73,13 +73,14 @@ public class College extends BaseCollege<College> {
     /**
      * 获取学院信息详情
      *
-     * @param id
+     * @param requestBean
      * @return
      */
-    public Record detailCollegeInfo(String id) {
+    public Record detailCollegeInfo(RequestBean requestBean) {
+        String collegeId = ParamKit.checkObjectNotNull(requestBean,"collegeId");
         String sql = "SELECT college.*,school.schoolName,school.schoolDes FROM college,school " +
                 "WHERE college.id = ? AND college.isDelete = ? " +
                 "AND college.schoolId = school.id AND school.isDelete = ?";
-        return Db.findFirst(sql, id, SysConstant.ISDELETE.NO, SysConstant.ISDELETE.NO);
+        return Db.findFirst(sql, collegeId, SysConstant.ISDELETE.NO, SysConstant.ISDELETE.NO);
     }
 }

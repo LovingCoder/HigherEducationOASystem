@@ -50,4 +50,12 @@ public class UIController extends CollegeController {
     public void detailTeacherUI(){
         render("/page/teacher/detail.jsp");
     }
+
+    /**
+     * 选课页面
+     */
+    @ActionKey("/UI/chooseTaskbookUI")
+    public void chooseTaskbookUI(){
+        render("/page/mytaskbook/chooseTaskbook.jsp");
+    }
 }

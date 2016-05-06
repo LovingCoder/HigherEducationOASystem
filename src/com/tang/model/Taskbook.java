@@ -105,4 +105,79 @@ public class Taskbook extends BaseTaskbook<Taskbook> {
 		Page<Record> recordPage = Db.paginate(requestBean.getPageInfo().getCurrentPage(), requestBean.getPageInfo().getPageSize(), select, sqlExcept.toString(), paras.toArray());
 		return recordPage;
 	}
+
+	/**
+	 * 获取没有被教师选的任务书 课程
+	 * @param requestBean
+	 * @return
+	 */
+	public Page<Record> getNotChoosenTaskbook(RequestBean requestBean){
+		String schoolId = ParamKit.checkObjectNotNull(requestBean,"schoolId");
+		String collegeId = ParamKit.checkObjectNotNull(requestBean,"collegeId");
+
+		String term = ParamKit.checkObjectNotNull(requestBean,"term");
+		String courseName = ParamKit.checkObjectNotNull(requestBean, "courseName");
+		String major = ParamKit.checkObjectNotNull(requestBean, "major");
+		String courseProperty = ParamKit.checkObjectNotNull(requestBean,"courseProperty");
+
+		int pageNumber = requestBean.getPageInfo().getCurrentPage();
+		int pageSize = requestBean.getPageInfo().getPageSize();
+
+		List<Object> paras = new ArrayList<Object>();
+
+		String select = "SELECT *";
+		StringBuilder sqlExcept = new StringBuilder("FROM taskbook " +
+				"WHERE id NOT IN(SELECT teacher_taskbook.taskbookId FROM teacher_taskbook " +
+				"WHERE teacher_taskbook.teacherId IN(SELECT teacher.id FROM teacher " +
+				"WHERE teacher.schoolId = ? AND collegeId = ? AND isDelete = ?) AND teacher_taskbook.isDelete = ?) " +
+				"AND taskbook.isDelete = ?");
+		paras.add(schoolId);
+		paras.add(collegeId);
+		paras.add(SysConstant.ISDELETE.NO);
+		paras.add(SysConstant.ISDELETE.NO);
+		paras.add(SysConstant.ISDELETE.NO);
+		if (!Strings.isNullOrEmpty(courseName)){
+			sqlExcept.append(" AND courseName LIKE ? ");
+			paras.add("%" + courseName +"%");
+		}
+		if (!Strings.isNullOrEmpty(courseProperty)){
+			sqlExcept.append(" AND courseProperty LIKE ? ");
+			paras.add("%" + courseProperty +"%");
+		}
+		if (!Strings.isNullOrEmpty(major)){
+			sqlExcept.append(" AND major LIKE ? ");
+			paras.add("%" + major +"%");
+		}
+		if (!Strings.isNullOrEmpty(term)){
+			sqlExcept.append(" AND term LIKE ? ");
+			paras.add("%"+term+"%");
+		}
+		sqlExcept.append(" ORDER BY serialNumber ASC ");
+		Page<Record> recordPage = Db.paginate(pageNumber,pageSize,select,sqlExcept.toString(),paras.toArray());
+		return recordPage;
+	}
+
+	/**
+	 * 检查该任务书 课程是否已经被其他教师选定
+	 * @param requestBean
+	 * @return
+	 */
+	public Record checkTaskbookIsChoosen(RequestBean requestBean){
+		String taskbookId = ParamKit.checkObjectNotNull(requestBean,"taskbookId");
+		String sql = "SELECT taskbook.*,teacher.teacherName FROM teacher_taskbook " +
+				"LEFT JOIN teacher ON teacher.id = teacher_taskbook.teacherId " +
+				"LEFT JOIN taskbook ON taskbook.id = teacher_taskbook.taskbookId " +
+				"WHERE teacher_taskbook.taskbookId = ? AND teacher_taskbook.isDelete = ? AND teacher.isDelete = ? AND taskbook.isDelete = ?";
+		return Db.findFirst(sql,taskbookId,SysConstant.ISDELETE.NO,SysConstant.ISDELETE.NO,SysConstant.ISDELETE.NO);
+	}
+
+	/**
+	 * 根据id获取任务书 课程
+	 * @param requestBean
+	 * @return
+	 */
+	public Record getTaskbookById(RequestBean requestBean){
+		String taskbookId = ParamKit.checkObjectNotNull(requestBean,"taskbookId");
+		return Db.findFirst("SELECT * FROM taskbook WHERE id = ? AND isDelete = ?",taskbookId,SysConstant.ISDELETE.NO);
+	}
 }

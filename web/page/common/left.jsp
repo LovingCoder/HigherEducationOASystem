@@ -75,7 +75,7 @@
 									</span>
                 </a>
                 <ul class="submenu">
-                    <li><a href="ui_element.html"><span class="submenu-label">我要选课</span></a></li>
+                    <li><a href="/UI/chooseTaskbookUI"><span class="submenu-label">我要选课</span></a></li>
                     <li><a href="ui_element.html"><span class="submenu-label">我的选课列表</span></a></li>
                 </ul>
             </li>

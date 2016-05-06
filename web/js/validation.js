@@ -74,12 +74,32 @@ function checkSex(data) {
  * @param data
  * @returns {*}
  */
-function getAge(data){
+function getAge(data) {
     if (null == data || '' == data) {
         return "<span class='label label-danger'>未填写</span>";
     } else {
         var nowdate = new Date();
-        var age =nowdate.getFullYear() - data.substr(0,4);
+        var age = nowdate.getFullYear() - data.substr(0, 4);
         return age;
+    }
+}
+
+/**
+ * 判断校区
+ * 1 是莲花街
+ * 2 是中原路
+ * 3 是嵩山路
+ * @param data
+ * @returns {*}
+ */
+function checkSchoolZone(data) {
+    if (null == data || '' == data) {
+        return "<span class='label label-danger'>未填写</span>";
+    } else if ("1" == data) {
+        return "莲花街校区";
+    } else if ("2" == data) {
+        return "中原路校区";
+    } else if ("3" == data) {
+        return "嵩山路校区";
     }
 }

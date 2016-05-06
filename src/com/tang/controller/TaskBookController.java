@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.jfinal.aop.Before;
 import com.jfinal.core.ActionKey;
 import com.jfinal.core.Controller;
+import com.jfinal.kit.HttpKit;
 import com.jfinal.kit.JsonKit;
 import com.jfinal.plugin.activerecord.Page;
 import com.jfinal.plugin.activerecord.Record;
@@ -16,6 +17,7 @@ import com.tang.interceptor.LoginInterceptor;
 import com.tang.model.Taskbook;
 import com.tang.util.*;
 import org.apache.log4j.Logger;
+import org.eclipse.jetty.util.thread.Timeout;
 
 import java.util.List;
 
@@ -37,6 +39,7 @@ public class TaskBookController extends Controller {
      */
     @ActionKey("/taskbook/list")
     public void taskBookList(){
+        HttpKit.setCharSet("utf-8");
         RequestBean requestBean = RequestBeanKit.getRequestBean(getRequest());
         Page<Record> recordPage = Taskbook.dao.taskbookList(requestBean);
         PageInfo pageInfo = requestBean.getPageInfo();
@@ -71,5 +74,44 @@ public class TaskBookController extends Controller {
         }
         System.out.println("/taskbook/uploadTaskbook---"+responseObejct);
         renderJson(responseObejct);
+    }
+
+    /**
+     * 获取没有被教师选择的任务书 课程
+     */
+    @ActionKey("/taskbook/getNotChoosenTaskbook")
+    public void getNotChoosenTaskbook(){
+        HttpKit.setCharSet("utf-8");
+        RequestBean requestBean = RequestBeanKit.getRequestBean(getRequest());
+        Page<Record> recordPage = Taskbook.dao.getNotChoosenTaskbook(requestBean);
+        JSONObject responseObject;
+        if (null != recordPage){
+            requestBean.getPageInfo().setTotalPage(recordPage.getTotalPage());
+            requestBean.getPageInfo().setCount(recordPage.getTotalRow());
+            responseObject = ResponseBeanKit.responseBean(SysConstant.CODE.SUCCESS,null,RecordKit.listRecordToMap(recordPage.getList()),requestBean.getPageInfo());
+        }else {
+            responseObject = ResponseBeanKit.responseBean(SysConstant.CODE.FAIL,SysConstant.TASKBOOK.ALLCHOOSEN,null,requestBean.getPageInfo());
+        }
+        System.out.println("/taskbook/getNotChoosenTaskbook---"+responseObject);
+        renderJson(responseObject);
+    }
+
+    /**
+     * 检查该课程任务书是否已被其他教师选中
+     */
+    @ActionKey("/taskbook/checkTaskbookIsChoosen")
+    public void checkTaskbookIsChoosen(){
+        HttpKit.setCharSet("utf-8");
+        RequestBean requestBean = RequestBeanKit.getRequestBean(getRequest());
+        Record record = Taskbook.dao.checkTaskbookIsChoosen(requestBean);
+        JSONObject responseObject;
+        //为空说明该课程没有被选中 返回该课程的信息返回0 如果不为空 则返回选择这门课程的教师 返回1
+        if (null == record){
+            responseObject = ResponseBeanKit.responseBean(SysConstant.CODE.SUCCESS,null,Taskbook.dao.getTaskbookById(requestBean).getColumns(),null);
+        }else{
+            responseObject = ResponseBeanKit.responseBean(SysConstant.CODE.FAIL,SysConstant.TASKBOOK.TASKBOOKISCHOOSEN,record.getColumns(),null);
+        }
+        System.out.println("/taskbook/checkTaskbookIsChoosen---"+responseObject);
+        renderJson(responseObject);
     }
 }

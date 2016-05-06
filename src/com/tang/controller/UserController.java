@@ -57,7 +57,7 @@ public class UserController extends Controller {
         if (null != record){
             JSONObject jsonObject = JSONObject.parseObject(JsonKit.toJson(record.getColumns()));
             getSession().setAttribute("user", jsonObject);
-            getSession().setMaxInactiveInterval(300);
+            getSession().setMaxInactiveInterval(60*30);
             record.remove("password");
             responseObject = ResponseBeanKit.responseBean(SysConstant.CODE.SUCCESS,null,record.getColumns(),new PageInfo());
         }else {

@@ -70,6 +70,8 @@ public class SysConstant {
         public static final String UPLOADFAIL = "上传任务书失败！";
         public static final String QUERYSUCCESS = "获取任务书列表成功！";
         public static final String QUERYFAIL = "获取任务书列表失败！";
+        public static final String ALLCHOOSEN = "没有可选课程！";
+        public static final String TASKBOOKISCHOOSEN = "该课程已被其他教师选定！";
     }
 
     /**

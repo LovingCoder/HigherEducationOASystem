@@ -33,6 +33,8 @@
         /**
          * 获取本学院教师列表 页面一加载就执行
          */
+
+        var teacherList;
         $(function () {
             var session =<%=session.getAttribute("user")%>;
             var collegeId = session.teacher.collegeId;
@@ -74,10 +76,19 @@
                                 "<td> " + checkTdNUllOrEmpty(teacherList[i].schoolName) + " </td>" +
                                 "<td> " + checkTdNUllOrEmpty(teacherList[i].collegeName) + " </td>" +
                                 "<td> " + checkTdNUllOrEmpty(teacherList[i].className) + " </td>" +
-                                "<td><button class='btn btn-warning marginTB-xs' onclick=toDetailPgae(teacherList[i].id)>详情</button>&nbsp;<button type='button' class='btn btn-danger marginTB-xs'>删除</button></td>" +
-                                "</tr>"
+                                "<td><button class='btn btn-warning marginTB-xs detailClick' onclick='toDetailPgae()'>详情</button>&nbsp;<button type='button' class='btn btn-danger marginTB-xs'>删除</button></td>" +
+                                "</tr>";
                         $("#tbody").append(str);
                     }
+
+                    $(".detailClick").click(function(){
+                        var inx = $(".detailClick").index(this);
+                        for(var i=0;i<teacherList.length;i++){
+                            if(i == inx){
+                                alert(teacherList[i].id);
+                            }
+                        }
+                    })
                 },
                 error: function () {
                     alert("请求失败");
@@ -91,8 +102,12 @@
 //            window.location.href = "/UI/detailTeacherUI?teacherId="+teacherId;
 //        });
 
-        function toDetailPgae(teacherId){
-            alert(teacherId);
+
+
+
+        function toDetailPgae(){
+
+
             window.location.href = "/UI/detailTeacherUI?teacherId="+teacherId;
         }
     </script>

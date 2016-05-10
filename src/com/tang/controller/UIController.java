@@ -48,6 +48,7 @@ public class UIController extends CollegeController {
      */
     @ActionKey("/UI/detailTeacherUI")
     public void detailTeacherUI(){
+        setAttr("teacherId",getPara("teacherId"));
         render("/page/teacher/detail.jsp");
     }
 
@@ -57,5 +58,13 @@ public class UIController extends CollegeController {
     @ActionKey("/UI/chooseTaskbookUI")
     public void chooseTaskbookUI(){
         render("/page/mytaskbook/chooseTaskbook.jsp");
+    }
+
+    /**
+     * 我的选课列表页面
+     */
+    @ActionKey("/UI/queryMyTaskbookUI")
+    public void queryMyTaskbookUI(){
+        render("/page/mytaskbook/query.jsp");
     }
 }

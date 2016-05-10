@@ -20,6 +20,7 @@ import org.apache.log4j.Logger;
 import org.eclipse.jetty.util.thread.Timeout;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Tang on 2016/4/7.
@@ -112,6 +113,80 @@ public class TaskBookController extends Controller {
             responseObject = ResponseBeanKit.responseBean(SysConstant.CODE.FAIL,SysConstant.TASKBOOK.TASKBOOKISCHOOSEN,record.getColumns(),null);
         }
         System.out.println("/taskbook/checkTaskbookIsChoosen---"+responseObject);
+        renderJson(responseObject);
+    }
+
+    /**
+     * 教师勾选课程时 调用的controller
+     */
+    @Before(Tx.class)
+    @ActionKey("/taskbook/chooseTaskbook")
+    public void chooseTasbook(){
+        HttpKit.setCharSet("utf-8");
+        RequestBean requestBean = RequestBeanKit.getRequestBean(getRequest());
+        Boolean result = Taskbook.dao.chooseTaskbook(requestBean);
+        JSONObject responseObject;
+        if (result){
+            responseObject = ResponseBeanKit.responseBean(SysConstant.CODE.SUCCESS,null,null,null);
+        }else {
+            responseObject = ResponseBeanKit.responseBean(SysConstant.CODE.FAIL,SysConstant.TASKBOOK.TASKBOOKISCHOOSEN,null,null);
+        }
+        System.out.println("/taskbook/chooseTaskbook---"+responseObject);
+        renderJson(responseObject);
+    }
+
+    /**
+     * 选定值取消
+     */
+    @Before(Tx.class)
+    @ActionKey("/taskbook/chooseTasbookCancel")
+    public void chooseTasbookCancel(){
+        HttpKit.setCharSet("utf-8");
+        RequestBean requestBean = RequestBeanKit.getRequestBean(getRequest());
+        Boolean result = Taskbook.dao.chooseTaskbookCancel(requestBean);
+        JSONObject responseObject;
+        if (result){
+            responseObject = ResponseBeanKit.responseBean(SysConstant.CODE.SUCCESS,SysConstant.TASKBOOK.TASKBOOKISCHOOSENCANCEL,null,null);
+        }else {
+            responseObject = ResponseBeanKit.responseBean(SysConstant.CODE.FAIL,SysConstant.TASKBOOK.TASKBOOKISCHOOSENCANCELFAIL,null,null);
+        }
+        System.out.println("/taskbook/chooseTasbookCancel---"+responseObject);
+        renderJson(responseObject);
+    }
+
+    /**
+     * 新的教师选课（教师选完课再进行提交，不再进行异步校验，统一提交到后端再进行校验）
+     */
+    @Before(Tx.class)
+    @ActionKey("/taskbook/newChooseTaskbook")
+    public void  newChooseTaskbook(){
+        HttpKit.setCharSet("utf-8");
+        RequestBean requestBean = RequestBeanKit.getRequestBean(getRequest());
+        Map<String,List<Map<String,Object>>> listMap = Taskbook.dao.newChooseTaskBook(requestBean);
+        JSONObject responseObject;
+        responseObject = ResponseBeanKit.responseBean(SysConstant.CODE.SUCCESS,null,listMap,null);
+        System.out.println("/taskbook/newChooseTaskbook---"+responseObject);
+        renderJson(responseObject);
+    }
+
+    /**
+     * 我的选课列表
+     */
+    @ActionKey("/taskbook/queryMyTaskbook")
+    public void queryMyTaskbook(){
+        HttpKit.setCharSet("utf-8");
+        RequestBean requestBean = RequestBeanKit.getRequestBean(getRequest());
+        Page<Record> recordPage = Taskbook.dao.queryMyTaskbook(requestBean);
+        PageInfo pageInfo = requestBean.getPageInfo();
+        JSONObject responseObject;
+        if (null != recordPage){
+            pageInfo.setCount(recordPage.getTotalRow());
+            pageInfo.setTotalPage(recordPage.getTotalPage());
+            responseObject = ResponseBeanKit.responseBean(SysConstant.CODE.SUCCESS,SysConstant.TASKBOOK.QUERYSUCCESS,RecordKit.listRecordToMap(recordPage.getList()),pageInfo);
+        }else {
+            responseObject = ResponseBeanKit.responseBean(SysConstant.CODE.FAIL,SysConstant.TASKBOOK.QUERYFAIL,null,pageInfo);
+        }
+        System.out.println("/taskbook/queryMyTaskbook---"+responseObject);
         renderJson(responseObject);
     }
 }

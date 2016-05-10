@@ -72,6 +72,8 @@ public class SysConstant {
         public static final String QUERYFAIL = "获取任务书列表失败！";
         public static final String ALLCHOOSEN = "没有可选课程！";
         public static final String TASKBOOKISCHOOSEN = "该课程已被其他教师选定！";
+        public static final String TASKBOOKISCHOOSENCANCEL = "您取消了选择该课程！";
+        public static final String TASKBOOKISCHOOSENCANCELFAIL = "取消课程失败！";
     }
 
     /**

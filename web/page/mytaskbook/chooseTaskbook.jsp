@@ -29,8 +29,12 @@
     <!-- Tag Input -->
     <link href="/css/jquery.tagsinput.css" rel="stylesheet">
 
+    <link href="/css/style.css" rel="stylesheet">
+
     <script src="/jquery/jquery.min.js"></script>
 
+    <link rel="stylesheet" href="/css/ui-dialog.css">
+    <script src="/js/dialog-min.js"></script>
     <script src="/js/validation.js"></script>
 
     <script type="text/javascript">
@@ -54,8 +58,7 @@
                 "sessionId": "2c88449748214631ac43e6b370bd1034",
                 "requestId": "1a30fa8c-362d-4634-86f6-6f1e600e40db",
                 "requestContent": {
-                    "schoolId": schoolId,
-                    "collegeId": collegeId
+
                 },
                 "pageInfo": {
                     "pageSize": 10,
@@ -82,27 +85,28 @@
                         for (var i in responseContent) {
                             var str = "<tr> " +
                                     "<td><input class='tgl tgl-flip' id='" + responseContent[i].id + "' type='checkbox' value='" + responseContent[i].id + "' onclick='checking(" + responseContent[i].id + ")' name='checkbox'><label class='tgl-btn' data-tg-off='未选' data-tg-on='已选' for='" + responseContent[i].id + "'></label></td>" +
-                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].serialNumber) + " </td>" +
-                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].courseCode) + " </td> " +
-                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].courseName) + " </td>" +
-                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].teachingNumber) + " </td>" +
-                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].major) + " </td>" +
-                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].schoolZone) + " </td>" +
-                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].classAndStudent) + " </td>" +
-                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].grade) + " </td>" +
-                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].totalStudent) + " </td>" +
-                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].testType) + " </td>" +
-                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].weekTime) + " </td>" +
-                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].totalTime) + " </td>" +
-                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].startAndEndWeek) + " </td>" +
-                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].classHour) + " </td>" +
-                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].courseProperty) + " </td>" +
-                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].mergeClassOpinion) + " </td>" +
-                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].classRoomType) + " </td>" +
-                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].term) + " </td>" +
+                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].serialNumber) + " </td>" +
+                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].courseCode) + " </td> " +
+                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].courseName) + " </td>" +
+                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].teachingNumber) + " </td>" +
+                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].major) + " </td>" +
+                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].schoolZone) + " </td>" +
+                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].classAndStudent) + " </td>" +
+                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].grade) + " </td>" +
+                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].totalStudent) + " </td>" +
+                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].testType) + " </td>" +
+                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].weekTime) + " </td>" +
+                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].totalTime) + " </td>" +
+                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].startAndEndWeek) + " </td>" +
+                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].classHour) + " </td>" +
+                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].courseProperty) + " </td>" +
+                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].mergeClassOpinion) + " </td>" +
+                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].classRoomType) + " </td>" +
+                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].term) + " </td>" +
                                     "</tr>"
                             tbody.append(str);
                         }
+                        $("#pageUL");
                     } else {
                         alert(data["message"]);
                     }
@@ -163,26 +167,25 @@
                         tbody.empty();
                         for (var i in responseContent) {
                             var str = "<tr> " +
-                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].serialNumber) + " </td>" +
-                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].courseCode) + " </td> " +
-                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].courseName) + " </td>" +
-                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].teachingNumber) + " </td>" +
-                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].major) + " </td>" +
-                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].schoolZone) + " </td>" +
-                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].classAndStudent) + " </td>" +
-                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].grade) + " </td>" +
-                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].totalStudent) + " </td>" +
-                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].testType) + " </td>" +
-                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].weekTime) + " </td>" +
-                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].totalTime) + " </td>" +
-                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].startAndEndWeek) + " </td>" +
-                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].classHour) + " </td>" +
-                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].teacherSign) + " </td>" +
-                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].title) + " </td>" +
-                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].courseProperty) + " </td>" +
-                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].mergeClassOpinion) + " </td>" +
-                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].classRoomType) + " </td>" +
-                                    "<td> " + checkTdNUllOrEmpty(responseContent[i].term) + " </td>" +
+                                    "<td><input class='tgl tgl-flip' id='" + responseContent[i].id + "' type='checkbox' value='" + responseContent[i].id + "' onclick='checking(" + responseContent[i].id + ")' name='checkbox'><label class='tgl-btn' data-tg-off='未选' data-tg-on='已选' for='" + responseContent[i].id + "'></label></td>" +
+                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].serialNumber) + " </td>" +
+                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].courseCode) + " </td> " +
+                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].courseName) + " </td>" +
+                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].teachingNumber) + " </td>" +
+                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].major) + " </td>" +
+                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].schoolZone) + " </td>" +
+                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].classAndStudent) + " </td>" +
+                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].grade) + " </td>" +
+                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].totalStudent) + " </td>" +
+                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].testType) + " </td>" +
+                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].weekTime) + " </td>" +
+                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].totalTime) + " </td>" +
+                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].startAndEndWeek) + " </td>" +
+                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].classHour) + " </td>" +
+                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].courseProperty) + " </td>" +
+                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].mergeClassOpinion) + " </td>" +
+                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].classRoomType) + " </td>" +
+                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].term) + " </td>" +
                                     "</tr>"
                             tbody.append(str);
                         }
@@ -197,60 +200,143 @@
         }
 
         /**
-         * 异步请求该课程是否已经被选
+         * 点击复选框时获取里边的值
          */
+        var taskbookIds = new Array();
         $(document).on("click", ".tgl", function () {
             var taskbookId = $(this).attr("id");
-            if ($(this)[0].checked == true) {
-                alert(taskbookId);
-                var para = {
-                    "requestTime": "2016-03-15 15:38:09.009",
-                    "requestMethod": "",
-                    "sessionId": "2c88449748214631ac43e6b370bd1034",
-                    "requestId": "1a30fa8c-362d-4634-86f6-6f1e600e40db",
-                    "requestContent": {
-                        "taskbookId": taskbookId
-                    },
-                    "pageInfo": {
-                        "pageSize": 10,
-                        "currentPage": 1
+            if ($(this)[0].checked == true){
+                taskbookIds.push(taskbookId);
+            }else{
+                for(var i = 0; i < taskbookIds.length; i++){
+                    if(taskbookId == taskbookIds[i]){
+                        delete taskbookIds[i];
                     }
-                };
-                $.ajax({
-                    cache: false,
-                    type: "POST",
-                    dataType: "json",		  //json格式，重要
-                    url: "/taskbook/checkTaskbookIsChoosen",	//把数据发送到/taskbook/checkTaskbookIsChoosen
-                    data: para,	//要发送的是para中的数据
-                    async: false,
-                    error: function (data) {
-                        alert("数据错误！");
-                    },
-                    success: function (data) {
-                        /*如果返回状态等于0 说明该课程可以用 弹出课程的信息 如果状态是1 说明该课程已经被选了 弹出课程信息以及选课的教师*/
-                        alert(data.responseContent);
-                        if(0 == data.status){
-
-                        }else if(1 == data.status){
-
-                        }
-                    }
-
-                });
-            } else {
-                alert("你还没点呢");
+                }
             }
         });
 
 
-        //        $(".tgl").each(function(){
-        //            var schoolId = $(this).attr("id");
-        //            if($(this)[0].checked == true){
-        //                alert(schoolId);
-        //            }else{
-        //                alert("你还没点呢");
-        //            }
-        //        });
+        /**
+        * 选课
+         */
+        function chooseTaskbook(){
+            alert(taskbookIds.toLocaleString());
+            var teacherId = session.teacher.id;
+            var para = {
+                "requestTime": "2016-03-15 15:38:09.009",
+                "requestMethod": "",
+                "sessionId": "2c88449748214631ac43e6b370bd1034",
+                "requestId": "1a30fa8c-362d-4634-86f6-6f1e600e40db",
+                "requestContent": {
+                    "taskbookIds": taskbookIds.toLocaleString(),
+                    "teacherId":teacherId
+                },
+                "pageInfo": {
+                    "pageSize": 10,
+                    "currentPage": 1
+                }
+            };
+            $.ajax({
+                cache: false,
+                type: "POST",
+                dataType: "json",		  //json格式，重要
+                url: "/taskbook/newChooseTaskbook",	//把数据发送到/taskbook/newChooseTaskbook
+                data: para,	//要发送的是para中的数据
+                async: false,
+                error: function (data) {
+                    alert("数据错误！");
+                },
+                success: function (data) {
+                    if(0 == data.status){
+                        var myChooseTaskbookList = data.responseContent.myChooseTaskbookList;
+                        var conflictTaskbookList = data.responseContent.conflictTaskbookList;
+                        var a = "";
+                        var b = "";
+                        for(var i in myChooseTaskbookList){
+                            a = a + "<tr> " +
+                                    "<td class='td-style'> " + checkTdNUllOrEmpty(myChooseTaskbookList[i].serialNumber) + " </td>" +
+                                    "<td class='td-style'> " + checkTdNUllOrEmpty(myChooseTaskbookList[i].courseCode) + " </td> " +
+                                    "<td class='td-style'> " + checkTdNUllOrEmpty(myChooseTaskbookList[i].courseName) + " </td>" +
+                                    "<td class='td-style'> " + checkTdNUllOrEmpty(myChooseTaskbookList[i].teachingNumber) + " </td>" +
+                                    "<td class='td-style'> " + checkTdNUllOrEmpty(myChooseTaskbookList[i].major) + " </td>" +
+                                    "<td class='td-style'> " + checkTdNUllOrEmpty(myChooseTaskbookList[i].schoolZone) + " </td>" +
+                                    "<td class='td-style'> " + checkTdNUllOrEmpty(myChooseTaskbookList[i].classAndStudent) + " </td>" +
+                                    "<td class='td-style'> " + checkTdNUllOrEmpty(myChooseTaskbookList[i].grade) + " </td>" +
+                                    "<td class='td-style'> " + checkTdNUllOrEmpty(myChooseTaskbookList[i].totalStudent) + " </td>" +
+                                    "<td class='td-style'> " + checkTdNUllOrEmpty(myChooseTaskbookList[i].testType) + " </td>" +
+                                    "<td class='td-style'> " + checkTdNUllOrEmpty(myChooseTaskbookList[i].weekTime) + " </td>" +
+                                    "<td class='td-style'> " + checkTdNUllOrEmpty(myChooseTaskbookList[i].totalTime) + " </td>" +
+                                    "<td class='td-style'> " + checkTdNUllOrEmpty(myChooseTaskbookList[i].startAndEndWeek) + " </td>" +
+                                    "<td class='td-style'> " + checkTdNUllOrEmpty(myChooseTaskbookList[i].classHour) + " </td>" +
+                                    "<td class='td-style'> " + checkTdNUllOrEmpty(myChooseTaskbookList[i].courseProperty) + " </td>" +
+                                    "<td class='td-style'> " + checkTdNUllOrEmpty(myChooseTaskbookList[i].mergeClassOpinion) + " </td>" +
+                                    "<td class='td-style'> " + checkTdNUllOrEmpty(myChooseTaskbookList[i].classRoomType) + " </td>" +
+                                    "<td class='td-style'> " + checkTdNUllOrEmpty(myChooseTaskbookList[i].term) + " </td>" +
+                                    "</tr>";
+                        }
+                        for(var i in conflictTaskbookList){
+                            b = b + "<tr> " +
+                                    "<td class='td-style'> " + checkTdNUllOrEmpty(conflictTaskbookList[i].serialNumber) + " </td>" +
+                                    "<td class='td-style'> " + checkTdNUllOrEmpty(conflictTaskbookList[i].courseCode) + " </td> " +
+                                    "<td class='td-style'> " + checkTdNUllOrEmpty(conflictTaskbookList[i].courseName) + " </td>" +
+                                    "<td class='td-style'> " + checkTdNUllOrEmpty(conflictTaskbookList[i].teachingNumber) + " </td>" +
+                                    "<td class='td-style'> " + checkTdNUllOrEmpty(conflictTaskbookList[i].major) + " </td>" +
+                                    "<td class='td-style'> " + checkTdNUllOrEmpty(conflictTaskbookList[i].schoolZone) + " </td>" +
+                                    "<td class='td-style'> " + checkTdNUllOrEmpty(conflictTaskbookList[i].classAndStudent) + " </td>" +
+                                    "<td class='td-style'> " + checkTdNUllOrEmpty(conflictTaskbookList[i].grade) + " </td>" +
+                                    "<td class='td-style'> " + checkTdNUllOrEmpty(conflictTaskbookList[i].totalStudent) + " </td>" +
+                                    "<td class='td-style'> " + checkTdNUllOrEmpty(conflictTaskbookList[i].testType) + " </td>" +
+                                    "<td class='td-style'> " + checkTdNUllOrEmpty(conflictTaskbookList[i].weekTime) + " </td>" +
+                                    "<td class='td-style'> " + checkTdNUllOrEmpty(conflictTaskbookList[i].totalTime) + " </td>" +
+                                    "<td class='td-style'> " + checkTdNUllOrEmpty(conflictTaskbookList[i].startAndEndWeek) + " </td>" +
+                                    "<td class='td-style'> " + checkTdNUllOrEmpty(conflictTaskbookList[i].classHour) + " </td>" +
+                                    "<td class='td-style'> " + checkTdNUllOrEmpty(conflictTaskbookList[i].courseProperty) + " </td>" +
+                                    "<td class='td-style'> " + checkTdNUllOrEmpty(conflictTaskbookList[i].mergeClassOpinion) + " </td>" +
+                                    "<td class='td-style'> " + checkTdNUllOrEmpty(conflictTaskbookList[i].classRoomType) + " </td>" +
+                                    "<td class='td-style'> " + checkTdNUllOrEmpty(conflictTaskbookList[i].term) + " </td>" +
+                                    "</tr>";
+                        }
+                        var str = "<table class='table table-striped'>" +
+                                "<thead><tr><th class='td-style'>序号</th>" +
+                                "<th class='td-style'>课程代码</th>" +
+                                "<th class='td-style'>课程名称</th>" +
+                                "<th class='td-style'>教学计划号</th>" +
+                                "<th class='td-style'>专业</th>" +
+                                "<th class='td-style'>校区</th>" +
+                                "<th class='td-style'>班级及人数</th>" +
+                                "<th class='td-style'>年级</th>" +
+                                "<th class='td-style'>总人数</th>" +
+                                "<th class='td-style'>考核方式</th>" +
+                                "<th class='td-style'>周学时</th>" +
+                                "<th class='td-style'>总学时</th>" +
+                                "<th class='td-style'>上课起止周次</th>" +
+                                "<th class='td-style'>时数</th>" +
+                                "<th class='td-style'>课程性质</th>" +
+                                "<th class='td-style'>合班意见</th>" +
+                                "<th class='td-style'>教室类型</th>" +
+                                "<th class='td-style'>学期</th>" +
+                                "</tr></thead><tbody><tr><td colspan='18'>本次选定课程</td><tr>"+a+"<tr><td colspan='18'>未选定课程（与其他教师冲突）</td><tr>"+b+"<tbody></table>";
+                        var d = dialog({
+                            cancelValue: '我知道了，再看看',
+                            cancel: function () {
+                                window.location.reload();
+                            },
+                            okValue: '选完了，去看看我的选课列表',
+                            ok: function () {
+                                window.location.href = '/UI/queryMyTaskbookUI';
+                            },
+                            title:'本次选课详情',
+                            content:str
+                        });
+                        d.show();
+                    }else if(1 == data.status){
+                        alert(data.message);
+                    }
+                }
+
+            });
+        }
 
 
     </script>
@@ -286,40 +372,48 @@
         </div>
         <!-- /form-group -->
         <button type="button" class="btn btn-sm btn-success" id="search" onclick="search()">Search</button>
-        <button type="button" class="btn btn-sm btn-success" id="choose" onclick="search()" style="float: right">
+        <button type="button" class="btn btn-sm btn-success" id="choose" onclick="chooseTaskbook()" style="float: right">
             提交所选课程
         </button>
     </div>
-    <table class="table table-striped" id="dataTable">
+    <table class="table table-striped" id="dataTable" style="table-layout:fixed;height: 70%">
         <thead>
         <tr>
-            <th>选定</th>
-            <th>序号</th>
-            <th>课程代码</th>
-            <th>课程名称</th>
-            <th>教学计划号</th>
-            <th>专业</th>
-            <th>校区</th>
-            <th>班级及人数</th>
-            <th>年级</th>
-            <th>总人数</th>
-            <th>考核方式</th>
-            <th>周学时</th>
-            <th>总学时</th>
-            <th>上课起止周次</th>
-            <th>时数</th>
-            <th>课程性质</th>
-            <th>合班意见</th>
-            <th>教室类型</th>
-            <th>学期</th>
+            <th class="td-style">选定</th>
+            <th class="td-style">序号</th>
+            <th class="td-style">课程代码</th>
+            <th class="td-style">课程名称</th>
+            <th class="td-style">教学计划号</th>
+            <th class="td-style">专业</th>
+            <th class="td-style">校区</th>
+            <th class="td-style">班级及人数</th>
+            <th class="td-style">年级</th>
+            <th class="td-style">总人数</th>
+            <th class="td-style">考核方式</th>
+            <th class="td-style">周学时</th>
+            <th class="td-style">总学时</th>
+            <th class="td-style">上课起止周次</th>
+            <th class="td-style">时数</th>
+            <th class="td-style">课程性质</th>
+            <th class="td-style">合班意见</th>
+            <th class="td-style">教室类型</th>
+            <th class="td-style">学期</th>
         </tr>
         </thead>
         <tbody id="tbody">
         </tbody>
     </table>
     <div class="pages" id="page">
-        <div id="Pagination">
-            <ul class="pagination pagination-split"></ul>
+        <div>
+            <ul class="pagination pagination-split" id="pageUL">
+                <li class="disabled"><a href="#">&laquo;</a></li>
+                <li class="active"><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">&raquo;</a></li>
+            </ul>
         </div>
         <div class="searchPage">
             <span class="page-sum">共<strong class="allPage">${recordPage.totalPage}</strong>页</span>
@@ -328,7 +422,7 @@
                     class="fa fa-angle-double-right m-left-xs"></i></button>
         </div>
     </div>
-    <footer class="footer">
+    <%--<footer class="footer">
 				<span class="footer-brand">
 					<strong class="text-danger">HAUT OA System</strong>
 				</span>
@@ -336,7 +430,7 @@
         <p class="no-margin">
             &copy; 2016 <strong>CoderKK</strong>. ALL Rights Reserved.
         </p>
-    </footer>
+    </footer>--%>
 </div>
 <a href="#" class="scroll-to-top hidden-print"><i class="fa fa-chevron-up fa-lg"></i></a>
 <!-- Le javascript

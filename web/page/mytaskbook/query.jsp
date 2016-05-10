@@ -1,16 +1,15 @@
 <%--
   Created by IntelliJ IDEA.
   User: Tang
-  Date: 2016/4/7
-  Time: 15:51
+  Date: 2016/5/10
+  Time: 15:44
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
-<html lang="en">
+<html>
 <head>
     <meta charset="utf-8">
-    <title>任务书列表</title>
+    <title>我的选课列表</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -30,17 +29,22 @@
     <script src="/jquery/jquery.min.js"></script>
 
     <script src="/js/validation.js"></script>
-    
+
     <script type="text/javascript">
+
+        var session =<%=session.getAttribute("user")%>;
+
         /*获取任务书列表 页面加载就获取*/
-        $(function query() {
+        $(function () {
             var currentPage = 1;
             var para = {
                 "requestTime": "2016-03-15 15:38:09.009",
                 "requestMethod": "",
                 "sessionId": "2c88449748214631ac43e6b370bd1034",
                 "requestId": "1a30fa8c-362d-4634-86f6-6f1e600e40db",
-                "requestContent": {},
+                "requestContent": {
+                    "teacherId": session.teacher.id
+                },
                 "pageInfo": {
                     "pageSize": 10,
                     "currentPage": currentPage
@@ -50,7 +54,7 @@
                 cache: false,
                 type: "POST",
                 dataType: "json",		  //json格式，重要
-                url: "/taskbook/list",	//把表单数据发送到/taskbook/list
+                url: "/taskbook/queryMyTaskbook",	//把表单数据发送到/taskbook/queryMyTaskbook
                 data: para,	//要发送的是para中的数据
                 async: false,
                 error: function (data) {
@@ -88,7 +92,6 @@
                             tbody.append(str);
                         }
                         currentPage = data.page.currentPage;
-
                     } else {
                         alert(data["message"]);
                     }
@@ -108,6 +111,7 @@
                 "sessionId": "2c88449748214631ac43e6b370bd1034",
                 "requestId": "1a30fa8c-362d-4634-86f6-6f1e600e40db",
                 "requestContent": {
+                    "teacherId": session.teacher.id,
                     "courseName": $("#courseName").val(),
                     "major": $("#major").val(),
                     "courseProperty": $("#courseProperty").val(),
@@ -124,7 +128,7 @@
                 cache: false,
                 type: "POST",
                 dataType: "json",		  //json格式，重要
-                url: "/taskbook/list",
+                url: "/taskbook/queryMyTaskbook",
                 async: false,
                 success: function (data) {
                     if (0 == data.status) {
@@ -167,7 +171,7 @@
             })
         }
 
-        function goToPage(){
+        function goToPage() {
             var para = {
                 "requestTime": "2016-03-15 15:38:09.009",
                 "requestMethod": "",
@@ -239,8 +243,8 @@
     <div class="padding-md">
         <ul class="breadcrumb">
             <li><span class="primary-font"><i class="icon-home"></i></span><a href="index.html"> Home</a></li>
-            <li>任务书管理</li>
-            <li>任务书列表</li>
+            <li>选课管理</li>
+            <li>我的选课列表</li>
         </ul>
         <div class="form-inline no-margin">
             <div class="form-group">
@@ -302,7 +306,8 @@
         <div class="searchPage">
             <span class="page-sum">共<strong class="allPage">${recordPage.totalPage}</strong>页</span>
             <span class="page-go">跳转到第<input type="text" id="pageNumber">页</span>
-            <button type="button" class="btn btn-success marginTB-xs" onclick="goToPage()">GO<i class="fa fa-angle-double-right m-left-xs"></i></button>
+            <button type="button" class="btn btn-success marginTB-xs" onclick="goToPage()">GO<i
+                    class="fa fa-angle-double-right m-left-xs"></i></button>
         </div>
     </div>
     <footer class="footer">

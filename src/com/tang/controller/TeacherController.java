@@ -80,7 +80,7 @@ public class TeacherController extends Controller {
         } else {
             responseObject = ResponseBeanKit.responseBean(SysConstant.CODE.FAIL, SysConstant.TEACHER.TEACHERNOTEXIST, null, null);
         }
-        System.out.println("/teacher/queryTeacher---" + responseObject);
+        System.out.println("/teacher/detailTeacher---" + responseObject);
         renderJson(responseObject);
     }
 }

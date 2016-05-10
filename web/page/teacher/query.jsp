@@ -24,7 +24,10 @@
     <!-- Simplify -->
     <link href="/css/simplify.min.css" rel="stylesheet">
 
+    <link rel="stylesheet" href="/css/ui-dialog.css">
+
     <script src="/jquery/jquery.min.js"></script>
+    <script src="/js/dialog-min.js"></script>
 
     <script src="/js/validation.js"></script>
 
@@ -76,19 +79,33 @@
                                 "<td> " + checkTdNUllOrEmpty(teacherList[i].schoolName) + " </td>" +
                                 "<td> " + checkTdNUllOrEmpty(teacherList[i].collegeName) + " </td>" +
                                 "<td> " + checkTdNUllOrEmpty(teacherList[i].className) + " </td>" +
-                                "<td><button class='btn btn-warning marginTB-xs detailClick' onclick='toDetailPgae()'>详情</button>&nbsp;<button type='button' class='btn btn-danger marginTB-xs'>删除</button></td>" +
+                                "<td><button class='btn btn-warning marginTB-xs detailClick'>详情</button>&nbsp;<button type='button' class='btn btn-danger marginTB-xs'>删除</button></td>" +
                                 "</tr>";
                         $("#tbody").append(str);
                     }
 
+                    //给详情按钮添加点击事件
                     $(".detailClick").click(function(){
                         var inx = $(".detailClick").index(this);
                         for(var i=0;i<teacherList.length;i++){
                             if(i == inx){
-                                alert(teacherList[i].id);
+                                window.location.href = "/UI/detailTeacherUI?teacherId="+teacherList[i].id;
+//                                var d = dialog({
+//                                    title: '教师详情',
+//                                    content: '按钮回调函数返回 false 则不许关闭',
+//                                    okValue: '提交更改',
+//                                    ok: function () {
+//                                        this.title('提交中…');
+//                                        return false;
+//                                    },
+//                                    cancelValue: '返回',
+//                                    cancel: function () {}
+//                                });
+//                                d.show();
+
                             }
                         }
-                    })
+                    });
                 },
                 error: function () {
                     alert("请求失败");
@@ -102,12 +119,7 @@
 //            window.location.href = "/UI/detailTeacherUI?teacherId="+teacherId;
 //        });
 
-
-
-
         function toDetailPgae(){
-
-
             window.location.href = "/UI/detailTeacherUI?teacherId="+teacherId;
         }
     </script>

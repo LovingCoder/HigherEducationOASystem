@@ -57,11 +57,11 @@ public abstract class BaseUser<M extends BaseUser<M>> extends Model<M> implement
 		return get("password");
 	}
 
-	public void setUserRole(java.lang.String userRole) {
+	public void setUserRole(java.lang.Integer userRole) {
 		set("userRole", userRole);
 	}
 
-	public java.lang.String getUserRole() {
+	public java.lang.Integer getUserRole() {
 		return get("userRole");
 	}
 

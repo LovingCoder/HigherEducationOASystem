@@ -2,14 +2,14 @@
   Created by IntelliJ IDEA.
   User: Tang
   Date: 2016/5/10
-  Time: 15:44
+  Time: 16:23
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <meta charset="utf-8">
-    <title>我的选课列表</title>
+    <title>教师选课情况</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -34,7 +34,7 @@
 
         var session =<%=session.getAttribute("user")%>;
 
-        /*获取任务书列表 页面加载就获取*/
+        /*获取教师选课列表 页面加载就获取*/
         $(function () {
             var currentPage = 1;
             var para = {
@@ -43,7 +43,7 @@
                 "sessionId": "2c88449748214631ac43e6b370bd1034",
                 "requestId": "1a30fa8c-362d-4634-86f6-6f1e600e40db",
                 "requestContent": {
-                    "teacherId": session.teacher.id
+
                 },
                 "pageInfo": {
                     "pageSize": 10,
@@ -54,7 +54,7 @@
                 cache: false,
                 type: "POST",
                 dataType: "json",		  //json格式，重要
-                url: "/taskbook/queryMyTaskbook",	//把表单数据发送到/taskbook/queryMyTaskbook
+                url: "/taskbook/teacherTaskbook",	//把表单数据发送到/taskbook/teacherTaskbook
                 data: para,	//要发送的是para中的数据
                 async: false,
                 error: function (data) {
@@ -88,6 +88,7 @@
                                     "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].mergeClassOpinion) + " </td>" +
                                     "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].classRoomType) + " </td>" +
                                     "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].term) + " </td>" +
+                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].teacherName) + " </td>" +
                                     "</tr>"
                             tbody.append(str);
                         }
@@ -105,13 +106,18 @@
          * 搜索任务书
          */
         function search() {
+            //获取下拉框选中的值
+            var obj=document.getElementById('isChoosen');
+            var index=obj.selectedIndex; //序号，取当前选中选项的序号
+            var isChoosen = obj.options[index].value;
+
             var para = {
                 "requestTime": "2016-03-15 15:38:09.009",
                 "requestMethod": "",
                 "sessionId": "2c88449748214631ac43e6b370bd1034",
                 "requestId": "1a30fa8c-362d-4634-86f6-6f1e600e40db",
                 "requestContent": {
-                    "teacherId": session.teacher.id,
+                    "isChoosen": isChoosen,
                     "courseName": $("#courseName").val(),
                     "major": $("#major").val(),
                     "courseProperty": $("#courseProperty").val(),
@@ -128,7 +134,7 @@
                 cache: false,
                 type: "POST",
                 dataType: "json",		  //json格式，重要
-                url: "/taskbook/queryMyTaskbook",
+                url: "/taskbook/teacherTaskbook",
                 async: false,
                 success: function (data) {
                     if (0 == data.status) {
@@ -158,6 +164,7 @@
                                     "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].mergeClassOpinion) + " </td>" +
                                     "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].classRoomType) + " </td>" +
                                     "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].term) + " </td>" +
+                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].teacherName) + " </td>" +
                                     "</tr>"
                             tbody.append(str);
                         }
@@ -178,7 +185,6 @@
                 "sessionId": "2c88449748214631ac43e6b370bd1034",
                 "requestId": "1a30fa8c-362d-4634-86f6-6f1e600e40db",
                 "requestContent": {
-                    "teacherId": session.teacher.id,
                 },
                 "pageInfo": {
                     "pageSize": 10,
@@ -189,7 +195,7 @@
                 cache: false,
                 type: "POST",
                 dataType: "json",		  //json格式，重要
-                url: "/taskbook/queryMyTaskbook",	//把表单数据发送到/taskbook/list
+                url: "/taskbook/teacherTaskbook",	//把表单数据发送到/taskbook/teacherTaskbook
                 data: para,	//要发送的是para中的数据
                 async: false,
                 error: function (data) {
@@ -224,6 +230,7 @@
                                     "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].mergeClassOpinion) + " </td>" +
                                     "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].classRoomType) + " </td>" +
                                     "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].term) + " </td>" +
+                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].teacherName) + " </td>" +
                                     "</tr>"
                             tbody.append(str);
                         }
@@ -269,6 +276,14 @@
                 <label class="sr-only">学期</label>
                 <input type="text" class="form-control" placeholder="学期" id="term" name="term">
             </div>
+
+            <div class="form-group">
+                <select class="form-control" id="isChoosen" name="isChoosen">
+                        <option selected="selected" value="">全部课程</option>
+                        <option value="1">已被选择课程</option>
+                        <option value="0">未被选择课程</option>
+                </select>
+            </div>
             <!-- /form-group -->
             <button type="button" class="btn btn-sm btn-success" id="search" onclick="search()">Search</button>
         </div>
@@ -295,6 +310,7 @@
                 <th class="td-style">合班意见</th>
                 <th class="td-style">教室类型</th>
                 <th class="td-style">学期</th>
+                <th class="td-style">选课教师</th>
             </tr>
             </thead>
             <tbody id="tbody">

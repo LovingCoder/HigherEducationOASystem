@@ -6,9 +6,10 @@ CREATE TABLE USER (
  updateTime timestamp,
  userName VARCHAR(100),
  password VARCHAR(100),
-	userRole VARCHAR(100)
+ userRole VARCHAR(100)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 ALTER TABLE USER ADD PRIMARY KEY (id);
+ALTER TABLE USER MODIFY userRole INT(11);
 
 -- 创建任务书信息表 -- 
 CREATE TABLE taskbook (
@@ -18,34 +19,35 @@ CREATE TABLE taskbook (
  updateTime timestamp,
  serialNumber INT,
  courseCode VARCHAR(100),
-courseName VARCHAR(100),
-teachingNumber VARCHAR(100),
-major VARCHAR(100),
-schoolZone VARCHAR(100),
-classAndStudent VARCHAR(100),
-grade VARCHAR(100),
-totalStudent INT,
-testType VARCHAR(100),
-weekTime VARCHAR(100),
-totalTime VARCHAR(100),
-startAndEndWeek VARCHAR(100),
-classHour INT,
-teacherSign VARCHAR(100),
-title VARCHAR(100),
-courseProperty VARCHAR(100),
-mergeClassOpinion VARCHAR(100),
-classRoomType VARCHAR(100),
-term VARCHAR(100)
+ courseName VARCHAR(100),
+ teachingNumber VARCHAR(100),
+ major VARCHAR(100),
+ schoolZone VARCHAR(100),
+ classAndStudent VARCHAR(100),
+ grade VARCHAR(100),
+ totalStudent INT,
+ testType VARCHAR(100),
+ weekTime VARCHAR(100),
+ totalTime VARCHAR(100),
+ startAndEndWeek VARCHAR(100),
+ classHour INT,
+ teacherSign VARCHAR(100),
+ title VARCHAR(100),
+ courseProperty VARCHAR(100),
+ mergeClassOpinion VARCHAR(100),
+ classRoomType VARCHAR(100),
+ term VARCHAR(100)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 ALTER TABLE taskbook ADD PRIMARY KEY (id);
+ALTER TABLE taskbook ADD teacherId VARCHAR(32);
 
 -- 创建学校表 -- 
 CREATE TABLE school( id VARCHAR(32) NOT NULL,
- isDelete INT DEFAULT 1,
- createTime timestamp,
- updateTime timestamp,
- schoolName VARCHAR(100),
-schoolDes VARCHAR(255)
+                     isDelete INT DEFAULT 1,
+                     createTime timestamp,
+                     updateTime timestamp,
+                     schoolName VARCHAR(100),
+                     schoolDes VARCHAR(255)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 ALTER TABLE school ADD PRIMARY KEY (id);
 
@@ -56,8 +58,8 @@ CREATE TABLE college(
  createTime timestamp,
  updateTime timestamp,
  collegeName VARCHAR(100),
-collegeDes VARCHAR(255),
-schoolId VARCHAR(32)
+ collegeDes VARCHAR(255),
+ schoolId VARCHAR(32)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 ALTER TABLE college ADD PRIMARY KEY (id);
 
@@ -69,15 +71,15 @@ CREATE TABLE teacher (
  updateTime timestamp,
  teacherName VARCHAR(100),
  sex VARCHAR(100),
-	bornDate TIMESTAMP,
-classId VARCHAR(32),
-collegeId VARCHAR(32),
-schoolId VARCHAR(32)
+ bornDate TIMESTAMP,
+ classId VARCHAR(32),
+ collegeId VARCHAR(32),
+ schoolId VARCHAR(32)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 ALTER TABLE teacher ADD PRIMARY KEY (id);
 ALTER TABLE teacher ADD email VARCHAR(255);
 ALTER TABLE teacher ADD userId VARCHAR(32);
-ALTER TABLE teacher MODIFY sex INT(11); 
+ALTER TABLE teacher MODIFY sex INT(11);
 
 -- 创建班级信息表 --
 CREATE TABLE class (
@@ -87,8 +89,8 @@ CREATE TABLE class (
  updateTime timestamp,
  className VARCHAR(100),
  classDes VARCHAR(255),
-collegeId VARCHAR(32),
-schooolId VARCHAR(32)
+ collegeId VARCHAR(32),
+ schooolId VARCHAR(32)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 ALTER TABLE class ADD PRIMARY KEY (id);
 
@@ -104,13 +106,21 @@ CREATE TABLE teacher_taskbook(
 ALTER TABLE teacher_taskbook ADD PRIMARY KEY (id);
 
 CREATE TABLE dictionary(
-id VARCHAR(32) NOT NULL,
-isDelete INT DEFAULT 1,
+ id VARCHAR(32) NOT NULL,
+ isDelete INT DEFAULT 1,
  createTime timestamp,
  updateTime timestamp,
-field VARCHAR(100),
-value INT(11),
-mean VARCHAR(100)
+ field VARCHAR(100),
+ value INT(11),
+ mean VARCHAR(100)
 );
 ALTER TABLE dictionary ADD PRIMARY KEY(id);
 
+INSERT INTO dictionary
+(id,isDelete,createTime,updateTime,field,value,mean)
+VALUES
+ (REPLACE(UUID(),'-',''),0,NOW(),NOW(),'userRole',0,'教务主任');
+INSERT INTO dictionary
+(id,isDelete,createTime,updateTime,field,value,mean)
+VALUES
+ (REPLACE(UUID(),'-',''),0,NOW(),NOW(),'userRole',1,'任课教师');

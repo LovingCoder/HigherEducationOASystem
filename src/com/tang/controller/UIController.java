@@ -67,4 +67,12 @@ public class UIController extends CollegeController {
     public void queryMyTaskbookUI(){
         render("/page/mytaskbook/query.jsp");
     }
+
+    /**
+     * 教师选课情况列表
+     */
+    @ActionKey("/UI/teacherTaskbookUI")
+    public void teacherTaskbookUI(){
+        render("/page/teacherTaskbook/teacherTaskbook.jsp");
+    }
 }

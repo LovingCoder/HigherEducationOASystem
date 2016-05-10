@@ -189,4 +189,25 @@ public class TaskBookController extends Controller {
         System.out.println("/taskbook/queryMyTaskbook---"+responseObject);
         renderJson(responseObject);
     }
+
+    /**
+     * 教师选课情况查看
+     */
+    @ActionKey("/taskbook/teacherTaskbook")
+    public void teacherTaskbook(){
+        HttpKit.setCharSet("utf-8");
+        RequestBean requestBean = RequestBeanKit.getRequestBean(getRequest());
+        Page<Record> recordPage = Taskbook.dao.queryTeacherTaskbook(requestBean);
+        PageInfo pageInfo = requestBean.getPageInfo();
+        JSONObject responseObject;
+        if (null != recordPage){
+            pageInfo.setCount(recordPage.getTotalRow());
+            pageInfo.setTotalPage(recordPage.getTotalPage());
+            responseObject = ResponseBeanKit.responseBean(SysConstant.CODE.SUCCESS,null,RecordKit.listRecordToMap(recordPage.getList()),pageInfo);
+        }else {
+            responseObject = ResponseBeanKit.responseBean(SysConstant.CODE.FAIL,SysConstant.TASKBOOK.QUERYFAIL,null,pageInfo);
+        }
+        System.out.println("/taskbook/teacherTaskbook---"+responseObject);
+        renderJson(responseObject);
+    }
 }

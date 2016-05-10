@@ -272,4 +272,53 @@ public class Taskbook extends BaseTaskbook<Taskbook> {
 		sqlExcept.append(" ORDER BY serialNumber ASC ");
 		return Db.paginate(pageNumber,pageSize,"SELECT *",sqlExcept.toString(),paras.toArray());
 	}
+
+
+	/**
+	 * 获取课程选择情况
+	 * @param requestBean
+	 * @return
+	 */
+	public Page<Record> queryTeacherTaskbook(RequestBean requestBean){
+		String isChoosen = ParamKit.checkObjectNotNull(requestBean, "isChoosen");
+		int pageNumber = requestBean.getPageInfo().getCurrentPage();
+		int pageSize = requestBean.getPageInfo().getPageSize();
+		String term = ParamKit.checkObjectNotNull(requestBean, "term");
+		String courseName = ParamKit.checkObjectNotNull(requestBean, "courseName");
+		String major = ParamKit.checkObjectNotNull(requestBean, "major");
+		String courseProperty = ParamKit.checkObjectNotNull(requestBean, "courseProperty");
+		String select = "SELECT taskbook.*,teacher.teacherName";
+		StringBuilder sqlExcept = new StringBuilder("FROM taskbook " +
+				"LEFT JOIN teacher ON teacher.id = taskbook.teacherId AND teacher.isDelete = ? " +
+				"WHERE taskbook.isDelete = ?");
+		List<Object> paras = new ArrayList<Object>();
+		paras.add(SysConstant.ISDELETE.NO);
+		paras.add(SysConstant.ISDELETE.NO);
+		if (!Strings.isNullOrEmpty(courseName)){
+			sqlExcept.append(" AND taskbook.courseName LIKE ? ");
+			paras.add("%" + courseName +"%");
+		}
+		if (!Strings.isNullOrEmpty(courseProperty)){
+			sqlExcept.append(" AND taskbook.courseProperty LIKE ? ");
+			paras.add("%" + courseProperty +"%");
+		}
+		if (!Strings.isNullOrEmpty(major)){
+			sqlExcept.append(" AND taskbook.major LIKE ? ");
+			paras.add("%" + major +"%");
+		}
+		if (!Strings.isNullOrEmpty(term)){
+			sqlExcept.append(" AND taskbook.term LIKE ? ");
+			paras.add("%"+term+"%");
+		}
+		if (!Strings.isNullOrEmpty(isChoosen)){
+			// 0 是没有被选的课程 1 是已经被选的课程
+			if (0 == Integer.valueOf(isChoosen)){
+				sqlExcept.append(" AND taskbook.teacherId IS NULL ");
+			}else if (1 == Integer.valueOf(isChoosen)){
+				sqlExcept.append(" AND taskbook.teacherId IS NOT NULL ");
+			}
+		}
+		sqlExcept.append(" ORDER BY taskbook.teacherId DESC,taskbook.serialNumber ASC ");
+		return Db.paginate(pageNumber,pageSize,select,sqlExcept.toString(),paras.toArray());
+	}
 }

@@ -77,6 +77,7 @@
                 <ul class="submenu">
                     <li><a href="/UI/chooseTaskbookUI"><span class="submenu-label">我要选课</span></a></li>
                     <li><a href="/UI/queryMyTaskbookUI"><span class="submenu-label">我的选课列表</span></a></li>
+                    <li><a href="/UI/teacherTaskbookUI"><span class="submenu-label">教师选课情况查看</span></a></li>
                 </ul>
             </li>
 

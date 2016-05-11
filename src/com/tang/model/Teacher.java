@@ -32,7 +32,7 @@ public class Teacher extends BaseTeacher<Teacher> {
         String name = ParamKit.checkObjectNotNull(requestBean, "teacherName");
         String sex = ParamKit.checkObjectNotNull(requestBean, "sex");
         String bornDateStr = ParamKit.checkObjectNotNull(requestBean, "bornDate");
-        Date bornDate = DateUtils.formateDate(bornDateStr, "yyyyMMdd");
+        Date bornDate = DateUtils.formateDate(bornDateStr, SysConstant.TIMEFORMAT.yyyyMMdd);
         String classId = ParamKit.checkObjectNotNull(requestBean, "classId");
         String collegeId = ParamKit.checkObjectNotNull(requestBean, "collegeId");
         String schoolId = ParamKit.checkObjectNotNull(requestBean, "schoolId");
@@ -69,6 +69,7 @@ public class Teacher extends BaseTeacher<Teacher> {
         String collegeId = ParamKit.checkObjectNotNull(requestBean, "collegeId");
         String schoolId = ParamKit.checkObjectNotNull(requestBean, "schoolId");
         String classId = ParamKit.checkObjectNotNull(requestBean, "classId");
+        String isChoosen = ParamKit.checkObjectNotNull(requestBean,"isChoosen");
         String select = "SELECT teacher.*,class.className,college.collegeName,school.schoolName";
         StringBuilder sqlExcept = new StringBuilder("FROM teacher " +
                 "LEFT JOIN college ON college.id = teacher.collegeId AND college.isDelete = ? " +
@@ -89,6 +90,13 @@ public class Teacher extends BaseTeacher<Teacher> {
         if (!Strings.isNullOrEmpty(teacherName)) {
             sqlExcept.append(" AND teacher.teacherName LIKE ? ");
             paras.add("%" + teacherName + "%");
+        }
+        // 1 是已选课的教师 0 是未选课的教师
+        if (!Strings.isNullOrEmpty(isChoosen) && 1 == Integer.valueOf(isChoosen)){
+            sqlExcept.append(" AND teacher.id in(SELECT DISTINCT teacherId FROM taskbook WHERE taskbook.teacherId IS NOT NULL) ");
+        }
+        if (!Strings.isNullOrEmpty(isChoosen) && 0 == Integer.valueOf(isChoosen)){
+            sqlExcept.append(" AND teacher.id not in(SELECT DISTINCT teacherId FROM taskbook WHERE taskbook.teacherId IS NOT NULL) ");
         }
         sqlExcept.append(" AND teacher.isDelete = ? ");
         paras.add(SysConstant.ISDELETE.NO);

@@ -191,13 +191,13 @@ public class TaskBookController extends Controller {
     }
 
     /**
-     * 教师选课情况查看
+     * 课程状态查看
      */
-    @ActionKey("/taskbook/teacherTaskbook")
-    public void teacherTaskbook(){
+    @ActionKey("/taskbook/queryTaskbookStatus")
+    public void queryTaskbookStatus(){
         HttpKit.setCharSet("utf-8");
         RequestBean requestBean = RequestBeanKit.getRequestBean(getRequest());
-        Page<Record> recordPage = Taskbook.dao.queryTeacherTaskbook(requestBean);
+        Page<Record> recordPage = Taskbook.dao.queryTaskbookStatus(requestBean);
         PageInfo pageInfo = requestBean.getPageInfo();
         JSONObject responseObject;
         if (null != recordPage){
@@ -207,7 +207,7 @@ public class TaskBookController extends Controller {
         }else {
             responseObject = ResponseBeanKit.responseBean(SysConstant.CODE.FAIL,SysConstant.TASKBOOK.QUERYFAIL,null,pageInfo);
         }
-        System.out.println("/taskbook/teacherTaskbook---"+responseObject);
+        System.out.println("/taskbook/queryTaskbookStatus---"+responseObject);
         renderJson(responseObject);
     }
 }

@@ -103,3 +103,15 @@ function checkSchoolZone(data) {
         return "嵩山路校区";
     }
 }
+
+function checkDailyWorkType(data){
+    if (null == data || '' == data) {
+        return "<span class='label label-danger'>未填写</span>";
+    } else if ("1" == data || 1 == data) {
+        return "打扫卫生";
+    } else if ("2" == data || 2 == data) {
+        return "公派值日";
+    } else if ("3" == data || 3 == data) {
+        return "日常事务安排";
+    }
+}

@@ -279,7 +279,7 @@ public class Taskbook extends BaseTaskbook<Taskbook> {
 	 * @param requestBean
 	 * @return
 	 */
-	public Page<Record> queryTeacherTaskbook(RequestBean requestBean){
+	public Page<Record> queryTaskbookStatus(RequestBean requestBean){
 		String isChoosen = ParamKit.checkObjectNotNull(requestBean, "isChoosen");
 		int pageNumber = requestBean.getPageInfo().getCurrentPage();
 		int pageSize = requestBean.getPageInfo().getPageSize();

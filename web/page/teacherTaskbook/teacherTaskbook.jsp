@@ -38,9 +38,6 @@
         $(function () {
             var currentPage = 1;
             var para = {
-                "requestTime": "2016-03-15 15:38:09.009",
-                "requestMethod": "",
-                "sessionId": "2c88449748214631ac43e6b370bd1034",
                 "requestId": "1a30fa8c-362d-4634-86f6-6f1e600e40db",
                 "requestContent": {
 
@@ -54,7 +51,7 @@
                 cache: false,
                 type: "POST",
                 dataType: "json",		  //json格式，重要
-                url: "/taskbook/teacherTaskbook",	//把表单数据发送到/taskbook/teacherTaskbook
+                url: "/taskbook/queryTaskbookStatus",	//把表单数据发送到/taskbook/teacherTaskbook
                 data: para,	//要发送的是para中的数据
                 async: false,
                 error: function (data) {
@@ -112,10 +109,6 @@
             var isChoosen = obj.options[index].value;
 
             var para = {
-                "requestTime": "2016-03-15 15:38:09.009",
-                "requestMethod": "",
-                "sessionId": "2c88449748214631ac43e6b370bd1034",
-                "requestId": "1a30fa8c-362d-4634-86f6-6f1e600e40db",
                 "requestContent": {
                     "isChoosen": isChoosen,
                     "courseName": $("#courseName").val(),
@@ -134,8 +127,8 @@
                 cache: false,
                 type: "POST",
                 dataType: "json",		  //json格式，重要
-                url: "/taskbook/teacherTaskbook",
-                async: false,
+                url: "/taskbook/queryTaskbookStatus",
+                async: true,
                 success: function (data) {
                     if (0 == data.status) {
                         //将请求成功的数据显示出来
@@ -180,10 +173,6 @@
 
         function goToPage() {
             var para = {
-                "requestTime": "2016-03-15 15:38:09.009",
-                "requestMethod": "",
-                "sessionId": "2c88449748214631ac43e6b370bd1034",
-                "requestId": "1a30fa8c-362d-4634-86f6-6f1e600e40db",
                 "requestContent": {
                 },
                 "pageInfo": {
@@ -195,7 +184,7 @@
                 cache: false,
                 type: "POST",
                 dataType: "json",		  //json格式，重要
-                url: "/taskbook/teacherTaskbook",	//把表单数据发送到/taskbook/teacherTaskbook
+                url: "/taskbook/queryTaskbookStatus",	//把表单数据发送到/taskbook/teacherTaskbook
                 data: para,	//要发送的是para中的数据
                 async: false,
                 error: function (data) {

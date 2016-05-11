@@ -87,7 +87,9 @@ public class SysConstant {
      * 日期格式
      */
     public static class TIMEFORMAT{
-        public static final String DATE = "yyyy-MM-dd HH:mm:ss";
+        public static final String yyyyMMddHHmmss = "yyyy-MM-dd HH:mm:ss";
+        public static final String yyyyMMddHHmm = "yyyy-MM-dd HH:mm";
+        public static final String yyyyMMdd = "yyyy-MM-dd";
     }
 
     /**
@@ -98,5 +100,12 @@ public class SysConstant {
         public static final String ADDFAIL = "添加教师失败！";
         public static final String QUERYTEACHERNULL = "没有教师！";
         public static final String TEACHERNOTEXIST = "教师不存在！";
+    }
+
+    /**
+     * 办公事务提示
+     */
+    public static class DAILYWORK{
+        public static final String QUERYFAIL = "没有事务！";
     }
 }

@@ -173,10 +173,6 @@
 
         function goToPage() {
             var para = {
-                "requestTime": "2016-03-15 15:38:09.009",
-                "requestMethod": "",
-                "sessionId": "2c88449748214631ac43e6b370bd1034",
-                "requestId": "1a30fa8c-362d-4634-86f6-6f1e600e40db",
                 "requestContent": {
                     "teacherId": session.teacher.id,
                 },

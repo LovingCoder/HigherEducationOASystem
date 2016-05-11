@@ -77,7 +77,15 @@
                 <ul class="submenu">
                     <li><a href="/UI/chooseTaskbookUI"><span class="submenu-label">我要选课</span></a></li>
                     <li><a href="/UI/queryMyTaskbookUI"><span class="submenu-label">我的选课列表</span></a></li>
-                    <li><a href="/UI/teacherTaskbookUI"><span class="submenu-label">教师选课情况查看</span></a></li>
+                    <li class="openable">
+                        <a href="#">
+                            <span class="submenu-label">教师选课情况查看</span>
+                        </a>
+                        <ul class="submenu third-level">
+                            <li><a href="/UI/teacherTaskbookUI"><span class="submenu-label">课程状态查看</span></a></li>
+                            <li><a href="/UI/queryTeacherUI"><span class="submenu-label">教师状态查看</span></a></li>
+                        </ul>
+                    </li>
                 </ul>
             </li>
 
@@ -130,8 +138,8 @@
 									</span>
                 </a>
                 <ul class="submenu">
-                    <li><a href="signin.html"><span class="submenu-label">Sign in</span></a></li>
-
+                    <li><a href="/UI/addDailyWorkUI"><span class="submenu-label">新建事务</span></a></li>
+                    <li><a href="/UI/queryDailyWorkUI"><span class="submenu-label">查看事务</span></a></li>
                 </ul>
             </li>
 

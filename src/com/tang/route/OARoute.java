@@ -17,5 +17,6 @@ public class OARoute extends Routes {
         add("/teacher",TeacherController.class);
         add("/ui",UIController.class);
         add("/class",ClassController.class);
+        add("/dailyWork",DailyWorkController.class);
     }
 }

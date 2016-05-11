@@ -75,4 +75,20 @@ public class UIController extends CollegeController {
     public void teacherTaskbookUI(){
         render("/page/teacherTaskbook/teacherTaskbook.jsp");
     }
+
+    /**
+     * 新建事务页面
+     */
+    @ActionKey("/UI/addDailyWorkUI")
+    public void addDailyWorkUI(){
+        render("/page/dailyWork/add.jsp");
+    }
+
+    /**
+     * 事务列表页面
+     */
+    @ActionKey("/UI/queryDailyWorkUI")
+    public void queryDailyWorkUI(){
+        render("/page/dailyWork/query.jsp");
+    }
 }

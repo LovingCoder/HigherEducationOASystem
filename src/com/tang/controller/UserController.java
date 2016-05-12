@@ -35,7 +35,7 @@ public class UserController extends Controller {
         Record record = User.me.userRegister(requestBean);
         JSONObject responseObject;
         if (null != record){
-            getSession().setAttribute("user", record);
+            getSession().setAttribute("user", record.getColumns());
             record.remove("password");
             responseObject = ResponseBeanKit.responseBean(SysConstant.CODE.SUCCESS,null,record.getColumns(),null);
         }else {

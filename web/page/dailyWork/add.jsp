@@ -28,16 +28,28 @@
 
     <script src="/jquery/jquery.min.js"></script>
     <script src="/bootstrap/js/bootstrap.min.js"></script>
-    <script src="/jquery/jquerysession.js"></script>
     <script src="/js/DatetimePicker-i18n-zh-CN.js"></script>
     <script src="/js/DateTimePicker.js"></script>
+
+    <link rel="stylesheet" href="/css/ui-dialog.css">
+    <script src="/js/dialog-min.js"></script>
     <script type="application/javascript">
 
+        /**
+         * 获取session
+         * */
         var session =<%=session.getAttribute("user")%>;
+
+        /**
+         * 加载日期插件
+         * */
         $(document).ready(function () {
             $("#dtBox").DateTimePicker();
         });
 
+        /**
+        * 获取教师列表
+         */
         $(document).ready(function () {
             var collegeId = session.teacher.collegeId;
             var schoolId = session.teacher.schoolId;
@@ -69,8 +81,6 @@
                         var str = "<option value='" + teacherList[i].id + "'>" + teacherList[i].teacherName + "</option>";
                         $("#executorId").append(str);
                     }
-                    //添加成功后跳转到列表页面
-                    window.location.href = "/UI/queryDailyWorkUI";
                 },
                 error: function (data) {
                     alert("请求错误！");
@@ -78,6 +88,9 @@
             });
         });
 
+        /**
+        * 添加事务
+         */
         function addDailyWork() {
             var para = {
                 "requestContent": {
@@ -105,7 +118,20 @@
                     alert("数据错误！");
                 },
                 success: function (data) {
-
+                    var d = dialog({
+                        title: '提示',
+                        content: data.message,
+                        okValue: '前往事务列表页面查看',
+                        ok: function () {
+                            //添加成功后跳转到列表页面
+                            window.location.href = "/UI/queryDailyWorkUI";
+                        },
+                        cancelValue: '继续新建事务',
+                        cancel: function () {
+                            window.location.reload();
+                        }
+                    });
+                    d.show();
                 }
             });
         }

@@ -1,4 +1,5 @@
 package com.tang.model;
+
 import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.Page;
 import com.jfinal.plugin.activerecord.Record;
@@ -18,86 +19,91 @@ import java.util.Date;
  */
 @SuppressWarnings("serial")
 public class User extends BaseUser<User> {
-	
-	public static final User me = new User();
-	/**
-	 * 所有 sql 与业务逻辑写在 Model 或 Service 中，不要写在 Controller 中，养成好习惯，有利于大型项目的开发与维护
-	 */
-	public Page<User> paginate(int pageNumber, int pageSize) {
-		return paginate(pageNumber, pageSize, "select *", "from user order by id asc");
-	}
 
-	/**
-	 * 用户注册 添加用户表和教师表 默认教师权限是普通教师
-	 * @param requestBean
-	 * @return
+    public static final User me = new User();
+
+    /**
+     * 所有 sql 与业务逻辑写在 Model 或 Service 中，不要写在 Controller 中，养成好习惯，有利于大型项目的开发与维护
      */
-	public Record userRegister(RequestBean requestBean) throws Exception{
-		String userName = ParamKit.checkObjectNotNull(requestBean,"username");
-		String userPwd = ParamKit.checkObjectNotNull(requestBean,"password");
-		String email = ParamKit.checkObjectNotNull(requestBean,"email");
-		Record user = new Record();
-		user.set("id", IDKit.uuid())
-				.set("userName",userName)
-				.set("password",userPwd)
-				.set("userRole",SysConstant.USERROLE.COMMONTEACHER)
-				.set("isDelete", SysConstant.ISDELETE.NO)
-				.set("createTime",new Date())
-				.set("updateTime", new Date());
-		Record teacher = new Record();
-		teacher.set("id",IDKit.uuid())
-				.set("createTime",new Date())
-				.set("updateTime",new Date())
-				.set("userId",user.get("id"))
-				.set("email",email)
-				.set("isDelete",SysConstant.ISDELETE.NO);
-		Boolean result = Db.save("user",user) && Db.save("teacher",teacher);
-		if (!result){
-			throw new Exception();
-		}
-		return user;
-	}
+    public Page<User> paginate(int pageNumber, int pageSize) {
+        return paginate(pageNumber, pageSize, "select *", "from user order by id asc");
+    }
 
-	/**
-	 * 用户登录
-	 * @param requestBean
-	 * @return
-     */
-	public Record userLogin(RequestBean requestBean){
-		String username = ParamKit.checkObjectNotNull(requestBean,"username");
-		String password = ParamKit.checkObjectNotNull(requestBean,"password");
-        String sql = "SELECT * FROM user WHERE userName = ? AND password = ? AND isDelete = ?";
-		Record record = Db.findFirst(sql, username, password, SysConstant.ISDELETE.NO);
-		if (null == record){
-			return null;
-		}
-		Record teacher = Db.findFirst("SELECT * FROM teacher WHERE userId = ? AND isDelete = ?", record.get("id"), SysConstant.ISDELETE.NO);
-		record.set("teacher",(null == teacher) ? null : teacher.getColumns());
-		return  record;
-	}
-
-	/**
-	 * 完善用户信息 更新教师表
-	 * @param requestBean
-	 * @param userId
+    /**
+     * 用户注册 添加用户表和教师表 默认教师权限是普通教师
+     *
+     * @param requestBean
      * @return
      */
-	public Boolean completUserInfo(RequestBean requestBean,String userId) throws Exception{
-		String teacherName = ParamKit.checkObjectNotNull(requestBean,"teacherName");
-		String sex = ParamKit.checkObjectNotNull(requestBean,"sex");
-		String bornDate = ParamKit.checkObjectNotNull(requestBean,"bornDate");
-		String classId = ParamKit.checkObjectNotNull(requestBean,"classId");
-		String collegeId = ParamKit.checkObjectNotNull(requestBean,"collegeId");
-		String schoolId = ParamKit.checkObjectNotNull(requestBean,"schoolId");
-		int i = Db.update("UPDATE teacher SET updateTime = ?,teacherName = ?,sex = ?,bornDate = ?," +
-				"classId = ?,collegeId = ?,schoolId = ?,email = ? " +
-				"WHERE userId = ? AND isDelete = ?",new Date(),teacherName,sex,bornDate,classId,collegeId,schoolId,userId);
-		if (1 == i){
-			return true;
-		}else {
-			throw new Exception();
-		}
-	}
+    public Record userRegister(RequestBean requestBean) throws Exception {
+        String userName = ParamKit.checkObjectNotNull(requestBean, "username");
+        String userPwd = ParamKit.checkObjectNotNull(requestBean, "password");
+        String email = ParamKit.checkObjectNotNull(requestBean, "email");
+        Record user = new Record();
+        user.set("id", IDKit.uuid())
+                .set("userName", userName)
+                .set("email", email)
+                .set("password", userPwd)
+                .set("userRole", SysConstant.USERROLE.COMMONTEACHER)
+                .set("isDelete", SysConstant.ISDELETE.NO)
+                .set("createTime", new Date())
+                .set("updateTime", new Date());
+        Record teacher = new Record();
+        teacher.set("id", IDKit.uuid())
+                .set("createTime", new Date())
+                .set("updateTime", new Date())
+                .set("userId", user.get("id"))
+                .set("email", email)
+                .set("isDelete", SysConstant.ISDELETE.NO);
+        Boolean result = Db.save("user", user) && Db.save("teacher", teacher);
+        if (!result) {
+            throw new Exception();
+        }
+        return user;
+    }
+
+    /**
+     * 用户登录 用户名或邮箱均可登录
+     *
+     * @param requestBean
+     * @return
+     */
+    public Record userLogin(RequestBean requestBean) {
+        String username = ParamKit.checkObjectNotNull(requestBean, "username");
+        String password = ParamKit.checkObjectNotNull(requestBean, "password");
+        String sql = "SELECT * FROM user WHERE userName = ? OR email = ? AND password = ? AND isDelete = ?";
+        Record record = Db.findFirst(sql, username, username, password, SysConstant.ISDELETE.NO);
+        if (null == record) {
+            return null;
+        }
+        Record teacher = Db.findFirst("SELECT * FROM teacher WHERE userId = ? AND isDelete = ?", record.get("id"), SysConstant.ISDELETE.NO);
+        record.set("teacher", (null == teacher) ? null : teacher.getColumns());
+        return record;
+    }
+
+    /**
+     * 完善用户信息 更新教师表
+     *
+     * @param requestBean
+     * @param userId
+     * @return
+     */
+    public Boolean completUserInfo(RequestBean requestBean, String userId) throws Exception {
+        String teacherName = ParamKit.checkObjectNotNull(requestBean, "teacherName");
+        String sex = ParamKit.checkObjectNotNull(requestBean, "sex");
+        String bornDate = ParamKit.checkObjectNotNull(requestBean, "bornDate");
+        String classId = ParamKit.checkObjectNotNull(requestBean, "classId");
+        String collegeId = ParamKit.checkObjectNotNull(requestBean, "collegeId");
+        String schoolId = ParamKit.checkObjectNotNull(requestBean, "schoolId");
+        int i = Db.update("UPDATE teacher SET updateTime = ?,teacherName = ?,sex = ?,bornDate = ?," +
+                "classId = ?,collegeId = ?,schoolId = ?,email = ? " +
+                "WHERE userId = ? AND isDelete = ?", new Date(), teacherName, sex, bornDate, classId, collegeId, schoolId, userId);
+        if (1 == i) {
+            return true;
+        } else {
+            throw new Exception();
+        }
+    }
 }
 
 

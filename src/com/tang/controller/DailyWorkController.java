@@ -8,8 +8,8 @@ import com.jfinal.kit.HttpKit;
 import com.jfinal.plugin.activerecord.Page;
 import com.jfinal.plugin.activerecord.Record;
 import com.jfinal.plugin.activerecord.tx.Tx;
-import com.tang.bean.PageInfo;
 import com.tang.bean.RequestBean;
+import com.tang.bean.ResponseBean;
 import com.tang.model.DailyWork;
 import com.tang.util.RecordKit;
 import com.tang.util.RequestBeanKit;
@@ -30,7 +30,7 @@ public class DailyWorkController extends Controller{
         HttpKit.setCharSet("utf-8");
         RequestBean requestBean = RequestBeanKit.getRequestBean(getRequest());
         Record record = DailyWork.dao.addDaiyWork(requestBean);
-        JSONObject responseObject = ResponseBeanKit.responseBean(SysConstant.CODE.SUCCESS,null,record.getColumns(),null);
+        JSONObject responseObject = ResponseBeanKit.responseBean(SysConstant.CODE.SUCCESS,SysConstant.DAILYWORK.ADDSUCCESS,record.getColumns(),null);
         System.out.println("/dailyWork/addDailyWork---"+responseObject);
         renderJson(responseObject);
     }
@@ -54,6 +54,24 @@ public class DailyWorkController extends Controller{
             responseObject = ResponseBeanKit.responseBean(SysConstant.CODE.FAIL,null, null,requestBean.getPageInfo());
         }
         System.out.println("/dailyWork/queryDailyWork---"+responseObject);
+        renderJson(responseObject);
+    }
+
+    /**
+     * 删除事务
+     */
+    @ActionKey("/dailyWork/deleteDailyWork")
+    public void deleteDailyWork(){
+        HttpKit.setCharSet("utf-8");
+        RequestBean requestBean = RequestBeanKit.getRequestBean(getRequest());
+        Boolean result = DailyWork.dao.deleteDailyWork(requestBean);
+        JSONObject responseObject;
+        if (result){
+            responseObject = ResponseBeanKit.responseBean(SysConstant.CODE.SUCCESS,SysConstant.DAILYWORK.DELETESUCCESS,null,null);
+        }else {
+            responseObject = ResponseBeanKit.responseBean(SysConstant.CODE.FAIL,SysConstant.DAILYWORK.DELETEFAIL,null,null);
+        }
+        System.out.println("/dailyWork/deleteDailyWork---"+responseObject);
         renderJson(responseObject);
     }
 

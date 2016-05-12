@@ -32,6 +32,10 @@
     <script src="/js/validation.js"></script>
     <script type="application/javascript">
 
+        /**
+         * 获取session
+         * */
+        var session =<%=session.getAttribute("user")%>;
 
         $(document).ready(function () {
             $("#dtBox").DateTimePicker({
@@ -45,14 +49,7 @@
          * 获取当前登录教师所在的学院信息详情
          */
         $(function () {
-            //获取session 得到当前登录教师所在学院id
-            var session =<%=session.getAttribute("user")%>;
             var collegeId = session.teacher.collegeId;
-            if (null == collegeId || '' == collegeId) {
-                alert("对不起！您没有在任何学院任职！无法执行操作！");
-                window.location.reload();
-                return false;
-            }
             var para = {
                 "requestContent": {
                     "collegeId": collegeId
@@ -89,13 +86,8 @@
          * 获取当前学院下的所有班级
          */
         $(function () {
-            var session =<%=session.getAttribute("user")%>;
             var collegeId = session.teacher.collegeId;
             var schoolId = session.teacher.schoolId;
-            if (null == collegeId || '' == collegeId || null == schoolId || '' == schoolId) {
-                alert("对不起！您没有在该学校或者学院任职！无法执行操作！");
-                return false;
-            }
             var para = {
                 "requestContent": {
                     "collegeId": collegeId,

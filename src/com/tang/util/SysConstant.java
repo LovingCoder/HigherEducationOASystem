@@ -106,6 +106,9 @@ public class SysConstant {
      * 办公事务提示
      */
     public static class DAILYWORK{
+        public static final String ADDSUCCESS = "新建事务成功！";
         public static final String QUERYFAIL = "没有事务！";
+        public static final String DELETESUCCESS = "已删除！";
+        public static final String DELETEFAIL = "删除失败！";
     }
 }

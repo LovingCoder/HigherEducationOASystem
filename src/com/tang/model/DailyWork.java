@@ -119,4 +119,19 @@ public class DailyWork extends BaseDailyWork<DailyWork> {
         }
         return recordPage;
     }
+
+    /**
+     * 删除事务
+     * @param requestBean
+     * @return
+     */
+    public Boolean deleteDailyWork(RequestBean requestBean){
+        String id = ParamKit.checkObjectNotNull(requestBean,"id");
+        int i = Db.update("UPDATE daily_work SET isDelete = ? WHERE id = ? AND isDelete = ?",SysConstant.ISDELETE.YES,id,SysConstant.ISDELETE.NO);
+        if (1 == i){
+            return true;
+        }else {
+            return false;
+        }
+    }
 }

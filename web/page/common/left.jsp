@@ -6,7 +6,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>菜单导航栏</title>
     <!-- Bootstrap core CSS -->
     <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -32,6 +32,28 @@
     <!-- Simplify -->
     <link href="/css/simplify.min.css" rel="stylesheet">
 
+    <script src="/jquery/jquery.min.js"></script>
+    <script type="application/javascript">
+
+        var session = <%=session.getAttribute("user")%>;
+
+        /**
+         * 根据用户权限 显示和隐藏部分功能菜单
+         */
+        $(function () {
+            var userRole = session.userRole;
+            if (0 == userRole) {
+                $("#uploadTaskbook").show();
+                $("#addTeacher").show();
+                $("#addDailyWork").show();
+            } else {
+                $("#uploadTaskbook").hide();
+                $("#addTeacher").hide();
+                $("#addDailyWork").hide();
+            }
+        });
+
+    </script>
     <base target="mainFrame">
 </head>
 <body>
@@ -55,7 +77,7 @@
 									</span>
                 </a>
                 <ul class="submenu bg-palette4">
-                    <li><a href="/UI/uploadTaskbookUI"><span class="submenu-label">上传任务书</span></a>
+                    <li id="uploadTaskbook"><a href="/UI/uploadTaskbookUI"><span class="submenu-label">上传任务书</span></a>
                     </li>
                     <li><a href="/UI/queryTaskbookUI"><span
                             class="submenu-label">查看任务书</span></a></li>
@@ -118,7 +140,7 @@
 									</span>
                 </a>
                 <ul class="submenu bg-palette4">
-                    <li><a href="/UI/addTeacherUI"><span class="submenu-label">添加教师</span></a>
+                    <li id="addTeacher"><a href="/UI/addTeacherUI"><span class="submenu-label">添加教师</span></a>
                     </li>
                     <li><a href="/UI/queryTeacherUI"><span
                             class="submenu-label">查看本学院教师列表</span></a></li>
@@ -138,9 +160,21 @@
 									</span>
                 </a>
                 <ul class="submenu">
-                    <li><a href="/UI/addDailyWorkUI"><span class="submenu-label">新建事务</span></a></li>
+                    <li id="addDailyWork"><a href="/UI/addDailyWorkUI"><span class="submenu-label">新建事务</span></a></li>
                     <li><a href="/UI/queryDailyWorkUI"><span class="submenu-label">查看事务</span></a></li>
                 </ul>
+            </li>
+
+            <li class="bg-palette2">
+                <a href="timeline.html">
+									<span class="menu-content block">
+										<span class="menu-icon"><i class="block fa fa-clock-o fa-lg"></i></span>
+										<span class="text m-left-sm">个人信息</span>
+									</span>
+									<span class="menu-content-hover block">
+										个人信息
+									</span>
+                </a>
             </li>
 
             <!-- 关于 -->

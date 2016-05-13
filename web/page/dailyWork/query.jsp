@@ -39,108 +39,42 @@
         var session =<%=session.getAttribute("user")%>;
 
         /**
-         * 加载日期插件
+         * 页面加载的时候判断该用户是否有学校和学院
          * */
-        $(document).ready(function () {
-            $("#dtBox").DateTimePicker();
+        $(document).ready(function(){
+            var collegeId = session.teacher.collegeId;
+            var schoolId = session.teacher.schoolId;
+            if(null == collegeId || '' == collegeId || null == schoolId || '' == schoolId){
+                var d = dialog({
+                    title: '提示',
+                    content: '您好，欢迎使用本教学办公事务管理系统，您当前没有所在学校和班级，为了保证您体验更多完善的功能，请完善您的个人信息',
+                    okValue: '好的，完善个人信息',
+                    ok: function () {
+                        window.location.href = '/UI/completUserUI';
+                    },
+                    cancelValue: '暂时不用，我先看看',
+                    cancel: function () {
+                    }
+                });
+                d.show();
+            }else{
+                loadDate();
+                queryTeacher();
+                queryDailyWork();
+            }
         });
 
         /**
-         * 获取事务列表 页面一加载就执行
-         */
-        $(function () {
-            var collegeId = session.teacher.collegeId;
-            var schoolId = session.teacher.schoolId;
-            if (null == collegeId || '' == collegeId || null == schoolId || '' == schoolId) {
-                alert("对不起！您没有在该学校或者学院任职！无法执行操作！");
-                return false;
-            }
-            var para = {
-                "requestContent": {
-                    "collegeId": collegeId,
-                    "schoolId": schoolId
-                },
-                "pageInfo": {
-                    "pageSize": 10,
-                    "currentPage": 1
-                }
-            };
-            $.ajax({
-                data: para,
-                type: "post",
-                url: "/dailyWork/queryDailyWork",
-                dataType: "json",
-                cache: false,
-                async: false,
-                success: function (data) {
-                    //给表格填充值
-                    var dailyWorkList = data.responseContent;
-                    for (var i in dailyWorkList) {
-                        var str = "<tr> " +
-                                "<td> " + checkTdNUllOrEmpty(dailyWorkList[i].commanderTeacher.teacherName) + " </td>" +
-                                "<td> " + checkTdNUllOrEmpty(dailyWorkList[i].title) + " </td>" +
-                                "<td> " + checkDailyWorkType(dailyWorkList[i].workType) + " </td>" +
-                                "<td> " + checkTdNUllOrEmpty(dailyWorkList[i].beginTime) + " </td>" +
-                                "<td> " + checkTdNUllOrEmpty(dailyWorkList[i].endTime) + " </td>" +
-                                "<td> " + checkTdNUllOrEmpty(dailyWorkList[i].executorTeacher.teacherName) + " </td>" +
-                                "<td> " + checkTdNUllOrEmpty(dailyWorkList[i].desText) + " </td>" +
-                                "<td><button type='button' class='btn btn-danger marginTB-xs detailClick'>删除</button></td>" +
-                                "</tr>";
-                        $("#tbody").append(str);
-                    }
-
-                    //给详情按钮添加点击事件
-                    $(".detailClick").click(function () {
-                        var inx = $(".detailClick").index(this);
-                        for (var i = 0; i < dailyWorkList.length; i++) {
-                            if (i == inx) {
-                                var id = dailyWorkList[i].id;
-                                var d = dialog({
-                                    title: '警告',
-                                    content: '确定要删除该事务？',
-                                    cancelValue: '取消',
-                                    cancel: function () {
-                                        window.location.reload();
-                                    },
-                                    okValue: '确定',
-                                    ok: function () {
-                                        $.post("/dailyWork/deleteDailyWork", {
-                                            "requestContent": {
-                                                "id": id
-                                            },
-                                            "pageInfo": {
-                                                "pageSize": 10,
-                                                "currentPage": 1
-                                            }
-                                        }, function (result) {
-                                            var a = dialog({
-                                                title: '删除提示',
-                                                content: result.message,
-                                                cancel: false,
-                                                okValue: '我知道了',
-                                                ok: function () {
-                                                    window.location.reload();
-                                                }
-                                            });
-                                            a.showModal();
-                                        }, "json");
-                                    }
-                                });
-                                d.showModal();
-                            }
-                        }
-                    });
-                },
-                error: function () {
-                    alert("请求失败");
-                }
-            })
-        });
+         * 加载日期插件
+         * */
+        function loadDate() {
+            $("#dtBox").DateTimePicker();
+        }
 
         /**
          * 获取教师列表，给下拉框赋值
          */
-        $(function () {
+        function queryTeacher() {
             var para = {
                 "requestContent": {
                     "collegeId": session.teacher.collegeId,
@@ -171,12 +105,11 @@
                     alert("请求失败");
                 }
             })
-        });
-
-        function toDetailPgae() {
-            window.location.href = "/UI/detailTeacherUI?teacherId=" + teacherId;
         }
 
+        /**
+         * 获取事务列表
+         */
         function queryDailyWork() {
             var para = {
                 "requestContent": {
@@ -191,7 +124,7 @@
 
                 },
                 "pageInfo": {
-                    "pageSize": 999999,
+                    "pageSize": 10,
                     "currentPage": 1
                 }
             };

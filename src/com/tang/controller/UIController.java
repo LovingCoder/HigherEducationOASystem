@@ -91,4 +91,12 @@ public class UIController extends CollegeController {
     public void queryDailyWorkUI(){
         render("/page/dailyWork/query.jsp");
     }
+
+    /**
+     * 完善用户信息
+     */
+    @ActionKey("/UI/completUserUI")
+    public void completUserUI(){
+        render("/page/user/complet.jsp");
+    }
 }

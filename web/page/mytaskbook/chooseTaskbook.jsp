@@ -43,8 +43,33 @@
          * 获取session
          * */
         var session =<%=session.getAttribute("user")%>;
+
+        /**
+         * 页面加载的时候判断该用户是否有学校和学院
+         * */
+        $(document).ready(function () {
+            var collegeId = session.teacher.collegeId;
+            var schoolId = session.teacher.schoolId;
+            if (null == collegeId || '' == collegeId || null == schoolId || '' == schoolId) {
+                var d = dialog({
+                    title: '提示',
+                    content: '您好，欢迎使用本教学办公事务管理系统，您当前没有所在学校和班级，为了保证您体验更多完善的功能，请完善您的个人信息',
+                    okValue: '好的，完善个人信息',
+                    ok: function () {
+                        window.location.href = '/UI/completUserUI';
+                    },
+                    cancelValue: '暂时不用，我先看看',
+                    cancel: function () {
+                    }
+                });
+                d.show();
+            } else {
+                queryNotChoosenTaskbook();
+            }
+        });
+
         /*获取没有被选择的任务书 课程列表 页面加载就获取*/
-        $(function () {
+        function queryNotChoosenTaskbook() {
             var schoolId = session.teacher.schoolId;
             var collegeId = session.teacher.collegeId;
             if (null == schoolId || "" == schoolId || null == collegeId || "" == collegeId) {
@@ -109,7 +134,7 @@
                 }
 
             });
-        });
+        }
 
         function go() {
             var number = document.getElementById("jump").value;
@@ -430,10 +455,6 @@
 
 <!-- Bootstrap -->
 <script src="/bootstrap/js/bootstrap.min.js"></script>
-
-<!-- Datatable -->
-<script src='/js/jquery.dataTables.min.js'></script>
-<script src='/js/uncompressed/dataTables.bootstrap.js'></script>
 
 <!-- Slimscroll -->
 <script src='/js/jquery.slimscroll.min.js'></script>

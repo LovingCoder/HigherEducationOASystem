@@ -15,14 +15,15 @@
     <meta name="Keywords" content="">
     <meta name="Description" content="">
     <title>Henan University of Technology</title>
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
     <!-- Vendor CSS -->
-    <link href="/css/material-design-iconic-font/css/material-design-iconic-font.min.css" rel="stylesheet" type="text/css">
+    <link href="/css/material-design-iconic-font/css/material-design-iconic-font.min.css" rel="stylesheet"
+          type="text/css">
     <!-- CSS -->
     <link href="/css/app.min.1.css" rel="stylesheet" type="text/css">
 
     <script type="application/javascript">
-        function login(URL,PARAMS){
+        function login(URL, PARAMS) {
 //            if(null == PARAMS.get){
 //                alert("用户名或密码不能为空！");
 //                return false;
@@ -42,38 +43,38 @@
             return temp;
         }
 
-        function doLoginByAjax(){
+        function doLoginByAjax() {
             var para = {
-                "requestTime":"2016-03-15 15:38:09.009",
-                "requestMethod":"",
-                "sessionId":"2c88449748214631ac43e6b370bd1034",
-                "requestId":"1a30fa8c-362d-4634-86f6-6f1e600e40db",
-                "requestContent":{
-                    "username":$("#username").val(),
-                    "password":$("#password").val()
+                "requestTime": "2016-03-15 15:38:09.009",
+                "requestMethod": "",
+                "sessionId": "2c88449748214631ac43e6b370bd1034",
+                "requestId": "1a30fa8c-362d-4634-86f6-6f1e600e40db",
+                "requestContent": {
+                    "username": $("#username").val(),
+                    "password": $("#password").val()
                 },
-                "pageInfo":{
-                    "pageSize":20,
-                    "currentPage":1
+                "pageInfo": {
+                    "pageSize": 20,
+                    "currentPage": 1
                 }
             };
             $.ajax({
                 cache: false,
                 type: "POST",
                 dataType: "json",		  //json格式，重要
-                url:"/user/login",	//把表单数据发送到/user/login
-                data:para,	//要发送的是para中的数据
+                url: "/user/login",	//把表单数据发送到/user/login
+                data: para,	//要发送的是para中的数据
                 async: false,
-                error: function(data) {
+                error: function (data) {
                     alert("用户名或密码错误！");
                 },
-                success: function(data) {
+                success: function (data) {
 //                    $("#ajaxDiv").html(data);	//将返回的结果显示到ajaxDiv中
 //                    window.location.href = "/higherEducation/main";
                     /*如果返回状态等于0 登录成功 跳转到主页面*/
-                    if(0 == data["status"]){
+                    if (0 == data["status"]) {
                         window.location.href = "/index/frame";
-                    }else {
+                    } else {
                         alert(data["message"]);
                     }
                 }
@@ -81,42 +82,42 @@
             });
         }
 
-        function doRegisterByAjax(){
+        function doRegisterByAjax() {
             var password = $("#registerPassword").val();
             var confirmPassword = $("#registerConPassword").val();
-            if(confirmPassword != password){
+            if (confirmPassword != password) {
                 alert("确认密码错误！")
                 return false;
             }
             var para = {
-                "sessionId":"2c88449748214631ac43e6b370bd1034",
-                "requestContent":{
-                    "username":$("#registerUsername").val(),
-                    "email":$("#registerEmail").val(),
-                    "password":confirmPassword,
+                "sessionId": "2c88449748214631ac43e6b370bd1034",
+                "requestContent": {
+                    "username": $("#registerUsername").val(),
+                    "email": $("#registerEmail").val(),
+                    "password": confirmPassword,
                 },
-                "pageInfo":{
-                    "pageSize":20,
-                    "currentPage":1
+                "pageInfo": {
+                    "pageSize": 20,
+                    "currentPage": 1
                 }
             };
             $.ajax({
                 cache: false,
                 type: "POST",
                 dataType: "json",		  //json格式，重要
-                url:"/user/register",	//把表单数据发送到/user/login
-                data:para,	//要发送的是para中的数据
+                url: "/user/register",	//把表单数据发送到/user/login
+                data: para,	//要发送的是para中的数据
                 async: false,
-                error: function(data) {
+                error: function (data) {
                     alert("发送请求失败！");
                 },
-                success: function(data) {
+                success: function (data) {
 //                    $("#ajaxDiv").html(data);	//将返回的结果显示到ajaxDiv中
 //                    alert("请求成功"+data["data"]);
 //                    window.location.href = "/higherEducation/main";
-                    if(0 == data["status"]){
+                    if (0 == data["status"]) {
                         window.location.href = "/index/frame";
-                    }else {
+                    } else {
                         alert(data["message"]);
                     }
                 }
@@ -130,12 +131,15 @@
 
 <div class="lc-block" id="l-login" data-ng-class="{'toggled':lctrl.login === 1}">
     <h1 class="lean">HAUT OA</h1>
+
     <div class="input-group m-b-20">
     		<span class="input-group-addon">
     			<i class="zmdi zmdi-account"></i>
     		</span>
+
         <div class="fg-line">
-            <input type="text" class="form-control" placeholder="Username" regex="^\w{3,16}$" id="username" name="username" value="123"/>
+            <input type="text" class="form-control" placeholder="Username" regex="^\w{3,16}$" id="username"
+                   name="username" value="123"/>
         </div>
     </div>
 
@@ -143,8 +147,10 @@
     		<span class="input-group-addon">
     			<i class="zmdi zmdi-male"></i>
     		</span>
+
         <div class="fg-line">
-            <input type="password" class="form-control" placeholder="Password" regex="^\w+" id="password" name="password" value="123456"/>
+            <input type="password" class="form-control" placeholder="Password" regex="^\w+" id="password"
+                   name="password" value="123456"/>
         </div>
     </div>
 
@@ -152,7 +158,7 @@
 
     <div class="checkbox">
         <label>
-            <input type="checkbox" value="" />
+            <input type="checkbox" value=""/>
             <i class="input-helper">
                 保持登录状态
             </i>
@@ -163,17 +169,20 @@
     </a>
     <ul class="login-navigation">
         <li class="bgm-red" data-ng-click="lctrl.login = 0; lctrl.register = 1">注册</li>
-        <li data-block="#l-forget-password" class="bgm-orange" data-ng-click="lctrl.login = 0; lctrl.forgot = 1">忘记密码?</li>
+        <li data-block="#l-forget-password" class="bgm-orange" data-ng-click="lctrl.login = 0; lctrl.forgot = 1">忘记密码?
+        </li>
     </ul>
 </div>
 
-<div class="lc-block" id="l-register" data-ng-class="{ 'toggled': lctrl.register === 1 }" data-ng-if="lctrl.register === 1">
+<div class="lc-block" id="l-register" data-ng-class="{ 'toggled': lctrl.register === 1 }"
+     data-ng-if="lctrl.register === 1">
     <h1 class="lean">HAUT OA</h1>
 
     <div class="input-group m-b-20">
     		<span class="input-group-addon">
     			<i class="zmdi zmdi-account"></i>
     		</span>
+
         <div class="fg-line">
             <input type="text" class="form-control" placeholder="Username" regex="^\w{3,16}$" id="registerUsername"/>
         </div>
@@ -183,8 +192,10 @@
     		<span class="input-group-addon">
     			<i class="zmdi zmdi-email"></i>
     		</span>
+
         <div class="fg-line">
-            <input type="text" class="form-control" placeholder="Email Address" regex="^\w+@\w+\.[a-zA-Z]+(\.[a-zA-Z]+)?$" id="registerEmail"/>
+            <input type="text" class="form-control" placeholder="Email Address"
+                   regex="^\w+@\w+\.[a-zA-Z]+(\.[a-zA-Z]+)?$" id="registerEmail"/>
         </div>
     </div>
 
@@ -192,6 +203,7 @@
     		<span class="input-group-addon">
     			<i class="zmdi zmdi-male"></i>
     		</span>
+
         <div class="fg-line">
             <input type="password" class="form-control" placeholder="Password" regex="^\w+" id="registerPassword"/>
         </div>
@@ -201,8 +213,10 @@
     		<span class="input-group-addon">
     			<i class="zmdi zmdi-male"></i>
     		</span>
+
         <div class="fg-line">
-            <input type="password" class="form-control" placeholder="Confirm Password" regex="^\w+" id="registerConPassword"/>
+            <input type="password" class="form-control" placeholder="Confirm Password" regex="^\w+"
+                   id="registerConPassword"/>
         </div>
     </div>
 
@@ -216,21 +230,29 @@
         </label>
     </div>
 
-    <a href="javascript:doRegisterByAjax()" class="btn btn-login btn-danger btn-float"><i class="zmdi zmdi-arrow-forward"></i></a>
+    <a href="javascript:doRegisterByAjax()" class="btn btn-login btn-danger btn-float"><i
+            class="zmdi zmdi-arrow-forward"></i></a>
 
     <ul class="login-navigation">
         <li data-block="#l-login" class="bgm-green" data-ng-click="lctrl.register = 0; lctrl.login = 1">登录</li>
-        <li data-block="#l-forget-password" class="bgm-orange" data-ng-click="lctrl.register = 0; lctrl.forgot = 1">忘记密码?</li>
+        <li data-block="#l-forget-password" class="bgm-orange" data-ng-click="lctrl.register = 0; lctrl.forgot = 1">
+            忘记密码?
+        </li>
     </ul>
 </div>
 
-<div class="lc-block" id="l-forget-password" data-ng-class="{ 'toggled': lctrl.forgot === 1 }" data-ng-if="lctrl.forgot === 1">
+<div class="lc-block" id="l-forget-password" data-ng-class="{ 'toggled': lctrl.forgot === 1 }"
+     data-ng-if="lctrl.forgot === 1">
     <h1 class="lean">HAUT OA</h1>
+
     <p class="text-left">请输入您注册账户所用的邮箱，我们将发送验证文件到您的邮箱中，请注意查收</p>
+
     <div class="input-group m-b-20">
         <span class="input-group-addon"><i class="zmdi zmdi-email"></i></span>
+
         <div class="fg-line">
-            <input type="text" class="form-control" placeholder="Email Address" regex="^\w+@\w+\.[a-zA-Z]+(\.[a-zA-Z]+)?$"/>
+            <input type="text" class="form-control" placeholder="Email Address"
+                   regex="^\w+@\w+\.[a-zA-Z]+(\.[a-zA-Z]+)?$"/>
         </div>
     </div>
 
@@ -274,12 +296,12 @@
 <!-- Template Modules -->
 <script src="/js/modules/form.js"></script>
 <script type="text/javascript">
-    $(function (){
+    $(function () {
         // 定位到用户名输入框
         $("#username").focus();
-        } );
+    });
     // 避免session过期后重新登录后输入框嵌套
-    if(window.parent != window) {
+    if (window.parent != window) {
         window.parent.location.reload(true)
     }
 </script>

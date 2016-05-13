@@ -33,12 +33,38 @@
 
     <script type="application/javascript">
 
+        var session = <%=session.getAttribute("user")%>
+
+        /**
+         * 页面加载的时候判断该用户是否有学校和学院
+         * */
+        $(document).ready(function () {
+            var collegeId = session.teacher.collegeId;
+            var schoolId = session.teacher.schoolId;
+            if (null == collegeId || '' == collegeId || null == schoolId || '' == schoolId) {
+                var d = dialog({
+                    title: '提示',
+                    content: '您好，欢迎使用本教学办公事务管理系统，您当前没有所在学校和班级，为了保证您体验更多完善的功能，请完善您的个人信息',
+                    okValue: '好的，完善个人信息',
+                    ok: function () {
+                        window.location.href = '/UI/completUserUI';
+                    },
+                    cancelValue: '暂时不用，我先看看',
+                    cancel: function () {
+                    }
+                });
+                d.show();
+            } else {
+                queryTeacher();
+            }
+        });
+
         /**
          * 获取本学院教师列表 页面一加载就执行
          */
 
         var teacherList;
-        $(function () {
+        function queryTeacher() {
             var session =<%=session.getAttribute("user")%>;
             var collegeId = session.teacher.collegeId;
             var schoolId = session.teacher.schoolId;
@@ -107,13 +133,16 @@
                     alert("请求失败");
                 }
             })
-        });
+        }
 
-//        $("button").live('click',function (teacherId){
-//            $(this) //就是点击那那个button
-//            alert(teacherId);
-//            window.location.href = "/UI/detailTeacherUI?teacherId="+teacherId;
-//        });
+        $(function (){
+            var userRole = session.userRole;
+            if(0 == userRole){
+                $(".detailClick").show();
+            }else{
+                $(".detailClick").hide();
+            }
+        });
 
         function toDetailPgae(){
             window.location.href = "/UI/detailTeacherUI?teacherId="+teacherId;

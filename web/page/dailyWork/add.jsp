@@ -40,6 +40,28 @@
          * */
         var session =<%=session.getAttribute("user")%>;
 
+        $(document).ready(function(){
+            var collegeId = session.teacher.collegeId;
+            var schoolId = session.teacher.schoolId;
+            if(null == collegeId || '' == collegeId || null == schoolId || '' == schoolId){
+                var d = dialog({
+                    title: '提示',
+                    content: '您好，欢迎使用本教学办公事务管理系统，您当前没有所在学校和班级，为了保证您体验更多完善的功能，请完善您的个人信息',
+                    okValue: '好的，完善个人信息',
+                    ok: function () {
+                        window.location.href = '/UI/completUserUI';
+                    },
+                    cancelValue: '暂时不用，我先看看',
+                    cancel: function () {
+                        return false;
+                    }
+                });
+                d.show();
+            }else{
+                queryTeacher();
+            }
+        });
+
         /**
          * 加载日期插件
          * */
@@ -50,7 +72,7 @@
         /**
         * 获取教师列表
          */
-        $(document).ready(function () {
+        function queryTeacher(){
             var collegeId = session.teacher.collegeId;
             var schoolId = session.teacher.schoolId;
             if (null == collegeId || '' == collegeId || null == schoolId || '' == schoolId) {
@@ -86,7 +108,44 @@
                     alert("请求错误！");
                 }
             });
-        });
+        }
+//        $(document).ready(function () {
+//            var collegeId = session.teacher.collegeId;
+//            var schoolId = session.teacher.schoolId;
+//            if (null == collegeId || '' == collegeId || null == schoolId || '' == schoolId) {
+//                alert("对不起！您没有在该学校或者学院任职！无法执行操作！");
+//                return false;
+//            }
+//            var para = {
+//                "requestContent": {
+//                    "collegeId": collegeId,
+//                    "schoolId": schoolId
+//                },
+//                "pageInfo": {
+//                    "pageSize": 10,
+//                    "currentPage": 1
+//                }
+//            };
+//            $.ajax({
+//                data: para,
+//                type: "post",
+//                url: "/teacher/queryTeacher",
+//                dataType: "json",
+//                cache: false,
+//                async: false,
+//                success: function (data) {
+//                    //给下拉框填充值
+//                    teacherList = data.responseContent;
+//                    for (var i in teacherList) {
+//                        var str = "<option value='" + teacherList[i].id + "'>" + teacherList[i].teacherName + "</option>";
+//                        $("#executorId").append(str);
+//                    }
+//                },
+//                error: function (data) {
+//                    alert("请求错误！");
+//                }
+//            });
+//        });
 
         /**
         * 添加事务

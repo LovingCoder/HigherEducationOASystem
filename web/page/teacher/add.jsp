@@ -22,12 +22,14 @@
     <link href="/css/simplify.min.css" rel="stylesheet">
 
     <link href="/css/DateTimePicker.css" rel="stylesheet">
+    <link href="/css/ui-dialog.css" rel="stylesheet">
 
     <script src="/jquery/jquery.min.js"></script>
     <script src="/bootstrap/js/bootstrap.min.js"></script>
     <script src="/jquery/jquerysession.js"></script>
     <script src="/js/DatetimePicker-i18n-zh-CN.js"></script>
     <script src="/js/DateTimePicker.js"></script>
+    <script src="/js/dialog-min.js"></script>
 
     <script src="/js/validation.js"></script>
     <script type="application/javascript">
@@ -36,19 +38,44 @@
          * 获取session
          * */
         var session =<%=session.getAttribute("user")%>;
-
+        /**
+         * 页面加载的时候判断该用户是否有学校和学院
+         * */
         $(document).ready(function () {
+            var collegeId = session.teacher.collegeId;
+            var schoolId = session.teacher.schoolId;
+            if (null == collegeId || '' == collegeId || null == schoolId || '' == schoolId) {
+                var d = dialog({
+                    title: '提示',
+                    content: '您好，欢迎使用本教学办公事务管理系统，您当前没有所在学校和班级，为了保证您体验更多完善的功能，请完善您的个人信息',
+                    okValue: '好的，完善个人信息',
+                    ok: function () {
+                        window.location.href = '/UI/completUserUI';
+                    },
+                    cancelValue: '暂时不用，我先看看',
+                    cancel: function () {
+                    }
+                });
+                d.show();
+            } else {
+                loadDate();
+                detailCollege();
+                queryClass();
+                queryTaskbook();
+            }
+        });
+
+        function loadDate() {
             $("#dtBox").DateTimePicker({
 
                 isPopup: false
 
             });
-        });
-
+        }
         /**
          * 获取当前登录教师所在的学院信息详情
          */
-        $(function () {
+        function detailCollege() {
             var collegeId = session.teacher.collegeId;
             var para = {
                 "requestContent": {
@@ -80,12 +107,12 @@
                     alert("请求失败");
                 }
             })
-        });
+        }
 
         /**
          * 获取当前学院下的所有班级
          */
-        $(function () {
+       function queryClass() {
             var collegeId = session.teacher.collegeId;
             var schoolId = session.teacher.schoolId;
             var para = {
@@ -117,8 +144,7 @@
                     alert("请求失败");
                 }
             })
-        });
-
+        }
         function addTeacher() {
             var classId = $("#selectClass").val();
             var sex = $("input[name='sex']:checked").val();
@@ -217,7 +243,7 @@
 
         <div class="col-sm-3">
             <input type="text" placeholder="电子邮件" class="form-control input-sm" data-parsley-required="true"
-                   data-parsley-type="email" id="email">
+                   data-parsley-type="电子邮件" id="email">
         </div>
     </div>
     <!-- /form-group -->
@@ -229,7 +255,7 @@
             <input type="hidden" id="schoolId">
             <input type="text" placeholder="学校" class="form-control input-sm" data-parsley-required="true"
                    readonly="readonly"
-                   data-parsley-type="email" id="school">
+                   data-parsley-type="学校" id="school">
         </div>
     </div>
 
@@ -240,7 +266,7 @@
             <input type="hidden" id="collegeId">
             <input type="text" placeholder="学院" class="form-control input-sm" data-parsley-required="true"
                    readonly="readonly"
-                   data-parsley-type="email" id="college">
+                   data-parsley-type="学院" id="college">
         </div>
     </div>
 
@@ -258,12 +284,6 @@
     <div style="margin-left: 70px">
         <button type="submit" class="btn btn-info" onclick="addTeacher()">添加</button>
     </div>
-</div>
-
-
-<div>
-    <label class="label-danger">${userName}</label>
-
 </div>
 </body>
 </html>

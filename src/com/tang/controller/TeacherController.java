@@ -89,8 +89,8 @@ public class TeacherController extends Controller {
     /**
      * 删除教师
      */
-    @Before(PowerInterceptor.class)
     @ActionKey("/teacher/deleteTeacher")
+//    @Before(PowerInterceptor.class)
     public void deleteTeacher(){
         HttpKit.setCharSet("utf-8");
         RequestBean requestBean = RequestBeanKit.getRequestBean(getRequest());

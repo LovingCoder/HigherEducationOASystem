@@ -38,26 +38,26 @@
         /**
          * 页面加载的时候判断该用户是否有学校和学院
          * */
-        $(document).ready(function () {
-            var collegeId = session.teacher.collegeId;
-            var schoolId = session.teacher.schoolId;
-            if (null == collegeId || '' == collegeId || null == schoolId || '' == schoolId) {
-                var d = dialog({
-                    title: '提示',
-                    content: '您好，欢迎使用本教学办公事务管理系统，您当前没有所在学校和班级，为了保证您体验更多完善的功能，请完善您的个人信息',
-                    okValue: '好的，完善个人信息',
-                    ok: function () {
-                        window.location.href = '/UI/completUserUI';
-                    },
-                    cancelValue: '暂时不用，我先看看',
-                    cancel: function () {
+                $(document).ready(function () {
+                    var collegeId = session.teacher.collegeId;
+                    var schoolId = session.teacher.schoolId;
+                    if (null == collegeId || '' == collegeId || null == schoolId || '' == schoolId) {
+                        var d = dialog({
+                            title: '提示',
+                            content: '您好，欢迎使用本教学办公事务管理系统，您当前没有所在学校和班级，为了保证您体验更多完善的功能，请完善您的个人信息',
+                            okValue: '好的，完善个人信息',
+                            ok: function () {
+                                window.location.href = '/UI/completUserUI';
+                            },
+                            cancelValue: '暂时不用，我先看看',
+                            cancel: function () {
+                            }
+                        });
+                        d.show();
+                    } else {
+                        queryTeacher();
                     }
                 });
-                d.show();
-            } else {
-                queryTeacher();
-            }
-        });
 
         /**
          * 获取本学院教师列表 页面一加载就执行
@@ -106,29 +106,42 @@
                     }
 
                     //给详情按钮添加点击事件
-                    $(".detailClick").click(function(){
+                    $(".detailClick").click(function () {
                         var inx = $(".detailClick").index(this);
-                        for(var i=0;i<teacherList.length;i++){
-                            if(i == inx){
-                                window.location.href = "/UI/detailTeacherUI?teacherId="+teacherList[i].id;
+                        for (var i = 0; i < teacherList.length; i++) {
+                            if (i == inx) {
+                                window.location.href = "/UI/detailTeacherUI?teacherId=" + teacherList[i].id;
                             }
                         }
                     });
 
-                    $(".deleteClick").click(function(){
+                    $(".deleteClick").click(function () {
                         var inx = $(".deleteClick").index(this);
-                        for(var i=0;i<teacherList.length;i++){
-                            if(i == inx){
+                        for (var i = 0; i < teacherList.length; i++) {
+                            if (i == inx) {
+                                var teacherId = teacherList[i].id;
                                 var d = dialog({
                                     title: '警告',
                                     content: '按钮回调函数返回 false 则不许关闭',
                                     okValue: '提交更改',
                                     ok: function () {
-                                        this.title('提交中…');
-                                        $.post("/teacher/deleteTeacher",teacherList[i].id,function(data){alert(data.message)},"json");
+                                        var paras = {
+                                            "requestContent": {
+                                                "id": teacherId
+                                            },
+                                            "pageInfo": {
+                                                "pageSize": 10,
+                                                "currentPage": 1
+                                            }
+                                        };
+                                        $.post("/teacher/deleteTeacher", paras, function (result) {
+                                            alert(result.message);
+                                            window.location.reload();
+                                        }, "json");
                                     },
                                     cancelValue: '返回',
-                                    cancel: function () {}
+                                    cancel: function () {
+                                    }
                                 });
                                 d.show();
                             }
@@ -141,17 +154,17 @@
             })
         }
 
-        $(function (){
+        $(function () {
             var userRole = session.userRole;
-            if(0 == userRole){
+            if (0 == userRole) {
                 $(".detailClick").show();
-            }else{
+            } else {
                 $(".detailClick").hide();
             }
         });
 
-        function toDetailPgae(){
-            window.location.href = "/UI/detailTeacherUI?teacherId="+teacherId;
+        function toDetailPgae() {
+            window.location.href = "/UI/detailTeacherUI?teacherId=" + teacherId;
         }
     </script>
 

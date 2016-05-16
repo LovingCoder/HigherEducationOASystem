@@ -26,6 +26,9 @@ public class SysConstant {
         public static final int ADMINTEACHER = 0;
         //1 是普通教师
         public static final int COMMONTEACHER = 1;
+
+        //权限不足提示
+        public static final String PERMISSIONDENIED = "权限不足，无法进行该操作！";
     }
 
     /**
@@ -100,6 +103,8 @@ public class SysConstant {
         public static final String ADDFAIL = "添加教师失败！";
         public static final String QUERYTEACHERNULL = "没有教师！";
         public static final String TEACHERNOTEXIST = "教师不存在！";
+        public static final String DELETESUCCESS = "删除教师成功！";
+        public static final String DELETEFAIL = "删除教师失败！";
     }
 
     /**

@@ -6,11 +6,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>主页面</title>
+    <title>系统首页</title>
     <link rel="stylesheet" href="/css/ui-dialog.css">
 
     <script src="/jquery/jquery.min.js"></script>
-    <script src="/js/dialog-min.js"></script>
+    <script src="/js/dialog-plus.js"></script>
 
 
     <script type="application/javascript">
@@ -29,7 +29,9 @@
                     cancelValue: '暂时不用，我先看看',
                     cancel: function () {
                         return false;
-                    }
+                    },
+                    lock:true,
+                    window:'top'
                 });
                 d.show();
             }

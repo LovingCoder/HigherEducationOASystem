@@ -1,12 +1,14 @@
 package com.tang.model;
 
 import com.google.common.base.Strings;
+import com.jfinal.aop.Before;
 import com.jfinal.ext.kit.DateKit;
 import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.Page;
 import com.jfinal.plugin.activerecord.Record;
 import com.tang.bean.RequestBean;
 import com.tang.config.OAConfig;
+import com.tang.interceptor.PowerInterceptor;
 import com.tang.model.base.BaseTeacher;
 import com.tang.util.*;
 import org.apache.xmlbeans.impl.tool.Extension;
@@ -129,5 +131,22 @@ public class Teacher extends BaseTeacher<Teacher> {
         List<Record> taskbookList = Db.find(sqlTaskbook, SysConstant.ISDELETE.NO, teacherId, SysConstant.ISDELETE.NO);
         teacher.set("teskbookList", RecordKit.listRecordToMap(taskbookList));
         return teacher;
+    }
+
+    /**
+     * 删除教师
+     * @param requestBean
+     * @return
+     */
+    @Before(PowerInterceptor.class)
+    public Boolean deleteTeacher(RequestBean requestBean){
+        String id = ParamKit.checkObjectNotNull(requestBean,"id");
+        int i =Db.update("UPDATE teacher SET isDelete = ? WHERE id = ? AND isDelete = ?",SysConstant.ISDELETE.YES,id,SysConstant.ISDELETE.NO);
+        int j = Db.update("UPDATE taskbook SET isDelete = ? WHERE teacherId = ? AND isDelete = ?",SysConstant.ISDELETE.YES,id,SysConstant.ISDELETE.NO);
+        if (i==1 && j>=0){
+            return true;
+        }else {
+            return false;
+        }
     }
 }

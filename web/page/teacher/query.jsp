@@ -65,7 +65,6 @@
 
         var teacherList;
         function queryTeacher() {
-            var session =<%=session.getAttribute("user")%>;
             var collegeId = session.teacher.collegeId;
             var schoolId = session.teacher.schoolId;
             if (null == collegeId || '' == collegeId || null == schoolId || '' == schoolId) {
@@ -101,7 +100,7 @@
                                 "<td> " + checkTdNUllOrEmpty(teacherList[i].schoolName) + " </td>" +
                                 "<td> " + checkTdNUllOrEmpty(teacherList[i].collegeName) + " </td>" +
                                 "<td> " + checkTdNUllOrEmpty(teacherList[i].className) + " </td>" +
-                                "<td><button class='btn btn-warning marginTB-xs detailClick'>详情</button>&nbsp;<button type='button' class='btn btn-danger marginTB-xs'>删除</button></td>" +
+                                "<td><button class='btn btn-warning marginTB-xs detailClick'>详情</button>&nbsp;<button type='button' class='btn btn-danger marginTB-xs deleteClick'>删除</button></td>" +
                                 "</tr>";
                         $("#tbody").append(str);
                     }
@@ -112,19 +111,26 @@
                         for(var i=0;i<teacherList.length;i++){
                             if(i == inx){
                                 window.location.href = "/UI/detailTeacherUI?teacherId="+teacherList[i].id;
-//                                var d = dialog({
-//                                    title: '教师详情',
-//                                    content: '按钮回调函数返回 false 则不许关闭',
-//                                    okValue: '提交更改',
-//                                    ok: function () {
-//                                        this.title('提交中…');
-//                                        return false;
-//                                    },
-//                                    cancelValue: '返回',
-//                                    cancel: function () {}
-//                                });
-//                                d.show();
+                            }
+                        }
+                    });
 
+                    $(".deleteClick").click(function(){
+                        var inx = $(".deleteClick").index(this);
+                        for(var i=0;i<teacherList.length;i++){
+                            if(i == inx){
+                                var d = dialog({
+                                    title: '警告',
+                                    content: '按钮回调函数返回 false 则不许关闭',
+                                    okValue: '提交更改',
+                                    ok: function () {
+                                        this.title('提交中…');
+                                        $.post("/teacher/deleteTeacher",teacherList[i].id,function(data){alert(data.message)},"json");
+                                    },
+                                    cancelValue: '返回',
+                                    cancel: function () {}
+                                });
+                                d.show();
                             }
                         }
                     });

@@ -12,11 +12,13 @@ import com.jfinal.plugin.activerecord.Record;
 import com.jfinal.plugin.activerecord.tx.Tx;
 import com.tang.bean.RequestBean;
 import com.tang.interceptor.LoginInterceptor;
+import com.tang.interceptor.PowerInterceptor;
 import com.tang.model.Teacher;
 import com.tang.util.RecordKit;
 import com.tang.util.RequestBeanKit;
 import com.tang.util.ResponseBeanKit;
 import com.tang.util.SysConstant;
+import org.eclipse.jetty.server.Request;
 
 /**
  * Created by Tang on 2016/4/21.
@@ -82,5 +84,24 @@ public class TeacherController extends Controller {
         }
         System.out.println("/teacher/detailTeacher---" + responseObject);
         renderJson(responseObject);
+    }
+
+    /**
+     * 删除教师
+     */
+    @Before(PowerInterceptor.class)
+    @ActionKey("/teacher/deleteTeacher")
+    public void deleteTeacher(){
+        HttpKit.setCharSet("utf-8");
+        RequestBean requestBean = RequestBeanKit.getRequestBean(getRequest());
+        Boolean result = Teacher.dao.deleteTeacher(requestBean);
+        JSONObject responseContent;
+        if (result){
+            responseContent = ResponseBeanKit.responseBean(SysConstant.CODE.SUCCESS,SysConstant.TEACHER.DELETESUCCESS,null,null);
+        }else {
+            responseContent = ResponseBeanKit.responseBean(SysConstant.CODE.FAIL,SysConstant.TEACHER.DELETEFAIL,null,null);
+        }
+        System.out.println("/teacher/deleteTeacher---"+responseContent);
+        renderJson(responseContent);
     }
 }

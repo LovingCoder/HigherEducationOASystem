@@ -57,76 +57,14 @@
                 });
                 d.show();
             } else {
-                queryTaskbook();
+                query();
             }
         });
 
-        /*获取任务书列表 页面加载就获取*/
-        function queryTaskbook() {
-            var currentPage = 1;
-            var para = {
-                "requestContent": {},
-                "pageInfo": {
-                    "pageSize": 10,
-                    "currentPage": currentPage
-                }
-            };
-            $.ajax({
-                cache: false,
-                type: "POST",
-                dataType: "json",		  //json格式，重要
-                url: "/taskbook/list",	//把表单数据发送到/taskbook/list
-                data: para,	//要发送的是para中的数据
-                async: false,
-                error: function (data) {
-                    alert("数据错误！");
-                },
-                success: function (data) {
-                    /*如果返回状态等于0 请求成功*/
-                    if (0 == data.status) {
-                        //将请求成功的数据显示出来
-                        var responseContent = data.responseContent;
-                        var tbody = $("#tbody");
-                        for (var i in responseContent) {
-                            var str = "<tr> " +
-                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].serialNumber) + " </td>" +
-                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].courseCode) + " </td> " +
-                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].courseName) + " </td>" +
-                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].teachingNumber) + " </td>" +
-                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].major) + " </td>" +
-                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].schoolZone) + " </td>" +
-                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].classAndStudent) + " </td>" +
-                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].grade) + " </td>" +
-                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].totalStudent) + " </td>" +
-                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].testType) + " </td>" +
-                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].weekTime) + " </td>" +
-                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].totalTime) + " </td>" +
-                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].startAndEndWeek) + " </td>" +
-                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].classHour) + " </td>" +
-                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].teacherSign) + " </td>" +
-                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].title) + " </td>" +
-                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].courseProperty) + " </td>" +
-                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].mergeClassOpinion) + " </td>" +
-                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].classRoomType) + " </td>" +
-                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].term) + " </td>" +
-                                    "</tr>"
-                            tbody.append(str);
-                        }
-                        currentPage = data.page.currentPage;
-
-                    } else {
-                        alert(data["message"]);
-                    }
-                }
-
-            });
-        }
-
-
         /**
-         * 搜索任务书
+         * 获取任务书列表
          */
-        function search() {
+        function query() {
             var para = {
                 "requestContent": {
                     "courseName": $("#courseName").val(),
@@ -251,8 +189,6 @@
 </head>
 
 <body>
-
-<div>
     <div class="padding-md">
         <ul class="breadcrumb">
             <li><span class="primary-font"><i class="icon-home"></i></span><a href="index.html"> Home</a></li>
@@ -332,7 +268,6 @@
             &copy; 2016 <strong>CoderKK</strong>. ALL Rights Reserved.
         </p>
     </footer>
-</div>
 <a href="#" class="scroll-to-top hidden-print"><i class="fa fa-chevron-up fa-lg"></i></a>
 
 <!-- Le javascript

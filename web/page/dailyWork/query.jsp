@@ -254,7 +254,7 @@
     <div id="dtBox"></div>
 </div>
 <%--事务列表--%>
-<table class="table table-striped" id="dataTable">
+<table class="table table-striped" id="dataTable" style="table-layout:fixed;height: 70%">
     <thead>
     <tr>
         <th>发布老师</th>

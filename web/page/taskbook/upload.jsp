@@ -120,7 +120,7 @@
 <!-- ./padding-md -->
 <%--</div><!-- /main-container -->--%>
 
-<footer class="footer">
+<%--<footer class="footer">
 				<span class="footer-brand">
 					<strong class="text-danger">HAUT OA System</strong>
 				</span>
@@ -128,7 +128,7 @@
     <p class="no-margin">
         &copy; 2016 <strong>CoderKK</strong>. ALL Rights Reserved.
     </p>
-</footer>
+</footer>--%>
 </div><!-- /wrapper -->
 
 <a href="#" class="scroll-to-top hidden-print"><i class="fa fa-chevron-up fa-lg"></i></a>

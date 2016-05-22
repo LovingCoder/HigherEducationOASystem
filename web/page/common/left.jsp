@@ -166,7 +166,7 @@
             </li>
 
             <li class="bg-palette2">
-                <a href="timeline.html">
+                <a href="/UI/completUserUI">
 									<span class="menu-content block">
 										<span class="menu-icon"><i class="block fa fa-clock-o fa-lg"></i></span>
 										<span class="text m-left-sm">个人信息</span>

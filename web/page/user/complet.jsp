@@ -41,7 +41,112 @@
             $("#dtBox").DateTimePicker({
                 isPopup: false
             });
+            querySchool();
+            //学校下拉框改变时获取学院信息
+            $("#selectSchool").change(function(){
+                queryCollege();
+            });
+            //学院下拉框改变时获取班级信息
+            $("#selectCollege").change(function(){
+                queryClass();
+            });
         });
+
+        /**
+         * 获取学校列表
+         */
+        function querySchool(){
+            $.ajax({
+                url:"/school/querySchool",
+                type: "post",
+                dataType: "json",
+                cache: false,
+                async: false,
+                success:function(data){
+                    //给学校下拉框赋值
+                    var schoolList = data.responseContent;
+                    for (var i in schoolList){
+                        var str = "<option value='" + schoolList[i].id + "'>" + schoolList[i].schoolName + "</option>";
+                        $("#selectSchool").append(str);
+                    }
+                },
+                error:function(data){
+                    alert(data.message);
+                }
+            });
+        }
+        /**
+         * 获取学院列表
+         */
+        function queryCollege(){
+            var paras = {
+                "requestContent": {
+                    "schoolId": $("#selectSchool").val()
+                },
+                "pageInfo": {
+                    "pageSize": 10,
+                    "currentPage": 1
+                }
+            };
+            $.ajax({
+                url:"/college/queryCollege",
+                type: "post",
+                data: paras,
+                dataType: "json",
+                cache: false,
+                async: true,
+                success:function(data){
+                    //先移除之前的信息
+                    $("#selectCollege").find("option").remove();
+                    //给学院下拉框赋值
+                    var collegeList = data.responseContent;
+                    for (var i in collegeList){
+                        var str = "<option value='" + collegeList[i].id + "'>" + collegeList[i].collegeName + "</option>";
+                        $("#selectCollege").append(str);
+                    }
+                },
+                error:function(data){
+                    alert(data.message);
+                }
+            });
+        }
+
+        /**
+         * 获取班级列表
+         */
+        function queryClass(){
+            var paras = {
+                "requestContent": {
+                    "schoolId": $("#selectSchool").val(),
+                    "collegeId":$("#selectCollege").val()
+                },
+                "pageInfo": {
+                    "pageSize": 10,
+                    "currentPage": 1
+                }
+            };
+            $.ajax({
+                url:"/class/queryClass",
+                type:"post",
+                data: paras,
+                dataType: "json",
+                cache: false,
+                async: true,
+                success:function(data){
+                    //先移除之前的信息
+                    $("#selectClass").find("option").remove();
+                    //给学院下拉框赋值
+                    var classList = data.responseContent;
+                    for (var i in classList){
+                        var str = "<option value='" + classList[i].id + "'>" + classList[i].className + "</option>";
+                        $("#selectClass").append(str);
+                    }
+                },
+                error:function(data){
+                    alert(data.message);
+                }
+            });
+        }
 
     </script>
 </head>
@@ -111,10 +216,8 @@
         <label class="col-sm-1 control-label">学校：</label>
 
         <div class="col-sm-3">
-            <input type="hidden" id="schoolId">
-            <input type="text" placeholder="学校" class="form-control input-sm" data-parsley-required="true"
-                   readonly="readonly"
-                   data-parsley-type="学校" id="school">
+            <select class="form-control" id="selectSchool">
+            </select>
         </div>
     </div>
 
@@ -122,10 +225,8 @@
         <label class="col-sm-1 control-label">学院：</label>
 
         <div class="col-sm-3">
-            <input type="hidden" id="collegeId">
-            <input type="text" placeholder="学院" class="form-control input-sm" data-parsley-required="true"
-                   readonly="readonly"
-                   data-parsley-type="学院" id="college">
+            <select class="form-control" id="selectCollege">
+            </select>
         </div>
     </div>
 

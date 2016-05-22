@@ -49,10 +49,11 @@ public class College extends BaseCollege<College> {
     /**
      * 获取学校当前的所有学院
      *
-     * @param schoolId
+     * @param requestBean
      * @return
      */
-    public List<Record> queryCollege(String schoolId) {
+    public List<Record> queryCollege(RequestBean requestBean) {
+        String schoolId = ParamKit.checkObjectNotNull(requestBean,"schoolId");
         return Db.find("SELECT * FROM college WHERE schoolId = ? AND isDelete = ?", schoolId, SysConstant.ISDELETE.NO);
     }
 

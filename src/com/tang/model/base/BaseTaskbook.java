@@ -201,12 +201,4 @@ public abstract class BaseTaskbook<M extends BaseTaskbook<M>> extends Model<M> i
 		return get("term");
 	}
 
-	public void setTeacherId(java.lang.String teacherId) {
-		set("teacherId", teacherId);
-	}
-
-	public java.lang.String getTeacherId() {
-		return get("teacherId");
-	}
-
 }

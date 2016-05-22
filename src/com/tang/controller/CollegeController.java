@@ -12,10 +12,13 @@ import com.jfinal.plugin.activerecord.tx.Tx;
 import com.tang.bean.RequestBean;
 import com.tang.interceptor.LoginInterceptor;
 import com.tang.model.College;
+import com.tang.util.RecordKit;
 import com.tang.util.RequestBeanKit;
 import com.tang.util.ResponseBeanKit;
 import com.tang.util.SysConstant;
 import org.apache.xmlbeans.impl.xb.xsdschema.Public;
+
+import java.util.List;
 
 /**
  * 学院相关Controller
@@ -66,6 +69,21 @@ public class CollegeController extends Controller{
         }
         log.debug(JSONObject.toJSONString(responseObject));
         System.out.println("/college/getCollegeByTeacherId---" +responseObject);
+        renderJson(responseObject);
+    }
+
+    /**
+     * 获取学院列表
+     */
+    @ActionKey("/college/queryCollege")
+    public void queryCollege(){
+        HttpKit.setCharSet("utf-8");
+        RequestBean requestBean = RequestBeanKit.getRequestBean(getRequest());
+        List<Record> recordList = College.dao.queryCollege(requestBean);
+        JSONObject responseObject;
+        responseObject = ResponseBeanKit.responseBean(SysConstant.CODE.SUCCESS,SysConstant.COLLEGE.DETAILSUCCESS, RecordKit.listRecordToMap(recordList),null);
+        log.debug(JSONObject.toJSONString(responseObject));
+        System.out.println("/college/queryCollege---" +responseObject);
         renderJson(responseObject);
     }
 

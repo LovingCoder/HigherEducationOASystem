@@ -1,4 +1,5 @@
 package com.tang.controller;
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.jfinal.aop.Before;
 import com.jfinal.core.ActionKey;
@@ -7,6 +8,7 @@ import com.jfinal.kit.HttpKit;
 import com.jfinal.kit.JsonKit;
 import com.jfinal.log.Log;
 import com.jfinal.log.Log4jLog;
+import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.Record;
 import com.jfinal.plugin.activerecord.tx.Tx;
 import com.tang.bean.PageInfo;
@@ -76,14 +78,16 @@ public class UserController extends Controller {
     public void userComplet() throws Exception{
         HttpKit.setCharSet("utf-8");
         RequestBean requestBean = RequestBeanKit.getRequestBean(getRequest());
-        String userId = getSession().getAttribute("id").toString();
+        JSONObject session = JSON.parseObject(getSession().getAttribute("user").toString());
+        String userId = session.getString("id");
         Boolean result = User.me.completUserInfo(requestBean, userId);
         JSONObject responseObject;
         //返回结果 成功返回0 失败返回1
         if (result){
-            responseObject = ResponseBeanKit.responseBean(SysConstant.CODE.SUCCESS,null,null,null);
+            session.put("teacher", Db.findFirst("SELECT * FROM teacher WHERE userId = ? AND isDelete = ?", userId, SysConstant.ISDELETE.NO).getColumns());
+            responseObject = ResponseBeanKit.responseBean(SysConstant.CODE.SUCCESS,SysConstant.TEACHER.COMPLETSUCCESS,null,null);
         }else {
-            responseObject = ResponseBeanKit.responseBean(SysConstant.CODE.FAIL,null,null,null);
+            responseObject = ResponseBeanKit.responseBean(SysConstant.CODE.FAIL,SysConstant.TEACHER.COMPLETFAIL,null,null);
         }
         System.out.println("/user/complet---"+responseObject);
         renderJson(responseObject);

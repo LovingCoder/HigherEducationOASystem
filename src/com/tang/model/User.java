@@ -92,12 +92,12 @@ public class User extends BaseUser<User> {
         String teacherName = ParamKit.checkObjectNotNull(requestBean, "teacherName");
         String sex = ParamKit.checkObjectNotNull(requestBean, "sex");
         String bornDate = ParamKit.checkObjectNotNull(requestBean, "bornDate");
-        String classId = ParamKit.checkObjectNotNull(requestBean, "classId");
+        String majorId = ParamKit.checkObjectNotNull(requestBean, "majorId");
         String collegeId = ParamKit.checkObjectNotNull(requestBean, "collegeId");
         String schoolId = ParamKit.checkObjectNotNull(requestBean, "schoolId");
         int i = Db.update("UPDATE teacher SET updateTime = ?,teacherName = ?,sex = ?,bornDate = ?," +
-                "classId = ?,collegeId = ?,schoolId = ?,email = ? " +
-                "WHERE userId = ? AND isDelete = ?", new Date(), teacherName, sex, bornDate, classId, collegeId, schoolId, userId);
+                "majorId = ?,collegeId = ?,schoolId = ? " +
+                "WHERE userId = ? AND isDelete = ?", new Date(), teacherName, sex, bornDate, majorId, collegeId, schoolId, userId,SysConstant.ISDELETE.NO);
         if (1 == i) {
             return true;
         } else {

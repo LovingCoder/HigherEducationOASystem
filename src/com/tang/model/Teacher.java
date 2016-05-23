@@ -35,7 +35,7 @@ public class Teacher extends BaseTeacher<Teacher> {
         String sex = ParamKit.checkObjectNotNull(requestBean, "sex");
         String bornDateStr = ParamKit.checkObjectNotNull(requestBean, "bornDate");
         Date bornDate = DateUtils.formateDate(bornDateStr, SysConstant.TIMEFORMAT.yyyyMMdd);
-        String classId = ParamKit.checkObjectNotNull(requestBean, "classId");
+        String majorId = ParamKit.checkObjectNotNull(requestBean, "majorId");
         String collegeId = ParamKit.checkObjectNotNull(requestBean, "collegeId");
         String schoolId = ParamKit.checkObjectNotNull(requestBean, "schoolId");
         String email = ParamKit.checkObjectNotNull(requestBean, "email");
@@ -47,7 +47,7 @@ public class Teacher extends BaseTeacher<Teacher> {
                 .set("teacherName", name)
                 .set("sex", sex)
                 .set("bornDate", bornDate)
-                .set("classId", classId)
+                .set("majorId", majorId)
                 .set("collegeId", collegeId)
                 .set("schoolId", schoolId)
                 .set("email", email);
@@ -70,13 +70,13 @@ public class Teacher extends BaseTeacher<Teacher> {
         String teacherName = ParamKit.checkObjectNotNull(requestBean, "teacherName");
         String collegeId = ParamKit.checkObjectNotNull(requestBean, "collegeId");
         String schoolId = ParamKit.checkObjectNotNull(requestBean, "schoolId");
-        String classId = ParamKit.checkObjectNotNull(requestBean, "classId");
+        String majorId = ParamKit.checkObjectNotNull(requestBean, "majorId");
         String isChoosen = ParamKit.checkObjectNotNull(requestBean,"isChoosen");
-        String select = "SELECT teacher.*,class.className,college.collegeName,school.schoolName";
+        String select = "SELECT teacher.*,major.majorName,college.collegeName,school.schoolName";
         StringBuilder sqlExcept = new StringBuilder("FROM teacher " +
                 "LEFT JOIN college ON college.id = teacher.collegeId AND college.isDelete = ? " +
                 "LEFT JOIN school ON school.id = teacher.schoolId AND school.isDelete = ? " +
-                "LEFT JOIN class ON class.id = teacher.classId AND class.isDelete = ? " +
+                "LEFT JOIN major ON major.id = teacher.majorId AND major.isDelete = ? " +
                 "WHERE teacher.schoolId = ? " +
                 "AND teacher.collegeId = ? ");
         List<Object> paras = new ArrayList<Object>();
@@ -85,9 +85,9 @@ public class Teacher extends BaseTeacher<Teacher> {
         paras.add(SysConstant.ISDELETE.NO);
         paras.add(schoolId);
         paras.add(collegeId);
-        if (!Strings.isNullOrEmpty(classId)) {
-            sqlExcept.append(" AND class.id = ? ");
-            paras.add(classId);
+        if (!Strings.isNullOrEmpty(majorId)) {
+            sqlExcept.append(" AND major.id = ? ");
+            paras.add(majorId);
         }
         if (!Strings.isNullOrEmpty(teacherName)) {
             sqlExcept.append(" AND teacher.teacherName LIKE ? ");
@@ -115,10 +115,10 @@ public class Teacher extends BaseTeacher<Teacher> {
     public Record detailTeacher(RequestBean requestBean) {
         String teacherId = ParamKit.checkObjectNotNull(requestBean, "teacherId");
         //获取教师信息
-        String sqlTeacher = "SELECT teacher.*,class.className,college.collegeName,school.schoolName FROM teacher " +
+        String sqlTeacher = "SELECT teacher.*,major.majorName,college.collegeName,school.schoolName FROM teacher " +
                 "LEFT JOIN college ON college.id = teacher.collegeId AND college.isDelete = ? " +
                 "LEFT JOIN school ON school.id = teacher.schoolId AND school.isDelete = ? " +
-                "LEFT JOIN class ON class.id = teacher.classId AND class.isDelete = ? " +
+                "LEFT JOIN major ON major.id = teacher.majorId AND major.isDelete = ? " +
                 "WHERE teacher.id = ? AND teacher.isDelete = ?";
         Record teacher = Db.findFirst(sqlTeacher, SysConstant.ISDELETE.NO, SysConstant.ISDELETE.NO, SysConstant.ISDELETE.NO, teacherId, SysConstant.ISDELETE.NO);
         if (null == teacher) {

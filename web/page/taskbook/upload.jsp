@@ -71,6 +71,10 @@
                 alert("请选择要上传的任务书excel文件！");
                 return false;
             }
+            if (null == session.teacher || null == session.teacher.collegeId || '' == session.teacher.collegeId || null == session.teacher.schoolId || '' == session.teacher.schoolId || 0!=session.teacher.userRole) {
+                alert("对不起，您没有上传文件权限！");
+                return false;
+            }
             formData.append('term', $("#termName").val());
             formData.append('file', $("#file")[0].files[0]);
             $.ajax({

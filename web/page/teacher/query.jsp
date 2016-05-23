@@ -189,7 +189,7 @@
         <th>邮箱</th>
         <th>学校</th>
         <th>学院</th>
-        <td>班级</td>
+        <td>专业</td>
         <td>操作</td>
     </tr>
     </thead>

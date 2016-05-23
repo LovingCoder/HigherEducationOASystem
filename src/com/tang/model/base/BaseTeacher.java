@@ -65,12 +65,12 @@ public abstract class BaseTeacher<M extends BaseTeacher<M>> extends Model<M> imp
 		return get("bornDate");
 	}
 
-	public void setClassId(java.lang.String classId) {
-		set("classId", classId);
+	public void setMajorId(java.lang.String majorId) {
+		set("majorId", majorId);
 	}
 
-	public java.lang.String getClassId() {
-		return get("classId");
+	public java.lang.String getMajorId() {
+		return get("majorId");
 	}
 
 	public void setCollegeId(java.lang.String collegeId) {
@@ -89,20 +89,20 @@ public abstract class BaseTeacher<M extends BaseTeacher<M>> extends Model<M> imp
 		return get("schoolId");
 	}
 
-	public void setEmail(java.lang.String email) {
-		set("email", email);
-	}
-
-	public java.lang.String getEmail() {
-		return get("email");
-	}
-
 	public void setUserId(java.lang.String userId) {
 		set("userId", userId);
 	}
 
 	public java.lang.String getUserId() {
 		return get("userId");
+	}
+
+	public void setEmail(java.lang.String email) {
+		set("email", email);
+	}
+
+	public java.lang.String getEmail() {
+		return get("email");
 	}
 
 }

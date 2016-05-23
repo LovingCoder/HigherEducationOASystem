@@ -139,7 +139,7 @@
 
         <div class="fg-line">
             <input type="text" class="form-control" placeholder="Username" regex="^\w{3,16}$" id="username"
-                   name="username" value="123"/>
+                   name="username" value="Admin"/>
         </div>
     </div>
 

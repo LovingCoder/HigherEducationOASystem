@@ -41,6 +41,7 @@
             $("#dtBox").DateTimePicker({
                 isPopup: false
             });
+            $("#email").val(session.email);
             querySchool();
             //学校下拉框改变时获取学院信息
             $("#selectSchool").change(function(){
@@ -48,7 +49,7 @@
             });
             //学院下拉框改变时获取班级信息
             $("#selectCollege").change(function(){
-                queryClass();
+                queryMajor();
             });
         });
 
@@ -112,9 +113,9 @@
         }
 
         /**
-         * 获取班级列表
+         * 获取专业列表
          */
-        function queryClass(){
+        function queryMajor(){
             var paras = {
                 "requestContent": {
                     "schoolId": $("#selectSchool").val(),
@@ -126,7 +127,7 @@
                 }
             };
             $.ajax({
-                url:"/class/queryClass",
+                url:"/major/queryMajor",
                 type:"post",
                 data: paras,
                 dataType: "json",
@@ -134,13 +135,47 @@
                 async: true,
                 success:function(data){
                     //先移除之前的信息
-                    $("#selectClass").find("option").remove();
-                    //给学院下拉框赋值
-                    var classList = data.responseContent;
-                    for (var i in classList){
-                        var str = "<option value='" + classList[i].id + "'>" + classList[i].className + "</option>";
-                        $("#selectClass").append(str);
+                    $("#selectMajor").find("option").remove();
+                    //给专业下拉框赋值
+                    var majorList = data.responseContent;
+                    for (var i in majorList){
+                        var str = "<option value='" + majorList[i].id + "'>" + majorList[i].majorName + "</option>";
+                        $("#selectMajor").append(str);
                     }
+                },
+                error:function(data){
+                    alert(data.message);
+                }
+            });
+        }
+
+        /**
+        * 保存信息
+         */
+        function saveInfo(){
+            var paras = {
+                "requestContent": {
+                    "teacherName":$("#teacherName").val(),
+                    "sex":$("input[name='sex']:checked").val(),
+                    "bornDate":$("#bornDate").val(),
+                    "schoolId": $("#selectSchool").val(),
+                    "collegeId":$("#selectCollege").val(),
+                    "majorId":$("#selectMajor").val()
+                },
+                "pageInfo": {
+                    "pageSize": 10,
+                    "currentPage": 1
+                }
+            };
+            $.ajax({
+                url:"/user/complet",
+                type:"post",
+                data: paras,
+                dataType: "json",
+                cache: false,
+                async: true,
+                success:function(data){
+                    alert(data.message);
                 },
                 error:function(data){
                     alert(data.message);
@@ -155,8 +190,7 @@
 <%--顶部导航栏--%>
 <div class="padding-md">
     <ul class="breadcrumb">
-        <li>教师信息管理</li>
-        <li>添加教师</li>
+        <li>完善个人信息</li>
     </ul>
 </div>
 
@@ -207,7 +241,7 @@
 
         <div class="col-sm-3">
             <input type="text" placeholder="电子邮件" class="form-control input-sm" data-parsley-required="true"
-                   data-parsley-type="电子邮件" id="email">
+                   data-parsley-type="电子邮件" id="email" readonly="readonly">
         </div>
     </div>
     <!-- /form-group -->
@@ -230,19 +264,19 @@
         </div>
     </div>
 
-    <%--班级--%>
+    <%--专业--%>
     <div class="form-group">
-        <label class="col-sm-1 control-label">班级：</label>
+        <label class="col-sm-1 control-label">专业：</label>
 
         <div class="col-sm-3">
-            <select class="form-control" id="selectClass">
+            <select class="form-control" id="selectMajor">
             </select>
         </div>
     </div>
 
 
     <div style="margin-left: 70px">
-        <button type="submit" class="btn btn-info" onclick="addTeacher()">添加</button>
+        <button type="submit" class="btn btn-info" onclick="saveInfo()">保存</button>
     </div>
 </div>
 </body>

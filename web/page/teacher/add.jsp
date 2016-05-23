@@ -47,7 +47,7 @@
             if (null == collegeId || '' == collegeId || null == schoolId || '' == schoolId) {
                 var d = dialog({
                     title: '提示',
-                    content: '您好，欢迎使用本教学办公事务管理系统，您当前没有所在学校和班级，为了保证您体验更多完善的功能，请完善您的个人信息',
+                    content: '您好，欢迎使用本教学办公事务管理系统，您当前没有所在学校和专业，为了保证您体验更多完善的功能，请完善您的个人信息',
                     okValue: '好的，完善个人信息',
                     ok: function () {
                         window.location.href = '/UI/completUserUI';
@@ -60,8 +60,7 @@
             } else {
                 loadDate();
                 detailCollege();
-                queryClass();
-                queryTaskbook();
+                queryMajor();
             }
         });
 
@@ -110,9 +109,9 @@
         }
 
         /**
-         * 获取当前学院下的所有班级
+         * 获取当前学院下的所有专业
          */
-       function queryClass() {
+       function queryMajor() {
             var collegeId = session.teacher.collegeId;
             var schoolId = session.teacher.schoolId;
             var para = {
@@ -128,16 +127,16 @@
             $.ajax({
                 data: para,
                 type: "post",
-                url: "/class/queryClass",
+                url: "/major/queryMajor",
                 dataType: "json",
                 cache: false,
                 async: false,
                 success: function (data) {
                     //给班级下拉框填充值
-                    classList = data.responseContent;
-                    for (var i in classList) {
-                        var str = "<option value='" + classList[i].id + "'>" + classList[i].className + "</option>";
-                        $("#selectClass").append(str);
+                    majorList = data.responseContent;
+                    for (var i in majorList) {
+                        var str = "<option value='" + majorList[i].id + "'>" + majorList[i].majorName + "</option>";
+                        $("#selectMajor").append(str);
                     }
                 },
                 error: function () {
@@ -146,14 +145,14 @@
             })
         }
         function addTeacher() {
-            var classId = $("#selectClass").val();
+            var majorId = $("#selectMajor").val();
             var sex = $("input[name='sex']:checked").val();
             var para = {
                 "requestContent": {
                     "teacherName": $("#teacherName").val(),
                     "sex": sex,
                     "bornDate": $("#bornDate").val(),
-                    "classId": classId,
+                    "majorId": majorId,
                     "collegeId": $("#collegeId").val(),
                     "schoolId": $("#schoolId").val(),
                     "email": $("#email").val()
@@ -270,12 +269,12 @@
         </div>
     </div>
 
-    <%--班级--%>
+    <%--专业--%>
     <div class="form-group">
-        <label class="col-sm-1 control-label">班级：</label>
+        <label class="col-sm-1 control-label">专业：</label>
 
         <div class="col-sm-3">
-            <select class="form-control" id="selectClass">
+            <select class="form-control" id="selectMajor">
             </select>
         </div>
     </div>

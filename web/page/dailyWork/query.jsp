@@ -60,7 +60,10 @@
             }else{
                 loadDate();
                 queryTeacher();
-                queryDailyWork();
+                queryDailyWork(1);
+                $('#pagination').jqPaginator('option', {
+                    totalPages: totalPage
+                });
             }
         });
 
@@ -110,7 +113,7 @@
         /**
          * 获取事务列表
          */
-        function queryDailyWork() {
+        function queryDailyWork(currentPage) {
             var para = {
                 "requestContent": {
                     "collegeId": session.teacher.collegeId,
@@ -125,7 +128,7 @@
                 },
                 "pageInfo": {
                     "pageSize": 10,
-                    "currentPage": 1
+                    "currentPage": currentPage
                 }
             };
             $.ajax({
@@ -270,6 +273,23 @@
     <tbody id="tbody">
     </tbody>
 </table>
+<%-- 分页 --%>
+<ul class="pagination" id="pagination"></ul>
+<a href="#" class="scroll-to-top hidden-print"><i class="fa fa-chevron-up fa-lg"></i></a>
 
+<%-- 调用分页插件 --%>
+<script src="/jquery/jquery.min.js"></script>
+<script src="/js/jqPaginator.js"></script>
+<script type="application/javascript">
+
+    $.jqPaginator('#pagination', {
+        totalPages: 1,
+        visiblePages: 10,
+        currentPage: 1,
+        onPageChange: function (num, type) {
+            query(num);
+        }
+    });
+</script>
 </body>
 </html>

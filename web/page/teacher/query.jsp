@@ -55,7 +55,10 @@
                         });
                         d.show();
                     } else {
-                        queryTeacher();
+                        queryTeacher(1);
+                        $('#pagination').jqPaginator('option', {
+                            totalPages: totalPage
+                        });
                     }
                 });
 
@@ -64,7 +67,7 @@
          */
 
         var teacherList;
-        function queryTeacher() {
+        function queryTeacher(currentPage) {
             var collegeId = session.teacher.collegeId;
             var schoolId = session.teacher.schoolId;
             if (null == collegeId || '' == collegeId || null == schoolId || '' == schoolId) {
@@ -78,7 +81,7 @@
                 },
                 "pageInfo": {
                     "pageSize": 10,
-                    "currentPage": 1
+                    "currentPage": currentPage
                 }
             };
             $.ajax({
@@ -89,6 +92,8 @@
                 cache: false,
                 async: false,
                 success: function (data) {
+                    totalPage = data.page.totalPage;
+                    $("#tbody").empty();
                     //给表格填充值
                     teacherList = data.responseContent;
                     for (var i in teacherList) {
@@ -198,6 +203,22 @@
 
     </tbody>
 </table>
+<%-- 分页 --%>
+<ul class="pagination" id="pagination"></ul>
+<a href="#" class="scroll-to-top hidden-print"><i class="fa fa-chevron-up fa-lg"></i></a>
+<%-- 调用分页插件 --%>
+<script src="/jquery/jquery.min.js"></script>
+<script src="/js/jqPaginator.js"></script>
+<script type="application/javascript">
 
+    $.jqPaginator('#pagination', {
+        totalPages: 1,
+        visiblePages: 10,
+        currentPage: 1,
+        onPageChange: function (num, type) {
+            queryTeacher(num);
+        }
+    });
+</script>
 </body>
 </html>

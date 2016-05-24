@@ -64,12 +64,15 @@
                 });
                 d.show();
             } else {
-                queryNotChoosenTaskbook();
+                queryNotChoosenTaskbook(1);
+                $('#pagination').jqPaginator('option', {
+                    totalPages: totalPage
+                });
             }
         });
 
         /*获取没有被选择的任务书 课程列表 页面加载就获取*/
-        function queryNotChoosenTaskbook() {
+        function queryNotChoosenTaskbook(currentPage) {
             var schoolId = session.teacher.schoolId;
             var collegeId = session.teacher.collegeId;
             if (null == schoolId || "" == schoolId || null == collegeId || "" == collegeId) {
@@ -79,11 +82,14 @@
             }
             var para = {
                 "requestContent": {
-
+                    "courseName": $("#courseName").val(),
+                    "major": $("#major").val(),
+                    "courseProperty": $("#courseProperty").val(),
+                    "term": $("#term").val()
                 },
                 "pageInfo": {
                     "pageSize": 10,
-                    "currentPage": 1
+                    "currentPage": currentPage
                 }
             };
             $.ajax({
@@ -97,12 +103,14 @@
                     alert("数据错误！");
                 },
                 success: function (data) {
+                    totalPage = data.page.totalPage;
                     /*如果返回状态等于0 请求成功 否则弹出提示信息*/
                     if (0 == data.status) {
                         //将请求成功的数据显示出来
                         var responseContent = data.responseContent;
 //                        responseContent = null;
                         var tbody = $("#tbody");
+                        tbody.empty();
                         for (var i in responseContent) {
                             var str = "<tr> " +
                                     "<td><input class='tgl tgl-flip' id='" + responseContent[i].id + "' type='checkbox' value='" + responseContent[i].id + "' onclick='checking(" + responseContent[i].id + ")' name='checkbox'><label class='tgl-btn' data-tg-off='未选' data-tg-on='已选' for='" + responseContent[i].id + "'></label></td>" +
@@ -136,86 +144,6 @@
             });
         }
 
-        function go() {
-            var number = document.getElementById("jump").value;
-            $.ajax({
-                type: "post",
-                data: {"pageNumber": number},
-                url: "/taskbook/list",
-                success: function (data) {
-
-                },
-                error: function () {
-                    alert("调用失败");
-                }
-            })
-        }
-        ;
-
-        /**
-         * 搜索任务书
-         */
-        function search() {
-            var para = {
-                "requestContent": {
-                    "courseName": $("#courseName").val(),
-                    "major": $("#major").val(),
-                    "courseProperty": $("#courseProperty").val(),
-                    "term": $("#term").val()
-                },
-                "pageInfo": {
-                    "pageSize": 10,
-                    "currentPage": 1
-                }
-            };
-            $.ajax({
-                type: "post",
-                data: para,
-                cache: false,
-                type: "POST",
-                dataType: "json",		  //json格式，重要
-                url: "/taskbook/list",
-                async: false,
-                success: function (data) {
-                    if (0 == data.status) {
-                        //将请求成功的数据显示出来
-                        var responseContent = data.responseContent;
-                        var tbody = $("#tbody");
-                        tbody.empty();
-                        for (var i in responseContent) {
-                            var str = "<tr> " +
-                                    "<td><input class='tgl tgl-flip' id='" + responseContent[i].id + "' type='checkbox' value='" + responseContent[i].id + "' onclick='checking(" + responseContent[i].id + ")' name='checkbox'><label class='tgl-btn' data-tg-off='未选' data-tg-on='已选' for='" + responseContent[i].id + "'></label></td>" +
-                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].serialNumber) + " </td>" +
-                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].courseCode) + " </td> " +
-                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].courseName) + " </td>" +
-                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].teachingNumber) + " </td>" +
-                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].major) + " </td>" +
-                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].schoolZone) + " </td>" +
-                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].classAndStudent) + " </td>" +
-                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].grade) + " </td>" +
-                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].totalStudent) + " </td>" +
-                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].testType) + " </td>" +
-                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].weekTime) + " </td>" +
-                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].totalTime) + " </td>" +
-                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].startAndEndWeek) + " </td>" +
-                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].classHour) + " </td>" +
-                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].courseProperty) + " </td>" +
-                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].mergeClassOpinion) + " </td>" +
-                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].classRoomType) + " </td>" +
-                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].term) + " </td>" +
-                                    "</tr>"
-                            tbody.append(str);
-                        }
-                    } else {
-                        alert(data["message"]);
-                    }
-                },
-                error: function () {
-                    alert("调用失败");
-                }
-            })
-        }
-
         /**
          * 点击复选框时获取里边的值
          */
@@ -238,7 +166,6 @@
         * 选课
          */
         function chooseTaskbook(){
-            alert(taskbookIds.toLocaleString());
             var teacherId = session.teacher.id;
             var para = {
                 "requestContent": {
@@ -261,6 +188,7 @@
                     alert("数据错误！");
                 },
                 success: function (data) {
+                    totalPage = data.page.totalPage;
                     if(0 == data.status){
                         var myChooseTaskbookList = data.responseContent.myChooseTaskbookList;
                         var conflictTaskbookList = data.responseContent.conflictTaskbookList;
@@ -384,7 +312,7 @@
             <input type="text" class="form-control" placeholder="学期" id="term" name="term">
         </div>
         <!-- /form-group -->
-        <button type="button" class="btn btn-sm btn-success" id="search" onclick="search()">Search</button>
+        <button type="button" class="btn btn-sm btn-success" id="search" onclick="queryNotChoosenTaskbook(1)">Search</button>
         <button type="button" class="btn btn-sm btn-success" id="choose" onclick="chooseTaskbook()" style="float: right">
             提交所选课程
         </button>
@@ -416,35 +344,9 @@
         <tbody id="tbody">
         </tbody>
     </table>
-    <div class="pages" id="page">
-        <div>
-            <ul class="pagination pagination-split" id="pageUL">
-                <li class="disabled"><a href="#">&laquo;</a></li>
-                <li class="active"><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-                <li><a href="#">&raquo;</a></li>
-            </ul>
-        </div>
-        <div class="searchPage">
-            <span class="page-sum">共<strong class="allPage">${recordPage.totalPage}</strong>页</span>
-            <span class="page-go">跳转到第<input type="text" id="jump">页</span>
-            <button type="button" class="btn btn-success marginTB-xs" onclick="go()">GO<i
-                    class="fa fa-angle-double-right m-left-xs"></i></button>
-        </div>
-    </div>
-    <%--<footer class="footer">
-				<span class="footer-brand">
-					<strong class="text-danger">HAUT OA System</strong>
-				</span>
-
-        <p class="no-margin">
-            &copy; 2016 <strong>CoderKK</strong>. ALL Rights Reserved.
-        </p>
-    </footer>--%>
 </div>
+<%-- 分页 --%>
+<ul class="pagination" id="pagination"></ul>
 <a href="#" class="scroll-to-top hidden-print"><i class="fa fa-chevron-up fa-lg"></i></a>
 <!-- Le javascript
 ================================================== -->
@@ -468,6 +370,19 @@
 <!-- Simplify -->
 <script src="/js/simplify/simplify.js"></script>
 
+<%-- 调用分页插件 --%>
+<script src="/jquery/jquery.min.js"></script>
+<script src="/js/jqPaginator.js"></script>
+<script type="application/javascript">
 
+    $.jqPaginator('#pagination', {
+        totalPages: 1,
+        visiblePages: 10,
+        currentPage: 1,
+        onPageChange: function (num, type) {
+            queryNotChoosenTaskbook(num);
+        }
+    });
+</script>
 </body>
 </html>

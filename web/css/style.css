@@ -451,5 +451,6 @@ h4 {
     text-overflow: ellipsis;
     white-space: nowrap;
     width: 10px;
-    text-align: center
+    height: auto;
+    text-align: center;
 }

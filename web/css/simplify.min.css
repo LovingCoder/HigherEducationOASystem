@@ -1858,7 +1858,7 @@ a.list-group-item.active, a.list-group-item.active:focus, a.list-group-item.acti
 
 .main-container {
     position: relative;
-    margin-left: 240px;
+    margin-left: 0px;
     background-color: #f5f5f5;
     right: 0;
     left: 0;

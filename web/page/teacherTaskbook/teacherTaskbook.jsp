@@ -54,12 +54,15 @@
                 });
                 d.show();
             } else {
-                query();
+                queryTaskbookStatus(1);
+                $('#pagination').jqPaginator('option', {
+                    totalPages: totalPage
+                });
             }
         });
 
-        /*获取教师选课列表 页面加载就获取*/
-        function query() {
+        /*获取课程状态 页面加载就获取*/
+        function queryTaskbookStatus(currentPage) {
             //获取下拉框选中的值
             var obj = document.getElementById('isChoosen');
             var index = obj.selectedIndex; //序号，取当前选中选项的序号
@@ -75,7 +78,7 @@
                 },
                 "pageInfo": {
                     "pageSize": 10,
-                    "currentPage": 1
+                    "currentPage": currentPage
                 }
             };
             $.ajax({
@@ -89,65 +92,7 @@
                     alert("数据错误！");
                 },
                 success: function (data) {
-                    /*如果返回状态等于0 请求成功*/
-                    if (0 == data.status) {
-                        //将请求成功的数据显示出来
-                        var responseContent = data.responseContent;
-                        var tbody = $("#tbody");
-                        for (var i in responseContent) {
-                            var str = "<tr> " +
-                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].serialNumber) + " </td>" +
-                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].courseCode) + " </td> " +
-                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].courseName) + " </td>" +
-                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].teachingNumber) + " </td>" +
-                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].major) + " </td>" +
-                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].schoolZone) + " </td>" +
-                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].classAndStudent) + " </td>" +
-                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].grade) + " </td>" +
-                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].totalStudent) + " </td>" +
-                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].testType) + " </td>" +
-                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].weekTime) + " </td>" +
-                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].totalTime) + " </td>" +
-                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].startAndEndWeek) + " </td>" +
-                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].classHour) + " </td>" +
-                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].teacherSign) + " </td>" +
-                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].title) + " </td>" +
-                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].courseProperty) + " </td>" +
-                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].mergeClassOpinion) + " </td>" +
-                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].classRoomType) + " </td>" +
-                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].term) + " </td>" +
-                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].teacherName) + " </td>" +
-                                    "</tr>"
-                            tbody.append(str);
-                        }
-                        currentPage = data.page.currentPage;
-                    } else {
-                        alert(data["message"]);
-                    }
-                }
-
-            });
-        }
-
-        function goToPage() {
-            var para = {
-                "requestContent": {},
-                "pageInfo": {
-                    "pageSize": 10,
-                    "currentPage": $("#pageNumber").val()
-                }
-            };
-            $.ajax({
-                cache: false,
-                type: "POST",
-                dataType: "json",		  //json格式，重要
-                url: "/taskbook/queryTaskbookStatus",	//把表单数据发送到/taskbook/teacherTaskbook
-                data: para,	//要发送的是para中的数据
-                async: false,
-                error: function (data) {
-                    alert("数据错误！");
-                },
-                success: function (data) {
+                    totalPage = data.page.totalPage;
                     /*如果返回状态等于0 请求成功*/
                     if (0 == data.status) {
                         //将请求成功的数据显示出来
@@ -181,7 +126,6 @@
                             tbody.append(str);
                         }
                         currentPage = data.page.currentPage;
-
                     } else {
                         alert(data["message"]);
                     }
@@ -229,7 +173,7 @@
             </select>
         </div>
         <!-- /form-group -->
-        <button type="button" class="btn btn-sm btn-success" id="search" onclick="search()">Search</button>
+        <button type="button" class="btn btn-sm btn-success" id="search" onclick="queryTaskbookStatus(1)">Search</button>
     </div>
     <table class="table table-striped" id="dataTable" style="table-layout:fixed;height: 70%">
         <thead>
@@ -261,18 +205,7 @@
         </tbody>
     </table>
 </div>
-<div class="pages" id="page">
-    <div id="Pagination">
-        <ul class="pagination pagination-split"></ul>
-    </div>
-    <div class="searchPage">
-        <span class="page-sum">共<strong class="allPage">${recordPage.totalPage}</strong>页</span>
-        <span class="page-go">跳转到第<input type="text" id="pageNumber">页</span>
-        <button type="button" class="btn btn-success marginTB-xs" onclick="goToPage()">GO<i
-                class="fa fa-angle-double-right m-left-xs"></i></button>
-    </div>
-</div>
-<footer class="footer">
+<%--<footer class="footer">
 				<span class="footer-brand">
 					<strong class="text-danger">HAUT OA System</strong>
 				</span>
@@ -280,7 +213,9 @@
     <p class="no-margin">
         &copy; 2016 <strong>CoderKK</strong>. ALL Rights Reserved.
     </p>
-</footer>
+</footer>--%>
+<%-- 分页 --%>
+<ul class="pagination" id="pagination"></ul>
 <a href="#" class="scroll-to-top hidden-print"><i class="fa fa-chevron-up fa-lg"></i></a>
 
 <!-- Le javascript
@@ -309,6 +244,19 @@
 <!-- Simplify -->
 <script src="/js/simplify/simplify.js"></script>
 
+<%-- 调用分页插件 --%>
+<script src="/jquery/jquery.min.js"></script>
+<script src="/js/jqPaginator.js"></script>
+<script type="application/javascript">
 
+    $.jqPaginator('#pagination', {
+        totalPages: 1,
+        visiblePages: 10,
+        currentPage: 1,
+        onPageChange: function (num, type) {
+            queryTaskbookStatus(num);
+        }
+    });
+</script>
 </body>
 </html>

@@ -98,7 +98,7 @@
                 success: function (data) {
                     //给班级下拉框填充值
                     majorList = data.responseContent;
-                    for (var i in classList) {
+                    for (var i in majorList) {
                         var str = "<option value='" + majorList[i].id + "'>" + majorList[i].majorName + "</option>";
                         $("#selectMajor").append(str);
                     }
@@ -113,7 +113,6 @@
          * 获取教师详情
          */
         function detailTeacher() {
-            alert("ddd");
             var teacherId = $("#teacherId").val();
             var para = {
                 "requestContent": {

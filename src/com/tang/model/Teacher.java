@@ -71,7 +71,7 @@ public class Teacher extends BaseTeacher<Teacher> {
         String collegeId = ParamKit.checkObjectNotNull(requestBean, "collegeId");
         String schoolId = ParamKit.checkObjectNotNull(requestBean, "schoolId");
         String majorId = ParamKit.checkObjectNotNull(requestBean, "majorId");
-        String isChoosen = ParamKit.checkObjectNotNull(requestBean,"isChoosen");
+        String isChoosen = ParamKit.checkObjectNotNull(requestBean, "isChoosen");
         String select = "SELECT teacher.*,major.majorName,college.collegeName,school.schoolName";
         StringBuilder sqlExcept = new StringBuilder("FROM teacher " +
                 "LEFT JOIN college ON college.id = teacher.collegeId AND college.isDelete = ? " +
@@ -94,10 +94,10 @@ public class Teacher extends BaseTeacher<Teacher> {
             paras.add("%" + teacherName + "%");
         }
         // 1 是已选课的教师 0 是未选课的教师
-        if (!Strings.isNullOrEmpty(isChoosen) && 1 == Integer.valueOf(isChoosen)){
+        if (!Strings.isNullOrEmpty(isChoosen) && 1 == Integer.valueOf(isChoosen)) {
             sqlExcept.append(" AND teacher.id in(SELECT DISTINCT teacherId FROM taskbook WHERE taskbook.teacherId IS NOT NULL) ");
         }
-        if (!Strings.isNullOrEmpty(isChoosen) && 0 == Integer.valueOf(isChoosen)){
+        if (!Strings.isNullOrEmpty(isChoosen) && 0 == Integer.valueOf(isChoosen)) {
             sqlExcept.append(" AND teacher.id not in(SELECT DISTINCT teacherId FROM taskbook WHERE taskbook.teacherId IS NOT NULL) ");
         }
         sqlExcept.append(" AND teacher.isDelete = ? ");
@@ -125,27 +125,26 @@ public class Teacher extends BaseTeacher<Teacher> {
             return null;
         }
         //获取教师所选的课 任务书
-        String sqlTaskbook = "SELECT teacher_taskbook.teacherId,taskbook.* FROM teacher_taskbook " +
-                "LEFT JOIN taskbook ON taskbook.id = teacher_taskbook.taskbookId AND taskbook.isDelete = ? " +
-                "WHERE teacher_taskbook.teacherId = ? AND teacher_taskbook.isDelete = ?";
-        List<Record> taskbookList = Db.find(sqlTaskbook, SysConstant.ISDELETE.NO, teacherId, SysConstant.ISDELETE.NO);
+        String sqlTaskbook = "SELECT * FROM taskbook WHERE teacherId = ? AND isDelete = ?";
+        List<Record> taskbookList = Db.find(sqlTaskbook, teacherId, SysConstant.ISDELETE.NO);
         teacher.set("teskbookList", RecordKit.listRecordToMap(taskbookList));
         return teacher;
     }
 
     /**
      * 删除教师
+     *
      * @param requestBean
      * @return
      */
     @Before(PowerInterceptor.class)
-    public Boolean deleteTeacher(RequestBean requestBean){
-        String id = ParamKit.checkObjectNotNull(requestBean,"id");
-        int i =Db.update("UPDATE teacher SET isDelete = ? WHERE id = ? AND isDelete = ?",SysConstant.ISDELETE.YES,id,SysConstant.ISDELETE.NO);
-        int j = Db.update("UPDATE taskbook SET isDelete = ? WHERE teacherId = ? AND isDelete = ?",SysConstant.ISDELETE.YES,id,SysConstant.ISDELETE.NO);
-        if (i==1 && j>=0){
+    public Boolean deleteTeacher(RequestBean requestBean) {
+        String id = ParamKit.checkObjectNotNull(requestBean, "id");
+        int i = Db.update("UPDATE teacher SET isDelete = ? WHERE id = ? AND isDelete = ?", SysConstant.ISDELETE.YES, id, SysConstant.ISDELETE.NO);
+        int j = Db.update("UPDATE taskbook SET isDelete = ? WHERE teacherId = ? AND isDelete = ?", SysConstant.ISDELETE.YES, id, SysConstant.ISDELETE.NO);
+        if (i == 1 && j >= 0) {
             return true;
-        }else {
+        } else {
             return false;
         }
     }

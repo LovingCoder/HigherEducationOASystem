@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>教师列表</title>
+    <title>教师选课情况列表</title>
     <!-- Bootstrap core CSS -->
     <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -100,7 +100,8 @@
                                 "<td> " + checkTdNUllOrEmpty(teacherList[i].schoolName) + " </td>" +
                                 "<td> " + checkTdNUllOrEmpty(teacherList[i].collegeName) + " </td>" +
                                 "<td> " + checkTdNUllOrEmpty(teacherList[i].className) + " </td>" +
-                                "<td><button class='btn btn-warning marginTB-xs detailClick'>详情</button>&nbsp;<button type='button' class='btn btn-danger marginTB-xs deleteClick'>删除</button></td>" +
+                                "<td> " + checkTdTeacherTaskbook(teacherList[i].taskbookList) + "</td>" +
+                                "<td><button class='btn btn-warning marginTB-xs detailClick'>选课详情</button>" +
                                 "</tr>";
                         $("#tbody").append(str);
                     }
@@ -115,39 +116,7 @@
                         }
                     });
 
-                    $(".deleteClick").click(function () {
-                        var inx = $(".deleteClick").index(this);
-                        for (var i = 0; i < teacherList.length; i++) {
-                            if (i == inx) {
-                                var teacherId = teacherList[i].id;
-                                var d = dialog({
-                                    title: '警告',
-                                    content: '按钮回调函数返回 false 则不许关闭',
-                                    okValue: '提交更改',
-                                    ok: function () {
-                                        var paras = {
-                                            "requestContent": {
-                                                "id": teacherId
-                                            },
-                                            "pageInfo": {
-                                                "pageSize": 10,
-                                                "currentPage": 1
-                                            }
-                                        };
-                                        $.post("/teacher/deleteTeacher", paras, function (result) {
-                                            alert(result.message);
-                                            window.location.reload();
-                                        }, "json");
-                                    },
-                                    cancelValue: '返回',
-                                    cancel: function () {
-                                    }
-                                });
-                                d.show();
-                            }
-                        }
-                    });
-
+                    //重新设置总页数
                     $('#pagination').jqPaginator('option', {
                         totalPages: totalPage
                     });
@@ -180,6 +149,8 @@
     <ul class="breadcrumb">
         <li>教师信息管理</li>
         <li>教师列表</li>
+        <li>教师选课情况查看</li>
+        <li>教师状态查看</li>
     </ul>
 </div>
 
@@ -194,6 +165,7 @@
         <th>学校</th>
         <th>学院</th>
         <td>专业</td>
+        <td>选课状态</td>
         <td>操作</td>
     </tr>
     </thead>

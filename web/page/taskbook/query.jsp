@@ -35,8 +35,7 @@
 
     <script type="text/javascript">
 
-        var session =
-        <%=session.getAttribute("user")%>
+        var session = <%=session.getAttribute("user")%>;
         var totalPage = null;
         /**
          * 页面加载的时候判断该用户是否有学校和学院
@@ -57,11 +56,6 @@
                     }
                 });
                 d.show();
-            } else {
-                query(1);
-                $('#pagination').jqPaginator('option', {
-                    totalPages: totalPage
-                });
             }
         });
 
@@ -124,6 +118,9 @@
                     } else {
                         alert(data["message"]);
                     }
+                    $('#pagination').jqPaginator('option', {
+                        totalPages: totalPage
+                    });
                 },
                 error: function () {
                     alert("调用失败");
@@ -224,12 +221,11 @@
 <script src="/jquery/jquery.min.js"></script>
 <script src="/js/jqPaginator.js"></script>
 <script type="application/javascript">
-
     $.jqPaginator('#pagination', {
         totalPages: 1,
         visiblePages: 10,
         currentPage: 1,
-        onPageChange: function (num, type) {
+        onPageChange: function (num) {
             query(num);
         }
     });

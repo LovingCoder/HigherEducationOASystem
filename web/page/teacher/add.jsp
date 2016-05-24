@@ -132,7 +132,7 @@
                 cache: false,
                 async: false,
                 success: function (data) {
-                    //给班级下拉框填充值
+                    //给专业下拉框填充值
                     majorList = data.responseContent;
                     for (var i in majorList) {
                         var str = "<option value='" + majorList[i].id + "'>" + majorList[i].majorName + "</option>";

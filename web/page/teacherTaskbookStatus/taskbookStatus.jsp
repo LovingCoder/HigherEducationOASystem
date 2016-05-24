@@ -53,11 +53,6 @@
                     }
                 });
                 d.show();
-            } else {
-                queryTaskbookStatus(1);
-                $('#pagination').jqPaginator('option', {
-                    totalPages: totalPage
-                });
             }
         });
 
@@ -125,10 +120,12 @@
                                     "</tr>"
                             tbody.append(str);
                         }
-                        currentPage = data.page.currentPage;
                     } else {
                         alert(data["message"]);
                     }
+                    $('#pagination').jqPaginator('option', {
+                        totalPages: totalPage
+                    });
                 }
 
             });
@@ -141,7 +138,8 @@
     <ul class="breadcrumb">
         <li><span class="primary-font"><i class="icon-home"></i></span><a href="index.html"> Home</a></li>
         <li>选课管理</li>
-        <li>我的选课列表</li>
+        <li>教师选课情况查看</li>
+        <li>课程状态查看</li>
     </ul>
     <div class="form-inline no-margin">
         <div class="form-group">

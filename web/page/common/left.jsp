@@ -104,8 +104,8 @@
                             <span class="submenu-label">教师选课情况查看</span>
                         </a>
                         <ul class="submenu third-level">
-                            <li><a href="/UI/teacherTaskbookUI"><span class="submenu-label">课程状态查看</span></a></li>
-                            <li><a href="/UI/queryTeacherUI"><span class="submenu-label">教师状态查看</span></a></li>
+                            <li><a href="/UI/taskbookStatusUI"><span class="submenu-label">课程状态查看</span></a></li>
+                            <li><a href="/UI/teacherStatusUI"><span class="submenu-label">教师状态查看</span></a></li>
                         </ul>
                     </li>
                 </ul>

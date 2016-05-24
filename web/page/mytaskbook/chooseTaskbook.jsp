@@ -63,11 +63,6 @@
                     }
                 });
                 d.show();
-            } else {
-                queryNotChoosenTaskbook(1);
-                $('#pagination').jqPaginator('option', {
-                    totalPages: totalPage
-                });
             }
         });
 
@@ -135,10 +130,12 @@
                                     "</tr>"
                             tbody.append(str);
                         }
-                        $("#pageUL");
                     } else {
                         alert(data["message"]);
                     }
+                    $('#pagination').jqPaginator('option', {
+                        totalPages: totalPage
+                    });
                 }
 
             });
@@ -379,7 +376,7 @@
         totalPages: 1,
         visiblePages: 10,
         currentPage: 1,
-        onPageChange: function (num, type) {
+        onPageChange: function (num) {
             queryNotChoosenTaskbook(num);
         }
     });

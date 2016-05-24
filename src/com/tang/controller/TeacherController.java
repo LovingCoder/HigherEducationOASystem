@@ -60,7 +60,7 @@ public class TeacherController extends Controller {
         if (null != recordPage) {
             requestBean.getPageInfo().setCount(recordPage.getTotalRow());
             requestBean.getPageInfo().setTotalPage(recordPage.getTotalPage());
-            responseObject = ResponseBeanKit.responseBean(SysConstant.CODE.SUCCESS, null, RecordKit.listRecordToMap(recordPage.getList()), requestBean.getPageInfo());
+            responseObject = ResponseBeanKit.responseBean(SysConstant.CODE.SUCCESS, null, RecordKit.listRecordToMap(Teacher.dao.completQueryTeacher(recordPage)), requestBean.getPageInfo());
         } else {
             responseObject = ResponseBeanKit.responseBean(SysConstant.CODE.FAIL, SysConstant.TEACHER.QUERYTEACHERNULL, null, null);
         }

@@ -53,11 +53,6 @@
                     }
                 });
                 d.show();
-            } else {
-                queryMyTaskbook(1);
-                $('#pagination').jqPaginator('option', {
-                    totalPages: totalPage
-                });
             }
         });
 
@@ -124,10 +119,12 @@
                                     "</tr>"
                             tbody.append(str);
                         }
-                        currentPage = data.page.currentPage;
                     } else {
                         alert(data["message"]);
                     }
+                    $('#pagination').jqPaginator('option', {
+                        totalPages: totalPage
+                    });
                 }
 
             });

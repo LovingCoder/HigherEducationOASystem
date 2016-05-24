@@ -115,3 +115,16 @@ function checkDailyWorkType(data){
         return "日常事务安排";
     }
 }
+
+/**
+ * 检查教师选课情况
+ * @param data
+ * @returns {*}
+ */
+function checkTdTeacherTaskbook(data){
+    if (null == data || '' == data) {
+        return "<span class='label label-danger'>未选</span>";
+    } else {
+        return "<span class='label label-success'>已选</span>";
+    }
+}

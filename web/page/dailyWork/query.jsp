@@ -60,10 +60,6 @@
             }else{
                 loadDate();
                 queryTeacher();
-                queryDailyWork(1);
-                $('#pagination').jqPaginator('option', {
-                    totalPages: totalPage
-                });
             }
         });
 
@@ -103,6 +99,9 @@
                         $("#commanderId").append(str);
                         $("#executorId").append(str);
                     }
+                    $('#pagination').jqPaginator('option', {
+                        totalPages: totalPage
+                    });
                 },
                 error: function () {
                     alert("请求失败");
@@ -286,7 +285,7 @@
         totalPages: 1,
         visiblePages: 10,
         currentPage: 1,
-        onPageChange: function (num, type) {
+        onPageChange: function (num) {
             query(num);
         }
     });

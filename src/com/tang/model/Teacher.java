@@ -148,4 +148,17 @@ public class Teacher extends BaseTeacher<Teacher> {
             return false;
         }
     }
+
+    /**
+     * 完善教师列表信息，根据教师id获取教师的选课情况
+     * @param recordPage
+     * @return
+     */
+    public List<Record> completQueryTeacher(Page<Record> recordPage){
+        for (Record record : recordPage.getList()){
+            List<Record> recordList =  Db.find("SELECT * FROM taskbook WHERE teacherId = ? AND isDelete = ?", record.getStr("id"), SysConstant.ISDELETE.NO);
+            record.set("taskbookList",RecordKit.listRecordToMap(recordList));
+        }
+        return recordPage.getList();
+    }
 }

@@ -54,6 +54,8 @@
                             }
                         });
                         d.show();
+                    }else{
+                        queryMajor();
                     }
                 });
 
@@ -72,7 +74,9 @@
             var para = {
                 "requestContent": {
                     "collegeId": collegeId,
-                    "schoolId": schoolId
+                    "schoolId": schoolId,
+                    "teacherName": $("#teacherName").val(),
+                    "majorId": $("majorId").val()
                 },
                 "pageInfo": {
                     "pageSize": 10,
@@ -122,7 +126,7 @@
                                 var teacherId = teacherList[i].id;
                                 var d = dialog({
                                     title: '警告',
-                                    content: '按钮回调函数返回 false 则不许关闭',
+                                    content: '确定删除该教师？',
                                     okValue: '提交更改',
                                     ok: function () {
                                         var paras = {
@@ -167,8 +171,50 @@
             }
         });
 
-        function toDetailPgae() {
-            window.location.href = "/UI/detailTeacherUI?teacherId=" + teacherId;
+        /**
+         * 获取专业列表
+         * @returns {boolean}
+         */
+        function queryMajor() {
+            var collegeId = session.teacher.collegeId;
+            var schoolId = session.teacher.schoolId;
+            if (null == collegeId || '' == collegeId || null == schoolId || '' == schoolId) {
+                alert("对不起！您没有在该学校或者学院任职！无法执行操作！");
+                return false;
+            }
+            var para = {
+                "requestContent": {
+                    "collegeId": collegeId,
+                    "schoolId": schoolId
+                },
+                "pageInfo": {
+                    "pageSize": 10,
+                    "currentPage": currentPage
+                }
+            };
+            $.ajax({
+                data: para,
+                type: "post",
+                url: "/major/queryMajor",
+                dataType: "json",
+                cache: false,
+                async: false,
+                success: function (data) {
+                    alert(data);
+                    if(0 == data.status){
+                        var str;
+                        alert(data.responseContent);
+                        for(var i in data.responseContent){
+                            alert(data.responseContent[i].id);
+                        }
+                    }else{
+                        alert(data.message);
+                    }
+                },
+                error: function () {
+                    alert("请求失败！");
+                }
+            });
         }
     </script>
 
@@ -177,12 +223,25 @@
 
 <%--顶部导航栏--%>
 <div class="padding-md">
-    <ul class="breadcrumb">
+    <l class="breadcrumb">
+        <li><span class="primary-font"><i class="icon-home"></i></span><a href="/higherEducation/main">Home</a></li>
         <li>教师信息管理</li>
-        <li>教师列表</li>
-    </ul>
+        <li class="active">教师列表</li>
+    </l>
 </div>
+<div class="form-inline no-margin">
+    <div class="form-group">
+        <label class="sr-only">教师名</label>
+        <input type="text" class="form-control" placeholder="教师名" id="teacherName" name="teacherName">
+    </div>
+    <div class="form-group">
+        <label class="sr-only">专业</label>
+        <select class="form-control" placeholder="专业" id="majorId" name="majorId">
 
+        </select>
+    </div>
+    <button type="button" class="btn btn-sm btn-success" id="search" onclick="queryTeacher(1)">Search</button>
+</div>
 <%--教师信息列表--%>
 <table class="table table-striped" id="dataTable">
     <thead>

@@ -53,6 +53,15 @@ public class UIController extends CollegeController {
     }
 
     /**
+     * 教师选课状态详情页面
+     */
+    @ActionKey("/UI/detailTeacherStatusUI")
+    public void detailTeacherStatusUI(){
+        setAttr("teacherId",getPara("teacherId"));
+        render("/page/teacherTaskbookStatus/detailTeacherStatus.jsp");
+    }
+
+    /**
      * 选课页面
      */
     @ActionKey("/UI/chooseTaskbookUI")

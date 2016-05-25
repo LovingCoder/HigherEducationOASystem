@@ -127,7 +127,7 @@ public class Teacher extends BaseTeacher<Teacher> {
         //获取教师所选的课 任务书
         String sqlTaskbook = "SELECT * FROM taskbook WHERE teacherId = ? AND isDelete = ?";
         List<Record> taskbookList = Db.find(sqlTaskbook, teacherId, SysConstant.ISDELETE.NO);
-        teacher.set("teskbookList", RecordKit.listRecordToMap(taskbookList));
+        teacher.set("taskbookList", RecordKit.listRecordToMap(taskbookList));
         return teacher;
     }
 

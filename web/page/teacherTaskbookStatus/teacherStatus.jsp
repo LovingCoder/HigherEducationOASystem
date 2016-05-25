@@ -18,9 +18,6 @@
     <!-- ionicons -->
     <link href="/css/ionicons.min.css" rel="stylesheet">
 
-    <!-- datatable -->
-    <link href="/css/dataTables.bootstrap.css" rel="stylesheet">
-
     <!-- Simplify -->
     <link href="/css/simplify.min.css" rel="stylesheet">
 
@@ -54,6 +51,8 @@
                             }
                         });
                         d.show();
+                    } else {
+                        queryMajor();
                     }
                 });
 
@@ -72,7 +71,10 @@
             var para = {
                 "requestContent": {
                     "collegeId": collegeId,
-                    "schoolId": schoolId
+                    "schoolId": schoolId,
+                    "teacherName": $("#teacherName").val(),
+                    "majorId": $("#selectMajor").val(),
+                    "isChoosen": $("#isChoosen").val()
                 },
                 "pageInfo": {
                     "pageSize": 10,
@@ -101,7 +103,7 @@
                                 "<td> " + checkTdNUllOrEmpty(teacherList[i].collegeName) + " </td>" +
                                 "<td> " + checkTdNUllOrEmpty(teacherList[i].className) + " </td>" +
                                 "<td> " + checkTdTeacherTaskbook(teacherList[i].taskbookList) + "</td>" +
-                                "<td><button class='btn btn-warning marginTB-xs detailClick'>选课详情</button>" +
+                                "<td><button class='btn btn-warning marginTB-xs detailClick'>查看详情</button>" +
                                 "</tr>";
                         $("#tbody").append(str);
                     }
@@ -111,7 +113,9 @@
                         var inx = $(".detailClick").index(this);
                         for (var i = 0; i < teacherList.length; i++) {
                             if (i == inx) {
-                                window.location.href = "/UI/detailTeacherUI?teacherId=" + teacherList[i].id;
+//                                $.post("/UI/detailTeacherStatusUI", {"teacherId": teacherList[i].id});
+                                window.location.href = "/UI/detailTeacherStatusUI?teacherId=" + teacherList[i].id;
+                                break;
                             }
                         }
                     });
@@ -124,7 +128,7 @@
                 error: function () {
                     alert("请求失败");
                 }
-            })
+            });
         }
 
         $(function () {
@@ -136,8 +140,46 @@
             }
         });
 
-        function toDetailPgae() {
-            window.location.href = "/UI/detailTeacherUI?teacherId=" + teacherId;
+
+        /**
+         * 获取专业列表 给专业下拉框赋值
+         * @returns {boolean}
+         */
+        function queryMajor() {
+            var collegeId = session.teacher.collegeId;
+            var schoolId = session.teacher.schoolId;
+            if (null == collegeId || '' == collegeId || null == schoolId || '' == schoolId) {
+                alert("对不起！您没有在该学校或者学院任职！无法执行操作！");
+                return false;
+            }
+            var para = {
+                "requestContent": {
+                    "collegeId": collegeId,
+                    "schoolId": schoolId
+                },
+                "pageInfo": {
+                    "pageSize": 999999,
+                    "currentPage": 1
+                }
+            };
+            $.ajax({
+                data: para,
+                type: "post",
+                url: "/major/queryMajor",
+                dataType: "json",
+                cache: false,
+                async: false,
+                success: function (data) {
+                    $("#selectMajor").empty();
+                    $("#selectMajor").append("<option selected='selected' value=''>教师专业</option>");
+                    for (var i in data.responseContent) {
+                        $("#selectMajor").append("<option value='" + data.responseContent[i].id + "'>" + data.responseContent[i].majorName + "</option>");
+                    }
+                },
+                error: function () {
+                    alert("请求失败");
+                }
+            });
         }
     </script>
 
@@ -146,34 +188,55 @@
 
 <%--顶部导航栏--%>
 <div class="padding-md">
-    <ul class="breadcrumb">
-        <li>教师信息管理</li>
-        <li>教师列表</li>
+    <ol class="breadcrumb">
+        <li><span class="primary-font"><i class="icon-home"></i></span><a href="/higherEducation/main">Home</a></li>
+        <li>选课管理</li>
         <li>教师选课情况查看</li>
-        <li>教师状态查看</li>
-    </ul>
+        <li class="active">教师状态查看</li>
+    </ol>
+    <div class="form-inline no-margin">
+        <div class="form-group">
+            <label class="sr-only">教师姓名</label>
+            <input type="text" class="form-control" placeholder="教师姓名" id="teacherName" name="teacherName">
+        </div>
+        <!-- /form-group -->
+        <div class="form-group">
+            <select class="form-control" id="selectMajor" name="selectMajor">
+
+            </select>
+        </div>
+
+        <div class="form-group">
+            <select class="form-control" id="isChoosen" name="isChoosen">
+                <option selected="selected" value="">是否选课</option>
+                <option value=1>已选课</option>
+                <option value=0>未选课</option>
+            </select>
+        </div>
+        <!-- /form-group -->
+        <button type="button" class="btn btn-sm btn-success" id="search" onclick="queryTeacher(1)">Search</button>
+    </div>
+    <%--教师信息列表--%>
+    <table class="table table-striped" id="dataTable">
+        <thead>
+        <tr>
+            <th>姓名</th>
+            <th>性别</th>
+            <th>年龄</th>
+            <th>邮箱</th>
+            <th>学校</th>
+            <th>学院</th>
+            <td>专业</td>
+            <td>选课状态</td>
+            <td>选课详情</td>
+        </tr>
+        </thead>
+        <tbody id="tbody">
+        <!-- 此处开始迭代 -->
+
+        </tbody>
+    </table>
 </div>
-
-<%--教师信息列表--%>
-<table class="table table-striped" id="dataTable">
-    <thead>
-    <tr>
-        <th>姓名</th>
-        <th>性别</th>
-        <th>年龄</th>
-        <th>邮箱</th>
-        <th>学校</th>
-        <th>学院</th>
-        <td>专业</td>
-        <td>选课状态</td>
-        <td>操作</td>
-    </tr>
-    </thead>
-    <tbody id="tbody">
-    <!-- 此处开始迭代 -->
-
-    </tbody>
-</table>
 <%-- 分页 --%>
 <ul class="pagination" id="pagination"></ul>
 <a href="#" class="scroll-to-top hidden-print"><i class="fa fa-chevron-up fa-lg"></i></a>

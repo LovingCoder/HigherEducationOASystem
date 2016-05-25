@@ -189,9 +189,10 @@
 
 <%--顶部导航栏--%>
 <div class="padding-md">
-    <ul class="breadcrumb">
-        <li>完善个人信息</li>
-    </ul>
+    <ol class="breadcrumb">
+        <li><span class="primary-font"><i class="icon-home"></i></span><a href="/higherEducation/main">Home</a></li>
+        <li class="active">完善个人信息</li>
+    </ol>
 </div>
 
 <%--添加教师信息表单--%>

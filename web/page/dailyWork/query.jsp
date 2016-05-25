@@ -209,10 +209,11 @@
 
 <%--顶部导航栏--%>
 <div class="padding-md">
-    <ul class="breadcrumb">
+    <ol class="breadcrumb">
+        <li><span class="primary-font"><i class="icon-home"></i></span><a href="/higherEducation/main">Home</a></li>
         <li>教师信息管理</li>
-        <li>教师列表</li>
-    </ul>
+        <li class="active">教师列表</li>
+    </ol>
 </div>
 <div class="form-inline no-margin">
     <div class="form-group col-sm-1">

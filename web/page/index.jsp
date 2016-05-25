@@ -23,38 +23,15 @@
     <link href="/css/app.min.1.css" rel="stylesheet" type="text/css">
 
     <script type="application/javascript">
-        function login(URL, PARAMS) {
-//            if(null == PARAMS.get){
-//                alert("用户名或密码不能为空！");
-//                return false;
-//            }
-            var temp = document.createElement("form");
-            temp.action = URL;
-            temp.method = "post";
-            temp.style.display = "none";
-            for (var x in PARAMS) {
-                var opt = document.createElement("textarea");
-                opt.name = x;
-                opt.value = PARAMS[x];
-                temp.appendChild(opt);
-            }
-            document.body.appendChild(temp);
-            temp.submit();
-            return temp;
-        }
 
         function doLoginByAjax() {
             var para = {
-                "requestTime": "2016-03-15 15:38:09.009",
-                "requestMethod": "",
-                "sessionId": "2c88449748214631ac43e6b370bd1034",
-                "requestId": "1a30fa8c-362d-4634-86f6-6f1e600e40db",
                 "requestContent": {
                     "username": $("#username").val(),
                     "password": $("#password").val()
                 },
                 "pageInfo": {
-                    "pageSize": 20,
+                    "pageSize": 10,
                     "currentPage": 1
                 }
             };
@@ -69,9 +46,6 @@
                     alert("用户名或密码错误！");
                 },
                 success: function (data) {
-//                    $("#ajaxDiv").html(data);	//将返回的结果显示到ajaxDiv中
-//                    window.location.href = "/higherEducation/main";
-                    /*如果返回状态等于0 登录成功 跳转到主页面*/
                     if (0 == data["status"]) {
                         window.location.href = "/index/frame";
                     } else {
@@ -90,14 +64,13 @@
                 return false;
             }
             var para = {
-                "sessionId": "2c88449748214631ac43e6b370bd1034",
                 "requestContent": {
                     "username": $("#registerUsername").val(),
                     "email": $("#registerEmail").val(),
                     "password": confirmPassword,
                 },
                 "pageInfo": {
-                    "pageSize": 20,
+                    "pageSize": 10,
                     "currentPage": 1
                 }
             };
@@ -112,9 +85,6 @@
                     alert("发送请求失败！");
                 },
                 success: function (data) {
-//                    $("#ajaxDiv").html(data);	//将返回的结果显示到ajaxDiv中
-//                    alert("请求成功"+data["data"]);
-//                    window.location.href = "/higherEducation/main";
                     if (0 == data["status"]) {
                         window.location.href = "/index/frame";
                     } else {

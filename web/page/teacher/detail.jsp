@@ -152,7 +152,7 @@
                     $("#collegeId").attr("value", data.responseContent.id);
 //                    alert($("#collegeId").val());
                     $("#college").attr("value", data.responseContent.collegeName);
-                    //班级
+                    //专业
                     $("select option[value='" + data.responseContent.majorId + "']").attr("selected", "selected");
                     var taskbookList = data.responseContent.teskbookList;
                     for (var i in taskbookList) {
@@ -182,10 +182,12 @@
 <input type="hidden" id="teacherId" value=${teacherId}>
 <%--顶部导航栏--%>
 <div class="padding-md">
-    <ul class="breadcrumb">
+    <ol class="breadcrumb">
+        <li><span class="primary-font"><i class="icon-home"></i></span><a href="/higherEducation/main">Home</a></li>
         <li>教师信息管理</li>
-        <li>教师详情</li>
-    </ul>
+        <li><a href="/UI/queryTeacherUI">教师列表</a></li>
+        <li class="active">教师详情</li>
+    </ol>
 </div>
 
 <%--添加教师信息表单--%>

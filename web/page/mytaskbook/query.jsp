@@ -134,11 +134,11 @@
 
 <body>
 <div class="padding-md">
-    <ul class="breadcrumb">
-        <li><span class="primary-font"><i class="icon-home"></i></span><a href="index.html"> Home</a></li>
+    <ol class="breadcrumb">
+        <li><span class="primary-font"><i class="icon-home"></i></span><a href="/higherEducation/main">Home</a></li>
         <li>选课管理</li>
-        <li>我的选课列表</li>
-    </ul>
+        <li class="active">我的选课列表</li>
+    </ol>
     <div class="form-inline no-margin">
         <div class="form-group">
             <label class="sr-only">课程名称</label>

@@ -9,7 +9,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Simplify Admin</title>
+    <title>frame</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -103,15 +103,13 @@
 </head>
 
 <body class="overflow-hidden">
-<%--<jsp:include page="/page/common/common.html"/>--%>
-
 <%--<div class="main-container">--%>
 <div class="padding-md">
-    <ul class="breadcrumb">
-        <li><span class="primary-font"><i class="icon-home"></i></span><a href="index.html"> Home</a></li>
+    <ol class="breadcrumb">
+        <li><span class="primary-font"><i class="icon-home"></i></span><a href="/higherEducation/main">Home</a></li>
         <li>任务书管理</li>
-        <li>上传任务书</li>
-    </ul>
+        <li class="active">上传任务书</li>
+    </ol>
     <div class="alert alert-info alert-custom">
         <i class="fa fa-warning"></i><span class="m-left-xs">请选择要上传的任务书.</span>
     </div>

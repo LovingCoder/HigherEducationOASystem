@@ -199,10 +199,11 @@
 <body>
 <%--顶部导航栏--%>
 <div class="padding-md">
-    <ul class="breadcrumb">
+    <ol class="breadcrumb">
+        <li><span class="primary-font"><i class="icon-home"></i></span><a href="/higherEducation/main">Home</a></li>
         <li>日常办公管理</li>
-        <li>新建事务</li>
-    </ul>
+        <li class="active">新建事务</li>
+    </ol>
 </div>
 
 <div class="form-horizontal no-margin" id="type-constraint" data-validate="parsley" novalidate="">

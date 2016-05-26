@@ -1,6 +1,7 @@
 package com.tang.controller;
 
 import com.alibaba.fastjson.JSONObject;
+import com.google.common.base.Strings;
 import com.jfinal.aop.Before;
 import com.jfinal.core.ActionKey;
 import com.jfinal.core.Controller;
@@ -162,9 +163,13 @@ public class TaskBookController extends Controller {
     public void  newChooseTaskbook(){
         HttpKit.setCharSet("utf-8");
         RequestBean requestBean = RequestBeanKit.getRequestBean(getRequest());
-        Map<String,List<Map<String,Object>>> listMap = Taskbook.dao.newChooseTaskBook(requestBean);
         JSONObject responseObject;
-        responseObject = ResponseBeanKit.responseBean(SysConstant.CODE.SUCCESS,null,listMap,null);
+        if(Strings.isNullOrEmpty(ParamKit.checkObjectNotNull(requestBean,"taskbookIds"))){
+            responseObject = ResponseBeanKit.responseBean(SysConstant.CODE.FAIL,SysConstant.CHOOSETASKBOOK.TASKBOOKISNULL,null,null);
+        }else {
+            Map<String,List<Map<String,Object>>> listMap = Taskbook.dao.newChooseTaskBook(requestBean);
+            responseObject = ResponseBeanKit.responseBean(SysConstant.CODE.SUCCESS,null,listMap,null);
+        }
         System.out.println("/taskbook/newChooseTaskbook---"+responseObject);
         renderJson(responseObject);
     }

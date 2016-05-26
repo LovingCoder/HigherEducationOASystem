@@ -93,6 +93,7 @@
                 success: function (data) {
                     totalPage = data.page.totalPage;
                     $("#tbody").empty();
+                    alert(teacherList[i].sex);
                     //给表格填充值
                     teacherList = data.responseContent;
                     for (var i in teacherList) {

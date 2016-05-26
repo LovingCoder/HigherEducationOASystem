@@ -43,7 +43,7 @@
          * 获取session
          * */
         var session =<%=session.getAttribute("user")%>;
-
+        var currentPage = 1;
         /**
          * 页面加载的时候判断该用户是否有学校和学院
          * */
@@ -160,7 +160,7 @@
 
 
         /**
-        * 选课
+        * 提交选课信息
          */
         function chooseTaskbook(){
             var teacherId = session.teacher.id;
@@ -185,7 +185,6 @@
                     alert("数据错误！");
                 },
                 success: function (data) {
-                    totalPage = data.page.totalPage;
                     if(0 == data.status){
                         var myChooseTaskbookList = data.responseContent.myChooseTaskbookList;
                         var conflictTaskbookList = data.responseContent.conflictTaskbookList;
@@ -258,7 +257,7 @@
                         var d = dialog({
                             cancelValue: '我知道了，再看看',
                             cancel: function () {
-                                window.location.reload();
+                                queryNotChoosenTaskbook(currentPage);
                             },
                             okValue: '选完了，去看看我的选课列表',
                             ok: function () {
@@ -267,9 +266,17 @@
                             title:'本次选课详情',
                             content:str
                         });
-                        d.show();
+                        d.showModal();
                     }else if(1 == data.status){
-                        alert(data.message);
+                        var d = dialog({
+                            cancelValue: '选择课程',
+                            cancel: function () {
+                                queryNotChoosenTaskbook(currentPage);
+                            },
+                            title:'错误！',
+                            content:data.message
+                        });
+                        d.show();
                     }
                 }
 
@@ -377,6 +384,7 @@
         visiblePages: 10,
         currentPage: 1,
         onPageChange: function (num) {
+            currentPage = num;
             queryNotChoosenTaskbook(num);
         }
     });

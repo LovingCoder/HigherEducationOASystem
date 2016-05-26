@@ -118,4 +118,11 @@ public class SysConstant {
         public static final String DELETESUCCESS = "已删除！";
         public static final String DELETEFAIL = "删除失败！";
     }
+
+    /**
+     * 选课提示
+     */
+    public static class CHOOSETASKBOOK{
+        public static final String TASKBOOKISNULL = "您没有选择任何课程！";
+    }
 }

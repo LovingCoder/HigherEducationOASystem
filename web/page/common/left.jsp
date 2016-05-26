@@ -46,10 +46,12 @@
                 $("#uploadTaskbook").show();
                 $("#addTeacher").show();
                 $("#addDailyWork").show();
+                $("#teacherStatusUI").hide();
             } else {
                 $("#uploadTaskbook").hide();
                 $("#addTeacher").hide();
                 $("#addDailyWork").hide();
+                $("#teacherStatusUI").hide();
             }
         });
 
@@ -105,7 +107,7 @@
                         </a>
                         <ul class="submenu third-level">
                             <li><a href="/UI/taskbookStatusUI"><span class="submenu-label">课程状态查看</span></a></li>
-                            <li><a href="/UI/teacherStatusUI"><span class="submenu-label">教师状态查看</span></a></li>
+                            <li id="teacherStatusUI"><a href="/UI/teacherStatusUI"><span class="submenu-label">教师状态查看</span></a></li>
                         </ul>
                     </li>
                 </ul>

@@ -58,7 +58,6 @@
 
         /*获取我的选课列表 页面加载就获取*/
         function queryMyTaskbook(currentPage) {
-            var currentPage = 1;
             var para = {
                 "requestTime": "2016-03-15 15:38:09.009",
                 "requestMethod": "",
@@ -95,7 +94,8 @@
                         var tbody = $("#tbody");
                         tbody.empty();
                         for (var i in responseContent) {
-                            var str = "<tr> " +
+                            var str = "<tr>" +
+                                    "<td><input type='checkbox' class='tgl' id='" + responseContent[i].id + "' value='" + responseContent[i].id + "' name='checkbox'></td>" +
                                     "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].serialNumber) + " </td>" +
                                     "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].courseCode) + " </td> " +
                                     "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].courseName) + " </td>" +
@@ -116,7 +116,7 @@
                                     "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].mergeClassOpinion) + " </td>" +
                                     "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].classRoomType) + " </td>" +
                                     "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].term) + " </td>" +
-                                    "</tr>"
+                                    "</tr>";
                             tbody.append(str);
                         }
                     } else {
@@ -129,6 +129,23 @@
 
             });
         }
+
+        /**
+         * 点击复选框时获取里边的值
+         */
+        var taskbookIds = new Array();
+        $(document).on("click", ".tgl", function () {
+            var taskbookId = $(this).attr("id");
+            if ($(this)[0].checked == true) {
+                taskbookIds.push(taskbookId);
+            } else {
+                for (var i = 0; i < taskbookIds.length; i++) {
+                    if (taskbookId == taskbookIds[i]) {
+                        delete taskbookIds[i];
+                    }
+                }
+            }
+        });
     </script>
 </head>
 
@@ -166,6 +183,7 @@
     <table class="table table-striped" id="dataTable" style="table-layout:fixed;height: 70%">
         <thead>
         <tr>
+            <th class="td-style">退选</th>
             <th class="td-style">序号</th>
             <th class="td-style">课程代码</th>
             <th class="td-style">课程名称</th>

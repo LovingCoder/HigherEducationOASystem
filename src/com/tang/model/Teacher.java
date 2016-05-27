@@ -6,6 +6,7 @@ import com.jfinal.ext.kit.DateKit;
 import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.Page;
 import com.jfinal.plugin.activerecord.Record;
+import com.jfinal.plugin.activerecord.tx.Tx;
 import com.tang.bean.RequestBean;
 import com.tang.config.OAConfig;
 import com.tang.interceptor.PowerInterceptor;
@@ -151,14 +152,38 @@ public class Teacher extends BaseTeacher<Teacher> {
 
     /**
      * 完善教师列表信息，根据教师id获取教师的选课情况
+     *
      * @param recordPage
      * @return
      */
-    public List<Record> completQueryTeacher(Page<Record> recordPage){
-        for (Record record : recordPage.getList()){
-            List<Record> recordList =  Db.find("SELECT * FROM taskbook WHERE teacherId = ? AND isDelete = ?", record.getStr("id"), SysConstant.ISDELETE.NO);
-            record.set("taskbookList",RecordKit.listRecordToMap(recordList));
+    public List<Record> completQueryTeacher(Page<Record> recordPage) {
+        for (Record record : recordPage.getList()) {
+            List<Record> recordList = Db.find("SELECT * FROM taskbook WHERE teacherId = ? AND isDelete = ?", record.getStr("id"), SysConstant.ISDELETE.NO);
+            record.set("taskbookList", RecordKit.listRecordToMap(recordList));
         }
         return recordPage.getList();
+    }
+
+    /**
+     * 更新教师信息
+     *
+     * @param requestBean
+     * @return
+     */
+    @Before(Tx.class)
+    public Boolean updateTeacher(RequestBean requestBean) {
+        String id = ParamKit.checkObjectNotNull(requestBean, "id");
+        String teacherName = ParamKit.checkObjectNotNull(requestBean, "teacherName");
+        String bornDateStr = ParamKit.checkObjectNotNull(requestBean, "bornDate");
+        String majorId = ParamKit.checkObjectNotNull(requestBean, "majorId");
+        String collegeId = ParamKit.checkObjectNotNull(requestBean, "collegeId");
+        String schoolId = ParamKit.checkObjectNotNull(requestBean, "schoolId");
+        String email = ParamKit.checkObjectNotNull(requestBean, "email");
+        Record teacher = Db.findFirst("SELECT * FROM teacher WHERE id = ? AND schoolId = ? AND collegeId = ? AND isDelete = ?", id, schoolId, collegeId, SysConstant.ISDELETE.NO);
+        teacher.set("teacherName", Strings.isNullOrEmpty(teacherName) ? teacher.get("teacherName") : teacherName)
+                .set("bornDate", Strings.isNullOrEmpty(bornDateStr) ? teacher.getDate("bornDate") : DateUtils.formateDate(bornDateStr, SysConstant.TIMEFORMAT.yyyyMMdd))
+                .set("majorId", Strings.isNullOrEmpty(majorId) ? teacher.get("majorId") : majorId)
+                .set("email", Strings.isNullOrEmpty(email) ? teacher.get("email") : email);
+        return Db.update("teacher", teacher);
     }
 }

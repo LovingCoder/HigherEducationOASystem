@@ -41,16 +41,28 @@
             $("#dtBox").DateTimePicker({
                 isPopup: false
             });
-            $("#email").val(session.email);
+            completTeacherInfoFromSession();
             querySchool();
-            //学校下拉框改变时获取学院信息
-            $("#selectSchool").change(function(){
+
+            //设置学校选项禁用 如果有学校了 禁用
+            if(null != session.teacher.schoolId){
+                $("#selectSchool").attr("disabled",true);
                 queryCollege();
-            });
-            //学院下拉框改变时获取班级信息
-            $("#selectCollege").change(function(){
-                queryMajor();
-            });
+                //设置学院选项禁用 如果有学院了 禁用
+                if(null != session.teacher.collegeId){
+                    $("#selectCollege").attr("disabled",true);
+                    queryMajor();
+                }
+            }else{
+                //学校下拉框改变时获取学院信息
+                $("#selectSchool").change(function(){
+                    queryCollege();
+                });
+                //学院下拉框改变时获取班级信息
+                $("#selectCollege").change(function(){
+                    queryMajor();
+                });
+            }
         });
 
         /**
@@ -67,7 +79,7 @@
                     //给学校下拉框赋值
                     var schoolList = data.responseContent;
                     for (var i in schoolList){
-                        var str = "<option value='" + schoolList[i].id + "'>" + schoolList[i].schoolName + "</option>";
+                        var str = selectSchool(schoolList[i]);
                         $("#selectSchool").append(str);
                     }
                 },
@@ -76,6 +88,7 @@
                 }
             });
         }
+
         /**
          * 获取学院列表
          */
@@ -102,7 +115,7 @@
                     //给学院下拉框赋值
                     var collegeList = data.responseContent;
                     for (var i in collegeList){
-                        var str = "<option value='" + collegeList[i].id + "'>" + collegeList[i].collegeName + "</option>";
+                        var str = selectCollege(collegeList[i]);
                         $("#selectCollege").append(str);
                     }
                 },
@@ -116,6 +129,7 @@
          * 获取专业列表
          */
         function queryMajor(){
+            alert($("#selectCollege").val());
             var paras = {
                 "requestContent": {
                     "schoolId": $("#selectSchool").val(),
@@ -139,7 +153,7 @@
                     //给专业下拉框赋值
                     var majorList = data.responseContent;
                     for (var i in majorList){
-                        var str = "<option value='" + majorList[i].id + "'>" + majorList[i].majorName + "</option>";
+                        var str = selectMajor(majorList[i]);
                         $("#selectMajor").append(str);
                     }
                 },
@@ -183,6 +197,49 @@
             });
         }
 
+        function completTeacherInfoFromSession(){
+            $("#teacherName").attr("value",session.teacher.teacherName);
+            if(1 == session.teacher.sex){
+                $("#sexMan").attr("checked",true);
+            }else{
+                $("#sexWomen").attr("checked",true);
+            }
+            $("#bornDate").attr("value",session.teacher.bornDate);
+            $("#email").attr("value",session.teacher.email);
+        }
+
+        /**
+         * 学校选中
+         * */
+        function selectSchool(data){
+            if(data.id == session.teacher.schoolId){
+                return "<option value='" + data.id + "' selected='selected'>" + data.schoolName + "</option>";
+            }else{
+                return "<option value='" + data.id + "'>" + data.schoolName + "</option>";
+            }
+        }
+
+        /**
+         * 学院选中
+         * */
+        function selectCollege(data){
+            if(data.id == session.teacher.collegeId){
+                return "<option value='" + data.id + "' selected='selected'>" + data.collegeName + "</option>";
+            }else{
+                return "<option value='" + data.id + "'>" + data.collegeName + "</option>";
+            }
+        }
+
+        /**
+         * 专业选中
+         * */
+        function selectMajor(data){
+            if(data.id == session.teacher.majorId){
+                return "<option value='" + data.id + "' selected='selected'>" + data.majorName + "</option>";
+            }else{
+                return "<option value='" + data.id + "'>" + data.majorName + "</option>";
+            }
+        }
     </script>
 </head>
 <body>

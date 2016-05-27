@@ -60,13 +60,13 @@ function checkTdNUllOrEmpty(data) {
  * @returns {*}
  */
 function checkSex(data) {
-    if (null == data || '' == data) {
-        return "<span class='label label-danger'>未填写</span>";
-    } else if (0 == data) {
-        return '女';
-    } else if (1 == data) {
-        return '男';
+    var str = '';
+    if (1 == data) {
+        str = '男';
+    } else {
+        str = '女';
     }
+    return str;
 }
 
 /**
@@ -104,7 +104,7 @@ function checkSchoolZone(data) {
     }
 }
 
-function checkDailyWorkType(data){
+function checkDailyWorkType(data) {
     if (null == data || '' == data) {
         return "<span class='label label-danger'>未填写</span>";
     } else if ("1" == data || 1 == data) {
@@ -121,7 +121,7 @@ function checkDailyWorkType(data){
  * @param data
  * @returns {*}
  */
-function checkTdTeacherTaskbook(data){
+function checkTdTeacherTaskbook(data) {
     if (null == data || '' == data) {
         return "<span class='label label-danger'>未选</span>";
     } else {

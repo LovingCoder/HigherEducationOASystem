@@ -101,7 +101,7 @@
                                 "<td> " + checkTdNUllOrEmpty(teacherList[i].email) + " </td>" +
                                 "<td> " + checkTdNUllOrEmpty(teacherList[i].schoolName) + " </td>" +
                                 "<td> " + checkTdNUllOrEmpty(teacherList[i].collegeName) + " </td>" +
-                                "<td> " + checkTdNUllOrEmpty(teacherList[i].className) + " </td>" +
+                                "<td> " + checkTdNUllOrEmpty(teacherList[i].majorName) + " </td>" +
                                 "<td> " + checkTdTeacherTaskbook(teacherList[i].taskbookList) + "</td>" +
                                 "<td><button class='btn btn-warning marginTB-xs detailClick'>查看详情</button>" +
                                 "</tr>";

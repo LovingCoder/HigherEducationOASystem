@@ -91,17 +91,36 @@ public class TeacherController extends Controller {
      */
     @ActionKey("/teacher/deleteTeacher")
 //    @Before(PowerInterceptor.class)
-    public void deleteTeacher(){
+    public void deleteTeacher() {
         HttpKit.setCharSet("utf-8");
         RequestBean requestBean = RequestBeanKit.getRequestBean(getRequest());
         Boolean result = Teacher.dao.deleteTeacher(requestBean);
         JSONObject responseContent;
-        if (result){
-            responseContent = ResponseBeanKit.responseBean(SysConstant.CODE.SUCCESS,SysConstant.TEACHER.DELETESUCCESS,null,null);
-        }else {
-            responseContent = ResponseBeanKit.responseBean(SysConstant.CODE.FAIL,SysConstant.TEACHER.DELETEFAIL,null,null);
+        if (result) {
+            responseContent = ResponseBeanKit.responseBean(SysConstant.CODE.SUCCESS, SysConstant.TEACHER.DELETESUCCESS, null, null);
+        } else {
+            responseContent = ResponseBeanKit.responseBean(SysConstant.CODE.FAIL, SysConstant.TEACHER.DELETEFAIL, null, null);
         }
-        System.out.println("/teacher/deleteTeacher---"+responseContent);
+        System.out.println("/teacher/deleteTeacher---" + responseContent);
+        renderJson(responseContent);
+    }
+
+    /**
+     * 更新教师信息
+     */
+    @Before(Tx.class)
+    @ActionKey("/teacher/updateTeacher")
+    public void updateTeacher() {
+        HttpKit.setCharSet("utf-8");
+        RequestBean requestBean = RequestBeanKit.getRequestBean(getRequest());
+        Boolean result = Teacher.dao.updateTeacher(requestBean);
+        JSONObject responseContent;
+        if (result) {
+            responseContent = ResponseBeanKit.responseBean(SysConstant.CODE.SUCCESS, SysConstant.TEACHER.UPDATESUCCESS, null, null);
+        } else {
+            responseContent = ResponseBeanKit.responseBean(SysConstant.CODE.FAIL, SysConstant.TEACHER.UPDATEFAIL, null, null);
+        }
+        System.out.println("/teacher/updateTeacher---" + responseContent);
         renderJson(responseContent);
     }
 }

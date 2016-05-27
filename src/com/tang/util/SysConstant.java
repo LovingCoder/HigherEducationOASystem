@@ -107,6 +107,8 @@ public class SysConstant {
         public static final String DELETEFAIL = "删除教师失败！";
         public static final String COMPLETSUCCESS = "完善用户成功！";
         public static final String COMPLETFAIL = "完善用户信息失败！";
+        public static final String UPDATESUCCESS = "更新教师信息成功！";
+        public static final String UPDATEFAIL = "更新教师信息失败！";
     }
 
     /**

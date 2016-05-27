@@ -46,7 +46,7 @@
                 $("#uploadTaskbook").show();
                 $("#addTeacher").show();
                 $("#addDailyWork").show();
-                $("#teacherStatusUI").hide();
+                $("#teacherStatusUI").show();
             } else {
                 $("#uploadTaskbook").hide();
                 $("#addTeacher").hide();
@@ -76,8 +76,7 @@
 									</span>
 									<span class="menu-content-hover block">
 										任务书
-									</span>
-                </a>
+									</span>                </a>
                 <ul class="submenu bg-palette4">
                     <li id="uploadTaskbook"><a href="/UI/uploadTaskbookUI"><span class="submenu-label">上传任务书</span></a>
                     </li>

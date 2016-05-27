@@ -84,7 +84,7 @@
                     "schoolId": schoolId
                 },
                 "pageInfo": {
-                    "pageSize": 10,
+                    "pageSize": 999999,
                     "currentPage": 1
                 }
             };
@@ -149,12 +149,12 @@
 //                    alert($("#schoolId").val());
                     $("#school").attr("value", data.responseContent.schoolName);
                     //给学院输入框赋值
-                    $("#collegeId").attr("value", data.responseContent.id);
+                    $("#collegeId").attr("value", data.responseContent.collegeId);
 //                    alert($("#collegeId").val());
                     $("#college").attr("value", data.responseContent.collegeName);
                     //专业
                     $("select option[value='" + data.responseContent.majorId + "']").attr("selected", "selected");
-                    var taskbookList = data.responseContent.teskbookList;
+                    /*var taskbookList = data.responseContent.teskbookList;
                     for (var i in taskbookList) {
                         var str = "<tr> " +
                                 "<td> " + checkTdNUllOrEmpty(taskbookList[i].courseCode) + " </td> " +
@@ -169,10 +169,53 @@
                                 "<td> " + checkTdNUllOrEmpty(taskbookList[i].term) + " </td>" +
                                 "</tr>"
                     }
-                    $("#taskbookList").append();
+                    $("#taskbookList").append();*/
                 },
                 error: function () {
                     alert("请求失败");
+                }
+            })
+        }
+
+        /**
+        * 保存修改后的教师信息
+         */
+        function saveInfo(){
+            var majorId = $("#selectMajor").val();
+            var sex = $("input[name='sex']:checked").val();
+            var para = {
+                "requestContent": {
+                    "id":$("#teacherId").val(),
+                    "teacherName": $("#teacherName").val(),
+                    "bornDate": $("#bornDate").val(),
+                    "majorId": majorId,
+                    "collegeId": $("#collegeId").val(),
+                    "schoolId": $("#schoolId").val(),
+                    "email": $("#email").val()
+                },
+                "pageInfo": {
+                    "pageSize": 10,
+                    "currentPage": 1
+                }
+            };
+            $.ajax({
+                type: "post",
+                data: para,
+                cache: false,
+                type: "POST",
+                dataType: "json",		  //json格式，重要
+                url: "/teacher/updateTeacher",
+                async: true,
+                success: function (data) {
+                    if (0 == data.status) {
+                        alert(data.message);
+                        window.location.href = "/UI/queryTeacherUI";
+                    } else {
+                        alert(data.message);
+                    }
+                },
+                error: function () {
+                    alert("发生异常！");
                 }
             })
         }
@@ -277,7 +320,7 @@
         </div>
 
         <%--课程列表--%>
-        <div class="form-group">
+        <%--<div class="form-group">
             <label class="col-sm-1 control-label">已选课程：</label>
 
             <div class="col-sm-9 padding-md" id="taskbookList">
@@ -301,10 +344,10 @@
                     </tbody>
                 </table>
             </div>
-        </div>
+        </div>--%>
 
         <div style="margin-left: 70px">
-            <button type="submit" class="btn btn-info" onclick="addTeacher()">保存更改</button>
+            <button type="submit" class="btn btn-info" onclick="saveInfo()">保存更改</button>
         </div>
     </div>
 

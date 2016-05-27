@@ -76,7 +76,7 @@
                     "collegeId": collegeId,
                     "schoolId": schoolId,
                     "teacherName": $("#teacherName").val(),
-                    "majorId": $("majorId").val()
+                    "majorId": $("#majorId option:selected").val()
                 },
                 "pageInfo": {
                     "pageSize": 10,
@@ -93,7 +93,6 @@
                 success: function (data) {
                     totalPage = data.page.totalPage;
                     $("#tbody").empty();
-                    alert(teacherList[i].sex);
                     //给表格填充值
                     teacherList = data.responseContent;
                     for (var i in teacherList) {
@@ -104,7 +103,7 @@
                                 "<td> " + checkTdNUllOrEmpty(teacherList[i].email) + " </td>" +
                                 "<td> " + checkTdNUllOrEmpty(teacherList[i].schoolName) + " </td>" +
                                 "<td> " + checkTdNUllOrEmpty(teacherList[i].collegeName) + " </td>" +
-                                "<td> " + checkTdNUllOrEmpty(teacherList[i].className) + " </td>" +
+                                "<td> " + checkTdNUllOrEmpty(teacherList[i].majorName) + " </td>" +
                                 "<td><button class='btn btn-warning marginTB-xs detailClick'>详情</button>&nbsp;<button type='button' class='btn btn-danger marginTB-xs deleteClick'>删除</button></td>" +
                                 "</tr>";
                         $("#tbody").append(str);
@@ -148,7 +147,7 @@
                                     cancel: function () {
                                     }
                                 });
-                                d.show();
+                                d.showModal();
                             }
                         }
                     });
@@ -189,8 +188,8 @@
                     "schoolId": schoolId
                 },
                 "pageInfo": {
-                    "pageSize": 10,
-                    "currentPage": currentPage
+                    "pageSize": 999999,
+                    "currentPage": 1
                 }
             };
             $.ajax({
@@ -201,12 +200,9 @@
                 cache: false,
                 async: false,
                 success: function (data) {
-                    alert(data);
                     if(0 == data.status){
-                        var str;
-                        alert(data.responseContent);
                         for(var i in data.responseContent){
-                            alert(data.responseContent[i].id);
+                            $("#majorId").append("<option value='"+data.responseContent[i].id+"'>"+data.responseContent[i].majorName+"</option>");
                         }
                     }else{
                         alert(data.message);
@@ -238,7 +234,7 @@
     <div class="form-group">
         <label class="sr-only">专业</label>
         <select class="form-control" placeholder="专业" id="majorId" name="majorId">
-
+            <option selected="selected" value="">选择专业</option>
         </select>
     </div>
     <button type="button" class="btn btn-sm btn-success" id="search" onclick="queryTeacher(1)">Search</button>

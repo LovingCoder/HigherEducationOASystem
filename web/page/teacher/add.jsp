@@ -66,9 +66,7 @@
 
         function loadDate() {
             $("#dtBox").DateTimePicker({
-
                 isPopup: false
-
             });
         }
         /**

@@ -39,8 +39,8 @@
     <div class="top-nav-inner">
         <div class="nav-header">
 
-            <a href="/higherEducation/main" class="brand">
-                <i class="fa fa-database"></i><span class="brand-name">
+            <a href="/index/frame" class="brand">
+                <span class="brand-name">
                 HAUT OA System
             </span>
             </a>

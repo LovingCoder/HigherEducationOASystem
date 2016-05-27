@@ -9,7 +9,6 @@
 <html>
 <head>
     <title>事务列表</title>
-    <!-- Bootstrap core CSS -->
     <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Font Awesome -->
@@ -21,15 +20,17 @@
     <!-- Simplify -->
     <link href="/css/simplify.min.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="/css/ui-dialog.css">
     <link href="/css/DateTimePicker.css" rel="stylesheet">
+    <link href="/css/ui-dialog.css" rel="stylesheet">
 
     <script src="/jquery/jquery.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/jquery/jquerysession.js"></script>
+    <script src="/js/DatetimePicker-i18n-zh-CN.js"></script>
+    <script src="/js/DateTimePicker.js"></script>
     <script src="/js/dialog-min.js"></script>
 
     <script src="/js/validation.js"></script>
-    <script src="/js/DatetimePicker-i18n-zh-CN.js"></script>
-    <script src="/js/DateTimePicker.js"></script>
 
     <script type="application/javascript">
 
@@ -58,7 +59,6 @@
                 });
                 d.show();
             }else{
-                loadDate();
                 queryTeacher();
             }
         });
@@ -67,7 +67,9 @@
          * 加载日期插件
          * */
         function loadDate() {
-            $("#dtBox").DateTimePicker();
+            $("#dtBox").DateTimePicker({
+                isPopup: false
+            });
         }
 
         /**
@@ -246,11 +248,11 @@
     <!-- /form-group -->
     <div class="form-group col-sm-2">
         <input type="text" class="form-control" placeholder="开始时间" id="beginTime" name="beginTime" data-field="datetime"
-               readonly="readonly" data-format="yyyy-MM-dd HH:mm">
+               data-format="yyyy-MM-dd HH:mm">
     </div>
     <div class="form-group col-sm-2">
         <input type="text" class="form-control" placeholder="结束时间" id="endTime" name="endTime" data-field="datetime"
-               readonly="readonly" data-format="yyyy-MM-dd HH:mm">
+               data-format="yyyy-MM-dd HH:mm">
     </div>
     <!-- /form-group -->
     <button type="button" class="btn btn-sm btn-success" id="search" onclick="queryDailyWork()">Search</button>
@@ -287,7 +289,7 @@
         visiblePages: 10,
         currentPage: 1,
         onPageChange: function (num) {
-            query(num);
+            queryDailyWork(num);
         }
     });
 </script>

@@ -59,10 +59,6 @@
         /*获取我的选课列表 页面加载就获取*/
         function queryMyTaskbook(currentPage) {
             var para = {
-                "requestTime": "2016-03-15 15:38:09.009",
-                "requestMethod": "",
-                "sessionId": "2c88449748214631ac43e6b370bd1034",
-                "requestId": "1a30fa8c-362d-4634-86f6-6f1e600e40db",
                 "requestContent": {
                     "teacherId": session.teacher.id,
                     "courseName": $("#courseName").val(),
@@ -95,7 +91,7 @@
                         tbody.empty();
                         for (var i in responseContent) {
                             var str = "<tr>" +
-                                    "<td><input type='checkbox' class='tgl' id='" + responseContent[i].id + "' value='" + responseContent[i].id + "' name='checkbox'></td>" +
+                                    "<td class='td-style'><input type='checkbox'  id='" + responseContent[i].id + "' value='" + responseContent[i].id + "' name='checkbox'></td>" +
                                     "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].serialNumber) + " </td>" +
                                     "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].courseCode) + " </td> " +
                                     "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].courseName) + " </td>" +
@@ -179,6 +175,7 @@
         </div>
         <!-- /form-group -->
         <button type="button" class="btn btn-sm btn-success" id="search" onclick="queryMyTaskbook(1)">Search</button>
+        <button type="button" class="btn btn-sm btn-danger" id="cancel" onclick="queryMyTaskbook(1)">退选</button>
     </div>
     <table class="table table-striped" id="dataTable" style="table-layout:fixed;height: 70%">
         <thead>

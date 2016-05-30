@@ -114,7 +114,7 @@
 
             <!-- 期中教学管理 -->
             <li class="bg-palette1">
-                <a href="inbox.html">
+                <a href="/UI/midterm404UI">
 									<span class="menu-content block">
 										<span class="menu-icon"><i class="block fa fa-envelope fa-lg"></i></span>
 										<span class="text m-left-sm">期中教学管理</span>
@@ -180,7 +180,7 @@
 
             <!-- 关于 -->
             <li class="bg-palette2">
-                <a href="timeline.html">
+                <a href="/UI/aboutUI">
 									<span class="menu-content block">
 										<span class="menu-icon"><i class="block fa fa-clock-o fa-lg"></i></span>
 										<span class="text m-left-sm">关于</span>

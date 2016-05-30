@@ -129,7 +129,7 @@
          * 获取专业列表
          */
         function queryMajor(){
-            alert($("#selectCollege").val());
+//            alert($("#selectCollege").val());
             var paras = {
                 "requestContent": {
                     "schoolId": $("#selectSchool").val(),

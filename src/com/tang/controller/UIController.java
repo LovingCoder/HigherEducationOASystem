@@ -116,4 +116,20 @@ public class UIController extends CollegeController {
     public void completUserUI(){
         render("/page/user/complet.jsp");
     }
+
+    /**
+     * 期中教学检测404
+     */
+    @ActionKey("/UI/midterm404UI")
+    public void midtermUI(){
+        render("/page/midterm/midterm404.html");
+    }
+
+    /**
+     * 关于
+     */
+    @ActionKey("/UI/aboutUI")
+    public void aboutUI(){
+        render("/page/about/about.html");
+    }
 }

@@ -66,12 +66,16 @@ public class TaskBookController extends Controller {
     public void uploadTaskbook() throws Exception{
         UploadFile uploadFile = getFile("file","uploadFiles");
         String term = getPara("term");
-        List<TaskBookExcel> list = TaskExcelKit.readTaskExcel(uploadFile.getFile());
-        Boolean result = Taskbook.dao.importTaskbook(list, term);
         JSONObject responseObejct;
-        if (result){
-            responseObejct = ResponseBeanKit.responseBean(SysConstant.CODE.SUCCESS,SysConstant.TASKBOOK.UPLOADSUCCESS, null,null);
-        }else {
+        try{
+            List<TaskBookExcel> list = TaskExcelKit.readTaskExcel(uploadFile.getFile());
+            Boolean result = Taskbook.dao.importTaskbook(list, term);
+            if (result){
+                responseObejct = ResponseBeanKit.responseBean(SysConstant.CODE.SUCCESS,SysConstant.TASKBOOK.UPLOADSUCCESS, null,null);
+            }else {
+                responseObejct = ResponseBeanKit.responseBean(SysConstant.CODE.FAIL,SysConstant.TASKBOOK.UPLOADFAIL,null,null);
+            }
+        }catch (Exception e){
             responseObejct = ResponseBeanKit.responseBean(SysConstant.CODE.FAIL,SysConstant.TASKBOOK.UPLOADFAIL,null,null);
         }
         System.out.println("/taskbook/uploadTaskbook---"+responseObejct);

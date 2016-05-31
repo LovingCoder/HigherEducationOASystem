@@ -5,6 +5,7 @@ import org.jeecgframework.poi.excel.ExcelImportUtil;
 import org.jeecgframework.poi.excel.entity.ImportParams;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -15,9 +16,15 @@ import java.util.List;
  */
 public class TaskExcelKit {
 
-    public static List<TaskBookExcel> readTaskExcel(File file){
+    public static List<TaskBookExcel> readTaskExcel(File file) throws Exception{
         ImportParams params = new ImportParams();
         params.setTitleRows(2);
-        return ExcelImportUtil.importExcel(file, TaskBookExcel.class, params);
+        List<TaskBookExcel> taskBookExcelList = new ArrayList<TaskBookExcel>();
+        try {
+            taskBookExcelList = ExcelImportUtil.importExcel(file, TaskBookExcel.class, params);
+        }catch (Exception e){
+            throw new Exception(e.getMessage());
+        }
+        return taskBookExcelList;
     }
 }

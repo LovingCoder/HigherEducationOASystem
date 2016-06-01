@@ -105,7 +105,7 @@
                                     "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].teachingNumber) + " </td>" +
                                     "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].major) + " </td>" +
                                     "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].schoolZone) + " </td>" +
-                                    "<td class='td-style' onmouseover='showData(\""+responseContent[i].id+7+"\",\""+checkTdNUllOrEmpty(responseContent[i].classAndStudent)+"\")'>" + checkTdNUllOrEmpty(responseContent[i].classAndStudent) + " </td>" +
+                                    "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].classAndStudent) + " </td>" +
                                     "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].grade) + " </td>" +
                                     "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].totalStudent) + " </td>" +
                                     "<td class='td-style'> " + checkTdNUllOrEmpty(responseContent[i].testType) + " </td>" +

@@ -92,4 +92,13 @@ public class UserController extends Controller {
         System.out.println("/user/complet---"+responseObject);
         renderJson(responseObject);
     }
+
+    /**
+     * 用户注销登录
+     */
+    @ActionKey("/user/userLogout")
+    public void userLogout(){
+        getRequest().getSession().invalidate();
+        redirect("/index/frame");
+    }
 }

@@ -127,4 +127,11 @@ public class SysConstant {
     public static class CHOOSETASKBOOK{
         public static final String TASKBOOKISNULL = "您没有选择任何课程！";
     }
+
+    /**
+     * 用户相关信息
+     */
+    public static class USER{
+        public static final String DEFAULTPWD = "123456";
+    }
 }

@@ -40,6 +40,14 @@ public class Teacher extends BaseTeacher<Teacher> {
         String collegeId = ParamKit.checkObjectNotNull(requestBean, "collegeId");
         String schoolId = ParamKit.checkObjectNotNull(requestBean, "schoolId");
         String email = ParamKit.checkObjectNotNull(requestBean, "email");
+        Record user = new Record();
+        user.set("id", IDKit.uuid())
+                .set("email", email)
+                .set("password", SysConstant.USER.DEFAULTPWD)
+                .set("userRole", SysConstant.USERROLE.COMMONTEACHER)
+                .set("isDelete", SysConstant.ISDELETE.NO)
+                .set("createTime", new Date())
+                .set("updateTime", new Date());
         Record teacher = new Record();
         teacher.set("id", IDKit.uuid())
                 .set("isDelete", SysConstant.ISDELETE.NO)
@@ -51,10 +59,12 @@ public class Teacher extends BaseTeacher<Teacher> {
                 .set("majorId", majorId)
                 .set("collegeId", collegeId)
                 .set("schoolId", schoolId)
-                .set("email", email);
-        Boolean result = Db.save("teacher", teacher);
-        if (result) {
-            return result;
+                .set("email", email)
+                .set("userId",user.get("id"));
+        Boolean result1 = Db.save("teacher", teacher);
+        Boolean result2 = Db.save("user",user);
+        if (result1 && result2) {
+            return true;
         } else {
             throw new Exception("添加教师失败！");
         }
@@ -184,6 +194,7 @@ public class Teacher extends BaseTeacher<Teacher> {
                 .set("bornDate", Strings.isNullOrEmpty(bornDateStr) ? teacher.getDate("bornDate") : DateUtils.formateDate(bornDateStr, SysConstant.TIMEFORMAT.yyyyMMdd))
                 .set("majorId", Strings.isNullOrEmpty(majorId) ? teacher.get("majorId") : majorId)
                 .set("email", Strings.isNullOrEmpty(email) ? teacher.get("email") : email);
+        Db.update("UPDATE USER SET email = ? WHERE id = ? AND isDelete = ?",email,teacher.get("userId"),SysConstant.ISDELETE.NO);
         return Db.update("teacher", teacher);
     }
 }

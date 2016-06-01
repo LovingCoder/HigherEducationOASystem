@@ -27,7 +27,7 @@ import org.eclipse.jetty.server.Request;
 public class TeacherController extends Controller {
 
     /**
-     * 添加教师
+     * 添加教师 添加教师时 默认创建教师登录账号 邮箱为登录名 初始密码为123456
      *
      * @throws Exception
      */

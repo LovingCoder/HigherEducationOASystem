@@ -54,7 +54,7 @@
                             }
                         });
                         d.show();
-                    }else{
+                    } else {
                         queryMajor();
                     }
                 });
@@ -200,11 +200,11 @@
                 cache: false,
                 async: false,
                 success: function (data) {
-                    if(0 == data.status){
-                        for(var i in data.responseContent){
-                            $("#majorId").append("<option value='"+data.responseContent[i].id+"'>"+data.responseContent[i].majorName+"</option>");
+                    if (0 == data.status) {
+                        for (var i in data.responseContent) {
+                            $("#majorId").append("<option value='" + data.responseContent[i].id + "'>" + data.responseContent[i].majorName + "</option>");
                         }
-                    }else{
+                    } else {
                         alert(data.message);
                     }
                 },
@@ -220,24 +220,25 @@
 
 <%--顶部导航栏--%>
 <div class="padding-md">
-    <l class="breadcrumb">
+    <ol class="breadcrumb">
         <li><span class="primary-font"><i class="icon-home"></i></span><a href="/higherEducation/main">Home</a></li>
         <li>教师信息管理</li>
         <li class="active">教师列表</li>
-    </l>
-</div>
-<div class="form-inline no-margin">
-    <div class="form-group">
-        <label class="sr-only">教师名</label>
-        <input type="text" class="form-control" placeholder="教师名" id="teacherName" name="teacherName">
+    </ol>
+
+    <div class="form-inline no-margin">
+        <div class="form-group">
+            <label class="sr-only">教师名</label>
+            <input type="text" class="form-control" placeholder="教师名" id="teacherName" name="teacherName">
+        </div>
+        <div class="form-group">
+            <label class="sr-only">专业</label>
+            <select class="form-control" placeholder="专业" id="majorId" name="majorId">
+                <option selected="selected" value="">选择专业</option>
+            </select>
+        </div>
+        <button type="button" class="btn btn-sm btn-success" id="search" onclick="queryTeacher(1)">Search</button>
     </div>
-    <div class="form-group">
-        <label class="sr-only">专业</label>
-        <select class="form-control" placeholder="专业" id="majorId" name="majorId">
-            <option selected="selected" value="">选择专业</option>
-        </select>
-    </div>
-    <button type="button" class="btn btn-sm btn-success" id="search" onclick="queryTeacher(1)">Search</button>
 </div>
 <%--教师信息列表--%>
 <table class="table table-striped" id="dataTable">

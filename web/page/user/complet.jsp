@@ -132,8 +132,8 @@
 //            alert($("#selectCollege").val());
             var paras = {
                 "requestContent": {
-                    "schoolId": $("#selectSchool").val(),
-                    "collegeId":$("#selectCollege").val()
+                    "schoolId": session.teacher.schoolId,
+                    "collegeId":session.teacher.collegeId
                 },
                 "pageInfo": {
                     "pageSize": 10,

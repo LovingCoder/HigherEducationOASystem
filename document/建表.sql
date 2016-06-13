@@ -105,16 +105,6 @@ CREATE TABLE major (
 
 ALTER TABLE major ADD PRIMARY KEY (id);
 
-CREATE TABLE teacher_taskbook (
- id VARCHAR (32) NOT NULL,
- isDelete INT DEFAULT 1,
- createTime TIMESTAMP,
- updateTime TIMESTAMP,
- teacherId VARCHAR (32),
- taskbookId VARCHAR (32)
-) ENGINE = INNODB DEFAULT CHARSET = utf8;
-
-ALTER TABLE teacher_taskbook ADD PRIMARY KEY (id);
 
 CREATE TABLE dictionary (
  id VARCHAR (32) NOT NULL,

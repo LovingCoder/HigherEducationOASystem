@@ -5,6 +5,7 @@
 >Mysql  5.7
 >Tomcat 7.0.68
 >Jdk1.8
+>IDEA ide
 ## 所需文件
 >建表.sql
 >教学任务书_格式模板.xlsx
@@ -12,7 +13,7 @@
 ## 运行步骤
 1. 启动Mysql
 2. 初始化数据库，执行建表.sql文件，创建表和基础数据
-3. 配置数据库连接信息，在源码包，res目录下的database_config.txt中配置即可，重新编译生成war包
+3. 将项目导入到IDEA中，配置数据库连接信息，在源码包，res目录下的database_config.txt中配置即可，重新编译生成war包
 4. 将生成的HigherEducationOASystem_war archive.war文件放到Tomcat的webapps目录下
 5. 部署和启动Tomcat，/bin/startup.bat
 6. 打开浏览器，地址栏输入127.0.0.1:8080/index 系统默认账号Admin,密码123456，该用户身份是系主任，登录即可进入系统主页。
